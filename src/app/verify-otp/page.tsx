@@ -134,7 +134,7 @@ export default function VerifyOtpPage() {
                 <button
                   onClick={() => handleVerifyOtp(otp)}
                   disabled={otp.length !== 6 || isLoading}
-                  className={`w-full py-3 px-4 rounded-lg shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 ${
+                  className={`w-full py-3 px-4 rounded-lg shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 ${
                     otp.length === 6 && !isLoading
                       ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)]'
                       : 'bg-[var(--primary-color)] cursor-not-allowed'

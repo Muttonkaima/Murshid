@@ -124,7 +124,7 @@ export default function AuthForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                     placeholder="Enter Your Email Address"
                     required
                   />
@@ -133,7 +133,7 @@ export default function AuthForm() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isLoading ? (
                     <>
@@ -198,7 +198,7 @@ export default function AuthForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                     placeholder="Enter Your Email Address"
                     required
                   />
@@ -207,7 +207,7 @@ export default function AuthForm() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isLoading ? (
                     <>
@@ -265,7 +265,7 @@ export default function AuthForm() {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                         placeholder="First Name"
                         required
                       />
@@ -280,7 +280,7 @@ export default function AuthForm() {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                         placeholder="Last Name"
                         required
                       />
@@ -298,7 +298,7 @@ export default function AuthForm() {
                         name="dob"
                         value={formData.dob}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
                         required
                       />
                     </div>
@@ -311,7 +311,7 @@ export default function AuthForm() {
                         name="gender"
                         value={formData.gender}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
                         required
                       >
                         <option value="">Select Gender</option>
@@ -335,7 +335,7 @@ export default function AuthForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                   placeholder="Enter Your Email Address"
                   required
                 />
@@ -353,7 +353,7 @@ export default function AuthForm() {
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
+                      className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
                       placeholder="Enter Your Password"
                       required
                     />
@@ -398,7 +398,7 @@ export default function AuthForm() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isLoading ? (
                   <>
@@ -424,7 +424,7 @@ export default function AuthForm() {
               <div>
                 <button
                   type="button"
-                  className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 cursor-pointer"
+                  className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 cursor-pointer"
                 >
                   <FcGoogle className="w-5 h-5 mr-2" />
                   {isLogin ? 'Sign in with Google' : 'Sign up with Google'}

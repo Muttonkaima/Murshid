@@ -315,7 +315,7 @@ const DashboardPage = () => {
                   <select 
                     value={activeSubject}
                     onChange={(e) => setActiveSubject(e.target.value)}
-                    className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-none text-gray-900 cursor-pointer"
+                    className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:border-none text-gray-900 cursor-pointer"
                   >
                     <option value="all">All Subjects</option>
                     <option value="math">Mathematics</option>

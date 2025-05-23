@@ -178,7 +178,7 @@ const OnboardingPage = () => {
                   isFormValid 
                     ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] cursor-pointer' 
                     : 'bg-gray-400 cursor-not-allowed'
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200`}
+                } focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200`}
               >
                 {isSubmitting ? (
                   <>

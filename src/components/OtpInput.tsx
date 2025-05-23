@@ -123,7 +123,7 @@ export default function OtpInput({
           onKeyDown={(e) => handleKeyDown(e, index)}
           onPaste={handlePaste}
           disabled={disabled}
-          className={`w-12 h-16 text-2xl text-center rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition-all duration-200 text-gray-900 ${disabled ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
+          className={`w-12 h-16 text-2xl text-center rounded-lg border-2 border-gray-300 focus:ring-1 focus:ring-[var(--primary-color)] outline-none transition-all duration-200 text-gray-900 ${disabled ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
           autoComplete="one-time-code"
           aria-label={`Digit ${index + 1} of ${length}`}
         />

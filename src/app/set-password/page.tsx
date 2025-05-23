@@ -134,7 +134,7 @@ export default function SetPasswordPage() {
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-900 placeholder-gray-400 pr-10"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-900 placeholder-gray-400 pr-10"
                     placeholder="Enter your password"
                     required
                   />
@@ -158,7 +158,7 @@ export default function SetPasswordPage() {
                     id="confirmPassword"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-900 placeholder-gray-400 pr-10"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-900 placeholder-gray-400 pr-10"
                     placeholder="Confirm your password"
                     required
                   />
@@ -190,7 +190,7 @@ export default function SetPasswordPage() {
               <button
                 type="submit"
                 disabled={!isFormValid || isLoading}
-                className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${isFormValid ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] cursor-pointer' : 'bg-gray-400 cursor-not-allowed'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200`}
+                className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${isFormValid ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] cursor-pointer' : 'bg-gray-400 cursor-not-allowed'} focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200`}
               >
                 {isLoading ? (
                   <>
