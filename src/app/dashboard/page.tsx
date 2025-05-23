@@ -144,7 +144,7 @@ const DashboardPage = () => {
                         onClick={() => setIsProfileOpen(false)}
                       >
                         <FiUserIcon className="mr-3 text-gray-400" size={16} />
-                        <span>Your Profile</span>
+                        <span>My Profile</span>
                       </Link>
                       <Link 
                         href="/settings" 

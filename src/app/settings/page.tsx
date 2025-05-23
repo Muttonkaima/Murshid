@@ -2,11 +2,13 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { FiArrowLeft, FiUser, FiLock, FiBell, FiMoon, FiSun, FiGlobe, FiCreditCard, FiShield, FiHelpCircle, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiArrowLeft, FiUser, FiLock, FiMail, FiBell, FiCreditCard, FiShield, FiGlobe, FiMoon, FiSun, FiHelpCircle, FiLogOut, FiEye, FiEyeOff, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import Sidebar from '@/components/layout/Sidebar';
 
 const SettingsPage = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('account');
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [darkMode, setDarkMode] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#10B981'); // Default theme color
   const [language, setLanguage] = useState('en');
@@ -202,14 +204,17 @@ const SettingsPage = () => {
                       {key === 'newsletter' && 'Subscribe to our newsletter'}
                     </p>
                   </div>
-                  <button
-                    onClick={() => handleNotificationChange(key as keyof typeof notifications)}
-                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${value ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
-                  >
-                    <span
-                      className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${value ? 'translate-x-5' : 'translate-x-1'}`}
-                    />
-                  </button>
+                  <div className="flex-shrink-0">
+                    <button
+                      onClick={() => handleNotificationChange(key as keyof typeof notifications)}
+                      className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors focus:outline-none ${value ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
+                      aria-label={`${value ? 'Disable' : 'Enable'} ${key} notifications`}
+                    >
+                      <span
+                        className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${value ? 'translate-x-6' : 'translate-x-1'}`}
+                      />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -226,22 +231,25 @@ const SettingsPage = () => {
                   <h3 className="font-medium text-gray-900">Dark Mode</h3>
                   <p className="text-sm text-gray-900">Switch between light and dark theme</p>
                 </div>
-                <button
-                  onClick={() => setDarkMode(!darkMode)}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${darkMode ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
-                >
-                  <span
-                    className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${darkMode ? 'translate-x-5' : 'translate-x-1'}`}
-                  />
-                </button>
+                <div className="flex-shrink-0">
+                  <button
+                    onClick={() => setDarkMode(!darkMode)}
+                    className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors focus:outline-none ${darkMode ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
+                    aria-label={darkMode ? 'Disable dark mode' : 'Enable dark mode'}
+                  >
+                    <span
+                      className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${darkMode ? 'translate-x-6' : 'translate-x-1'}`}
+                    />
+                  </button>
+                </div>
               </div>
               <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                 <h3 className="font-medium mb-2 text-gray-900">Theme Color</h3>
-                <div className="flex space-x-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {['#10B981', '#3B82F6', '#8B5CF6', '#EC4899', '#F59E0B'].map((color) => (
                     <button
                       key={color}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] ${selectedColor === color ? 'ring-2 ring-offset-1 ring-gray-400' : ''} cursor-pointer`}
+                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] ${selectedColor === color ? 'ring-2 ring-offset-1 ring-gray-400' : ''} cursor-pointer`}
                       style={{ backgroundColor: color }}
                       onClick={() => {
                         // Update the primary color in your theme
@@ -368,29 +376,31 @@ const SettingsPage = () => {
                       <p className="mt-1 text-sm text-green-600">Passwords match!</p>
                     )}
                   </div>
-                  <button 
-                    className={`mt-4 px-6 py-2 rounded-lg transition-colors ${isPasswordValid() ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
-                    disabled={!isPasswordValid()}
-                    onClick={() => {
-                      if (isPasswordValid()) {
-                        // Handle password update logic here
-                        alert('Password updated successfully!');
-                        setCurrentPassword('');
-                        setNewPassword('');
-                        setConfirmPassword('');
-                        setPasswordErrors({
-                          hasMinLength: false,
-                          hasUpperCase: false,
-                          hasLowerCase: false,
-                          hasNumber: false,
-                          hasSpecialChar: false,
-                          passwordsMatch: false
-                        });
-                      }
-                    }}
-                  >
-                    Update Password
-                  </button>
+                  <div className="w-full mt-4">
+                    <button 
+                      className={`w-full py-2 px-4 text-base rounded-lg transition-colors ${isPasswordValid() ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+                      disabled={!isPasswordValid()}
+                      onClick={() => {
+                        if (isPasswordValid()) {
+                          // Handle password update logic here
+                          alert('Password updated successfully!');
+                          setCurrentPassword('');
+                          setNewPassword('');
+                          setConfirmPassword('');
+                          setPasswordErrors({
+                            hasMinLength: false,
+                            hasUpperCase: false,
+                            hasLowerCase: false,
+                            hasNumber: false,
+                            hasSpecialChar: false,
+                            passwordsMatch: false
+                          });
+                        }
+                      }}
+                    >
+                      Update Password
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -453,15 +463,18 @@ const SettingsPage = () => {
                       <h4 className="font-medium text-gray-900">Activity Status</h4>
                       <p className="text-sm text-gray-600">Show when you're active on the app</p>
                     </div>
-                    <button
-                      onClick={() => setPrivacySettings(prev => ({
-                        ...prev,
-                        activityStatus: !prev.activityStatus
-                      }))}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${privacySettings.activityStatus ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
-                    >
-                      <span className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${privacySettings.activityStatus ? 'translate-x-5' : 'translate-x-1'}`} />
-                    </button>
+                    <div className="flex-shrink-0">
+                      <button
+                        onClick={() => setPrivacySettings(prev => ({
+                          ...prev,
+                          activityStatus: !prev.activityStatus
+                        }))}
+                        className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors ${privacySettings.activityStatus ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
+                        aria-label={privacySettings.activityStatus ? 'Disable activity status' : 'Enable activity status'}
+                      >
+                        <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${privacySettings.activityStatus ? 'translate-x-6' : 'translate-x-1'}`} />
+                      </button>
+                    </div>
                   </div>
                   <div className="pt-4 border-t border-gray-200">
                     <button className="text-sm font-medium text-[var(--primary-color)] hover:underline cursor-pointer">
@@ -507,12 +520,15 @@ const SettingsPage = () => {
                       <h4 className="font-medium text-gray-900">Auto-translate content</h4>
                       <p className="text-sm text-gray-600">Automatically translate posts in other languages</p>
                     </div>
-                    <button 
-                      onClick={() => setAutoTranslate(!autoTranslate)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${autoTranslate ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
-                    >
-                      <span className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${autoTranslate ? 'translate-x-5' : 'translate-x-1'}`} />
-                    </button>
+                    <div className="flex-shrink-0">
+                      <button 
+                        onClick={() => setAutoTranslate(!autoTranslate)}
+                        className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors ${autoTranslate ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
+                        aria-label={autoTranslate ? 'Disable auto-translate' : 'Enable auto-translate'}
+                      >
+                        <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${autoTranslate ? 'translate-x-6' : 'translate-x-1'}`} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -559,14 +575,16 @@ const SettingsPage = () => {
 
               <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-medium mb-4 text-gray-900">App Version</h3>
-                <div className="flex items-center justify-between">
+                <div className="space-y-4">
                   <div>
                     <p className="text-gray-600">You're using the latest version of our app</p>
                     <p className="text-sm text-gray-500 mt-1">Version 2.4.1 (Build 421)</p>
                   </div>
-                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer">
-                    Check for Updates
-                  </button>
+                  <div className="w-full sm:w-auto">
+                    <button className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium bg-transparent hover:bg-gray-50 text-[var(--primary-color)] cursor-pointer">
+                      Check for Updates
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -586,48 +604,85 @@ const SettingsPage = () => {
     }
   };
 
+  // Get the current active section for mobile dropdown
+  const activeSection = settingsSections.find(section => section.id === activeTab);
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Back Button */}
-      <button 
-        onClick={() => router.push('/dashboard')}
-        className="fixed top-4 left-4 flex items-center text-gray-600 hover:text-gray-900 bg-white p-2 rounded-full shadow-sm border border-gray-200 z-10 cursor-pointer"
-        aria-label="Back to Dashboard"
-      >
-        <FiArrowLeft className="w-5 h-5" />
-      </button>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-          <p className="mt-1 text-gray-900">Manage your account settings and preferences</p>
-        </div>
+    <div className="min-h-screen bg-gray-50 flex">
+      <Sidebar />
+      <div className="flex-1">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+            <p className="mt-1 text-gray-900">Manage your account settings and preferences</p>
+          </div>
 
-        <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-          <div className="md:flex">
-            {/* Sidebar Navigation */}
-            <div className="md:w-64 border-r border-gray-200 bg-gray-50">
-              <nav className="p-4 space-y-1">
-                {settingsSections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveTab(section.id)}
-                    className={`w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
-                      activeTab === section.id
-                        ? 'bg-[var(--primary-color)] bg-opacity-10 text-white'
-                        : 'text-gray-900 hover:bg-gray-100'
-                    }`}
+          <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div className="md:flex">
+              {/* Mobile Dropdown Navigation */}
+              <div className="md:hidden p-4 border-b border-gray-200">
+                <div className="relative">
+                  <div className="flex items-center justify-between p-3 text-gray-900 border border-gray-300 rounded-lg bg-white cursor-pointer"
+                    onClick={() => setOpenDropdown(openDropdown === 'mobile' ? null : 'mobile')}
                   >
-                    {section.icon}
-                    {section.title}
-                  </button>
-                ))}
-              </nav>
-            </div>
+                    <div className="flex items-center">
+                      {activeSection?.icon}
+                      <span className="ml-3 font-medium">{activeSection?.title}</span>
+                    </div>
+                    {openDropdown === 'mobile' ? 
+                      <FiChevronUp className="w-5 h-5 text-gray-400" /> : 
+                      <FiChevronDown className="w-5 h-5 text-gray-400" />
+                    }
+                  </div>
+                  {openDropdown === 'mobile' && (
+                    <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+                      {settingsSections.map((section) => (
+                        <div
+                          key={section.id}
+                          onClick={() => {
+                            setActiveTab(section.id);
+                            setOpenDropdown(null);
+                          }}
+                          className={`px-4 py-3 text-sm cursor-pointer hover:bg-gray-100 ${
+                            activeTab === section.id ? 'bg-[var(--primary-color)] bg-opacity-10 text-white' : 'text-gray-900'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            {section.icon}
+                            <span className="ml-3">{section.title}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
 
-            {/* Main Content */}
-            <div className="flex-1 p-8">
-              <div className="max-w-2xl md:h-[50vh] overflow-y-auto pr-2">
-                {renderTabContent()}
+              {/* Desktop Sidebar Navigation */}
+              <div className="hidden md:block md:w-64 border-r border-gray-200 bg-gray-50">
+                <nav className="p-4 space-y-1">
+                  {settingsSections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => setActiveTab(section.id)}
+                      className={`w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+                        activeTab === section.id
+                          ? 'bg-[var(--primary-color)] bg-opacity-10 text-white'
+                          : 'text-gray-900 hover:bg-gray-100'
+                      }`}
+                    >
+                      {section.icon}
+                      <span className="ml-3">{section.title}</span>
+                    </button>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Main Content */}
+              <div className="flex-1 p-8">
+                <div className="max-w-2xl md:h-[60vh] overflow-y-auto pr-2">
+                  {renderTabContent()}
+                </div>
               </div>
             </div>
           </div>

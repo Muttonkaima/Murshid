@@ -75,7 +75,7 @@ const Sidebar = () => {
         className={`fixed inset-y-0 left-0 transform ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out z-40 w-64 bg-white border-r border-gray-200 flex flex-col`}
         style={{ height: '100vh' }}
       >
-        <div className="p-4 border-b border-gray-200 flex justify-center">
+        <div className="p-0.5 border-b border-gray-200 flex justify-center">
           <img 
             src="/images/icon.png" 
             alt="Murshid Logo" 
