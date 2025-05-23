@@ -1,9 +1,11 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { FiUser, FiLock, FiBell, FiMoon, FiSun, FiGlobe, FiCreditCard, FiShield, FiHelpCircle, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiArrowLeft, FiUser, FiLock, FiBell, FiMoon, FiSun, FiGlobe, FiCreditCard, FiShield, FiHelpCircle, FiEye, FiEyeOff } from 'react-icons/fi';
 
 const SettingsPage = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState('account');
   const [darkMode, setDarkMode] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#10B981'); // Default theme color
@@ -239,7 +241,7 @@ const SettingsPage = () => {
                   {['#10B981', '#3B82F6', '#8B5CF6', '#EC4899', '#F59E0B'].map((color) => (
                     <button
                       key={color}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center focus:outline-none cursor-pointer`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] ${selectedColor === color ? 'ring-2 ring-offset-1 ring-gray-400' : ''}`}
                       style={{ backgroundColor: color }}
                       onClick={() => {
                         // Update the primary color in your theme
@@ -399,7 +401,7 @@ const SettingsPage = () => {
                     <h4 className="font-medium text-gray-900">SMS Authentication</h4>
                     <p className="text-sm text-gray-600">Use your phone to verify your identity</p>
                   </div>
-                  <button className="px-4 py-2 bg-gray-50 rounded-lg text-sm font-medium hover:bg-gray-100 text-[var(--primary-color)] cursor-pointer">
+                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 text-[var(--primary-color)] cursor-pointer">
                     Enable
                   </button>
                 </div>
@@ -408,7 +410,7 @@ const SettingsPage = () => {
                     <h4 className="font-medium text-gray-900">Authenticator App</h4>
                     <p className="text-sm text-gray-600">Use an authenticator app for verification</p>
                   </div>
-                  <button className="px-4 py-2 bg-gray-50 rounded-lg text-sm font-medium hover:bg-gray-100 text-[var(--primary-color)] cursor-pointer">
+                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 text-[var(--primary-color)] cursor-pointer">
                     Set Up
                   </button>
                 </div>
@@ -586,7 +588,15 @@ const SettingsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Back Button */}
+      <button 
+        onClick={() => router.push('/dashboard')}
+        className="fixed top-4 left-4 flex items-center text-gray-600 hover:text-gray-900 bg-white p-2 rounded-full shadow-sm border border-gray-200 z-10 cursor-pointer"
+        aria-label="Back to Dashboard"
+      >
+        <FiArrowLeft className="w-5 h-5" />
+      </button>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
           <p className="mt-1 text-gray-900">Manage your account settings and preferences</p>
