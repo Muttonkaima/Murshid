@@ -241,7 +241,7 @@ const SettingsPage = () => {
                   {['#10B981', '#3B82F6', '#8B5CF6', '#EC4899', '#F59E0B'].map((color) => (
                     <button
                       key={color}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] ${selectedColor === color ? 'ring-2 ring-offset-1 ring-gray-400' : ''}`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] ${selectedColor === color ? 'ring-2 ring-offset-1 ring-gray-400' : ''} cursor-pointer`}
                       style={{ backgroundColor: color }}
                       onClick={() => {
                         // Update the primary color in your theme
@@ -411,7 +411,7 @@ const SettingsPage = () => {
                     <p className="text-sm text-gray-600">Use an authenticator app for verification</p>
                   </div>
                   <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 text-[var(--primary-color)] cursor-pointer">
-                    Set Up
+                    Setup
                   </button>
                 </div>
               </div>
@@ -596,7 +596,7 @@ const SettingsPage = () => {
       >
         <FiArrowLeft className="w-5 h-5" />
       </button>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-16">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
           <p className="mt-1 text-gray-900">Manage your account settings and preferences</p>
@@ -626,7 +626,7 @@ const SettingsPage = () => {
 
             {/* Main Content */}
             <div className="flex-1 p-8">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl md:h-[50vh] overflow-y-auto pr-2">
                 {renderTabContent()}
               </div>
             </div>
