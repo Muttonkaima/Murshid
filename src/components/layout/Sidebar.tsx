@@ -17,7 +17,8 @@ import {
   FiX,
   FiBell,
   FiUser,
-  FiChevronRight
+  FiChevronRight,
+  FiLayers
 } from 'react-icons/fi';
 
 const Sidebar = () => {
@@ -34,6 +35,7 @@ const Sidebar = () => {
       dropdown: true,
       items: ['Mathematics', 'Science', 'Social', 'Languages']
     },
+    { name: 'Fundamentals', icon: <FiLayers size={20} />, href: '/fundamentals' },
     { name: 'Chat With Murshid', icon: <FiMessageSquare size={20} />, href: '/chat' },
     { name: 'AI Tools', icon: <FiTool size={20} />, href: '/ai-tools' },
     { name: 'Results', icon: <FiAward size={20} />, href: '/results' },
