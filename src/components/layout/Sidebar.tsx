@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   FiHome, 
   FiMessageSquare, 
@@ -21,11 +21,51 @@ import {
   FiLayers
 } from 'react-icons/fi';
 
+interface Subject {
+  id: string;
+  name: string;
+  slug: string;
+  isActive: boolean;
+  isVisible: boolean;
+  order: number;
+}
+
 const Sidebar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Automatically open the dropdown if we're on a subject page
+  useEffect(() => {
+    if (pathname.startsWith('/subjects')) {
+      setOpenDropdown('Subjects');
+    } else {
+      setOpenDropdown(null);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    // Load subjects from the JSON file
+    const loadSubjects = async () => {
+      try {
+        // Using require to import JSON directly in the frontend
+        const data = await import('@/data/subjects.json');
+        const visibleSubjects = data.subjects
+          .filter((subject: Subject) => subject.isVisible && subject.isActive)
+          .sort((a: Subject, b: Subject) => a.order - b.order);
+        setSubjects(visibleSubjects);
+      } catch (error) {
+        console.error('Failed to load subjects:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadSubjects();
+  }, []);
 
   const navItems = [
     { name: 'Home', icon: <FiHome size={20} />, href: '/dashboard' },
@@ -33,7 +73,10 @@ const Sidebar = () => {
       name: 'Subjects', 
       icon: <FiBookOpen size={20} />, 
       dropdown: true,
-      items: ['Mathematics', 'Science', 'Social'],
+      items: subjects.map(subject => ({
+        name: subject.name,
+        href: `/subjects/${subject.slug}`
+      })),
       href: '/subjects'
     },
     { name: 'Fundamentals', icon: <FiLayers size={20} />, href: '/fundamentals' },
@@ -49,7 +92,17 @@ const Sidebar = () => {
   };
 
   const isActive = (href: string) => {
-    return pathname === href ? 'bg-[var(--primary-color)] bg-opacity-10 text-white' : 'text-gray-600 hover:bg-gray-100';
+    // Check if the current pathname matches the href or is a child route
+    const isActive = pathname === href || 
+                   (pathname.startsWith(href) && href !== '/') ||
+                   pathname === `${href}/`;
+    return isActive ? 'bg-[var(--primary-color)] bg-opacity-10 text-white' : 'text-gray-600 hover:bg-gray-100';
+  };
+
+  // Check if a subject is active
+  const isSubjectActive = (subjectHref: string) => {
+    return pathname === subjectHref || 
+           pathname.startsWith(`${subjectHref}/`);
   };
 
   return (
@@ -106,17 +159,28 @@ const Sidebar = () => {
                     </Link>
                     {openDropdown === item.name && (
                       <ul className="mt-1 ml-10 space-y-1">   
-                        {item.items?.map((subItem) => (
-                          <li key={subItem}>
-                            <Link
-                              href={`/subjects/${subItem.toLowerCase()}`}
-                              className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {subItem}
-                            </Link>
-                          </li>
-                        ))}
+                        {loading ? (
+                          <li className="px-4 py-2 text-sm text-gray-500">Loading subjects...</li>
+                        ) : item.items && item.items.length === 0 ? (
+                          <li className="px-4 py-2 text-sm text-gray-500">No subjects available</li>
+                        ) : (
+                          item.items?.map((subItem) => (
+                            <li key={subItem.href}>
+                              <Link
+                                href={subItem.href}
+                                className={`block px-4 py-2 text-sm rounded-lg transition-colors ${
+                                  isSubjectActive(subItem.href)
+                                    ? 'bg-[var(--primary-color)]/20 text-[var(--primary-color)] font-medium'
+                                    : 'text-gray-600 hover:bg-gray-100'
+                                }`}
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                               
+                              </Link>
+                            </li>
+                          ))
+                        )}
                       </ul>
                     )}
                   </div>
