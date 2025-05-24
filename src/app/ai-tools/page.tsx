@@ -192,7 +192,7 @@ export default function AIToolsPage() {
       {/* Main Content */}
       <div className="flex-1 overflow-auto sm:mt-0 mt-12">
         <h2 className="md:hidden block text-2xl font-bold text-gray-900 mx-3 my-4">AI Tools</h2>
-        <p className="text-gray-600 mx-3 my-4">Smart AI tools to supercharge student life</p>
+        <p className="md:hidden text-gray-600 mx-3 my-4">Smart AI tools to supercharge student life</p>
 
       {/* Category and Search Section */}
       <div className="bg-white shadow-sm sticky top-0 z-10 mx-3 rounded-lg sm:mx-0 sm:rounded-none">
