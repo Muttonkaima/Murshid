@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { 
-  FiZap, 
-  FiGlobe, 
+import { useState, useEffect } from 'react';
+import {
+  FiZap,
+  FiGlobe,
   FiType,
   FiDivideCircle,
   FiAward,
@@ -79,21 +79,20 @@ const subjects = [
 ];
 
 // Level component for the modal
-const LevelCard = ({ level, isActive, subjectColor, onClick }: { 
-  level: number; 
-  isActive: boolean; 
-  subjectColor: string; 
-  onClick: () => void 
+const LevelCard = ({ level, isActive, subjectColor, onClick }: {
+  level: number;
+  isActive: boolean;
+  subjectColor: string;
+  onClick: () => void
 }) => {
   return (
     <button
       onClick={onClick}
       disabled={!isActive}
-      className={`relative group flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-300 ${
-        isActive 
+      className={`relative group flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-300 ${isActive
           ? `bg-gradient-to-br ${subjectColor} text-white shadow-lg hover:scale-105 hover:shadow-xl cursor-pointer`
           : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-      }`}
+        }`}
     >
       {!isActive && (
         <div className="absolute top-2 right-2">
@@ -102,11 +101,11 @@ const LevelCard = ({ level, isActive, subjectColor, onClick }: {
       )}
       <span className="text-2xl font-bold">{level}</span>
       <span className="text-xs mt-1">Level</span>
-      
+
       {isActive && (
         <div className="absolute -bottom-2 w-4 h-4 bg-white transform rotate-45 rounded-sm"></div>
       )}
-      
+
       {/* {isActive && (
         <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 text-xs font-medium px-2 py-1 rounded whitespace-nowrap shadow-lg z-50">
           Start Learning
@@ -117,24 +116,37 @@ const LevelCard = ({ level, isActive, subjectColor, onClick }: {
 };
 
 // Modal component for level selection
-const LevelModal = ({ 
-  isOpen, 
-  onClose, 
-  subject 
-}: { 
-  isOpen: boolean; 
-  onClose: () => void; 
-  subject: any 
+const LevelModal = ({
+  isOpen,
+  onClose,
+  subject
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  subject: any
 }) => {
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   if (!isOpen || !subject) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className={`relative bg-white rounded-2xl shadow-2xl w-full sm:max-w-4xl max-h-[90vh] overflow-hidden border-t-4 ${subject.borderColor}`}>
-        
+
         {/* Scrollable Area */}
         <div className="flex flex-col h-full">
-          
+
           {/* Modal Header */}
           <div className={`p-4 sm:p-6 ${subject.bgColor} text-white`}>
             <div className="flex justify-between items-center">
@@ -142,7 +154,7 @@ const LevelModal = ({
                 <h2 className="text-xl sm:text-2xl font-bold">{subject.name} Fundamentals</h2>
                 <p className="opacity-90 text-sm">Select a level to begin your journey</p>
               </div>
-              <button 
+              <button
                 onClick={onClose}
                 className={`p-2 rounded-full hover:text-gray-900 hover:bg-white hover:bg-opacity-20 transition-colors cursor-pointer`}
               >
@@ -155,7 +167,7 @@ const LevelModal = ({
           <div className="p-4 sm:p-6 overflow-y-auto">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {[...Array(10)].map((_, index) => (
-                <LevelCard 
+                <LevelCard
                   key={index + 1}
                   level={index + 1}
                   isActive={index === 0}
@@ -174,8 +186,8 @@ const LevelModal = ({
                 <span>10%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div 
-                  className={`h-2.5 rounded-full ${subject.bgColor}`} 
+                <div
+                  className={`h-2.5 rounded-full ${subject.bgColor}`}
                   style={{ width: '10%' }}
                 ></div>
               </div>
@@ -214,7 +226,7 @@ export default function FundamentalsPage() {
       <div className="md:w-64 w-full md:fixed md:inset-y-0 md:h-screen z-30">
         <Sidebar />
       </div>
-      
+
       {/* Main Content */}
       <div className="flex-1 md:ml-64">
         <div className="p-4 md:p-8 mt-10">
@@ -223,17 +235,16 @@ export default function FundamentalsPage() {
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Fundamentals</h1>
               <p className="text-gray-600">Select a subject to start learning the basics</p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {subjects.map((subject) => (
-                <div 
+                <div
                   key={subject.id}
                   onClick={() => !subject.isLocked && handleSubjectClick(subject)}
-                  className={`group relative bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 ${
-                    subject.isLocked 
-                      ? 'opacity-70 cursor-not-allowed' 
+                  className={`group relative bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 ${subject.isLocked
+                      ? 'opacity-70 cursor-not-allowed'
                       : 'cursor-pointer hover:shadow-md hover:-translate-y-1'
-                  }`}
+                    }`}
                 >
                   <div className={`h-2 ${subject.bgColor} ${subject.isLocked ? 'opacity-70' : ''}`}></div>
                   <div className="p-6 relative">
@@ -268,12 +279,12 @@ export default function FundamentalsPage() {
           </div>
         </div>
       </div>
-      
+
       {/* Level Selection Modal */}
-      <LevelModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        subject={selectedSubject} 
+      <LevelModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        subject={selectedSubject}
       />
     </div>
   );

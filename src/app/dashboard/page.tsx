@@ -186,6 +186,7 @@ const DashboardPage = () => {
                 title="Start Practice"
                 description="Practice with personalized questions"
                 buttonText="Practice Now"
+                buttonLink="/practice"
                 bgColor="bg-blue-100"
                 textColor="text-blue-600"
               />
@@ -194,6 +195,7 @@ const DashboardPage = () => {
                 title="Ask Murshid"
                 description="Get instant help with your doubts"
                 buttonText="Ask Now"
+                buttonLink="/chat"
                 bgColor="bg-purple-100"
                 textColor="text-purple-600"
               />
@@ -202,6 +204,7 @@ const DashboardPage = () => {
                 title="AI Tools"
                 description="Explore AI-powered learning tools"
                 buttonText="Explore"
+                buttonLink="/ai-tools"
                 bgColor="bg-green-100"
                 textColor="text-green-600"
               />

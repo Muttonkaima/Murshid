@@ -282,16 +282,16 @@ export default function ChatPage() {
             {chatHistory.map(chat => (
               <div
                 key={chat.id}
-                className={`group relative ${currentChatId === chat.id ? 'bg-[var(--primary-color)] bg-opacity-10' : ''} rounded-lg`}
+                className={`group relative ${currentChatId === chat.id ? 'bg-gray-100 bg-opacity-10' : ''} rounded-lg`}
               >
                 {editingChatId === chat.id ? (
-                  <form onSubmit={(e) => saveEdit(chat.id, e)} className="p-2">
+                  <form onSubmit={(e) => saveEdit(chat.id, e)} className="p-2 bg-gray-100">
                     <input
                       type="text"
                       value={editTitle}
                       onChange={(e) => setEditTitle(e.target.value)}
                       onClick={(e) => e.stopPropagation()}
-                      className="w-full px-2 py-1 text-sm border rounded focus:border-none focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] text-gray-900"
+                      className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:border-none focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] text-gray-900"
                       autoFocus
                     />
                     <div className="flex justify-end mt-2 space-x-2">
@@ -323,7 +323,7 @@ export default function ChatPage() {
                   >
                     <div className="font-medium flex justify-between items-center">
                       <span className="truncate pr-8">{chat.title}</span>
-                      <div className="absolute right-2 top-2 flex space-x-1 opacity-0 group-hover:opacity-100">
+                      <div className="absolute right-2 top-2 flex space-x-1 opacity-50 group-hover:opacity-100">
                         <button
                           onClick={(e) => startEditing(chat.id, chat.title, e)}
                           className="p-1 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full cursor-pointer"
