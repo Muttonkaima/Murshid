@@ -21,7 +21,8 @@ const subjects = [
     icon: <FiGlobe className="text-2xl text-white" />,
     color: 'from-amber-500 to-yellow-400',
     bgColor: 'bg-amber-500',
-    borderColor: 'border-amber-400'
+    borderColor: 'border-amber-400',
+    isLocked: false
   },
   {
     id: 'science',
@@ -30,17 +31,18 @@ const subjects = [
     icon: <FiZap className="text-2xl text-white" />,
     color: 'from-blue-500 to-cyan-400',
     bgColor: 'bg-blue-500',
-    borderColor: 'border-blue-400'
+    borderColor: 'border-blue-400',
+    isLocked: false
   },
   {
     id: 'kannada',
     name: 'Kannada',
     description: 'Learn Kannada language and literature',
-    // icon: <FiType className="text-2xl text-white" />,
     icon: <p className="text-2xl text-white font-bold">ಕ</p>,
     color: 'from-green-500 to-emerald-400',
     bgColor: 'bg-green-500',
-    borderColor: 'border-green-400'
+    borderColor: 'border-green-400',
+    isLocked: false
   },
   {
     id: 'hindi',
@@ -49,7 +51,8 @@ const subjects = [
     icon: <p className="text-2xl text-white font-bold">ह</p>,
     color: 'from-purple-500 to-fuchsia-400',
     bgColor: 'bg-purple-500',
-    borderColor: 'border-purple-400'
+    borderColor: 'border-purple-400',
+    isLocked: false
   },
   {
     id: 'mathematics',
@@ -58,7 +61,9 @@ const subjects = [
     icon: <FiDivideCircle className="text-2xl text-white" />,
     color: 'from-red-500 to-pink-400',
     bgColor: 'bg-red-500',
-    borderColor: 'border-red-400'
+    borderColor: 'border-red-400',
+    isLocked: true,
+    lockedMessage: 'Coming soon!'
   },
   {
     id: 'tamil',
@@ -67,7 +72,9 @@ const subjects = [
     icon: <p className="text-2xl text-white font-bold">த</p>,
     color: 'from-indigo-500 to-violet-400',
     bgColor: 'bg-indigo-500',
-    borderColor: 'border-indigo-400'
+    borderColor: 'border-indigo-400',
+    isLocked: true,
+    lockedMessage: 'Coming soon!'
   }
 ];
 
@@ -221,22 +228,37 @@ export default function FundamentalsPage() {
               {subjects.map((subject) => (
                 <div 
                   key={subject.id}
-                  onClick={() => handleSubjectClick(subject)}
-                  className={`group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1`}
+                  onClick={() => !subject.isLocked && handleSubjectClick(subject)}
+                  className={`group relative bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 ${
+                    subject.isLocked 
+                      ? 'opacity-70 cursor-not-allowed' 
+                      : 'cursor-pointer hover:shadow-md hover:-translate-y-1'
+                  }`}
                 >
-                  <div className={`h-2 ${subject.bgColor}`}></div>
-                  <div className="p-6">
-                    <div className={`w-12 h-12 rounded-lg ${subject.bgColor} bg-opacity-10 flex items-center justify-center mb-4 ${subject.bgColor.replace('bg-', 'text-')}`}>
-                      {subject.icon}
+                  <div className={`h-2 ${subject.bgColor} ${subject.isLocked ? 'opacity-70' : ''}`}></div>
+                  <div className="p-6 relative">
+                    <div className="flex justify-between items-start mb-2">
+                      <div className={`w-12 h-12 rounded-lg ${subject.bgColor} ${subject.isLocked ? 'opacity-70' : 'bg-opacity-10'} flex items-center justify-center ${subject.bgColor.replace('bg-', 'text-')}`}>
+                        {subject.icon}
+                      </div>
+                      {subject.isLocked && (
+                        <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                          Coming soon
+                        </span>
+                      )}
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{subject.name}</h3>
-                    <p className="text-gray-600 mb-4">{subject.description}</p>
-                    <div className="flex items-center text-sm text-gray-500">
+                    <h3 className={`text-xl font-semibold mb-2 ${subject.isLocked ? 'text-gray-500' : 'text-gray-900'}`}>
+                      {subject.name}
+                    </h3>
+                    <p className={`mb-4 ${subject.isLocked ? 'text-gray-400' : 'text-gray-600'}`}>
+                      {subject.description}
+                    </p>
+                    <div className={`flex items-center text-sm ${subject.isLocked ? 'text-gray-400' : 'text-gray-500'}`}>
                       <span>10 levels</span>
                       <span className="mx-2">•</span>
                       <span className="flex items-center">
-                        <FiAward className="w-4 h-4 mr-1 text-yellow-500" />
-                        Start from beginning
+                        <FiAward className={`w-4 h-4 mr-1 ${subject.isLocked ? 'text-gray-400' : 'text-yellow-500'}`} />
+                        {subject.isLocked ? 'Coming soon' : 'Start from beginning'}
                       </span>
                     </div>
                   </div>
