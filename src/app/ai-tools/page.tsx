@@ -13,6 +13,7 @@ interface Tool {
   category: string;
   isNew?: boolean;
   isPopular?: boolean;
+  isLocked?: boolean;
 }
 
 interface Category {
@@ -59,7 +60,7 @@ const tools: Tool[] = [
     title: 'Mind Map Generator',
     description: 'Visualize ideas and concepts in a mind map format',
     icon: <FiGlobe className="w-6 h-6 text-white" />,
-    category: 'study'
+    category: 'study',
   },
   {
     id: 'flashcards',
@@ -74,14 +75,14 @@ const tools: Tool[] = [
     title: 'Citation Generator',
     description: 'Generate citations in any format (APA, MLA, Chicago)',
     icon: <FiFileText className="w-6 h-6 text-white" />,
-    category: 'writing'
+    category: 'writing',
   },
   {
     id: 'equation-solver',
     title: 'Equation Solver',
     description: 'Solve algebraic, trigonometric, and calculus equations',
     icon: <FiCode className="w-6 h-6 text-white" />,
-    category: 'stem'
+    category: 'stem',
   },
   {
     id: 'plagiarism-checker',
@@ -103,7 +104,8 @@ const tools: Tool[] = [
     title: 'Language Tutor',
     description: 'Practice and learn new languages with AI',
     icon: <FiGlobe className="w-6 h-6 text-white" />,
-    category: 'study'
+    category: 'study',
+    isLocked: true
   },
   {
     id: 'code-explainer',
@@ -111,7 +113,7 @@ const tools: Tool[] = [
     description: 'Understand complex code snippets in simple terms',
     icon: <FiCode className="w-6 h-6 text-white" />,
     category: 'stem',
-    isPopular: true
+    isLocked: true
   },
   {
     id: 'time-management',
@@ -119,7 +121,7 @@ const tools: Tool[] = [
     description: 'Create optimal study schedules based on your goals',
     icon: <FiClock className="w-6 h-6 text-white" />,
     category: 'study',
-    isNew: true
+    isLocked: true
   }
 ];
 
@@ -326,8 +328,12 @@ export default function AIToolsPage() {
                 {filteredTools.map((tool) => (
                   <div
                     key={tool.id}
-                    onClick={() => handleToolClick(tool.id)}
-                    className="group bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-200 cursor-pointer hover:border-[var(--primary-color)] hover:border-opacity-50"
+                    onClick={() => !tool.isLocked && handleToolClick(tool.id)}
+                    className={`group rounded-xl shadow-sm border p-6 transition-all duration-200 ${
+                      tool.isLocked 
+                        ? 'bg-gray-50 border-gray-100 cursor-not-allowed opacity-70' 
+                        : 'bg-white border-gray-200 cursor-pointer hover:shadow-md hover:border-[var(--primary-color)] hover:border-opacity-50'
+                    }`}
                   >
                     <div className="flex justify-between items-start mb-4">
                       <div className="p-2 rounded-lg bg-[var(--primary-color)] bg-opacity-10 text-[var(--primary-color)]">
@@ -346,8 +352,15 @@ export default function AIToolsPage() {
                         )}
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-[var(--primary-color)] transition-colors">
+                    <h3 className={`text-lg font-semibold mb-1 transition-colors ${
+                      tool.isLocked 
+                        ? 'text-gray-500' 
+                        : 'text-gray-900 group-hover:text-[var(--primary-color)]'
+                    }`}>
                       {tool.title}
+                      {tool.isLocked && (
+                        <span className="ml-2 text-xs font-normal text-gray-400">(Coming Soon)</span>
+                      )}
                     </h3>
                     <p className="text-gray-600 text-sm">{tool.description}</p>
                     <div className="mt-4 flex justify-between items-center">
