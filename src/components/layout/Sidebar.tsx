@@ -33,7 +33,8 @@ const Sidebar = () => {
       name: 'Subjects', 
       icon: <FiBookOpen size={20} />, 
       dropdown: true,
-      items: ['Mathematics', 'Science', 'Social', 'Languages']
+      items: ['Mathematics', 'Science', 'Social'],
+      href: '/subjects'
     },
     { name: 'Fundamentals', icon: <FiLayers size={20} />, href: '/fundamentals' },
     { name: 'Chat With Murshid', icon: <FiMessageSquare size={20} />, href: '/chat' },
@@ -89,6 +90,9 @@ const Sidebar = () => {
               <li key={item.name}>
                 {item.dropdown ? (
                   <div>
+                    <Link
+                      href={item.href}
+                    >
                     <button
                       onClick={() => toggleDropdown(item.name)}
                       className={`w-full flex items-center justify-between px-4 py-3 rounded-lg ${isActive(item.href || '')} transition-colors cursor-pointer`}
@@ -99,8 +103,9 @@ const Sidebar = () => {
                       </div>
                       {openDropdown === item.name ? <FiChevronUp /> : <FiChevronDown />}
                     </button>
+                    </Link>
                     {openDropdown === item.name && (
-                      <ul className="mt-1 ml-10 space-y-1">
+                      <ul className="mt-1 ml-10 space-y-1">   
                         {item.items?.map((subItem) => (
                           <li key={subItem}>
                             <Link
