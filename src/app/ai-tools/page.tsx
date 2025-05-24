@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FiSearch, FiBookOpen, FiBook, FiFileText, FiLayers, FiCode, FiImage, FiMusic, FiFilm, FiGlobe, FiZap, FiCheckCircle, FiClock, FiTrendingUp } from 'react-icons/fi';
+import { FiSearch, FiBookOpen, FiBook, FiFileText, FiLayers, FiCode, FiImage, FiMusic, FiFilm, FiGlobe, FiZap, FiCheckCircle, FiClock, FiTrendingUp, FiFilter } from 'react-icons/fi';
 import Image from 'next/image';
 import Sidebar from '@/components/layout/Sidebar';
 
@@ -190,70 +190,69 @@ export default function AIToolsPage() {
         <Sidebar />
       </div>
       {/* Main Content */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto sm:mt-0 mt-12">
+        <h2 className="md:hidden block text-2xl font-bold text-gray-900 mx-3 my-4">AI Tools</h2>
+        <p className="text-gray-600 mx-3 my-4">Smart AI tools to supercharge student life</p>
 
       {/* Category and Search Section */}
-      <div className="bg-white shadow-sm sticky top-0 z-10">
+      <div className="bg-white shadow-sm sticky top-0 z-10 mx-3 rounded-lg sm:mx-0 sm:rounded-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Search and Dropdown */}
           <div className="md:hidden py-3 space-y-2">
-            {/* Mobile Search Bar */}
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="h-5 w-5 text-gray-400" />
-              </div>
-              <input
-                type="text"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none"
-                placeholder="Search tools..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            
-            {/* Mobile Category Dropdown */}
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none"
-              >
-                <span className="flex items-center">
-                  {categories.find(c => c.id === selectedCategory)?.icon}
-                  <span className="ml-2">
-                    {categories.find(c => c.id === selectedCategory)?.name || 'Select Category'}
-                  </span>
-                </span>
-                <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-                </svg>
-              </button>
+  {/* Mobile Search + Filter Row */}
+  <div className="flex items-center gap-2">
+    {/* Search Bar */}
+    <div className="relative flex-grow">
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <FiSearch className="h-5 w-5 text-gray-400" />
+      </div>
+      <input
+        type="text"
+        className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none"
+        placeholder="Search tools..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+    </div>
 
-              {isMobileMenuOpen && (
-                <div className="absolute z-10 mt-1 w-full rounded-md bg-white shadow-lg">
-                  <div className="py-1 max-h-60 overflow-auto">
-                    {categories.map((category) => (
-                      <button
-                        key={category.id}
-                        onClick={() => {
-                          setSelectedCategory(category.id);
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className={`w-full text-left px-4 py-2 text-sm flex items-center ${
-                          selectedCategory === category.id
-                            ? 'bg-[var(--primary-color)] bg-opacity-10 text-white'
-                            : 'text-gray-700 hover:bg-gray-100'
-                        }`}
-                      >
-                        <span className="mr-2">{category.icon}</span>
-                        {category.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+    {/* Filter Button */}
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none"
+      >
+        <FiFilter className="h-5 w-5" />
+      </button>
+
+      {/* Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="absolute right-0 z-10 mt-2 w-48 rounded-md bg-white shadow-lg">
+          <div className="py-1 max-h-60 overflow-auto">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => {
+                  setSelectedCategory(category.id);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-2 text-sm flex items-center ${
+                  selectedCategory === category.id
+                    ? 'bg-[var(--primary-color)] bg-opacity-10 text-white'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <span className="mr-2">{category.icon}</span>
+                {category.name}
+              </button>
+            ))}
           </div>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
 
           {/* Desktop View */}
           <div className="hidden md:flex md:items-center md:justify-between py-3">
