@@ -1,164 +1,122 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { FiUser, FiMail, FiPhone, FiCalendar, FiMapPin, FiEdit2, FiCheck, FiX, FiLock, FiEye, FiEyeOff, FiBook, FiBookOpen, FiFileText } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiUser, FiMail, FiPhone, FiCalendar, FiMapPin, FiEdit2, FiLock, FiX, FiBook, FiBookOpen, FiFileText, FiSave, FiImage, FiTrash } from 'react-icons/fi';
 import Image from 'next/image';
 import Sidebar from '@/components/layout/Sidebar';
 
-interface ProfileFieldProps {
+type ProfileField = {
+  id: string;
   label: string;
   value: string;
   icon: React.ReactNode;
-  isEditing?: boolean;
   type?: string;
-  onSave?: (value: string) => void;
-  onCancel?: () => void;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  isPassword?: boolean;
-}
-
-const ProfileField: React.FC<ProfileFieldProps> = ({
-  label,
-  value,
-  icon,
-  isEditing = false,
-  type = 'text',
-  onSave = () => {},
-  onCancel = () => {},
-  onChange = () => {},
-  isPassword = false
-}) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
-
-  useEffect(() => {
-    setInputValue(value);
-  }, [value]);
-
-  const handleSave = () => {
-    onSave(inputValue);
-  };
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-6 mb-4">
-      <div className="flex items-start">
-        <div className="p-2 rounded-lg bg-indigo-100 text-indigo-600 mr-4 mt-1">
-          {icon}
-        </div>
-        <div className="flex-1">
-          <label className="block text-sm font-medium text-gray-500 mb-1">{label}</label>
-          {isEditing ? (
-            <div className="space-y-2">
-              <div className="relative">
-                <input
-                  type={isPassword && !showPassword ? 'password' : type}
-                  value={inputValue}
-                  onChange={(e) => {
-                    setInputValue(e.target.value);
-                    onChange(e);
-                  }}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                />
-                {isPassword && (
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                  >
-                    {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
-                  </button>
-                )}
-              </div>
-              <div className="flex space-x-2">
-                <button
-                  onClick={handleSave}
-                  className="px-3 py-1 text-sm bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-                >
-                  Save
-                </button>
-                <button
-                  onClick={onCancel}
-                  className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="flex justify-between items-center">
-              <p className="text-gray-900">
-                {isPassword ? '••••••••' : value || 'Not provided'}
-              </p>
-              <button
-                onClick={() => {}}
-                className="p-1 text-gray-400 hover:text-indigo-600 transition-colors"
-              >
-                <FiEdit2 size={18} />
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
 };
 
 const ProfilePage = () => {
-  const [editingField, setEditingField] = useState<string | null>(null);
-  const [profile, setProfile] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    phone: '+1 (555) 123-4567',
-    dob: 'January 15, 2005',
-    location: 'San Francisco, CA',
-    school: 'City High School',
-    class: '12th Grade',
-    syllabus: 'CBSE',
-    bio: 'Passionate about learning and technology. Always looking for new challenges and opportunities to grow.'
-  });
+  const [isEditing, setIsEditing] = useState<string | null>(null);
+  const [tempValue, setTempValue] = useState('');
+  const [profileImage, setProfileImage] = useState('/images/favicon.png');
+  
+  const [profile, setProfile] = useState<ProfileField[]>([
+    { id: 'name', label: 'Full Name', value: 'John Doe', icon: <FiUser /> },
+    { id: 'email', label: 'Email', value: 'john.doe@example.com', icon: <FiMail />, type: 'email' },
+    { id: 'phone', label: 'Phone', value: '+1 (555) 123-4567', icon: <FiPhone />, type: 'tel' },
+    { id: 'dob', label: 'Date of Birth', value: '1990-01-01', icon: <FiCalendar />, type: 'date' },
+    { id: 'location', label: 'Location', value: 'San Francisco, CA', icon: <FiMapPin /> },
+    { id: 'education', label: 'Education', value: 'Computer Science', icon: <FiBook /> },
+    { id: 'class', label: 'Class', value: '12th Grade', icon: <FiBookOpen /> },
+    { id: 'syllabus', label: 'Syllabus', value: 'CBSE', icon: <FiFileText /> },
+  ]);
 
-  const handleEdit = (field: string) => {
-    setEditingField(field);
+  const [bio, setBio] = useState('Passionate about learning and technology. Always looking for new challenges and opportunities to grow.');
+  const [isEditingBio, setIsEditingBio] = useState(false);
+  const [tempBio, setTempBio] = useState('');
+
+  const startEditing = (id: string, value: string) => {
+    setIsEditing(id);
+    setTempValue(value);
   };
 
-  const handleSave = (field: string, value: string) => {
-    setProfile(prev => ({
-      ...prev,
-      [field]: value
-    }));
-    setEditingField(null);
+  const saveEdit = () => {
+    if (isEditing) {
+      setProfile(profile.map(field => 
+        field.id === isEditing ? { ...field, value: tempValue } : field
+      ));
+      setIsEditing(null);
+    }
+  };
+
+  const cancelEdit = () => {
+    setIsEditing(null);
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          setProfileImage(event.target.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const startEditingBio = () => {
+    setTempBio(bio);
+    setIsEditingBio(true);
+  };
+
+  const saveBio = () => {
+    setBio(tempBio);
+    setIsEditingBio(false);
+  };
+
+  const cancelBioEdit = () => {
+    setIsEditingBio(false);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
       {/* Sidebar */}
       <div className="md:block md:w-64 flex-shrink-0">
         <Sidebar />
       </div>
-      
+
       {/* Main Content */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto pb-20 md:pb-0">
         <div className="max-w-4xl mx-auto p-4 md:p-8">
           {/* Profile Header */}
-          <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
+          <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100 hover:shadow-md transition-all duration-300">
             <div className="flex flex-col md:flex-row items-center">
-              <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 md:mb-0 md:mr-6">
-                <Image
-                  src="/images/favicon.png"
-                  alt="Profile"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                />
-                <button className="absolute bottom-0 right-0 bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700 transition-colors cursor-pointer">
-                  <FiEdit2 size={16} />
-                </button>
+              <div className="relative group mb-6 md:mb-0 md:mr-8">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <Image
+                    src={profileImage}
+                    alt="Profile"
+                    width={160}
+                    height={160}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <label className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-110 shadow-md cursor-pointer">
+                  <FiImage size={18} />
+                  <input 
+                    type="file" 
+                    className="hidden" 
+                    accept="image/*" 
+                    onChange={handleImageUpload}
+                  />
+                </label>
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-2xl font-bold text-gray-900 mb-1">{profile.name}</h1>
-                <p className="text-gray-600 mb-4">Premium Member</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Mithun</h1>
+                <p className="text-blue-500 font-medium mb-4">mithun@gmail.com</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
                     Active
                   </span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
@@ -170,143 +128,123 @@ const ProfilePage = () => {
           </div>
 
           {/* Profile Details */}
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Personal Information</h2>
-            
-            <ProfileField
-              label="Full Name"
-              value={profile.name}
-              icon={<FiUser />}
-              isEditing={editingField === 'name'}
-              onSave={(value) => handleSave('name', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Email Address"
-              value={profile.email}
-              icon={<FiMail />}
-              type="email"
-              isEditing={editingField === 'email'}
-              onSave={(value) => handleSave('email', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Phone Number"
-              value={profile.phone}
-              icon={<FiPhone />}
-              type="tel"
-              isEditing={editingField === 'phone'}
-              onSave={(value) => handleSave('phone', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Date of Birth"
-              value={profile.dob}
-              icon={<FiCalendar />}
-              type="date"
-              isEditing={editingField === 'dob'}
-              onSave={(value) => handleSave('dob', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Location"
-              value={profile.location}
-              icon={<FiMapPin />}
-              isEditing={editingField === 'location'}
-              onSave={(value) => handleSave('location', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="School"
-              value={profile.school}
-              icon={<FiBook />}
-              isEditing={editingField === 'school'}
-              onSave={(value) => handleSave('school', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Class"
-              value={profile.class}
-              icon={<FiBookOpen />}
-              isEditing={editingField === 'class'}
-              onSave={(value) => handleSave('class', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <ProfileField
-              label="Syllabus"
-              value={profile.syllabus}
-              icon={<FiFileText />}
-              isEditing={editingField === 'syllabus'}
-              onSave={(value) => handleSave('syllabus', value)}
-              onCancel={() => setEditingField(null)}
-            />
-
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <div className="flex items-start">
-                <div className="p-2 rounded-lg bg-indigo-100 text-indigo-600 mr-4 mt-1">
-                  <FiUser />
-                </div>
-                <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-500 mb-1">
-                    Bio
-                  </label>
-                  {editingField === 'bio' ? (
-                    <div className="space-y-2">
-                      <textarea
-                        value={profile.bio}
-                        onChange={(e) => setProfile({...profile, bio: e.target.value})}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent min-h-[100px]"
-                      />
-                      <div className="flex space-x-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {profile.map((field) => (
+              <div 
+                key={field.id}
+                className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-all duration-300"
+              >
+                <div className="flex items-start">
+                  <div className="p-2 rounded-lg bg-green-100 text-[var(--primary-color)] mr-4">
+                    {field.icon}
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-sm font-medium text-gray-500 mb-1">
+                      {field.label}
+                    </label>
+                    {isEditing === field.id ? (
+                      <div className="space-y-2">
+                        <input
+                          type={field.type || 'text'}
+                          value={tempValue}
+                          onChange={(e) => setTempValue(e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-lg focus:border-transparent"
+                          autoFocus
+                        />
+                        <div className="flex space-x-2">
+                          <button
+                            onClick={saveEdit}
+                            className="px-3 py-1 text-sm bg-[var(--primary-color)] text-white rounded-lg hover:bg-[var(--primary-hover)] hover:text-white transition-colors flex items-center cursor-pointer"
+                          >
+                            <FiSave className="mr-1" size={14} />
+                            Save
+                          </button>
+                          <button
+                            onClick={cancelEdit}
+                            className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-between items-center group">
+                        <p className="text-gray-900">
+                          {field.value || 'Not provided'}
+                        </p>
                         <button
-                          onClick={() => setEditingField(null)}
-                          className="px-3 py-1 text-sm bg-[var(--primary-color)] text-white rounded-lg hover:bg-[var(--primary-hover)] transition-colors cursor-pointer"
+                          onClick={() => startEditing(field.id, field.value)}
+                          className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-blue-600 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer"
+                          aria-label={`Edit ${field.label}`}
                         >
-                          Save
-                        </button>
-                        <button
-                          onClick={() => setEditingField(null)}
-                          className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
-                        >
-                          Cancel
+                          <FiEdit2 size={16} />
                         </button>
                       </div>
-                    </div>
-                  ) : (
-                    <div className="flex justify-between">
-                      <p className="text-gray-900">{profile.bio}</p>
-                      <button
-                        onClick={() => setEditingField('bio')}
-                        className="p-1 text-gray-400 hover:text-indigo-600 transition-colors ml-4 flex-shrink-0"
-                      >
-                        <FiEdit2 size={18} />
-                      </button>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
 
-
+          {/* Bio Section */}
+          <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100 hover:shadow-md transition-all duration-300">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold text-gray-900">About Me</h2>
+              {!isEditingBio && (
+                <button
+                  onClick={startEditingBio}
+                  className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
+                  aria-label="Edit bio"
+                >
+                  <FiEdit2 size={18} />
+                </button>
+              )}
+            </div>
+            
+            {isEditingBio ? (
+              <div className="space-y-4">
+                <textarea
+                  value={tempBio}
+                  onChange={(e) => setTempBio(e.target.value)}
+                  className="w-full px-4 py-3 text-gray-900 border border-gray-300 rounded-xl focus:border-transparent min-h-[120px]"
+                  autoFocus
+                />
+                <div className="flex space-x-3">
+                  <button
+                    onClick={saveBio}
+                    className="px-4 py-2 bg-[var(--primary-color)] text-white text-sm font-medium rounded-lg hover:bg-[var(--primary-hover)] transition-colors flex items-center cursor-pointer"
+                  >
+                    <FiSave className="mr-2" size={16} />
+                    Save Changes
+                  </button>
+                  <button
+                    onClick={cancelBioEdit}
+                    className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <p className="text-gray-700 leading-relaxed">
+                {bio || 'No bio provided. Click the edit button to add one.'}
+              </p>
+            )}
+          </div>
 
           {/* Danger Zone */}
-          <div className="border border-red-200 bg-red-50 rounded-xl p-6">
-            <h2 className="text-xl font-semibold text-red-800 mb-2">Danger Zone</h2>
-            <p className="text-red-700 mb-4">These actions are irreversible. Please be certain.</p>
+          <div className="bg-gradient-to-r from-red-50 to-red-50/80 border border-red-100 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+            <h2 className="text-xl font-semibold text-red-800 mb-3">Danger Zone</h2>
+            <p className="text-red-700 mb-6">These actions are irreversible. Please be certain.</p>
             <div className="space-y-4">
-              <button className="px-4 py-2 bg-white text-red-600 border border-red-300 text-sm font-medium rounded-lg hover:bg-red-50 transition-colors">
-                Deactivate Account
+              <button className="w-full md:w-auto px-6 py-2.5 bg-white text-red-600 border border-red-200 text-sm font-medium rounded-lg hover:bg-red-50 transition-all hover:shadow-sm flex items-center justify-center space-x-2 cursor-pointer">
+                <FiLock size={16} />
+                <span>Deactivate Account</span>
               </button>
-              <button className="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                Delete Account
+              <button className="w-full md:w-auto px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-lg hover:from-red-600 hover:to-red-700 transition-all hover:shadow-sm flex items-center justify-center space-x-2 cursor-pointer">
+                <FiTrash size={18} />
+                <span>Delete Account</span>
               </button>
             </div>
           </div>
