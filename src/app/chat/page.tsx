@@ -105,7 +105,7 @@ export default function ChatPage() {
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto'; // Reset height
-      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 384)}px`; // 384px = 24rem
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 200)}px`; // 384px = 24rem
     }
   }, [input]);
 
@@ -468,7 +468,7 @@ export default function ChatPage() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Type your message..."
-                className="w-full px-4 py-6 pr-20 text-gray-900 border border-gray-400 rounded-xl resize-none overflow-y-auto"
+                className="w-full px-4 py-6 pr-20 text-gray-900 border border-gray-300 rounded-xl resize-none overflow-y-auto focus:outline-none focus:ring-0 focus:border-gray-00"
                 disabled={isLoading}
               />
 
