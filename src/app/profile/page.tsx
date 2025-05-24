@@ -174,7 +174,7 @@ const ProfilePage = () => {
                         </p>
                         <button
                           onClick={() => startEditing(field.id, field.value)}
-                          className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-blue-600 transition-colors opacity-0 group-hover:opacity-100 cursor-pointer"
+                          className="p-1.5 rounded-full bg-gray-100 hover:bg-gray-100 hover:text-blue-600 transition-colors text-blue-400 md:opacity-0 group-hover:opacity-100 cursor-pointer"
                           aria-label={`Edit ${field.label}`}
                         >
                           <FiEdit2 size={16} />
