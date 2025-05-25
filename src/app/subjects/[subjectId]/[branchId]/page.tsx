@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fi';
 import Link from 'next/link';
 import Sidebar from '@/components/layout/Sidebar';
+import QuizSettingsModal from '@/components/quiz/QuizSettingsModal';
 
 // Import the subjects data
 import subjectsData from '@/data/10/STATE/subjects/subjects.json';
@@ -64,6 +65,10 @@ const BranchChaptersPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [completedChapters, setCompletedChapters] = useState<Set<string>>(new Set());
+  
+  // Quiz settings modal state
+  const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
+  const [selectedChapter, setSelectedChapter] = useState<{id: string; title: string} | null>(null);
 
   useEffect(() => {
     try {
@@ -124,6 +129,28 @@ const BranchChaptersPage = () => {
     }
     
     setCompletedChapters(newCompleted);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('completedChapters', JSON.stringify(Array.from(newCompleted)));
+    }
+  };
+
+  const handleChapterClick = (chapter: Chapter) => {
+    setSelectedChapter({ id: chapter.id, title: chapter.name });
+    setIsQuizModalOpen(true);
+  };
+
+  const handleStartQuiz = (questionCount: number) => {
+    if (!selectedChapter) return;
+    
+    // In a real app, you would start the quiz with the selected number of questions
+    console.log(`Starting quiz for ${selectedChapter.title} with ${questionCount} questions`);
+    
+    // Mark as completed when quiz is started (in a real app, you might want to do this after completion)
+    const newCompleted = new Set(completedChapters);
+    newCompleted.add(selectedChapter.id);
+    setCompletedChapters(newCompleted);
+    
+    // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('completedChapters', JSON.stringify(Array.from(newCompleted)));
     }
@@ -262,7 +289,7 @@ const BranchChaptersPage = () => {
                   <div className="flex items-center">
                     <div className="w-16 h-1 bg-gray-200 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-blue-500 transition-all duration-500"
+                        className="h-full bg-[var(--primary-color)] transition-all duration-500"
                         style={{ width: `${completionPercentage}%` }}
                       ></div>
                     </div>
@@ -283,12 +310,8 @@ const BranchChaptersPage = () => {
                     const isCompleted = completedChapters.has(chapter.id);
                     
                     return (
-                      <Link 
-                        key={chapter.id} 
-                        href={`/subjects/${subject.slug}/${branch.slug}/${chapter.slug}`}
-                        className={`block group ${!chapter.isActive ? 'pointer-events-none' : ''}`}
-                      >
-                        <div className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 ${chapter.isActive ? 'group-hover:shadow-md group-hover:-translate-y-0.5' : 'opacity-75'}`}>
+                    <>
+                        <div onClick={() => handleChapterClick(chapter)} className={`bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 ${chapter.isActive ? 'group-hover:shadow-md group-hover:-translate-y-0.5' : 'opacity-75'} cursor-pointer`}>
                           <div className="p-4 md:p-6">
                             <div className="flex items-start">
                               <div className="flex-shrink-0">
@@ -338,7 +361,7 @@ const BranchChaptersPage = () => {
                             </div>
                           </div>
                         </div>
-                      </Link>
+                        </>
                     );
                   })
                 ) : (
@@ -359,7 +382,7 @@ const BranchChaptersPage = () => {
                     <p className="text-sm text-gray-500">Your progress</p>
                     <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
                       <div 
-                        className="bg-blue-500 h-2 rounded-full transition-all duration-500"
+                        className="bg-[var(--primary-color)] h-2 rounded-full transition-all duration-500"
                         style={{ width: `${completionPercentage}%` }}
                       ></div>
                     </div>
@@ -375,7 +398,7 @@ const BranchChaptersPage = () => {
                         router.push(`/subjects/${subject.slug}/${branch.slug}/${nextChapter.slug}`);
                       }
                     }}
-                    className="inline-flex items-center md:px-4 md:py-2 px-2 py-1 md:mx-0 mx-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="inline-flex items-center md:px-4 md:py-2 px-2 py-1 md:mx-0 mx-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none cursor-pointer"
                   >
                     {completedCount === chapters.length ? 'Review Course' : 'Continue Learning'}
                     <FiPlayCircle className="ml-2 h-5 w-5" />
@@ -384,6 +407,14 @@ const BranchChaptersPage = () => {
               </div>
             )}
           </div>
+          
+          {/* Quiz Settings Modal */}
+          <QuizSettingsModal
+            isOpen={isQuizModalOpen}
+            onCloseAction={() => setIsQuizModalOpen(false)}
+            onStartQuizAction={handleStartQuiz}
+            chapterTitle={selectedChapter?.title || 'this chapter'}
+          />
         </div>
       </div>
     </div>
