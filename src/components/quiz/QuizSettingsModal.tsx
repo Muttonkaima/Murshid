@@ -6,13 +6,13 @@ import React from 'react';
 
 type QuestionType = 
   | 'all'
-  | 'fill_in_blanks'
+  | 'fill-in-blanks'
   | 'mcq'
-  | 'multiselect'
-  | 'match_following'
+  | 'multi-select'
+  | 'match-the-following'
   | 'sorting'
   | 'reordering'
-  | 'true_false';
+  | 'true-false';
 
 interface QuizSettingsModalProps {
   isOpen: boolean;
@@ -34,13 +34,13 @@ export default function QuizSettingsModal({
   
   const questionTypes = [
     { value: 'all', label: 'All Types' },
-    { value: 'fill_in_blanks', label: 'Fill in the Blanks' },
-    { value: 'mcq', label: 'Multiple Choice (MCQ)' },
-    { value: 'multiselect', label: 'Multi-Select' },
-    { value: 'match_following', label: 'Match the Following' },
+    { value: 'fill-in-blanks', label: 'Fill in the Blanks' },
+    { value: 'mcq', label: 'Choose Correct Answer' },
+    { value: 'multi-select', label: 'Multi-Select' },
+    { value: 'match-the-following', label: 'Match the Following' },
     { value: 'sorting', label: 'Sorting' },
     { value: 'reordering', label: 'Reordering' },
-    { value: 'true_false', label: 'True/False' },
+    { value: 'true-false', label: 'True/False' },
   ];
   
   const selectedTypeLabel = questionTypes.find(type => type.value === questionType)?.label || 'Select Type';
