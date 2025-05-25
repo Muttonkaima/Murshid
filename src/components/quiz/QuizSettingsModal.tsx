@@ -2,11 +2,22 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+
+type QuestionType = 
+  | 'all'
+  | 'fill_in_blanks'
+  | 'mcq'
+  | 'multiselect'
+  | 'match_following'
+  | 'sorting'
+  | 'reordering'
+  | 'true_false';
 
 interface QuizSettingsModalProps {
   isOpen: boolean;
   onCloseAction: () => void;
-  onStartQuizAction: (questionCount: number) => void;
+  onStartQuizAction: (questionCount: number, questionType: QuestionType) => void;
   chapterTitle: string;
 }
 
@@ -17,17 +28,32 @@ export default function QuizSettingsModal({
   chapterTitle 
 }: QuizSettingsModalProps) {
   const [questionCount, setQuestionCount] = useState<number>(10);
+  const [questionType, setQuestionType] = useState<QuestionType>('all');
   const [isMounted, setIsMounted] = useState(false);
+  const [isTypeDropdownOpen, setIsTypeDropdownOpen] = useState(false);
+  
+  const questionTypes = [
+    { value: 'all', label: 'All Types' },
+    { value: 'fill_in_blanks', label: 'Fill in the Blanks' },
+    { value: 'mcq', label: 'Multiple Choice (MCQ)' },
+    { value: 'multiselect', label: 'Multi-Select' },
+    { value: 'match_following', label: 'Match the Following' },
+    { value: 'sorting', label: 'Sorting' },
+    { value: 'reordering', label: 'Reordering' },
+    { value: 'true_false', label: 'True/False' },
+  ];
+  
+  const selectedTypeLabel = questionTypes.find(type => type.value === questionType)?.label || 'Select Type';
+
+  const handleStartQuiz = () => {
+    onStartQuizAction(questionCount, questionType);
+    onCloseAction();
+  };
 
   useEffect(() => {
     setIsMounted(true);
     return () => setIsMounted(false);
   }, []);
-
-  const handleStartQuiz = () => {
-    onStartQuizAction(questionCount);
-    onCloseAction();
-  };
 
   if (!isMounted) return null;
 
@@ -49,8 +75,57 @@ export default function QuizSettingsModal({
                 Select number of questions for <span className="font-medium text-[var(--primary-color)]">{chapterTitle}</span>
               </p>
               
-              <div className="mb-8">
-                <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="mb-8 space-y-6">
+                {/* Question Type Selector */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Question Type
+                  </label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsTypeDropdownOpen(!isTypeDropdownOpen)}
+                      className="w-full bg-white border border-gray-300 rounded-lg py-2.5 px-3 text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] sm:text-sm cursor-pointer flex items-center justify-between"
+                    >
+                      <span>{selectedTypeLabel}</span>
+                      <svg 
+                        className={`h-5 w-5 text-gray-400 transform transition-transform ${isTypeDropdownOpen ? 'rotate-180' : ''}`} 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 20 20" 
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </button>
+                    
+                    {isTypeDropdownOpen && (
+                      <div className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base border border-gray-300 overflow-auto focus:outline-none sm:text-sm">
+                        {questionTypes.map((type) => (
+                          <div
+                            key={type.value}
+                            onClick={() => {
+                              setQuestionType(type.value as QuestionType);
+                              setIsTypeDropdownOpen(false);
+                            }}
+                            className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
+                              questionType === type.value ? 'bg-[var(--primary-color)]/10 text-[var(--primary-color)]' : 'text-gray-900'
+                            }`}
+                          >
+                            {type.label}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Question Count Selector */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Number of Questions
+                  </label>
+                  <div className="grid grid-cols-2 gap-3">
                   {[5, 10, 15, 20].map((count) => (
                     <button
                       key={count}
@@ -64,6 +139,7 @@ export default function QuizSettingsModal({
                       {count} Questions
                     </button>
                   ))}
+                </div>
                 </div>
                 
                 <div className="w-full bg-gray-200 rounded-full h-2.5">

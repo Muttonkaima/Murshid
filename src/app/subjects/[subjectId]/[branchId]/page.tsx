@@ -139,11 +139,11 @@ const BranchChaptersPage = () => {
     setIsQuizModalOpen(true);
   };
 
-  const handleStartQuiz = (questionCount: number) => {
+  const handleStartQuiz = (questionCount: number, questionType: string) => {
     if (!selectedChapter) return;
     
-    // In a real app, you would start the quiz with the selected number of questions
-    console.log(`Starting quiz for ${selectedChapter.title} with ${questionCount} questions`);
+    // In a real app, you would start the quiz with the selected number of questions and type
+    console.log(`Starting ${questionType} quiz for ${selectedChapter.title} with ${questionCount} questions`);
     
     // Mark as completed when quiz is started (in a real app, you might want to do this after completion)
     const newCompleted = new Set(completedChapters);
@@ -154,6 +154,9 @@ const BranchChaptersPage = () => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('completedChapters', JSON.stringify(Array.from(newCompleted)));
     }
+    
+    // In a real app, you would navigate to the quiz page with the selected parameters
+    // router.push(`/quiz/${selectedChapter.id}?count=${questionCount}&type=${questionType}`);
   };
 
   // Calculate completion percentage
