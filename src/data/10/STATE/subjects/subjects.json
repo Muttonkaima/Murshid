@@ -1,0 +1,436 @@
+{
+  "subjects": [
+    {
+      "id": "subj_001",
+      "name": "Mathematics",
+      "slug": "mathematics",
+      "description": "Explore various branches of mathematics from basic arithmetic to advanced calculus and beyond.",
+      "icon": "FiDivideCircle",
+      "isActive": true,
+      "isVisible": true,
+      "order": 1,
+      "branches": [
+        {
+          "id": "branch_001",
+          "subjectId": "subj_001",
+          "name": "Arithmetic",
+          "slug": "arithmetic",
+          "description": "Basic arithmetic operations and concepts.",
+          "icon": "FiDivideCircle",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_001",
+              "branchId": "branch_001",
+              "name": "Basic Operations",
+              "slug": "basic-operations",
+              "description": "Addition, subtraction, multiplication, and division.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Addition", "Subtraction", "Multiplication", "Division"]
+            }
+          ]
+        },
+        {
+          "id": "branch_002",
+          "subjectId": "subj_001",
+          "name": "Algebra",
+          "slug": "algebra",
+          "description": "Study of mathematical symbols and the rules for manipulating them.",
+          "icon": "FiXSquare",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_002",
+              "branchId": "branch_002",
+              "name": "Linear Equations",
+              "slug": "linear-equations",
+              "description": "Solving linear equations and inequalities.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Equations", "Inequalities", "Graphing lines"]
+            }
+          ]
+        },
+        {
+          "id": "branch_003",
+          "subjectId": "subj_001",
+          "name": "Geometry",
+          "slug": "geometry",
+          "description": "Study of shapes, sizes, and properties of space.",
+          "icon": "FiTriangle",
+          "isActive": true,
+          "isVisible": true,
+          "order": 3,
+          "chapters": [
+            {
+              "id": "chap_003",
+              "branchId": "branch_003",
+              "name": "Triangles",
+              "slug": "triangles",
+              "description": "Properties and classification of triangles.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Types of triangles", "Pythagoras theorem", "Triangle inequality"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_002",
+      "name": "Social Studies",
+      "slug": "social-studies",
+      "description": "Explore history, geography, and political science.",
+      "icon": "FiMap",
+      "isActive": true,
+      "isVisible": true,
+      "order": 6,
+      "branches": [
+        {
+          "id": "branch_007",
+          "subjectId": "subj_002",
+          "name": "History",
+          "slug": "history",
+          "description": "Study of past events and civilizations.",
+          "icon": "FiClock",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_008",
+              "branchId": "branch_007",
+              "name": "Ancient Civilizations",
+              "slug": "ancient-civilizations",
+              "description": "Overview of early human societies.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Mesopotamia", "Egypt", "Indus Valley"]
+            }
+          ]
+        },
+        {
+          "id": "branch_008",
+          "subjectId": "subj_002",
+          "name": "Geography",
+          "slug": "geography",
+          "description": "Study of Earth's landscapes and environments.",
+          "icon": "FiGlobe",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_009",
+              "branchId": "branch_008",
+              "name": "Physical Geography",
+              "slug": "physical-geography",
+              "description": "Landforms, climate, and ecosystems.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Mountains", "Rivers", "Climate zones"]
+            }
+          ]
+        },
+        {
+          "id": "branch_009",
+          "subjectId": "subj_002",
+          "name": "Political Science",
+          "slug": "political-science",
+          "description": "Study of government systems and political behavior.",
+          "icon": "FiShield",
+          "isActive": true,
+          "isVisible": true,
+          "order": 3,
+          "chapters": [
+            {
+              "id": "chap_010",
+              "branchId": "branch_009",
+              "name": "Government Types",
+              "slug": "government-types",
+              "description": "Different forms of government.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Democracy", "Monarchy", "Communism"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_003",
+      "name": "General Science",
+      "slug": "general-science",
+      "description": "Combination of Biology, Physics, and Chemistry.",
+      "icon": "FiActivity",
+      "isActive": true,
+      "isVisible": true,
+      "order": 7,
+      "branches": [
+        {
+          "id": "branch_005",
+          "subjectId": "subj_007",
+          "name": "Biology",
+          "slug": "biology",
+          "description": "Study of living organisms and their processes.",
+          "icon": "FiActivity",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_006",
+              "branchId": "branch_005",
+              "name": "Cell Biology",
+              "slug": "cell-biology",
+              "description": "Study of cell structure and function.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Cell membrane", "Nucleus", "Mitochondria", "Endoplasmic reticulum"]
+            }
+          ]
+        },
+        {
+          "id": "branch_003",
+          "subjectId": "subj_007",
+          "name": "Physics",
+          "slug": "physics",
+          "description": "Study of matter, motion, energy, and force.",
+          "icon": "FiAtom",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_004",
+              "branchId": "branch_003",
+              "name": "Mechanics",
+              "slug": "mechanics",
+              "description": "Study of motion and forces.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Projectile motion", "Relative velocity", "Graphical analysis"]
+            }
+          ]
+        },
+        {
+          "id": "branch_004",
+          "subjectId": "subj_007",
+          "name": "Chemistry",
+          "slug": "chemistry",
+          "description": "Study of matter and its changes.",
+          "icon": "FiDroplet",
+          "isActive": true,
+          "isVisible": true,
+          "order": 3,
+          "chapters": [
+            {
+              "id": "chap_005",
+              "branchId": "branch_004",
+              "name": "Organic Chemistry",
+              "slug": "organic-chemistry",
+              "description": "Study of organic compounds.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Alkanes", "Alkenes", "Alkynes"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_004",
+      "name": "Kannada",
+      "slug": "kannada",
+      "description": "Kannada language and literature parts 1 and 2.",
+      "icon": "FiEdit",
+      "isActive": true,
+      "isVisible": true,
+      "order": 8,
+      "branches": [
+        {
+          "id": "branch_010",
+          "subjectId": "subj_004",
+          "name": "Part 1",
+          "slug": "part-1",
+          "description": "Basics of Kannada language.",
+          "icon": "FiBook",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_011",
+              "branchId": "branch_010",
+              "name": "Alphabets",
+              "slug": "alphabets",
+              "description": "Learning Kannada alphabets.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Vowels", "Consonants"]
+            }
+          ]
+        },
+        {
+          "id": "branch_011",
+          "subjectId": "subj_004",
+          "name": "Part 2",
+          "slug": "part-2",
+          "description": "Advanced Kannada grammar and literature.",
+          "icon": "FiBookOpen",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_012",
+              "branchId": "branch_011",
+              "name": "Grammar",
+              "slug": "grammar",
+              "description": "Advanced grammar topics.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Tenses", "Sentence structure"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_005",
+      "name": "Hindi",
+      "slug": "hindi",
+      "description": "Hindi language and literature parts 1 and 2.",
+      "icon": "FiFileText",
+      "isActive": true,
+      "isVisible": true,
+      "order": 9,
+      "branches": [
+        {
+          "id": "branch_012",
+          "subjectId": "subj_005",
+          "name": "Part 1",
+          "slug": "part-1",
+          "description": "Basics of Hindi language.",
+          "icon": "FiBook",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_013",
+              "branchId": "branch_012",
+              "name": "Alphabets",
+              "slug": "alphabets",
+              "description": "Learning Hindi alphabets.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Vowels", "Consonants"]
+            }
+          ]
+        },
+        {
+          "id": "branch_013",
+          "subjectId": "subj_005",
+          "name": "Part 2",
+          "slug": "part-2",
+          "description": "Advanced Hindi grammar and literature.",
+          "icon": "FiBookOpen",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_014",
+              "branchId": "branch_013",
+              "name": "Grammar",
+              "slug": "grammar",
+              "description": "Advanced grammar topics.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Tenses", "Sentence structure"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_006",
+      "name": "English",
+      "slug": "english",
+      "description": "English language learning, grammar, and literature.",
+      "icon": "FiBookOpen",
+      "isActive": true,
+      "isVisible": true,
+      "order": 10,
+      "branches": [
+        {
+          "id": "branch_014",
+          "subjectId": "subj_006",
+          "name": "Grammar",
+          "slug": "grammar",
+          "description": "English grammar fundamentals.",
+          "icon": "FiBook",
+          "isActive": true,
+          "isVisible": true,
+          "order": 1,
+          "chapters": [
+            {
+              "id": "chap_015",
+              "branchId": "branch_014",
+              "name": "Parts of Speech",
+              "slug": "parts-of-speech",
+              "description": "Nouns, verbs, adjectives, and more.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Nouns", "Verbs", "Adjectives", "Adverbs"]
+            }
+          ]
+        },
+        {
+          "id": "branch_015",
+          "subjectId": "subj_006",
+          "name": "Literature",
+          "slug": "literature",
+          "description": "Reading and analysis of English literature.",
+          "icon": "FiBookOpen",
+          "isActive": true,
+          "isVisible": true,
+          "order": 2,
+          "chapters": [
+            {
+              "id": "chap_016",
+              "branchId": "branch_015",
+              "name": "Prose",
+              "slug": "prose",
+              "description": "Study of English prose texts.",
+              "isActive": true,
+              "isVisible": true,
+              "order": 1,
+              "topics": ["Short stories", "Essays"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which Portuguese explorer was the first European to arrive in India by sea route?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Vasco da Gama",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dupleix",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Vasco da Gama",
+      "explanation": "Vasco da Gama landed at Calicut in 1498, pioneering the sea route from Europe to India."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which battle marked the beginning of British political control in India?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Battle of Plassey",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Buxar",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Panipat",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Wandiwash",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Battle of Plassey",
+      "explanation": "The Battle of Plassey in 1757 marked the beginning of British political dominance in India."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Who was the first Governor-General of Bengal?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Warren Hastings",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Robert Clive",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord Cornwallis",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord Wellesley",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Warren Hastings",
+      "explanation": "Warren Hastings was appointed the first Governor-General of Bengal in 1773."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which European power established the first factory in Surat?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dutch",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "English",
+      "explanation": "The English East India Company established its first factory at Surat in 1613."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Who among the following was the founder of the French East India Company?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Dupleix",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Colbert",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "La Bourdonnais",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lally",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Colbert",
+      "explanation": "Jean-Baptiste Colbert founded the French East India Company in 1664."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "In which year did Vasco da Gama reach Calicut?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "1492",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "1498",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "1505",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "1510",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "1498",
+      "explanation": "Vasco da Gama arrived in Calicut in 1498, opening a direct sea route to India."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which British Governor-General introduced the Permanent Settlement in Bengal?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Lord Wellesley",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord Cornwallis",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord Dalhousie",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Warren Hastings",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Lord Cornwallis",
+      "explanation": "Lord Cornwallis introduced the Permanent Settlement in 1793."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Who was the first Dutch explorer to reach India?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Jan Huygen van Linschoten",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Pieter Both",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Cornelis de Houtman",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Hugo Grotius",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Cornelis de Houtman",
+      "explanation": "Cornelis de Houtman was the first Dutch explorer to reach India in 1595."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which treaty ended the Third Carnatic War?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Treaty of Paris",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Aix-la-Chapelle",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Versailles",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Salbai",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Treaty of Paris",
+      "explanation": "The Treaty of Paris (1763) ended the Third Carnatic War, confirming British dominance in India."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Who established Portuguese authority in Goa?",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Vasco da Gama",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Ferdinand Magellan",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Alfonso de Albuquerque",
+      "explanation": "Alfonso de Albuquerque established Portuguese authority in Goa in 1510."
+    }
+  ]
+}

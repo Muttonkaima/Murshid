@@ -1,0 +1,908 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 501,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಅಪಜಯ",
+          "read_text": true,
+          "read_text_value": "ಅಪಜಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5fa4d4f1-ceb3-4d36-a3fe-a804f0001ae4.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಉಷ",
+          "read_text": true,
+          "read_text_value": "ಉಷ",
+          "read_text_url": "https://mursh idaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b59217a7-f89b-47cf-9829-3f9daeb66e63.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c0a12db5-5d9f-4d06-b02c-2dff277681fb.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಉ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಲ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಷ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಅಪಜಯ": [
+          "ಅ",
+          "ಪ",
+          "ಜ",
+          "ಯ"
+        ],
+        "ಉಷ": [
+          "ಉ",
+          "ಷ"
+        ],
+        "ಕಮಲ": [
+          "ಕ",
+          "ಮ",
+          "ಲ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 502,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಅಪಜಯ",
+          "read_text": true,
+          "read_text_value": "ಅಪಜಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c3e502a9-8c55-4e9c-858d-28daf28cfee2.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಉಷ",
+          "read_text": true,
+          "read_text_value": "ಉಷ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/53d08464-a3fa-4cb3-b8c2-3c847b41280f.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3ce4bd5c-859f-434c-b39b-3ad1035fdd18.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಷ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಲ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಉ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಅಪಜಯ": [
+          "ಅ",
+          "ಪ",
+          "ಜ",
+          "ಯ"
+        ],
+        "ಉಷ": [
+          "ಉ",
+          "ಷ"
+        ],
+        "ಕಮಲ": [
+          "ಕ",
+          "ಮ",
+          "ಲ"
+        ]
+      },
+      "explanation": "Listen to the target words via audio and then arrange the displayed letters accordingly."
+    },
+    {
+      "id": 503,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ. Listen to the categories (target phrases):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/87ad65be-03e5-434f-944a-4aef9f9a2767.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ ದಸರ",
+          "read_text": true,
+          "read_text_value": "ಅರಸರ ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5084f977-6c0e-41af-a721-3250902bcfcb.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/568f0a89-b24c-473a-9888-8a778ab8a204.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಊಟದ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದಸರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅವರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರಸಮಯ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಊಟದ ಸಮಯ": [
+          "ಊಟದ",
+          "ಸಮಯ"
+        ],
+        "ಅರಸರ ದಸರ": [
+          "ಅರಸರ",
+          "ದಸರ"
+        ],
+        "ಅವರು ಊಟ ರಸಮಯ": [
+          "ಅವರು",
+          "ಊಟ",
+          "ರಸಮಯ"
+        ]
+      },
+      "explanation": "Arrange each set of word parts into the correct compound phrase as indicated by the category."
+    },
+    {
+      "id": 504,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ. Listen to the categories (target phrases):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c47b35cb-14de-45ec-9538-96b02711df1b.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ ದಸರ",
+          "read_text": true,
+          "read_text_value": "ಅರಸರ ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/45f07c28-48e6-44e5-b7bb-1a939566b6da.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4f61dfc2-a796-4b54-9b2c-ae65d81599bc.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟದ",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ದಸರ",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟ",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ಅವರು",
+          "read_text": true
+        },
+        {
+          "hide_text": false,
+          "text": "ರಸಮಯ",
+          "read_text": true
+        }
+      ],
+      "correctSorting": {
+        "ಊಟದ ಸಮಯ": [
+          "ಊಟದ",
+          "ಸಮಯ"
+        ],
+        "ಅರಸರ ದಸರ": [
+          "ಅರಸರ",
+          "ದಸರ"
+        ],
+        "ಅವರ ಊಟ ರಸಮಯ": [
+          "ಅವರು",
+          "ಊಟ",
+          "ರಸಮಯ"
+        ]
+      },
+      "explanation": "Listen to the audio for the individual parts and then assign them to form the complete compound phrases."
+    },
+    {
+      "id": 505,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಗಗನ",
+          "read_text": true,
+          "read_text_value": "ಗಗನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3a76d823-c3c4-4219-8e6e-fbc8596fc131.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಗ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಗಗನ": [
+          "ಗ",
+          "ಗ",
+          "ನ"
+        ]
+      },
+      "explanation": "Rearrange the letters to form the target word 'ಗಗನ'."
+    },
+    {
+      "id": 506,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ನಮನ",
+          "read_text": true,
+          "read_text_value": "ನಮನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/03c11bce-8063-451e-93a5-6440e3e29b31.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ನ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ನಮನ": [
+          "ನ",
+          "ಮ",
+          "ನ"
+        ]
+      },
+      "explanation": "Arrange the letters to form 'ನಮನ'."
+    },
+    {
+      "id": 507,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/49b7f2bd-a4b5-4739-946a-b359f627b5b6.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಲ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಕಮಲ": [
+          "ಕ",
+          "ಮ",
+          "ಲ"
+        ]
+      },
+      "explanation": "Arrange the letters so they spell 'ಕಮಲ'."
+    },
+    {
+      "id": 508,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ದಸರ",
+          "read_text": true,
+          "read_text_value": "ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/827813e4-486f-4258-aead-b9a9a4df8d13.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ದ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ದಸರ": [
+          "ದ",
+          "ಸ",
+          "ರ"
+        ]
+      },
+      "explanation": "Listen to the target word and arrange the letters accordingly."
+    },
+    {
+      "id": 509,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಸರಸ",
+          "read_text": true,
+          "read_text_value": "ಸರಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/af525c65-a5d1-437d-a54c-6001572d33c0.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಸ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಸರಸ": [
+          "ಸ",
+          "ರ",
+          "ಸ"
+        ]
+      },
+      "explanation": "Arrange the letters to form 'ಸರಸ' as heard."
+    },
+    {
+      "id": 510,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಪದವನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ(Sort the letters to form the word):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ದಶಕ",
+          "read_text": true,
+          "read_text_value": "ದಶಕ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f1b8f052-bdea-4491-90d8-1c9e1b426421.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ದ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಶ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ದಶಕ": [
+          "ದ",
+          "ಶ",
+          "ಕ"
+        ]
+      },
+      "explanation": "Listen to the target word and arrange the letters to form 'ದಶಕ'."
+    },
+    {
+      "id": 511,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ.(Listen to categories): ",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0a972a5d-1fa5-4d82-8747-22ee36114dae.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅರಸರ ದಸರ",
+          "read_text": true,
+          "read_text_value": "ಅರಸರ ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/71f2e4cf-307f-4dbd-81d7-493dee0ccba8.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಊಟದ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದಸರ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಊಟದ ಸಮಯ": [
+          "ಊಟದ",
+          "ಸಮಯ"
+        ],
+        "ಅರಸರ ದಸರ": [
+          "ಅರಸರ",
+          "ದಸರ"
+        ]
+      },
+      "explanation": "Arrange the parts to form the compound phrases exactly as given in the categories."
+    },
+    {
+      "id": 512,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ.(Listen to categories):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fb80964a-67e4-445c-be3e-b4c95692971d.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c93994a8-931a-4540-acf0-5635568691a0.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಅವರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟದ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಅವರ ಊಟ ರಸಮಯ": [
+          "ಅವರು",
+          "ಊಟ",
+          "ರಸಮಯ"
+        ],
+        "ಊಟದ ಸಮಯ": [
+          "ಊಟದ",
+          "ಸಮಯ"
+        ]
+      },
+      "explanation": "Arrange the word parts to rebuild the complete compound phrases."
+    },
+    {
+      "id": 513,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ.(Listen to categories):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ ದಸರ",
+          "read_text": true,
+          "read_text_value": "ಅರಸರ ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3266d8e7-709c-4cdf-a7a4-c71fa1d46b75.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದಸರ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಅರಸರ ದಸರ": [
+          "ಅರಸರ",
+          "ದಸರ"
+        ]
+      },
+      "explanation": "Reassemble the word parts to form the correct phrase."
+    },
+    {
+      "id": 514,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ.(Listen to items and arrange in categories):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": true,
+          "text": "ಊಟದ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/81a7f269-db20-4185-bbca-eaec6f1dc057.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2f464b8b-a0f9-4cb3-a568-358889a5b912.mp3"
+        }
+      ],
+      "correctSorting": {
+        "ಊಟದ ಸಮಯ": [
+          "ಊಟದ",
+          "ಸಮಯ"
+        ]
+      },
+      "explanation": "Listen to the audio of the parts and assign them correctly to form 'ಊಟದ ಸಮಯ'."
+    },
+    {
+      "id": 515,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಭಾಗಗಳನ್ನು ವಿಂಗಡಿಸಿ.(Listen to items and arrange in categories):",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಅವರ ಊಟ ರಸಮಯ",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": true,
+          "text": "ಅವರ",
+          "read_text": true,
+          "read_text_value": "ಅವರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b1897a0f-64f9-438b-b48c-b2c73d011822.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಊಟ",
+          "read_text": true,
+          "read_text_value": "ಊಟ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/564f3139-dddb-4515-81ed-3e82ef29ed02.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ರಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ರಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/66528c18-6754-44e5-b3de-819a6ba2ed02.mp3"
+        }
+      ],
+      "correctSorting": {
+        "ಅವರ ಊಟ ರಸಮಯ": [
+          "ಅವರ",
+          "ಊಟ",
+          "ರಸಮಯ"
+        ]
+      },
+      "explanation": "The parts are heard via audio; arrange them to reconstruct the phrase."
+    },
+    {
+      "id": 516,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the items into the categories(ಐಟಂಗಳು ಮತ್ತು ವರ್ಗಗಳನ್ನು ಕೇಳಿ)",
+        "read_text": true
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ ದಸರ",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಅರಸರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದಸರ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಅರಸರ ದಸರ": [
+          "ಅರಸರ",
+          "ದಸರ"
+        ]
+      },
+      "explanation": "Only the audio for the items is available; arrange them into the correct phrase."
+    }
+  ]
+}

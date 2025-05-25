@@ -1,0 +1,902 @@
+{
+  "questionType": "reordering",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange these major European battles in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Battle of Plassey",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Buxar",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Wandiwash",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Battle of Plassey",
+        "Battle of Wandiwash",
+        "Battle of Buxar"
+      ],
+      "explanation": "The Battle of Plassey was fought first, followed by the Battle of Wandiwash and later the Battle of Buxar."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following treaties in the order they were signed:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Treaty of Madras",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Mangalore",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Seringapatam",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Treaty of Madras",
+        "Treaty of Mangalore",
+        "Treaty of Seringapatam"
+      ],
+      "explanation": "The Treaty of Madras was followed by the Treaty of Mangalore and then the Treaty of Seringapatam."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the establishment of European settlements in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Portuguese settlement at Cochin",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dutch settlement at Pulicat",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French settlement at Pondicherry",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Portuguese settlement at Cochin",
+        "Dutch settlement at Pulicat",
+        "French settlement at Pondicherry"
+      ],
+      "explanation": "The Portuguese were the first to establish settlements, followed by the Dutch and the French."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following colonial administrative acts in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Regulating Act",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Pitt's India Act",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Charter Act",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Regulating Act",
+        "Pitt's India Act",
+        "Charter Act"
+      ],
+      "explanation": "The Regulating Act was the first administrative reform followed by Pitt's India Act and the Charter Act."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange these rulers of Mysore in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Tipu Sultan",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Hyder Ali",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Chikka Devaraja Wodeyar",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Chikka Devaraja Wodeyar",
+        "Hyder Ali",
+        "Tipu Sultan"
+      ],
+      "explanation": "Chikka Devaraja Wodeyar ruled before Hyder Ali, who was succeeded by his son, Tipu Sultan."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Anglo-Mysore Wars in the correct order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Second Anglo-Mysore War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "First Anglo-Mysore War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Fourth Anglo-Mysore War",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "First Anglo-Mysore War",
+        "Second Anglo-Mysore War",
+        "Fourth Anglo-Mysore War"
+      ],
+      "explanation": "The First Anglo-Mysore War was followed by the Second and later the Fourth."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange these European companies by the date of their founding:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Dutch East India Company",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Danish East India Company",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English East India Company",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "English East India Company",
+        "Dutch East India Company",
+        "Danish East India Company"
+      ],
+      "explanation": "The English East India Company was founded first, followed by the Dutch and the Danish companies."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following colonial capitals by their establishment:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Fort William (Calcutta)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Fort St. George (Madras)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bombay (Mumbai)",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Fort St. George (Madras)",
+        "Bombay (Mumbai)",
+        "Fort William (Calcutta)"
+      ],
+      "explanation": "Fort St. George was established first in Madras, followed by Bombay and Fort William in Calcutta."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following battles fought by the British in India in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Battle of Swally",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Plassey",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Wandiwash",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Battle of Swally",
+        "Battle of Plassey",
+        "Battle of Wandiwash"
+      ],
+      "explanation": "The Battle of Swally was the earliest, followed by Plassey and Wandiwash."
+    },
+    {
+      "id": 11,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following European trading posts by the order of their establishment:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Surat (British)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Cochin (Portuguese)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Chandernagore (French)",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Cochin (Portuguese)",
+        "Surat (British)",
+        "Chandernagore (French)"
+      ],
+      "explanation": "The Portuguese established Cochin first, followed by the British at Surat and later the French at Chandernagore."
+    },
+    {
+      "id": 12,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange these Anglo-French wars in India in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Second Carnatic War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "First Carnatic War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Third Carnatic War",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "First Carnatic War",
+        "Second Carnatic War",
+        "Third Carnatic War"
+      ],
+      "explanation": "The Carnatic Wars were fought in three phases, starting with the First, followed by the Second and Third Carnatic Wars."
+    },
+    {
+      "id": 13,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following European explorers by their arrival in India:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Vasco da Gama",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Vasco da Gama",
+        "Francisco de Almeida",
+        "Alfonso de Albuquerque"
+      ],
+      "explanation": "Vasco da Gama arrived first, followed by Almeida and later Albuquerque, who expanded Portuguese influence in India."
+    },
+    {
+      "id": 14,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following British territorial acquisitions in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Bengal",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Madras",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bombay",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Madras",
+        "Bombay",
+        "Bengal"
+      ],
+      "explanation": "The British first acquired Madras, then Bombay, and finally Bengal after the Battle of Plassey."
+    },
+    {
+      "id": 15,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange these British administrative measures in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Pitt’s India Act",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Government of India Act",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Regulating Act",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Regulating Act",
+        "Pitt’s India Act",
+        "Government of India Act"
+      ],
+      "explanation": "The Regulating Act came first, followed by Pitt’s India Act, and finally the Government of India Act."
+    },
+    {
+      "id": 16,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the establishment of British presidencies in the correct order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Bombay Presidency",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Madras Presidency",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bengal Presidency",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Madras Presidency",
+        "Bombay Presidency",
+        "Bengal Presidency"
+      ],
+      "explanation": "Madras was the first British presidency, followed by Bombay and later Bengal."
+    },
+    {
+      "id": 17,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following treaties involving the British in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Treaty of Allahabad",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Bassein",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Lahore",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Treaty of Allahabad",
+        "Treaty of Bassein",
+        "Treaty of Lahore"
+      ],
+      "explanation": "The Treaty of Allahabad was signed first, followed by the Treaty of Bassein and the Treaty of Lahore."
+    },
+    {
+      "id": 18,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Indian leaders' uprisings against the British in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Rani Lakshmibai",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Puli Thevar",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Tipu Sultan",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Puli Thevar",
+        "Tipu Sultan",
+        "Rani Lakshmibai"
+      ],
+      "explanation": "Puli Thevar resisted British influence before Tipu Sultan’s wars and Rani Lakshmibai’s role in the 1857 revolt."
+    },
+    {
+      "id": 19,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the establishment of important British forts in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Fort St. William",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Fort St. George",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Fort St. David",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Fort St. George",
+        "Fort St. David",
+        "Fort St. William"
+      ],
+      "explanation": "Fort St. George in Madras was established first, followed by Fort St. David and Fort St. William in Bengal."
+    },
+    {
+      "id": 21,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Portuguese viceroys of India in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Nino da Cunha",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Francisco de Almeida",
+        "Alfonso de Albuquerque",
+        "Nino da Cunha"
+      ],
+      "explanation": "Francisco de Almeida was the first Portuguese viceroy, followed by Alfonso de Albuquerque and Nino da Cunha."
+    },
+    {
+      "id": 22,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Mughal emperors based on their interaction with European traders:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Aurangzeb",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Shah Jahan",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Jahangir",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Jahangir",
+        "Shah Jahan",
+        "Aurangzeb"
+      ],
+      "explanation": "Jahangir was the first Mughal emperor to engage with European traders, followed by Shah Jahan and Aurangzeb."
+    },
+    {
+      "id": 23,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following British Governor-Generals of India in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Lord Dalhousie",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord Cornwallis",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Lord William Bentinck",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Lord Cornwallis",
+        "Lord William Bentinck",
+        "Lord Dalhousie"
+      ],
+      "explanation": "Lord Cornwallis served first, followed by Lord William Bentinck and later Lord Dalhousie."
+    },
+    {
+      "id": 24,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following European naval battles involving India in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Battle of Diu",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Swally",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Hoogly",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Battle of Diu",
+        "Battle of Swally",
+        "Battle of Hoogly"
+      ],
+      "explanation": "The Battle of Diu occurred first, followed by the Battle of Swally and then the Battle of Hoogly."
+    },
+    {
+      "id": 25,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the establishment of the following European settlements in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Goa (Portuguese)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bombay (British)",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Pondicherry (French)",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Goa (Portuguese)",
+        "Bombay (British)",
+        "Pondicherry (French)"
+      ],
+      "explanation": "Goa was established first by the Portuguese, followed by the British settlement in Bombay and the French in Pondicherry."
+    },
+    {
+      "id": 26,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following colonial land revenue systems in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Ryotwari System",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Permanent Settlement",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Mahalwari System",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Permanent Settlement",
+        "Ryotwari System",
+        "Mahalwari System"
+      ],
+      "explanation": "The Permanent Settlement was introduced first, followed by the Ryotwari and later the Mahalwari systems."
+    },
+    {
+      "id": 27,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Charter Acts in chronological order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Charter Act of 1813",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Charter Act of 1833",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Charter Act of 1853",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Charter Act of 1813",
+        "Charter Act of 1833",
+        "Charter Act of 1853"
+      ],
+      "explanation": "The Charter Act of 1813 was followed by the Charter Acts of 1833 and 1853."
+    },
+    {
+      "id": 28,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Indian rebellions against the British in order:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Revolt of 1857",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Poligar Rebellion",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Santhal Rebellion",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Poligar Rebellion",
+        "Santhal Rebellion",
+        "Revolt of 1857"
+      ],
+      "explanation": "The Poligar Rebellion occurred first, followed by the Santhal Rebellion and then the Revolt of 1857."
+    },
+    {
+      "id": 29,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following Portuguese trading outposts in order of establishment:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Daman",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Diu",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Goa",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Goa",
+        "Daman",
+        "Diu"
+      ],
+      "explanation": "Goa was established first, followed by Daman and Diu."
+    },
+    {
+      "id": 30,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Arrange the following rulers involved in resisting British expansion in India:",
+        "read_text": false
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Tipu Sultan",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Rani Chennamma",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Nana Saheb",
+          "read_text": false
+        }
+      ],
+      "correctOrder": [
+        "Tipu Sultan",
+        "Rani Chennamma",
+        "Nana Saheb"
+      ],
+      "explanation": "Tipu Sultan resisted British expansion first, followed by Rani Chennamma and Nana Saheb during the Revolt of 1857."
+    }
+  ]
+}

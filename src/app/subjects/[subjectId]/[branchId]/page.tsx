@@ -15,7 +15,7 @@ import Link from 'next/link';
 import Sidebar from '@/components/layout/Sidebar';
 
 // Import the subjects data
-import subjectsData from '@/data/subjects.json';
+import subjectsData from '@/data/10/STATE/subjects/subjects.json';
 
 // Define types
 interface Chapter {
@@ -294,9 +294,9 @@ const BranchChaptersPage = () => {
                               <div className="flex-shrink-0">
                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isCompleted ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-600'}`}>
                                   {isCompleted ? (
-                                    <FiCheckCircle className="h-5 w-5" />
+                                    <FiCheckCircle className="h-5 w-5 text-[var(--primary-color)]" />
                                   ) : (
-                                    <FiBook className="h-5 w-5" />
+                                    <FiBook className="h-5 w-5 text-[var(--primary-color)]" /> 
                                   )}
                                 </div>
                               </div>

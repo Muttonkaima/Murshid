@@ -1,0 +1,441 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 500,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the following people with their roles in the context of European arrival in India:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Vasco da Gama",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Raja Marthanda Varma",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Mughal Emperor Jahangir",
+          "read_text": false
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Considered the real founder of Portuguese power in India",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Issued a royal charter to the English East India Company",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Rescued an important principality from foreigners",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Discovered a new sea route to India",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Implemented the 'Blue Water Policy'",
+          "read_text": false
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Vasco da Gama",
+          "right": "Discovered a new sea route to India"
+        },
+        {
+          "left": "Francisco de Almeida",
+          "right": "Implemented the 'Blue Water Policy'"
+        },
+        {
+          "left": "Alfonso de Albuquerque",
+          "right": "Considered the real founder of Portuguese power in India"
+        },
+        {
+          "left": "Raja Marthanda Varma",
+          "right": "Rescued an important principality from foreigners"
+        },
+        {
+          "left": "Mughal Emperor Jahangir",
+          "right": "Issued a royal charter to the English East India Company"
+        }
+      ],
+      "explanation": "These individuals were key figures in the early stages of European engagement with India. **Vasco da Gama** is known for finding the sea route, **Almeida** for the 'Blue Water Policy', **Albuquerque** for establishing Portuguese power, **Raja Marthanda Varma** for protecting his kingdom from foreign influence and **Jahangir** for allowing the English to trade."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the following locations with their significance in the context of European trade and presence in India:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Constantinople",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Goa",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Surat",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Madras",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Calcutta",
+          "read_text": false
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "The location of the first English warehouse/factory",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Where the English built Fort St. George",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "A city that grew around Fort William, becoming a British Presidency",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "A major trade centre and 'Gateway of European Trade'",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "The administrative centre of the Portuguese in India",
+          "read_text": false
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Constantinople",
+          "right": "A major trade centre and 'Gateway of European Trade'"
+        },
+        {
+          "left": "Goa",
+          "right": "The administrative centre of the Portuguese in India"
+        },
+        {
+          "left": "Surat",
+          "right": "The location of the first English warehouse/factory"
+        },
+        {
+          "left": "Madras",
+          "right": "Where the English built Fort St. George"
+        },
+        {
+          "left": "Calcutta",
+          "right": "A city that grew around Fort William, becoming a British Presidency"
+        }
+      ],
+      "explanation": "**Constantinople** was a crucial trade hub. **Goa** was the Portuguese administrative center. **Surat** hosted the first English factory. The English built **Fort St. George** in Madras, and **Calcutta** grew around Fort William."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the following events with their outcomes or significance:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "First Carnatic War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Second Carnatic War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Third Carnatic War",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Plassey",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Buxar",
+          "read_text": false
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Led to British gaining Diwani rights over Bengal, Bihar and Odisha",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Led to British control over the Nawab of Bengal",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Ended with the 'Treaty of Pondicherry' and a setback for the French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Resulted in the French losing all their bases in India",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Ended with the 'Treaty of Aix-la-Chapelle'",
+          "read_text": false
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "First Carnatic War",
+          "right": "Ended with the 'Treaty of Aix-la-Chapelle'"
+        },
+        {
+          "left": "Second Carnatic War",
+          "right": "Ended with the 'Treaty of Pondicherry' and a setback for the French"
+        },
+        {
+          "left": "Third Carnatic War",
+          "right": "Resulted in the French losing all their bases in India"
+        },
+        {
+          "left": "Battle of Plassey",
+          "right": "Led to British control over the Nawab of Bengal"
+        },
+        {
+          "left": "Battle of Buxar",
+          "right": "Led to British gaining Diwani rights over Bengal, Bihar and Odisha"
+        }
+      ],
+      "explanation": "The **First Carnatic War** concluded with the Treaty of Aix-la-Chapelle. The **Second Carnatic War** ended with the Treaty of Pondicherry, with the French experiencing a setback. The **Third Carnatic War** resulted in the French losing their Indian bases. The **Battle of Plassey** put the British in control of Bengal, and the **Battle of Buxar** gave them Diwani rights."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the following individuals with their roles or connections to the Carnatic Wars:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Dupleix",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Robert Clive",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "La Bourdonnais",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Anwaruddin",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Sir Eyre Coote",
+          "read_text": false
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "French military leader who captured Madras in the First Carnatic War.",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "The Nawab of Carnatic who was defeated in the Battle of Ambur.",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "A British officer who played a key role in the Carnatic wars and the Battle of Plassey.",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "British commander who defeated the French in the Third Carnatic War.",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French Governor-General with ambitions in South India.",
+          "read_text": false
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Dupleix",
+          "right": "French Governor-General with ambitions in South India."
+        },
+        {
+          "left": "Robert Clive",
+          "right": "A British officer who played a key role in the Carnatic wars and the Battle of Plassey."
+        },
+        {
+          "left": "La Bourdonnais",
+          "right": "French military leader who captured Madras in the First Carnatic War."
+        },
+        {
+          "left": "Anwaruddin",
+          "right": "The Nawab of Carnatic who was defeated in the Battle of Ambur."
+        },
+        {
+          "left": "Sir Eyre Coote",
+          "right": "British commander who defeated the French in the Third Carnatic War."
+        }
+      ],
+      "explanation": "**Dupleix** was the ambitious French Governor-General, and **Robert Clive** was a key British officer. **La Bourdonnais** captured Madras for the French. **Anwaruddin** was a Nawab defeated in the Carnatic Wars, and **Sir Eyre Coote** was a British commander who defeated the French."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the following terms with their descriptions:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "East India Company",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Warehouses",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dastaks",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Blue Water Policy",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Treaty of Paris",
+          "read_text": false
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Returned Pondicherry to French control in 1763",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Granted a charter by Queen Elizabeth I to trade with Eastern countries",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Portuguese policy to establish dominance over the sea",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Licenses issued by Mughal rulers, misused by company officials",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Places for storing merchandise, protected by huge walls",
+          "read_text": false
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "East India Company",
+          "right": "Granted a charter by Queen Elizabeth I to trade with Eastern countries"
+        },
+        {
+          "left": "Warehouses",
+          "right": "Places for storing merchandise, protected by huge walls"
+        },
+        {
+          "left": "Dastaks",
+          "right": "Licenses issued by Mughal rulers, misused by company officials"
+        },
+        {
+          "left": "Blue Water Policy",
+          "right": "Portuguese policy to establish dominance over the sea"
+        },
+        {
+          "left": "Treaty of Paris",
+          "right": "Returned Pondicherry to French control in 1763"
+        }
+      ],
+      "explanation": "The **East India Company** was chartered by Queen Elizabeth I for trade. **Warehouses** were for storing goods. **Dastaks** were misused Mughal licenses. The **Blue Water Policy** was a Portuguese strategy for sea control, and the **Treaty of Paris** restored Pondicherry to the French."
+    }
+  ]
+}

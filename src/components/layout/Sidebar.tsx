@@ -52,7 +52,7 @@ const Sidebar = () => {
     const loadSubjects = async () => {
       try {
         // Using require to import JSON directly in the frontend
-        const data = await import('@/data/subjects.json');
+        const data = await import('@/data/10/STATE/subjects/subjects.json');
         const visibleSubjects = data.subjects
           .filter((subject: Subject) => subject.isVisible && subject.isActive)
           .sort((a: Subject, b: Subject) => a.order - b.order);

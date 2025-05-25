@@ -23,7 +23,7 @@ import Link from 'next/link';
 import Sidebar from '@/components/layout/Sidebar';
 
 // Import the subjects data
-import subjectsData from '@/data/subjects.json';
+import subjectsData from '@/data/10/STATE/subjects/subjects.json';
 
 // Define types for our data
 interface Chapter {

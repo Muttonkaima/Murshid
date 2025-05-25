@@ -1,0 +1,402 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort these explorers by the European power they represented:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dutch",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Vasco da Gama",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Pieter Both",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Jan van Riebeeck",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Sir Thomas Roe",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Robert Clive",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Portuguese": [
+          "Vasco da Gama",
+          "Francisco de Almeida"
+        ],
+        "Dutch": [
+          "Pieter Both",
+          "Jan van Riebeeck"
+        ],
+        "English": [
+          "Sir Thomas Roe",
+          "Robert Clive"
+        ]
+      },
+      "explanation": "Vasco da Gama and Almeida served Portugal; Pieter Both and Jan van Riebeeck represented Dutch interests; Roe and Clive were English."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort these battles by the European powers involved:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Battle of Diu",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Plassey",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Wandiwash",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Buxar",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Chaul",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Battle of Pondicherry",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Portuguese": [
+          "Battle of Diu",
+          "Battle of Chaul"
+        ],
+        "French": [
+          "Battle of Wandiwash",
+          "Battle of Pondicherry"
+        ],
+        "English": [
+          "Battle of Plassey",
+          "Battle of Buxar"
+        ]
+      },
+      "explanation": "Battles such as Diu and Chaul involved Portuguese forces; Wandiwash and Pondicherry were fought by the French; Plassey and Buxar marked English dominance."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort these territories by the European power that controlled them:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dutch",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Goa",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Pondicherry",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Madras",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Calcutta",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Surat",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Nagapatnam",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bassein",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bombay",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Chandernagore",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Portuguese": [
+          "Goa",
+          "Bassein"
+        ],
+        "French": [
+          "Pondicherry",
+          "Chandernagore"
+        ],
+        "English": [
+          "Madras",
+          "Calcutta",
+          "Surat",
+          "Bombay"
+        ],
+        "Dutch": [
+          "Nagapatnam"
+        ]
+      },
+      "explanation": "Goa and Bassein were under Portuguese control; Pondicherry and Chandernagore belonged to the French; the English controlled Madras, Calcutta, Surat, and Bombay; the Dutch held Nagapatnam."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort these European officials by their influence in India:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Alfonso de Albuquerque",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dupleix",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Robert Clive",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Warren Hastings",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Francisco de Almeida",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "La Bourdonnais",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Portuguese": [
+          "Alfonso de Albuquerque",
+          "Francisco de Almeida"
+        ],
+        "French": [
+          "Dupleix",
+          "La Bourdonnais"
+        ],
+        "English": [
+          "Robert Clive",
+          "Warren Hastings"
+        ]
+      },
+      "explanation": "Albuquerque and Almeida were Portuguese leaders; Dupleix and La Bourdonnais represented French interests; Clive and Hastings were significant figures in British administration."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort these trade centers by the European powers that controlled them:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Portuguese",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Dutch",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "French",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "English",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "Cochin",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Karikal",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bombay",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Surat",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Chandernagore",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Diu",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Portuguese": [
+          "Cochin",
+          "Diu"
+        ],
+        "French": [
+          "Karikal",
+          "Chandernagore"
+        ],
+        "English": [
+          "Bombay",
+          "Surat"
+        ],
+        "Dutch": []
+      },
+      "explanation": "Cochin and Diu were Portuguese trade centers; Karikal and Chandernagore were controlled by the French; Bombay and Surat belonged to the English."
+    }
+  ]
+}

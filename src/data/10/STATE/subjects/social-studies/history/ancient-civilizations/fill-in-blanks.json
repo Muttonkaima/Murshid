@@ -1,0 +1,725 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ was the first European country to establish trade relations with India by sea.",
+        "read_text": false
+      },
+      "correctAnswer": "Portugal",
+      "alternatives": [
+        "Portugal"
+      ],
+      "explanation": "Portugal, led by Vasco da Gama, was the first to reach India by sea in 1498."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Vasco da Gama first landed at _______ in 1498.",
+        "read_text": false
+      },
+      "correctAnswer": "Calicut",
+      "alternatives": [
+        "Calicut",
+        "Kozhikode"
+      ],
+      "explanation": "Vasco da Gama landed at Calicut on the Malabar Coast, establishing the Portuguese presence in India."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The first trading post established by the Portuguese in India was at _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Cochin",
+      "alternatives": [
+        "Cochin",
+        "Kochi"
+      ],
+      "explanation": "The Portuguese established their first trading post in Cochin in 1503."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The British East India Company was granted a charter by Queen _______ in 1600.",
+        "read_text": false
+      },
+      "correctAnswer": "Elizabeth I",
+      "alternatives": [
+        "Elizabeth I",
+        "Elizabeth the First"
+      ],
+      "explanation": "Queen Elizabeth I granted a charter to the British East India Company in 1600."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The first British factory in India was established at _______ in 1613.",
+        "read_text": false
+      },
+      "correctAnswer": "Surat",
+      "alternatives": [
+        "Surat"
+      ],
+      "explanation": "The British set up their first factory in Surat after securing permission from Mughal Emperor Jahangir."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch East India Company was established in the year _______.",
+        "read_text": false
+      },
+      "correctAnswer": "1602",
+      "alternatives": [
+        "1602"
+      ],
+      "explanation": "The Dutch East India Company was founded in 1602 to control trade with the East Indies."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Goa was captured by the Portuguese in the year _______.",
+        "read_text": false
+      },
+      "correctAnswer": "1510",
+      "alternatives": [
+        "1510"
+      ],
+      "explanation": "Afonso de Albuquerque captured Goa from the Sultan of Bijapur in 1510."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French established their first settlement in India at _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Pondicherry",
+      "alternatives": [
+        "Pondicherry",
+        "Puducherry"
+      ],
+      "explanation": "The French set up their first trading post at Pondicherry in 1674."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Treaty of _______ in 1763 marked the end of the Seven Years' War.",
+        "read_text": false
+      },
+      "correctAnswer": "Paris",
+      "alternatives": [
+        "Paris"
+      ],
+      "explanation": "The Treaty of Paris ended the Seven Years' War and limited French influence in India."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Battle of _______ in 1757 marked the beginning of British dominance in Bengal.",
+        "read_text": false
+      },
+      "correctAnswer": "Plassey",
+      "alternatives": [
+        "Plassey"
+      ],
+      "explanation": "The Battle of Plassey resulted in the defeat of Nawab Siraj-ud-Daulah by the British."
+    },
+    {
+      "id": 11,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch shifted their focus from India to the _______ Archipelago.",
+        "read_text": false
+      },
+      "correctAnswer": "Indonesian",
+      "alternatives": [
+        "Indonesian",
+        "East Indies"
+      ],
+      "explanation": "The Dutch focused on Indonesia, reducing their presence in India."
+    },
+    {
+      "id": 12,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ Company emerged as the dominant European trading power by the late 18th century.",
+        "read_text": false
+      },
+      "correctAnswer": "British East India",
+      "alternatives": [
+        "British East India",
+        "British East India Company"
+      ],
+      "explanation": "The British East India Company became the dominant power in India by the late 18th century."
+    },
+    {
+      "id": 13,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The English acquired the city of _______ from the Portuguese as part of a royal marriage dowry in 1661.",
+        "read_text": false
+      },
+      "correctAnswer": "Bombay",
+      "alternatives": [
+        "Bombay",
+        "Mumbai"
+      ],
+      "explanation": "Bombay was given to the British as dowry when Charles II married the Portuguese princess Catherine of Braganza."
+    },
+    {
+      "id": 14,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Treaty of _______ ended the First Anglo-French Carnatic War in 1748.",
+        "read_text": false
+      },
+      "correctAnswer": "Aix-la-Chapelle",
+      "alternatives": [
+        "Aix-la-Chapelle"
+      ],
+      "explanation": "The Treaty of Aix-la-Chapelle ended the First Carnatic War between the British and the French."
+    },
+    {
+      "id": 15,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Second Anglo-French Carnatic War ended with the Treaty of _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Pondicherry",
+      "alternatives": [
+        "Pondicherry"
+      ],
+      "explanation": "The Treaty of Pondicherry ended the Second Carnatic War in 1754."
+    },
+    {
+      "id": 16,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The first English settlement in India was at _______ in 1611.",
+        "read_text": false
+      },
+      "correctAnswer": "Masulipatnam",
+      "alternatives": [
+        "Masulipatnam",
+        "Machilipatnam"
+      ],
+      "explanation": "The English established their first settlement in Masulipatnam in 1611."
+    },
+    {
+      "id": 17,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French Governor _______ strengthened French influence in India during the 18th century.",
+        "read_text": false
+      },
+      "correctAnswer": "Dupleix",
+      "alternatives": [
+        "Dupleix"
+      ],
+      "explanation": "Joseph François Dupleix played a significant role in expanding French influence in southern India."
+    },
+    {
+      "id": 18,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The British constructed _______ in Madras to protect their trading interests.",
+        "read_text": false
+      },
+      "correctAnswer": "Fort St. George",
+      "alternatives": [
+        "Fort St. George",
+        "Fort St George"
+      ],
+      "explanation": "Fort St. George was built by the British in Madras in 1644."
+    },
+    {
+      "id": 19,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French constructed _______ in Pondicherry as their main fortification.",
+        "read_text": false
+      },
+      "correctAnswer": "Fort Louis",
+      "alternatives": [
+        "Fort Louis"
+      ],
+      "explanation": "Fort Louis was constructed by the French to secure their base at Pondicherry."
+    },
+    {
+      "id": 20,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch captured _______ from the Portuguese in 1656.",
+        "read_text": false
+      },
+      "correctAnswer": "Ceylon",
+      "alternatives": [
+        "Ceylon",
+        "Sri Lanka"
+      ],
+      "explanation": "The Dutch captured Ceylon from the Portuguese, weakening their influence in Asia."
+    },
+    {
+      "id": 21,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ marked the decline of Portuguese dominance in India.",
+        "read_text": false
+      },
+      "correctAnswer": "Battle of Diu",
+      "alternatives": [
+        "Battle of Diu"
+      ],
+      "explanation": "The Battle of Diu in 1509 marked the decline of Portuguese power as other European nations gained prominence."
+    },
+    {
+      "id": 22,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "In 1757, the British defeated Nawab Siraj-ud-Daulah at the Battle of _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Plassey",
+      "alternatives": [
+        "Plassey"
+      ],
+      "explanation": "The Battle of Plassey established British political dominance in Bengal."
+    },
+    {
+      "id": 23,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Robert Clive was a key figure in securing British victory at the Battle of _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Plassey",
+      "alternatives": [
+        "Plassey"
+      ],
+      "explanation": "Robert Clive's leadership was pivotal to the British victory at Plassey in 1757."
+    },
+    {
+      "id": 24,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French established trading centers in Chandernagore and _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Pondicherry",
+      "alternatives": [
+        "Pondicherry",
+        "Puducherry"
+      ],
+      "explanation": "The French established their main trading centers in Chandernagore and Pondicherry."
+    },
+    {
+      "id": 25,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ were known for their monopoly on the spice trade in India.",
+        "read_text": false
+      },
+      "correctAnswer": "Portuguese",
+      "alternatives": [
+        "Portuguese"
+      ],
+      "explanation": "The Portuguese controlled the spice trade from the early 16th century."
+    },
+    {
+      "id": 26,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ was the first British Governor of Bengal after the Battle of Plassey.",
+        "read_text": false
+      },
+      "correctAnswer": "Robert Clive",
+      "alternatives": [
+        "Robert Clive",
+        "Clive"
+      ],
+      "explanation": "Robert Clive became the first British Governor of Bengal after the British victory at Plassey."
+    },
+    {
+      "id": 27,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Treaty of _______ in 1783 ended the American War of Independence and impacted European colonial powers.",
+        "read_text": false
+      },
+      "correctAnswer": "Paris",
+      "alternatives": [
+        "Paris"
+      ],
+      "explanation": "The Treaty of Paris ended the American War of Independence and reshaped European colonial dynamics."
+    },
+    {
+      "id": 28,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ were the first European power to establish a naval presence in the Indian Ocean.",
+        "read_text": false
+      },
+      "correctAnswer": "Portuguese",
+      "alternatives": [
+        "Portuguese"
+      ],
+      "explanation": "The Portuguese established a naval presence in the Indian Ocean to control trade routes."
+    },
+    {
+      "id": 29,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Francisco de Almeida implemented the _______ Policy to strengthen Portuguese naval dominance.",
+        "read_text": false
+      },
+      "correctAnswer": "Blue Water",
+      "alternatives": [
+        "Blue Water"
+      ],
+      "explanation": "Francisco de Almeida introduced the 'Blue Water Policy' to enhance Portuguese maritime strength."
+    },
+    {
+      "id": 30,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ were the first to challenge Portuguese supremacy in India.",
+        "read_text": false
+      },
+      "correctAnswer": "Dutch",
+      "alternatives": [
+        "Dutch"
+      ],
+      "explanation": "The Dutch were the first to challenge Portuguese dominance in India by capturing ports."
+    },
+    {
+      "id": 31,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch East India Company was known as _______ in Dutch.",
+        "read_text": false
+      },
+      "correctAnswer": "Vereenigde Oostindische Compagnie",
+      "alternatives": [
+        "Vereenigde Oostindische Compagnie",
+        "VOC"
+      ],
+      "explanation": "The Dutch East India Company was officially called the Vereenigde Oostindische Compagnie (VOC)."
+    },
+    {
+      "id": 32,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French Governor-General _______ led the French during the Second Carnatic War.",
+        "read_text": false
+      },
+      "correctAnswer": "Dupleix",
+      "alternatives": [
+        "Dupleix"
+      ],
+      "explanation": "Joseph François Dupleix was the French Governor-General who led the French forces during the Carnatic Wars."
+    },
+    {
+      "id": 33,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Portuguese explorer _______ succeeded Vasco da Gama and consolidated Portuguese power in India.",
+        "read_text": false
+      },
+      "correctAnswer": "Afonso de Albuquerque",
+      "alternatives": [
+        "Afonso de Albuquerque",
+        "Albuquerque"
+      ],
+      "explanation": "Afonso de Albuquerque captured Goa and strengthened Portuguese control in India."
+    },
+    {
+      "id": 34,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The British acquired _______ from the Dutch through the Anglo-Dutch Treaty of 1824.",
+        "read_text": false
+      },
+      "correctAnswer": "Malacca",
+      "alternatives": [
+        "Malacca"
+      ],
+      "explanation": "Under the Anglo-Dutch Treaty of 1824, the British took over Malacca, while the Dutch focused on Indonesia."
+    },
+    {
+      "id": 35,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Battle of _______ in 1764 resulted in the British gaining control over Bengal, Bihar, and Orissa.",
+        "read_text": false
+      },
+      "correctAnswer": "Buxar",
+      "alternatives": [
+        "Buxar"
+      ],
+      "explanation": "The Battle of Buxar consolidated British control over Bengal, Bihar, and Orissa."
+    },
+    {
+      "id": 36,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French and British fought three major conflicts in India known as the _______ Wars.",
+        "read_text": false
+      },
+      "correctAnswer": "Carnatic",
+      "alternatives": [
+        "Carnatic"
+      ],
+      "explanation": "The Carnatic Wars were fought between the British and the French for dominance in southern India."
+    },
+    {
+      "id": 37,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Portuguese capital in India was established at _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Goa",
+      "alternatives": [
+        "Goa"
+      ],
+      "explanation": "Goa became the capital of Portuguese India in 1510."
+    },
+    {
+      "id": 38,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch established their headquarters in India at _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Pulicat",
+      "alternatives": [
+        "Pulicat"
+      ],
+      "explanation": "The Dutch East India Company established Pulicat as their headquarters in India."
+    },
+    {
+      "id": 39,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The English obtained permission to establish a factory at Madras from the local ruler of _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Chandragiri",
+      "alternatives": [
+        "Chandragiri"
+      ],
+      "explanation": "The English acquired land at Madras through permission from the ruler of Chandragiri in 1639."
+    },
+    {
+      "id": 40,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The _______ established a trading post at Surat in 1616, marking their entry into India.",
+        "read_text": false
+      },
+      "correctAnswer": "Dutch",
+      "alternatives": [
+        "Dutch"
+      ],
+      "explanation": "The Dutch established a factory at Surat in 1616 to compete with the British and Portuguese."
+    },
+    {
+      "id": 41,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The First Carnatic War was part of a larger European conflict called the War of _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Austrian Succession",
+      "alternatives": [
+        "Austrian Succession"
+      ],
+      "explanation": "The First Carnatic War was linked to the War of Austrian Succession in Europe."
+    },
+    {
+      "id": 42,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Second Carnatic War ended with the Treaty of _______ in 1754.",
+        "read_text": false
+      },
+      "correctAnswer": "Pondicherry",
+      "alternatives": [
+        "Pondicherry"
+      ],
+      "explanation": "The Treaty of Pondicherry ended hostilities between the British and the French in the Second Carnatic War."
+    },
+    {
+      "id": 43,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The English East India Company shifted its headquarters from Surat to _______ in 1687.",
+        "read_text": false
+      },
+      "correctAnswer": "Bombay",
+      "alternatives": [
+        "Bombay",
+        "Mumbai"
+      ],
+      "explanation": "The British East India Company moved its headquarters to Bombay to consolidate its trade presence."
+    },
+    {
+      "id": 44,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The French East India Company was established under the reign of King _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Louis XIV",
+      "alternatives": [
+        "Louis XIV",
+        "Louis 14"
+      ],
+      "explanation": "The French East India Company was founded by King Louis XIV in 1664."
+    },
+    {
+      "id": 45,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Portuguese explorer _______ was the first to reach India by sea in 1498.",
+        "read_text": false
+      },
+      "correctAnswer": "Vasco da Gama",
+      "alternatives": [
+        "Vasco da Gama"
+      ],
+      "explanation": "Vasco da Gama reached India by sea, landing at Calicut in 1498."
+    },
+    {
+      "id": 46,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The British established the Presidency of _______ in 1684, which became a key administrative center.",
+        "read_text": false
+      },
+      "correctAnswer": "Madras",
+      "alternatives": [
+        "Madras",
+        "Chennai"
+      ],
+      "explanation": "Madras was established as a Presidency in 1684 by the British East India Company."
+    },
+    {
+      "id": 47,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Dutch established their first factory in India at _______.",
+        "read_text": false
+      },
+      "correctAnswer": "Masulipatnam",
+      "alternatives": [
+        "Masulipatnam",
+        "Machilipatnam"
+      ],
+      "explanation": "The Dutch set up their first trading post at Masulipatnam in 1605."
+    },
+    {
+      "id": 48,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Treaty of _______ in 1763 limited French territorial possessions in India.",
+        "read_text": false
+      },
+      "correctAnswer": "Paris",
+      "alternatives": [
+        "Paris"
+      ],
+      "explanation": "The Treaty of Paris ended the Seven Years' War and restricted French possessions in India."
+    },
+    {
+      "id": 49,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Portuguese lost control of Ceylon to the _______ in 1658.",
+        "read_text": false
+      },
+      "correctAnswer": "Dutch",
+      "alternatives": [
+        "Dutch"
+      ],
+      "explanation": "The Dutch captured Ceylon from the Portuguese, marking the decline of Portuguese influence in the region."
+    },
+    {
+      "id": 50,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The Battle of _______ in 1761 marked the defeat of the French in India during the Third Carnatic War.",
+        "read_text": false
+      },
+      "correctAnswer": "Wandiwash",
+      "alternatives": [
+        "Wandiwash",
+        "Vandavasi"
+      ],
+      "explanation": "The Battle of Wandiwash marked the decisive defeat of the French by the British in 1761."
+    }
+  ]
+}
