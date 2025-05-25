@@ -8,7 +8,8 @@
       "question": {
         "hide_text": false,
         "text": "Vasco da Gama was the first European to reach India by sea in 1498.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Vasco da Gama, a Portuguese explorer, reached Calicut in 1498, opening the sea route to India."
@@ -19,7 +20,8 @@
       "question": {
         "hide_text": false,
         "text": "The British East India Company was established in 1600.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The British East India Company was granted a royal charter by Queen Elizabeth I in 1600."
@@ -30,7 +32,8 @@
       "question": {
         "hide_text": false,
         "text": "Francisco de Almeida introduced the 'Blue Water Policy' to strengthen Portuguese naval dominance.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Francisco de Almeida, the first Portuguese Governor of India, introduced the 'Blue Water Policy' to dominate the Indian Ocean."
@@ -41,7 +44,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch East India Company was established before the British East India Company.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Dutch East India Company (VOC) was established in 1602, two years after the British East India Company."
@@ -52,7 +56,8 @@
       "question": {
         "hide_text": false,
         "text": "The Battle of Plassey in 1757 marked the beginning of British political dominance in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Battle of Plassey established British control over Bengal and paved the way for British expansion in India."
@@ -63,7 +68,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese were the first Europeans to establish trading posts in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Portuguese, led by Vasco da Gama, were the first Europeans to establish trading posts in India in the early 1500s."
@@ -74,7 +80,8 @@
       "question": {
         "hide_text": false,
         "text": "Robert Clive led the British forces during the Battle of Buxar in 1764.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Robert Clive led British forces to victory at the Battle of Buxar, securing British dominance over Bengal, Bihar, and Orissa."
@@ -85,7 +92,8 @@
       "question": {
         "hide_text": false,
         "text": "The Treaty of Paris in 1763 ended the First Carnatic War between the British and the French.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Treaty of Aix-la-Chapelle in 1748 ended the First Carnatic War, while the Treaty of Paris ended the Seven Years' War."
@@ -96,7 +104,8 @@
       "question": {
         "hide_text": false,
         "text": "The French established their first trading post in Chandernagore.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The French established their first trading post in Chandernagore, West Bengal, in 1673."
@@ -107,7 +116,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch were driven out of India by the British after the Battle of Wandiwash in 1760.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The French, not the Dutch, were defeated by the British at the Battle of Wandiwash, ending French ambitions in India."
@@ -118,7 +128,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese established their first fort in India at Goa.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Portuguese established their first fort at Cochin in 1503. Goa was captured later in 1510."
@@ -129,7 +140,8 @@
       "question": {
         "hide_text": false,
         "text": "Alfonso de Albuquerque was responsible for capturing Goa for the Portuguese.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Alfonso de Albuquerque captured Goa from the Bijapur Sultanate in 1510, establishing it as a Portuguese colony."
@@ -140,7 +152,8 @@
       "question": {
         "hide_text": false,
         "text": "The British shifted their headquarters from Surat to Bombay in 1687.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The British shifted their headquarters from Surat to Bombay in 1687 after receiving the territory from the Portuguese."
@@ -151,7 +164,8 @@
       "question": {
         "hide_text": false,
         "text": "The French Governor Dupleix successfully defeated the British in the Third Carnatic War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The French Governor Dupleix was defeated in the Third Carnatic War by the British forces led by Robert Clive and Eyre Coote."
@@ -162,7 +176,8 @@
       "question": {
         "hide_text": false,
         "text": "The Battle of Buxar took place in 1757.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Battle of Buxar took place in 1764, seven years after the Battle of Plassey."
@@ -173,7 +188,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch established their headquarters in India at Pulicat.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Dutch established Pulicat as their headquarters in 1610, before moving to Nagapattinam."
@@ -184,7 +200,8 @@
       "question": {
         "hide_text": false,
         "text": "The Treaty of Bassein (1802) was signed between the British and the Marathas.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Treaty of Bassein was signed between the British and Peshwa Baji Rao II, which increased British influence over the Marathas."
@@ -195,7 +212,8 @@
       "question": {
         "hide_text": false,
         "text": "The British East India Company was granted Diwani rights over Bengal after the Battle of Buxar.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The British East India Company was granted Diwani rights in 1765, allowing them to collect revenue in Bengal, Bihar, and Orissa."
@@ -206,7 +224,8 @@
       "question": {
         "hide_text": false,
         "text": "The French East India Company was founded in 1664.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The French East India Company was established by Colbert under the reign of King Louis XIV in 1664."
@@ -217,7 +236,8 @@
       "question": {
         "hide_text": false,
         "text": "The first British factory in India was established at Surat.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The British East India Company established its first factory at Surat in 1613 after obtaining permission from Mughal Emperor Jahangir."
@@ -228,7 +248,8 @@
       "question": {
         "hide_text": false,
         "text": "Pondicherry was the first French settlement in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Pondicherry (Puducherry) became the first major French settlement in India in 1674."
@@ -239,7 +260,8 @@
       "question": {
         "hide_text": false,
         "text": "The British captured Madras from the Portuguese in 1639.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The British acquired Madras from the local ruler of Chandragiri in 1639, not from the Portuguese."
@@ -250,7 +272,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese were the last European power to leave India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Portuguese left India in 1961 after Goa was annexed by India. The French retained Pondicherry until 1954."
@@ -261,7 +284,8 @@
       "question": {
         "hide_text": false,
         "text": "The Danes established settlements in Tranquebar and Serampore.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Danish East India Company established trading posts in Tranquebar (Tamil Nadu) and Serampore (West Bengal)."
@@ -272,7 +296,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch primarily focused on the spice trade in the Malabar Coast and Ceylon.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Dutch East India Company concentrated on the spice trade and established control over Ceylon and the Malabar Coast."
@@ -283,7 +308,8 @@
       "question": {
         "hide_text": false,
         "text": "Fort St. George was built by the British in Bombay.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "Fort St. George was built by the British in Madras (Chennai) in 1644, not Bombay."
@@ -294,7 +320,8 @@
       "question": {
         "hide_text": false,
         "text": "The First Carnatic War ended with the Treaty of Aix-la-Chapelle.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The First Carnatic War ended in 1748 with the Treaty of Aix-la-Chapelle, which restored Madras to the British."
@@ -305,7 +332,8 @@
       "question": {
         "hide_text": false,
         "text": "The French Governor Dupleix was instrumental in the Second Carnatic War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Joseph François Dupleix, the French Governor-General, played a key role in the Second Carnatic War."
@@ -316,7 +344,8 @@
       "question": {
         "hide_text": false,
         "text": "The British East India Company lost the Battle of Wandiwash in 1760.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The British defeated the French at the Battle of Wandiwash in 1760, marking the end of French power in India."
@@ -327,7 +356,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch lost their influence in India after the Battle of Colachel.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Dutch were defeated by the Kingdom of Travancore at the Battle of Colachel in 1741, leading to the decline of Dutch influence in India."
@@ -338,7 +368,8 @@
       "question": {
         "hide_text": false,
         "text": "The Treaty of Seringapatam ended the Fourth Anglo-Mysore War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Treaty of Seringapatam ended the Third Anglo-Mysore War in 1792. The Fourth war ended with the death of Tipu Sultan in 1799."
@@ -349,7 +380,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese were the first Europeans to introduce printing technology in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Portuguese introduced the first printing press in Goa in 1556."
@@ -360,7 +392,8 @@
       "question": {
         "hide_text": false,
         "text": "The Battle of Swally was fought between the Portuguese and the British.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Battle of Swally (1612) marked a decisive victory for the British East India Company over the Portuguese, strengthening British influence."
@@ -371,7 +404,8 @@
       "question": {
         "hide_text": false,
         "text": "The French were the last European power to establish trading posts in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Danes (Danish) were the last European power to establish trading posts in India."
@@ -382,7 +416,8 @@
       "question": {
         "hide_text": false,
         "text": "The first English factory in India was established during the reign of Mughal Emperor Akbar.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The first English factory was established at Surat during the reign of Emperor Jahangir in 1613."
@@ -393,7 +428,8 @@
       "question": {
         "hide_text": false,
         "text": "The Marathas allied with the British during the Second Anglo-Mysore War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Marathas and the Nizam of Hyderabad allied with the British during the Second Anglo-Mysore War against Tipu Sultan."
@@ -404,7 +440,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch established Fort St. Angelo in Kerala.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Dutch captured Fort St. Angelo in Kannur (Kerala) from the Portuguese in 1663."
@@ -415,7 +452,8 @@
       "question": {
         "hide_text": false,
         "text": "The Treaty of Paris (1763) ended the conflict between the British and the Dutch in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Treaty of Paris (1763) ended hostilities between the British and the French, not the Dutch."
@@ -426,7 +464,8 @@
       "question": {
         "hide_text": false,
         "text": "The French established the city of Chandernagore as their major trading center in Bengal.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Chandernagore was established by the French as a key trading post in Bengal."
@@ -437,7 +476,8 @@
       "question": {
         "hide_text": false,
         "text": "The British acquired Bombay from the Dutch through the Treaty of Westminster.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The British acquired Bombay from the Portuguese as part of the dowry of Catherine of Braganza in 1661."
@@ -448,7 +488,8 @@
       "question": {
         "hide_text": false,
         "text": "The Battle of Chinsurah in 1759 marked the defeat of the Dutch by the British.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The British defeated the Dutch at the Battle of Chinsurah in Bengal, further consolidating British power in India."
@@ -459,7 +500,8 @@
       "question": {
         "hide_text": false,
         "text": "The French Governor Dupleix attempted to establish French supremacy in South India through alliances with Indian rulers.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Dupleix aimed to expand French influence by forming alliances with Indian rulers during the Carnatic Wars."
@@ -470,7 +512,8 @@
       "question": {
         "hide_text": false,
         "text": "The British initially focused their trade in the Malabar region.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The British initially focused their trade in Surat, Gujarat, before expanding to the eastern and southern coasts."
@@ -481,7 +524,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese were defeated by the Mughals at the Battle of Hooghly in 1632.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Mughal forces, led by Shah Jahan, defeated the Portuguese at Hooghly in 1632."
@@ -492,7 +536,8 @@
       "question": {
         "hide_text": false,
         "text": "The Treaty of Madras ended the Second Carnatic War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Treaty of Madras ended the First Anglo-Mysore War in 1769, not the Carnatic War."
@@ -503,7 +548,8 @@
       "question": {
         "hide_text": false,
         "text": "The Dutch ceded Nagapattinam to the British after the Fourth Anglo-Dutch War.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Dutch ceded Nagapattinam to the British following their defeat in the Fourth Anglo-Dutch War (1780-1784)."
@@ -514,7 +560,8 @@
       "question": {
         "hide_text": false,
         "text": "The Portuguese established their first settlement at Diu in India.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": false,
       "explanation": "The Portuguese established their first settlement at Cochin in 1503, while Diu was captured later."
@@ -525,7 +572,8 @@
       "question": {
         "hide_text": false,
         "text": "The First Anglo-Maratha War ended with the Treaty of Salbai in 1782.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Treaty of Salbai (1782) ended the First Anglo-Maratha War, establishing peace between the British and the Marathas."
@@ -536,7 +584,8 @@
       "question": {
         "hide_text": false,
         "text": "The French lost control of Pondicherry in 1761 but regained it through the Treaty of Paris.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "Pondicherry was returned to the French by the British under the Treaty of Paris in 1763."
@@ -547,7 +596,8 @@
       "question": {
         "hide_text": false,
         "text": "The British Parliament passed the Regulating Act in 1773 to oversee the administration of the East India Company.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Regulating Act of 1773 marked the first step towards British parliamentary control over the East India Company."
@@ -558,7 +608,8 @@
       "question": {
         "hide_text": false,
         "text": "The Battle of Plassey was fought between the British East India Company and the Nawab of Bengal.",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "correctAnswer": true,
       "explanation": "The Battle of Plassey was fought between the British East India Company and the Nawab of Bengal on June 23, 1757.",

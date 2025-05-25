@@ -8,23 +8,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange these major European battles in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Battle of Plassey",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Buxar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Wandiwash",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -40,23 +44,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following treaties in the order they were signed:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Treaty of Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Mangalore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Seringapatam",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -72,23 +80,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the establishment of European settlements in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Portuguese settlement at Cochin",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch settlement at Pulicat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French settlement at Pondicherry",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -104,23 +116,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following colonial administrative acts in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Regulating Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Pitt's India Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Charter Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -136,23 +152,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange these rulers of Mysore in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Tipu Sultan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Hyder Ali",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Chikka Devaraja Wodeyar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -168,23 +188,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Anglo-Mysore Wars in the correct order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Second Anglo-Mysore War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "First Anglo-Mysore War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Fourth Anglo-Mysore War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -200,23 +224,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange these European companies by the date of their founding:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Dutch East India Company",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Danish East India Company",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English East India Company",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -232,23 +260,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following colonial capitals by their establishment:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Fort William (Calcutta)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Fort St. George (Madras)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay (Mumbai)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -264,23 +296,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following battles fought by the British in India in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Battle of Swally",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Plassey",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Wandiwash",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -296,23 +332,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following European trading posts by the order of their establishment:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Surat (British)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Cochin (Portuguese)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Chandernagore (French)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -328,23 +368,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange these Anglo-French wars in India in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Second Carnatic War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "First Carnatic War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Third Carnatic War",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -360,23 +404,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following European explorers by their arrival in India:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Vasco da Gama",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Alfonso de Albuquerque",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -392,23 +440,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following British territorial acquisitions in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Bengal",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -424,23 +476,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange these British administrative measures in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Pitt’s India Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Government of India Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Regulating Act",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -456,23 +512,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the establishment of British presidencies in the correct order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Bombay Presidency",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras Presidency",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bengal Presidency",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -488,23 +548,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following treaties involving the British in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Treaty of Allahabad",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Bassein",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Lahore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -520,23 +584,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Indian leaders' uprisings against the British in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Rani Lakshmibai",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Puli Thevar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Tipu Sultan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -552,23 +620,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the establishment of important British forts in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Fort St. William",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Fort St. George",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Fort St. David",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -584,23 +656,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Portuguese viceroys of India in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Alfonso de Albuquerque",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Nino da Cunha",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -616,23 +692,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Mughal emperors based on their interaction with European traders:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Aurangzeb",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Shah Jahan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Jahangir",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -648,23 +728,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following British Governor-Generals of India in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Lord Dalhousie",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord Cornwallis",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord William Bentinck",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -680,23 +764,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following European naval battles involving India in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Battle of Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Swally",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Hoogly",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -712,23 +800,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the establishment of the following European settlements in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Goa (Portuguese)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay (British)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Pondicherry (French)",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -744,23 +836,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following colonial land revenue systems in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Ryotwari System",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Permanent Settlement",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Mahalwari System",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -776,23 +872,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Charter Acts in chronological order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Charter Act of 1813",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Charter Act of 1833",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Charter Act of 1853",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -808,23 +908,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Indian rebellions against the British in order:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Revolt of 1857",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Poligar Rebellion",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Santhal Rebellion",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -840,23 +944,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following Portuguese trading outposts in order of establishment:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Daman",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Goa",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -872,23 +980,27 @@
       "question": {
         "hide_text": false,
         "text": "Arrange the following rulers involved in resisting British expansion in India:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "Tipu Sultan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Rani Chennamma",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Nana Saheb",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctOrder": [

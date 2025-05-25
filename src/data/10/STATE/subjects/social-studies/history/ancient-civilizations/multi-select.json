@@ -7,33 +7,39 @@
       "question": {
         "hide_text": false,
         "text": "Which of the following were important trading centers during the Mughal period?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Surat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Masulipatnam",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Calcutta",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -48,33 +54,39 @@
       "question": {
         "hide_text": false,
         "text": "Which European powers established trading posts in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Spanish",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -91,33 +103,39 @@
       "question": {
         "hide_text": false,
         "text": "Which cities became major centers under British control in the 18th century?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Calcutta",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Delhi",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Surat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -133,33 +151,39 @@
       "question": {
         "hide_text": false,
         "text": "Which of the following were key commodities traded by the British in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Cotton",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Spices",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Tea",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Wheat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Opium",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -176,33 +200,39 @@
       "question": {
         "hide_text": false,
         "text": "Which battles helped the British establish dominance in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Battle of Plassey",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Buxar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Panipat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Wandiwash",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -218,33 +248,39 @@
       "question": {
         "hide_text": false,
         "text": "Which of the following were important ports for the Portuguese in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Goa",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Daman",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Calicut",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Surat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -260,33 +296,39 @@
       "question": {
         "hide_text": false,
         "text": "Which of the following were capitals of British Presidencies in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Calcutta",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Hyderabad",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bangalore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -302,33 +344,39 @@
       "question": {
         "hide_text": false,
         "text": "Which leaders played a role in the Anglo-French conflict in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Robert Clive",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dupleix",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "La Bourdonnais",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Tipu Sultan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Warren Hastings",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -344,33 +392,39 @@
       "question": {
         "hide_text": false,
         "text": "Which of the following territories were acquired by the British through the Doctrine of Lapse?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Satara",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Jhansi",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Nagpur",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Mysore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Punjab",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -386,33 +440,39 @@
       "question": {
         "hide_text": false,
         "text": "Which treaties were signed by the British with Indian rulers to secure alliances?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Treaty of Salbai",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Bassein",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Lahore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Seringapatam",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Versailles",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [

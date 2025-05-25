@@ -7,7 +7,8 @@
       "question": {
         "hide_text": false,
         "text": "ಈ ಕೆಳಗಿನ ಪದಗಳಲ್ಲಿ ತಿರುವು ಮತ್ತು ಪುನರಾವರ್ತನೆ ಇರುವ ಪದಗಳನ್ನು ಆಯ್ದುಕೊಳ್ಳಿ. (Select the words that indicate repetition.)",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
@@ -15,28 +16,32 @@
           "text": "ಹರಹರ",
           "read_text": true,
           "read_text_value": "ಹರಹರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2638f3b4-567d-449d-a221-7116889cde01.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2638f3b4-567d-449d-a221-7116889cde01.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ತಬಲ",
           "read_text": true,
           "read_text_value": "ತಬಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f8ac798f-e198-4107-996a-ddad7c993740.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f8ac798f-e198-4107-996a-ddad7c993740.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಎಡಬಲ",
           "read_text": true,
           "read_text_value": "ಎಡಬಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fa7bb460-1cfa-4753-97fe-2f1a96699621.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fa7bb460-1cfa-4753-97fe-2f1a96699621.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ದಶಕ",
           "read_text": true,
           "read_text_value": "ದಶಕ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5bfbb658-e4ea-463c-824d-0e92f7e40381.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5bfbb658-e4ea-463c-824d-0e92f7e40381.mp3",
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -52,28 +57,33 @@
         "text": "ಆಡಿಯೋ ಕೇಳಿ: ಯಾವ ಪದಗಳು ಸರಿ? (Listen to the audio prompt and select the correct words.)",
         "read_text": true,
         "read_text_value": "ಕಮಲ, ಕರಗ, ಕದನ, ಈಚಲ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/67072c5e-329c-4671-8976-3ff775b69b68.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/67072c5e-329c-4671-8976-3ff775b69b68.mp3",
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "ಕಮಲ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕರಗ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕದನ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಈಚಲ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -90,7 +100,8 @@
       "question": {
         "hide_text": false,
         "text": "ಈ ಕೆಳಗಿನ ಘನಶಬ್ದಗಳಲ್ಲಿ ಎರಡು ಪದಗಳು ಒಟ್ಟಾಗಿ ಬರೆಯಲ್ಪಟ್ಟಿವೆ. (Select the compound phrases(2 or more words) from the options you hear.)",
-        "read_text": true
+        "read_text": true,
+        "image": ""
       },
       "options": [
         {
@@ -98,28 +109,32 @@
           "text": "ಅವರ ಊಟ ರಸಮಯ",
           "read_text": true,
           "read_text_value": "ಅವರ ಊಟ ರಸಮಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/07c527f2-00f4-4764-a25f-67c4df331fda.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/07c527f2-00f4-4764-a25f-67c4df331fda.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಒಣಮರದ ಚರಕ",
           "read_text": true,
           "read_text_value": "ಒಣಮರದ ಚರಕ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/29cec6e5-c1e6-40d5-bf79-5619a4865274.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/29cec6e5-c1e6-40d5-bf79-5619a4865274.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಉಷ",
           "read_text": true,
           "read_text_value": "ಉಷ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ce2cf994-6103-44af-a5cc-c25024fefc2a.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ce2cf994-6103-44af-a5cc-c25024fefc2a.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಉದಯ",
           "read_text": true,
           "read_text_value": "ಉದಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5727e0c9-1c19-4b30-bdd9-ff07de384452.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5727e0c9-1c19-4b30-bdd9-ff07de384452.mp3",
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -134,28 +149,33 @@
       "question": {
         "hide_text": false,
         "text": "ಈ ಕೆಳಗಿನ ಪದಗಳಲ್ಲಿ ಯಾವವು ಕಾಲದ ಸೂಚಕಗಳನ್ನು (time indicators) ಸೂಚಿಸುತ್ತವೆ? (Select the words indicating time.)",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "ದಶಕ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಊಟದ ಸಮಯ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಆಗಸ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಔತಣ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -172,28 +192,33 @@
         "text": "ಆಡಿಯೋ: ಒಳ್ಳೆಯ ಉತ್ತರಗಳನ್ನು ಆಯ್ದುಕೊಳ್ಳಿ. (Listen to the audio and select the correct compound phrases(2 or more words).)",
         "read_text": true,
         "read_text_value": "ಕಮಲಳ ಸರ ಹವಳದ ಸರ, ಗಣಪನ ಆಲಯ ಜನರ ಆಗಮನ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/775f4bcb-b305-49e8-851d-90c17d0f2bed.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/775f4bcb-b305-49e8-851d-90c17d0f2bed.mp3",
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "ಕಮಲಳ ಸರ ಹವಳದ ಸರ",
-          "read_text": true
+          "read_text": true,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಗಣಪನ ಆಲಯ ಜನರ ಆಗಮನ",
-          "read_text": true
+          "read_text": true,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಪರವಶ",
-          "read_text": true
+          "read_text": true,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ನಗರ",
-          "read_text": true
+          "read_text": true,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -208,28 +233,33 @@
       "question": {
         "hide_text": false,
         "text": "ಕೆಳಗಿನ ಪದಗಳಲ್ಲಿ ಯಾವವು ಚಲನೆಯನ್ನು ಸೂಚಿಸುತ್ತವೆ? (Which words indicate movement(like walking, reading)?)",
-        "read_text": true
+        "read_text": true,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "ಪದರ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಉದಯ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಅಪಜಯ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಚಮಚ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -246,7 +276,8 @@
         "text": "ಆಡಿಯೋ: ಈ ಪದಗಳಲ್ಲಿ ಯಾವವು ಸಮೂಹವನ್ನು ಸೂಚಿಸುತ್ತವೆ? (Listen and select the words that indicate a grouping or collective.)",
         "read_text": true,
         "read_text_value": "ಊರಜನ, ಕಲರವ, ಪರವಶ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/142054ec-7fd3-47cf-a72f-602181ca2061.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/142054ec-7fd3-47cf-a72f-602181ca2061.mp3",
+        "image": ""
       },
       "options": [
         {
@@ -254,28 +285,32 @@
           "text": "ಊರಜನ",
           "read_text": true,
           "read_text_value": "ಊರಜನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ba498aed-cff3-4d4d-9f12-6ee92d458cf3.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ba498aed-cff3-4d4d-9f12-6ee92d458cf3.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಕಲರವ",
           "read_text": true,
           "read_text_value": "ಕಲರವ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f4af119a-9eac-4303-8f0a-e64ed4f8e6f0.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f4af119a-9eac-4303-8f0a-e64ed4f8e6f0.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಪರವಶ",
           "read_text": true,
           "read_text_value": "ಪರವಶ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9b2d52b6-f362-4cc5-aa4a-750e68b16bf0.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9b2d52b6-f362-4cc5-aa4a-750e68b16bf0.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಉರಗ",
           "read_text": true,
           "read_text_value": "ಉರಗ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d1bea04d-2570-42ff-998b-17efc2a7e013.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d1bea04d-2570-42ff-998b-17efc2a7e013.mp3",
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -293,28 +328,33 @@
         "text": "ನೀವು ಕೆಳಗಿನ ಪದಗಳನ್ನು ನೋಡಿ: ಆ ಪದಗಳಲ್ಲಿ ಯಾವವು ಧ್ವನಿಯು ಮತ್ತು ಮಾತಿನ ಹಿನ್ನೆಲೆಯನ್ನು ಸೂಚಿಸುತ್ತವೆ? (From the following words, select those that convey oral expression or speech.)",
         "read_text": true,
         "read_text_value": "ವಚನ, ಉರಗ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eea13080-00c5-4486-b94c-750c0e784949.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eea13080-00c5-4486-b94c-750c0e784949.mp3",
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "ವಚನ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಉರಗ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕಮಲ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕದನ",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -331,7 +371,8 @@
         "text": "ಆಡಿಯೋ ಕೇಳಿ: ಈ ಪದಗಳಲ್ಲಿ ಯಾವವು ಆಕಾಶ ಅಥವಾ ಉಡುಪು ಹೋಲುವ ಭಾವವನ್ನು ಸೂಚಿಸುತ್ತವೆ? (Listen to the audio and select the words that evoke a sense of the sky or vastness.)",
         "read_text": true,
         "read_text_value": "ಆಗಸ, ಔತಣ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f044e2e2-9995-4327-99f4-9e47cbc1b5e1.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f044e2e2-9995-4327-99f4-9e47cbc1b5e1.mp3",
+        "image": ""
       },
       "options": [
         {
@@ -339,28 +380,32 @@
           "text": "ಆಗಸ",
           "read_text": true,
           "read_text_value": "ಆಗಸ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8e2e9019-1dca-4f28-a529-0d4c5c1182ea.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8e2e9019-1dca-4f28-a529-0d4c5c1182ea.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಔತಣ",
           "read_text": true,
           "read_text_value": "ಔತಣ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/65cde2f3-8284-4fe2-b91d-6160f32a3469.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/65cde2f3-8284-4fe2-b91d-6160f32a3469.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ನಗರ",
           "read_text": true,
           "read_text_value": "ನಗರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e67e3bed-1f96-4196-98a3-b6099953447f.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e67e3bed-1f96-4196-98a3-b6099953447f.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಚಮಚ",
           "read_text": true,
           "read_text_value": "ಚಮಚ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b2c2e88a-dd3b-4d66-a8a4-c656ca69ec8c.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b2c2e88a-dd3b-4d66-a8a4-c656ca69ec8c.mp3",
+          "image": ""
         }
       ],
       "correctAnswers": [
@@ -377,7 +422,8 @@
         "text": "ಈ ಕೆಳಗಿನ ಪದಗಳಲ್ಲಿ ಯಾವ ಅಂಶಗಳನ್ನು ಸೂಚಿಸುತ್ತವೆ? (Select the words that reflect victory or utensils.)\nNote: This is an easy question; choose the words as you hear them.",
         "read_text": true,
         "read_text_value": "ಅಪಜಯ, ಚಮಚ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/06c6c23f-33fd-44bc-add3-7ba149a79ac0.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/06c6c23f-33fd-44bc-add3-7ba149a79ac0.mp3",
+        "image": ""
       },
       "options": [
         {
@@ -385,28 +431,32 @@
           "text": "ಅಪಜಯ",
           "read_text": true,
           "read_text_value": "ಅಪಜಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/203ecdff-0458-423c-93e7-b315dfe32376.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/203ecdff-0458-423c-93e7-b315dfe32376.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಚಮಚ",
           "read_text": true,
           "read_text_value": "ಚಮಚ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0fb881cc-a600-474e-9ceb-5dc9f7144536.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0fb881cc-a600-474e-9ceb-5dc9f7144536.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಉಷ",
           "read_text": true,
           "read_text_value": "ಉಷ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f8c2ed8e-bf92-48ac-a315-e44d3c0e58b8.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f8c2ed8e-bf92-48ac-a315-e44d3c0e58b8.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಕಮಲ",
           "read_text": true,
           "read_text_value": "ಕಮಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/868899a7-c5a2-493d-a82f-cf71e8fe5872.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/868899a7-c5a2-493d-a82f-cf71e8fe5872.mp3",
+          "image": ""
         }
       ],
       "correctAnswers": [

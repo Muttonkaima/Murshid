@@ -10,7 +10,8 @@
         "text": "ಕೆಳಗಿನ ಪದಗಳನ್ನು ಕೇಳಿದಂತೆ ಮರುಕ್ರಮಗೊಳಿಸಿ (Reorder the following words as heard):",
         "read_text": true,
         "read_text_value": "ವಚನ, ಉರಗ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36dc50f4-c946-4073-bf48-e3732382c279.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36dc50f4-c946-4073-bf48-e3732382c279.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -18,14 +19,16 @@
           "text": "ಉರಗ",
           "read_text": true,
           "read_text_value": "ಉರಗ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e89e89a6-61d5-4172-a97d-7fcdaf828db4.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e89e89a6-61d5-4172-a97d-7fcdaf828db4.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ವಚನ",
           "read_text": true,
           "read_text_value": "ವಚನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9ff2a7f1-36c8-4baf-812b-c5f48a2b74e5.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9ff2a7f1-36c8-4baf-812b-c5f48a2b74e5.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -42,7 +45,8 @@
         "text": "ಕೆಳಗಿನ ಪದಗಳನ್ನು ಕೇಳಿದಂತೆ ಮರುಕ್ರಮಗೊಳಿಸಿ (Reorder the following words as heard):.",
         "read_text": true,
         "read_text_value": "ಪದರ, ಉದಯ, ಚಮಚ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/24be820a-1896-4cf5-b2e1-a02d5d6dcf87.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/24be820a-1896-4cf5-b2e1-a02d5d6dcf87.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -50,21 +54,24 @@
           "text": "ಉದಯ",
           "read_text": true,
           "read_text_value": "ಉದಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/334b15ac-e077-411e-b710-0f73159f27b6.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/334b15ac-e077-411e-b710-0f73159f27b6.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಚಮಚ",
           "read_text": true,
           "read_text_value": "ಚಮಚ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/71a14691-f963-42d5-a474-2cd2af285148.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/71a14691-f963-42d5-a474-2cd2af285148.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಪದರ",
           "read_text": true,
           "read_text_value": "ಪದರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a7251b4c-48af-46bc-8a49-5bc46f64607b.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a7251b4c-48af-46bc-8a49-5bc46f64607b.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -82,7 +89,8 @@
         "text": "ಆಡಿಯೋ ಪ್ರಕಾರ ಕೆಳಗಿನ ಸಂಯುಕ್ತ ಪದಗುಚ್ಛವನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Reorder the following compound phrase as per the audio):",
         "read_text": true,
         "read_text_value": "ಅವರ ಊಟ ರಸಮಯ, ಒಣಮರದ ಚರಕ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/be879ca6-a3aa-48e4-aa2b-ba254d3fb4e3.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/be879ca6-a3aa-48e4-aa2b-ba254d3fb4e3.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -90,14 +98,16 @@
           "text": "ಒಣಮರದ ಚರಕ",
           "read_text": true,
           "read_text_value": "ಒಣಮರದ ಚರಕ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7fb2f0d2-a9ee-424a-abb7-68fc97d8d016.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7fb2f0d2-a9ee-424a-abb7-68fc97d8d016.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಅವರ ಊಟ ರಸಮಯ",
           "read_text": true,
           "read_text_value": "ಅವರ ಊಟ ರಸಮಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/433d00d4-2dcf-4231-b787-14935899d21a.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/433d00d4-2dcf-4231-b787-14935899d21a.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -114,7 +124,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Listen to the words and reorder them):",
         "read_text": true,
         "read_text_value": "ಕಮಲ, ಕರಗ, ಕದನ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1735a71b-789a-4a56-b27f-cc60143e8934.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1735a71b-789a-4a56-b27f-cc60143e8934.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -122,21 +133,24 @@
           "text": "ಕರಗ",
           "read_text": true,
           "read_text_value": "ಕರಗ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/398d77b3-8662-451f-87d0-7e0f350b1a65.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/398d77b3-8662-451f-87d0-7e0f350b1a65.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕದನ",
           "read_text": true,
           "read_text_value": "ಕದನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f0416195-a153-4851-9c6f-be68cb883e78.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f0416195-a153-4851-9c6f-be68cb883e78.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕಮಲ",
           "read_text": true,
           "read_text_value": "ಕಮಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/23d5f020-7d9b-4c66-93ff-f8a53f72e4df.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/23d5f020-7d9b-4c66-93ff-f8a53f72e4df.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -154,7 +168,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Reorder the following words as per the audio):",
         "read_text": true,
         "read_text_value": "ಊರಜನ, ಕಲರವ, ಪರವಶ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7f520034-5d8d-42a5-9194-fe8ce1eb3637.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7f520034-5d8d-42a5-9194-fe8ce1eb3637.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -162,21 +177,24 @@
           "text": "ಪರವಶ",
           "read_text": true,
           "read_text_value": "ಪರವಶ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ae907004-8589-4191-a294-ebd42a69ba7a.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ae907004-8589-4191-a294-ebd42a69ba7a.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕಲರವ",
           "read_text": true,
           "read_text_value": "ಕಲರವ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1c069909-046f-4bdb-891c-95433166bc31.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1c069909-046f-4bdb-891c-95433166bc31.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಊರಜನ",
           "read_text": true,
           "read_text_value": "ಊರಜನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a6ab190f-b3c9-4145-9c75-7f9219b598fe.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a6ab190f-b3c9-4145-9c75-7f9219b598fe.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -194,7 +212,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Arrange the words as heard):",
         "read_text": true,
         "read_text_value": "ದಶಕ, ಹರಹರ, ಆಲಯ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/606365da-6c6e-430f-8777-b3e35c5873bc.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/606365da-6c6e-430f-8777-b3e35c5873bc.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -202,21 +221,24 @@
           "text": "ಆಲಯ",
           "read_text": true,
           "read_text_value": "ಆಲಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/22d1d4e1-9b00-42fa-83fb-408778323edf.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/22d1d4e1-9b00-42fa-83fb-408778323edf.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ದಶಕ",
           "read_text": true,
           "read_text_value": "ದಶಕ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dc243326-a3cd-468a-ab0a-506ee84c3eb8.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dc243326-a3cd-468a-ab0a-506ee84c3eb8.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಹರಹರ",
           "read_text": true,
           "read_text_value": "ಹರಹರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/09167ac2-3ac7-4c7c-af85-1c336d2b2cb1.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/09167ac2-3ac7-4c7c-af85-1c336d2b2cb1.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -234,7 +256,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Listen and reorder): ",
         "read_text": true,
         "read_text_value": "ಎಡಬಲ, ತಬಲ, ಆಗಸ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e9c93c4f-fa85-4ed8-80ef-8151fb8e311f.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e9c93c4f-fa85-4ed8-80ef-8151fb8e311f.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -242,21 +265,24 @@
           "text": "ತಬಲ",
           "read_text": true,
           "read_text_value": "ತಬಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/83b49f8b-2673-4bf8-997a-5b328ed493fa.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/83b49f8b-2673-4bf8-997a-5b328ed493fa.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಆಗಸ",
           "read_text": true,
           "read_text_value": "ಆಗಸ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/64c59acc-99a1-41c5-94b3-8bce21bee9ec.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/64c59acc-99a1-41c5-94b3-8bce21bee9ec.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಎಡಬಲ",
           "read_text": true,
           "read_text_value": "ಎಡಬಲ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e4b6c18d-20f3-45dc-986a-1a6bc6208955.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e4b6c18d-20f3-45dc-986a-1a6bc6208955.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -274,7 +300,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Listen and reorder): ",
         "read_text": true,
         "read_text_value": "ಔತಣ, ಊಟದ ಸಮಯ, ಅರಸರ ದಸರ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1e1d6542-91d1-471c-9ef0-e3d8dcda18eb.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1e1d6542-91d1-471c-9ef0-e3d8dcda18eb.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -282,21 +309,24 @@
           "text": "ಅರಸರ ದಸರ",
           "read_text": true,
           "read_text_value": "ಅರಸರ ದಸರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/14a577ee-9e09-4368-b2a9-3e1b8610d9bc.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/14a577ee-9e09-4368-b2a9-3e1b8610d9bc.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಊಟದ ಸಮಯ",
           "read_text": true,
           "read_text_value": "ಊಟದ ಸಮಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c30c342a-2197-460e-bb2c-834417db7bf1.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c30c342a-2197-460e-bb2c-834417db7bf1.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಔತಣ",
           "read_text": true,
           "read_text_value": "ಔತಣ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/af8724d8-f0af-4aee-a66b-e49cc6521287.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/af8724d8-f0af-4aee-a66b-e49cc6521287.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -314,7 +344,8 @@
         "text": "ಎಚ್ಚರಿಕೆಯಿಂದ ಆಲಿಸಿ ಮತ್ತು ಈ ಸಂಯುಕ್ತ ಪದಗುಚ್ಛಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Listen carefully and reorder these compound phrases):",
         "read_text": true,
         "read_text_value": "ಗಣಪನ ಆಲಯ ಜನರ ಆಗಮನ, ಕಮಲಳ ಸರ ಹವಳದ ಸರ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eda2835c-93b2-49a3-8276-3ed95b2e75c9.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eda2835c-93b2-49a3-8276-3ed95b2e75c9.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -322,14 +353,16 @@
           "text": "ಕಮಲಳ ಸರ ಹವಳದ ಸರ",
           "read_text": true,
           "read_text_value": "ಕಮಲಳ ಸರ ಹವಳದ ಸರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5300ac84-168a-4bfa-be7c-f86290b5fe8a.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5300ac84-168a-4bfa-be7c-f86290b5fe8a.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಗಣಪನ ಆಲಯ ಜನರ ಆಗಮನ",
           "read_text": true,
           "read_text_value": "ಗಣಪನ ಆಲಯ ಜನರ ಆಗಮನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c0a73535-00d6-4a9c-b1f1-3ed5bca7c7e1.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c0a73535-00d6-4a9c-b1f1-3ed5bca7c7e1.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -346,20 +379,23 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(listen and reorder): ",
         "read_text": true,
         "read_text_value": "ಓಟದ ಆಟ ಸಡಗರದ ಆಟ, ನಗರದ ಜನ ವನದ ಮರ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/838fbe38-aaf1-4bbe-a96f-a4cd2959898b.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/838fbe38-aaf1-4bbe-a96f-a4cd2959898b.mp3",
+        "image": ""
       },
       "items": [
         {
           "hide_text": false,
           "text": "ನಗರದ ಜನ ವನದ ಮರ",
           "read_text": true,
-          "read_text_url": ""
+          "read_text_url": "",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಓಟದ ಆಟ ಸಡಗರದ ಆಟ",
           "read_text": true,
-          "read_text_url": ""
+          "read_text_url": "",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -376,7 +412,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Reorder the following words as heard):",
         "read_text": true,
         "read_text_value": "ಉದಯ, ಪರಿಭಾಷೆ, ವಚನ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a4c5b503-fec5-41ff-8f00-9155f9e8140c.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a4c5b503-fec5-41ff-8f00-9155f9e8140c.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -384,21 +421,24 @@
           "text": "ವಚನ",
           "read_text": true,
           "read_text_value": "ವಚನ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e23ddea1-a2e7-4691-a134-cdc5dceba0ce.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e23ddea1-a2e7-4691-a134-cdc5dceba0ce.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಉದಯ",
           "read_text": true,
           "read_text_value": "ಉದಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f6c0397f-d2db-4b1c-bf9f-dd42222656a1.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f6c0397f-d2db-4b1c-bf9f-dd42222656a1.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಪರಿಭಾಷೆ",
           "read_text": true,
           "read_text_value": "ಪರಿಭಾಷೆ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1ef26b4f-165f-4cb2-8d4d-732d9f224412.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1ef26b4f-165f-4cb2-8d4d-732d9f224412.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -416,7 +456,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Listen to the following audio and reorder the words:)",
         "read_text": true,
         "read_text_value": "ಕಮಲಳ, ಅರಸ, ದಸರ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e30d4129-705c-4ea2-a7ea-7907d9ebffec.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e30d4129-705c-4ea2-a7ea-7907d9ebffec.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -424,21 +465,24 @@
           "text": "ಅರಸ",
           "read_text": true,
           "read_text_value": "ಅರಸ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36cfe677-385d-4b72-976e-663b6079e194.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36cfe677-385d-4b72-976e-663b6079e194.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ದಸರ",
           "read_text": true,
           "read_text_value": "ದಸರ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/68d2d3c1-4d0a-4dd3-8b67-38455b4ad5ec.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/68d2d3c1-4d0a-4dd3-8b67-38455b4ad5ec.mp3",
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "ಕಮಲಳ",
           "read_text": true,
           "read_text_value": "ಕಮಲಳ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/23f11d89-14ae-43c0-944b-89b3fef1ae41.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/23f11d89-14ae-43c0-944b-89b3fef1ae41.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [
@@ -456,7 +500,8 @@
         "text": "ಪದಗಳನ್ನು ಆಲಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ(Reorder the words from the audio sequence below.):",
         "read_text": true,
         "read_text_value": "ಚಮಚ, ಅಪಜಯ, ಉಷ",
-        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4492e649-0ff3-4211-bada-4d2eaec0758b.mp3"
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4492e649-0ff3-4211-bada-4d2eaec0758b.mp3",
+        "image": ""
       },
       "items": [
         {
@@ -464,21 +509,24 @@
           "text": "ಉಷ",
           "read_text": true,
           "read_text_value": "ಉಷ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7f58d791-e7e3-454e-a8f2-4542203dac27.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7f58d791-e7e3-454e-a8f2-4542203dac27.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಚಮಚ",
           "read_text": true,
           "read_text_value": "ಚಮಚ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/242ddc43-f055-4409-9af4-988fb1513eca.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/242ddc43-f055-4409-9af4-988fb1513eca.mp3",
+          "image": ""
         },
         {
           "hide_text": true,
           "text": "ಅಪಜಯ",
           "read_text": true,
           "read_text_value": "ಅಪಜಯ",
-          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8995715b-ee3f-427c-aa54-f653883a53bb.mp3"
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8995715b-ee3f-427c-aa54-f653883a53bb.mp3",
+          "image": ""
         }
       ],
       "correctOrder": [

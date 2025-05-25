@@ -8,55 +8,65 @@
       "question": {
         "hide_text": false,
         "text": "Sort these explorers by the European power they represented:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "categories": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "items": [
         {
           "hide_text": false,
           "text": "Vasco da Gama",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Pieter Both",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Jan van Riebeeck",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Sir Thomas Roe",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Robert Clive",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctSorting": {
@@ -81,55 +91,65 @@
       "question": {
         "hide_text": false,
         "text": "Sort these battles by the European powers involved:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "categories": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "items": [
         {
           "hide_text": false,
           "text": "Battle of Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Plassey",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Wandiwash",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Buxar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Chaul",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Pondicherry",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctSorting": {
@@ -154,75 +174,89 @@
       "question": {
         "hide_text": false,
         "text": "Sort these territories by the European power that controlled them:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "categories": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "items": [
         {
           "hide_text": false,
           "text": "Goa",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Pondicherry",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Madras",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Calcutta",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Surat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Nagapatnam",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bassein",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Chandernagore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctSorting": {
@@ -252,55 +286,65 @@
       "question": {
         "hide_text": false,
         "text": "Sort these European officials by their influence in India:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "categories": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "items": [
         {
           "hide_text": false,
           "text": "Alfonso de Albuquerque",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dupleix",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Robert Clive",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Warren Hastings",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "La Bourdonnais",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctSorting": {
@@ -325,60 +369,71 @@
       "question": {
         "hide_text": false,
         "text": "Sort these trade centers by the European powers that controlled them:",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "categories": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "items": [
         {
           "hide_text": false,
           "text": "Cochin",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Karikal",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Bombay",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Surat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Chandernagore",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Diu",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctSorting": {

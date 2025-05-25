@@ -8,28 +8,33 @@
       "question": {
         "hide_text": false,
         "text": "Which Portuguese explorer was the first European to arrive in India by sea route?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Vasco da Gama",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Alfonso de Albuquerque",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dupleix",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Vasco da Gama",
@@ -41,28 +46,33 @@
       "question": {
         "hide_text": false,
         "text": "Which battle marked the beginning of British political control in India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Battle of Plassey",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Buxar",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Panipat",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Battle of Wandiwash",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Battle of Plassey",
@@ -74,28 +84,33 @@
       "question": {
         "hide_text": false,
         "text": "Who was the first Governor-General of Bengal?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Warren Hastings",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Robert Clive",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord Cornwallis",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord Wellesley",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Warren Hastings",
@@ -107,28 +122,33 @@
       "question": {
         "hide_text": false,
         "text": "Which European power established the first factory in Surat?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Portuguese",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Dutch",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "French",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "English",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "English",
@@ -140,28 +160,33 @@
       "question": {
         "hide_text": false,
         "text": "Who among the following was the founder of the French East India Company?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Dupleix",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Colbert",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "La Bourdonnais",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lally",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Colbert",
@@ -173,28 +198,33 @@
       "question": {
         "hide_text": false,
         "text": "In which year did Vasco da Gama reach Calicut?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "1492",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "1498",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "1505",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "1510",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "1498",
@@ -206,28 +236,33 @@
       "question": {
         "hide_text": false,
         "text": "Which British Governor-General introduced the Permanent Settlement in Bengal?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Lord Wellesley",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord Cornwallis",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Lord Dalhousie",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Warren Hastings",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Lord Cornwallis",
@@ -239,28 +274,33 @@
       "question": {
         "hide_text": false,
         "text": "Who was the first Dutch explorer to reach India?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Jan Huygen van Linschoten",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Pieter Both",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Cornelis de Houtman",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Hugo Grotius",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Cornelis de Houtman",
@@ -272,28 +312,33 @@
       "question": {
         "hide_text": false,
         "text": "Which treaty ended the Third Carnatic War?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Treaty of Paris",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Aix-la-Chapelle",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Versailles",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Treaty of Salbai",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Treaty of Paris",
@@ -305,28 +350,33 @@
       "question": {
         "hide_text": false,
         "text": "Who established Portuguese authority in Goa?",
-        "read_text": false
+        "read_text": false,
+        "image": ""
       },
       "options": [
         {
           "hide_text": false,
           "text": "Vasco da Gama",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Francisco de Almeida",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Alfonso de Albuquerque",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         },
         {
           "hide_text": false,
           "text": "Ferdinand Magellan",
-          "read_text": false
+          "read_text": false,
+          "image": ""
         }
       ],
       "correctAnswer": "Alfonso de Albuquerque",
