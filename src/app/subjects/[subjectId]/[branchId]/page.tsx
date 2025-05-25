@@ -68,7 +68,7 @@ const BranchChaptersPage = () => {
   
   // Quiz settings modal state
   const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
-  const [selectedChapter, setSelectedChapter] = useState<{id: string; title: string} | null>(null);
+  const [selectedChapter, setSelectedChapter] = useState<{id: string; title: string; slug: string} | null>(null);
 
   useEffect(() => {
     try {
@@ -135,7 +135,7 @@ const BranchChaptersPage = () => {
   };
 
   const handleChapterClick = (chapter: Chapter) => {
-    setSelectedChapter({ id: chapter.id, title: chapter.name });
+    setSelectedChapter({ id: chapter.id, title: chapter.name, slug: chapter.slug });
     setIsQuizModalOpen(true);
   };
 
@@ -417,6 +417,7 @@ const BranchChaptersPage = () => {
             onCloseAction={() => setIsQuizModalOpen(false)}
             onStartQuizAction={handleStartQuiz}
             chapterTitle={selectedChapter?.title || 'this chapter'}
+            chapterId={selectedChapter?.slug || ''}
           />
         </div>
       </div>

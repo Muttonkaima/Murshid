@@ -19,13 +19,15 @@ interface QuizSettingsModalProps {
   onCloseAction: () => void;
   onStartQuizAction: (questionCount: number, questionType: QuestionType) => void;
   chapterTitle: string;
+  chapterId: string;
 }
 
 export default function QuizSettingsModal({ 
   isOpen, 
   onCloseAction, 
   onStartQuizAction,
-  chapterTitle 
+  chapterTitle,
+  chapterId 
 }: QuizSettingsModalProps) {
   const [questionCount, setQuestionCount] = useState<number>(10);
   const [questionType, setQuestionType] = useState<QuestionType>('all');
@@ -46,8 +48,43 @@ export default function QuizSettingsModal({
   const selectedTypeLabel = questionTypes.find(type => type.value === questionType)?.label || 'Select Type';
 
   const handleStartQuiz = () => {
-    onStartQuizAction(questionCount, questionType);
-    onCloseAction();
+    // Navigate to the quiz page with the selected parameters
+    const searchParams = new URLSearchParams({
+      type: questionType,
+      count: questionCount.toString(),
+    });
+    
+    // Get the current path and remove any trailing slashes
+    let currentPath = window.location.pathname;
+    if (currentPath.endsWith('/')) {
+      currentPath = currentPath.slice(0, -1);
+    }
+    
+    // Construct the quiz URL based on the current path structure
+    // Expected structure: /subjects/[subjectId]/[branchId]/[chapterId]
+    // We need to navigate to: /quiz/[subjectId]/[branchId]/[chapterId]?type=...&count=...
+    const pathSegments = currentPath.split('/').filter(Boolean);
+
+    // Ensure we have the correct number of segments
+    if (pathSegments.length >= 3) {
+      const [_, subjectId, branchId] = pathSegments;
+      const quizUrl = `/quiz/${subjectId}/${branchId}/${chapterId}?${searchParams.toString()}`;
+      console.log(quizUrl);
+      // Navigate to the quiz page
+      window.location.href = quizUrl;
+      
+      // Call the onStartQuizAction if provided (for backward compatibility)
+      if (onStartQuizAction) {
+        onStartQuizAction(questionCount, questionType);
+      }
+      
+      onCloseAction();
+    } else {
+      console.error('Invalid path structure for quiz navigation');
+      // Fallback to the original behavior if path structure is unexpected
+      const quizUrl = `/quiz?${searchParams.toString()}`;
+      window.location.href = quizUrl;
+    }
   };
 
   useEffect(() => {
