@@ -12,7 +12,17 @@ import MultiSelectQuestion from '@/components/questions/MultiSelectQuestion';
 import SortingQuestion from '@/components/questions/SortingQuestion';
 import ReorderingQuestion from '@/components/questions/ReorderingQuestion';
 
-type QuestionType = 'mcq' | 'true-false' | 'fill-in-blanks' | 'match-the-following' | 'multi-select' | 'sorting' | 'reordering';
+type QuestionType = 'mcq' | 'true-false' | 'fill-in-blanks' | 'match-the-following' | 'multi-select' | 'sorting' | 'reordering' | 'all';
+
+const ALL_QUESTION_TYPES: QuestionType[] = [
+  'mcq',
+  'true-false',
+  'fill-in-blanks',
+  'match-the-following',
+  'multi-select',
+  'sorting',
+  'reordering'
+];
 
 const QuizPage = () => {
   const { subjectId, branchId, chapterId } = useParams();
@@ -233,33 +243,47 @@ const QuizPage = () => {
         setTimeElapsed(0);
         setIsTimerRunning(true);
         
-        // Dynamically import the JSON file
-        const module = await import(
-          `@/data/10/STATE/subjects/${subjectId}/${branchId}/${chapterId}/${questionType}.json`
-        );
+        let allQuestions: any[] = [];
+        const typesToLoad = questionType === 'all' ? ALL_QUESTION_TYPES : [questionType];
         
-        // Get the questions array from the imported module
-        let questions = module.questions || [];
-        
-        if (questions.length === 0) {
-          throw new Error('No questions found for the selected type');
+        // Load questions from all specified types
+        for (const type of typesToLoad) {
+          try {
+            const module = await import(
+              `@/data/10/STATE/subjects/${subjectId}/${branchId}/${chapterId}/${type}.json`
+            );
+            if (module.questions && module.questions.length > 0) {
+              allQuestions = [...allQuestions, ...module.questions.map((q: any) => ({
+                ...q,
+                originalType: type // Store the original type for rendering
+              }))];
+            }
+          } catch (e) {
+            console.warn(`Failed to load questions for type: ${type}`, e);
+            // Continue with other types even if one fails
+          }
         }
         
-        // Shuffle questions if needed
-        if (questionCount && questionCount < questions.length) {
-          questions = questions
-            .sort(() => 0.5 - Math.random())
-            .slice(0, questionCount);
+        if (allQuestions.length === 0) {
+          throw new Error('No questions found for the selected types');
         }
+        
+        // Shuffle all questions
+        const shuffledQuestions = [...allQuestions].sort(() => 0.5 - Math.random());
+        
+        // Take the requested number of questions
+        const selectedQuestions = questionCount 
+          ? shuffledQuestions.slice(0, Math.min(questionCount, shuffledQuestions.length))
+          : shuffledQuestions;
         
         // Calculate total possible marks from all questions
-        const totalMarks = questions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
+        const totalMarks = selectedQuestions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
         setTotalPossibleMarks(totalMarks);
         
         // Initialize score to 0
         setScore(0);
         
-        setQuestions(questions);
+        setQuestions(selectedQuestions);
       } catch (error) {
         console.error('Error loading questions:', error);
         setError(error instanceof Error ? error.message : 'Failed to load questions');
@@ -357,48 +381,33 @@ const QuizPage = () => {
     // Mark answer as submitted
     setIsAnswerSubmitted(true);
   };
-  
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-      setCurrentAnswer(null);
-      setIsAnswerSubmitted(false);
-      setShowExplanation(false);
-    } else {
-      setShowResults(true);
-    }
-  };
-  
-  const handlePreviousQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(prev => prev - 1);
-      setCurrentAnswer(null);
-      setIsAnswerSubmitted(false);
-      setShowExplanation(false);
-    }
-  };
-  
-
 
   const goToNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
+      setIsAnswerSubmitted(false);
     }
   };
 
   const goToPrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(prev => prev - 1);
+      setIsAnswerSubmitted(false);
     }
   };
 
   const renderQuestion = () => {
     if (isLoading) {
-      return <div>Loading questions...</div>;
+      return <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>;
     }
 
     if (questions.length === 0) {
-      return <div>No questions available</div>;
+      return <div className="text-center py-10">
+        <h3 className="text-lg font-medium text-gray-900">No questions available</h3>
+        <p className="mt-2 text-gray-500">Please try a different chapter or question type.</p>
+      </div>;
     }
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -407,10 +416,13 @@ const QuizPage = () => {
       userAnswer: userAnswers[currentQuestionIndex],
       onAnswer: handleAnswer,
       showFeedback: true,
-      disabled: false
+      disabled: isAnswerSubmitted
     };
 
-    switch (questionType) {
+    // Use the question's originalType if it exists (for 'all' type quizzes), otherwise use the quiz type
+    const questionTypeToRender = currentQuestion.originalType || questionType;
+
+    switch (questionTypeToRender) {
       case 'mcq':
         return <MCQQuestion {...commonProps} />;
       case 'true-false':
@@ -426,7 +438,20 @@ const QuizPage = () => {
       case 'reordering':
         return <ReorderingQuestion {...commonProps} />;
       default:
-        return <div>Unsupported question type</div>;
+        return <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-sm text-yellow-700">
+                Unsupported question type: {questionTypeToRender}
+              </p>
+            </div>
+          </div>
+        </div>;
     }
   };
 
@@ -442,7 +467,11 @@ const QuizPage = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <h1 className="text-2xl font-bold">Quiz Completed!</h1>
-                    <p className="text-blue-100">You've completed the {questionType.replace('-', ' ')} quiz</p>
+                    <p className="text-blue-100">
+                      You've completed the {questionType === 'all' 
+                        ? 'Mixed Question Types' 
+                        : questionType.replace(/-/g, ' ')} quiz
+                    </p>
                   </div>
                   <div className="text-5xl">{getPerformanceEmoji()}</div>
                 </div>
