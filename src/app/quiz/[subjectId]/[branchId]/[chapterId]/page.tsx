@@ -181,38 +181,57 @@ const QuizPage = () => {
     <DndProvider backend={HTML5Backend}>
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto p-4 md:p-8">
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                {questionType.charAt(0).toUpperCase() + questionType.slice(1).replace('-', ' ')} Quiz
-              </h1>
-              <p className="text-gray-600">
-                Question {currentQuestionIndex + 1} of {questions.length}
-              </p>
-            </div>
-            
-            <div className="mb-6">
-              {renderQuestion()}
-            </div>
-            
-            <div className="flex justify-between">
+          {showResults ? (
+            // Results screen
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <h1 className="text-2xl font-bold text-gray-900 mb-4">Quiz Results</h1>
+              <div className="mb-6">
+                <p className="text-lg">Your score: {score} out of {questions.length}</p>
+                <p className="text-lg">Percentage: {Math.round((score / questions.length) * 100)}%</p>
+              </div>
               <button
-                onClick={goToPrevious}
-                disabled={currentQuestionIndex === 0}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50"
+                onClick={() => window.location.reload()}
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               >
-                Previous
+                Try Again
               </button>
+            </div>
+          ) : (
+            // Quiz screen
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              {/* Existing quiz UI */}
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                  {questionType.charAt(0).toUpperCase() + questionType.slice(1).replace('-', ' ')} Quiz
+                </h1>
+                <p className="text-gray-600">
+                  Question {currentQuestionIndex + 1} of {questions.length}
+                </p>
+              </div>
               
-              <button
-                onClick={goToNext}
-                disabled={currentQuestionIndex >= questions.length - 1}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
-              >
-                {currentQuestionIndex >= questions.length - 1 ? 'Finish' : 'Next'}
-              </button>
+              <div className="mb-6">
+                {renderQuestion()}
+              </div>
+              
+              <div className="flex justify-between">
+                <button
+                  onClick={goToPrevious}
+                  disabled={currentQuestionIndex === 0}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50"
+                >
+                  Previous
+                </button>
+                
+                <button
+                  onClick={currentQuestionIndex >= questions.length - 1 ? handleFinishQuiz : goToNext}
+                  disabled={!userAnswers[currentQuestionIndex]?.answer}
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+                >
+                  {currentQuestionIndex >= questions.length - 1 ? 'Finish' : 'Next'}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </DndProvider>
