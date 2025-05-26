@@ -140,7 +140,7 @@ interface ReorderingQuestionProps {
     correctOrder: string[];
     explanation?: string;
   };
-  onAnswer?: (order: string[], isCorrect: boolean) => void;
+  onAnswer?: (order: string[], isCorrect: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: string[], isCorrect: boolean };
@@ -216,11 +216,12 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
     if (disabled || isSubmitted) return;
     
     const correct = checkAnswer();
+    const scoreObtained = calculateScore();
     setIsSubmitted(true);
     setIsCorrect(correct);
     
     if (onAnswer) {
-      onAnswer(items.map(item => item.text), correct);
+      onAnswer(items.map(item => item.text), correct, scoreObtained);
     }
   };
 
@@ -254,7 +255,7 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
   };
 
   const calculateScore = () => {
-    if (!isSubmitted || !question.correctOrder) return 0;
+    // if (!isSubmitted || !question.correctOrder) return 0;
     
     let correctCount = 0;
     const currentOrder = items.map(item => item.text);

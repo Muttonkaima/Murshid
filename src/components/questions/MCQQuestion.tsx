@@ -27,7 +27,7 @@ interface MCQQuestionProps {
     correctAnswer: string;
     explanation?: string;
   };
-  onAnswer?: (selectedOption: string, isCorrect: boolean) => void;
+  onAnswer?: (selectedOption: string, isCorrect: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: any, isCorrect: boolean };
@@ -65,9 +65,10 @@ const MCQQuestion: React.FC<MCQQuestionProps> = ({
     
     setSelectedOption(optionText);
     const correct = optionText === question.correctAnswer;
+    const score = correct ? question.marks : 0;
     
     if (onAnswer) {
-      onAnswer(optionText, correct);
+      onAnswer(optionText, correct, score);
     }
     
     setHasAnswered(true);

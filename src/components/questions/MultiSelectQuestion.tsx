@@ -26,7 +26,7 @@ interface MultiSelectQuestionProps {
     correctAnswers: string[];
     explanation?: string;
   };
-  onAnswer?: (selectedOptions: string[], isComplete: boolean) => void;
+  onAnswer?: (selectedOptions: string[], isComplete: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: string[], isCorrect: boolean }; // Add userAnswer prop
@@ -71,16 +71,27 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
 
   const handleSubmit = () => {
     if (disabled || selectedOptions.length === 0) return;
+    
+    // First calculate everything we need before state updates
     const isComplete = selectedOptions.length > 0;
     const isCorrect = isComplete && selectedOptions.every(opt => 
       question.correctAnswers.includes(opt)
     ) && selectedOptions.length === question.correctAnswers.length;
     
+    // Temporarily set isSubmitted to true for score calculation
+    const wasSubmitted = isSubmitted;
     setIsSubmitted(true);
+    
+    // Calculate score with isSubmitted = true
+    const score = calculateScore();
+    console.log("Score from multi component:", score, "isCorrect:", isCorrect);
+    
+    // Now update the state
     setShowExplanation(true);
     
     if (onAnswer) {
-      onAnswer(selectedOptions, isComplete);
+      // Pass parameters in the expected order: (answer, isCorrect, scoreObtained)
+      onAnswer(selectedOptions, isCorrect, score);
     }
   };
 
@@ -122,18 +133,20 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
 
   // Calculate score based on selected options
   const calculateScore = () => {
-    if (!isSubmitted) return 0;
+    // if (!isSubmitted) return 0;
     
     const correctSelections = selectedOptions.filter(opt => 
       question.correctAnswers.includes(opt)
     ).length;
     
-    const incorrectSelections = selectedOptions.length - correctSelections;
-    const missedSelections = question.correctAnswers.length - correctSelections;
+    // Calculate the percentage of correct answers
+    const percentage = correctSelections / question.correctAnswers.length;
     
-    // Simple scoring: (correct - incorrect) / total
-    const score = Math.max(0, correctSelections - incorrectSelections) / question.correctAnswers.length;
-    return Math.round(score * question.marks * 10) / 10; // Round to 1 decimal
+    // Calculate score based on the percentage and question marks
+    const score = percentage * question.marks;
+    
+    // Round to 1 decimal place
+    return Math.round(score * 10) / 10;
   };
 
   return (

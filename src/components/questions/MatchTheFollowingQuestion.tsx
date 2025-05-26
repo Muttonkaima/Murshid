@@ -27,7 +27,7 @@ interface MatchTheFollowingQuestionProps {
     correctPairs: MatchPair[];
     explanation?: string;
   };
-  onAnswer?: (pairs: MatchPair[], isCorrect: boolean) => void;
+  onAnswer?: (pairs: MatchPair[], isCorrect: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: MatchPair[], isCorrect: boolean };
@@ -169,9 +169,10 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     
     const score = calculateScore();
     const isFullyCorrect = score.correct === score.total;
+    const scoreObtained = (score.correct / score.total) * question.marks;
     
     if (onAnswer) {
-      onAnswer(pairs, isFullyCorrect);
+      onAnswer(pairs, isFullyCorrect, scoreObtained);
     }
     
     setScore(score);

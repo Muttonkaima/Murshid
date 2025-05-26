@@ -17,7 +17,7 @@ interface TrueFalseQuestionProps {
     correctAnswer: boolean;
     explanation?: string;
   };
-  onAnswer?: (selectedAnswer: boolean, isCorrect: boolean) => void;
+  onAnswer?: (selectedAnswer: boolean, isCorrect: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: boolean; isCorrect: boolean };
@@ -54,10 +54,11 @@ const TrueFalseQuestion: React.FC<TrueFalseQuestionProps> = ({
     
     setSelectedAnswer(answer);
     const correct = answer === question.correctAnswer;
+    const score = correct ? question.marks : 0;
     setIsSubmitted(true);
     
     if (onAnswer) {
-      onAnswer(answer, correct);
+      onAnswer(answer, correct, score);
     }
     
     setShowExplanation(true);

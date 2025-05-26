@@ -118,6 +118,9 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
   const [unsortedItems, setUnsortedItems] = useState<Item[]>([]);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [score, setScore] = useState<number>(0);
+  const [correctItemsCount, setCorrectItemsCount] = useState<number>(0);
+  const [totalItems, setTotalItems] = useState<number>(0);
   const [draggedItem, setDraggedItem] = useState<Item | null>(null);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -264,53 +267,68 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     
     const currentCategories = JSON.parse(JSON.stringify(categories));
     const sortedAnswers: Record<string, string[]> = {};
-    let isCorrect = true;
+    let correctItemsCount = 0;
+    let totalItems = 0;
     const itemFeedbacks: ItemFeedback[] = [];
     const correctAnswers = { ...question.correctSorting };
     
+    // Create a map of item text to its correct category
+    const itemToCorrectCategory = new Map<string, string>();
+    Object.entries(question.correctSorting).forEach(([categoryId, items]) => {
+      items.forEach(itemText => {
+        itemToCorrectCategory.set(itemText, categoryId);
+      });
+    });
+    
+    totalItems = itemToCorrectCategory.size;
+
     // Check each category
     currentCategories.forEach((category: Category) => {
-      const categoryItems = category.items?.map((item: Item) => item.text || '') || [];
-      sortedAnswers[category.id] = categoryItems;
+      const categoryItemTexts = category.items?.map((item: Item) => item.text || '') || [];
+      sortedAnswers[category.id] = categoryItemTexts;
       
-      const categoryText = category.text;
-      const correctItems = question.correctSorting[categoryText] || [];
+      const correctItemTexts = question.correctSorting[category.text] || [];
       
-      // Check if this category's items match the correct sorting
-      const isCategoryCorrect = categoryItems.length === correctItems.length &&
-        categoryItems.every((itemText: string, index: number) => 
-          itemText === correctItems[index]
-        );
-      
-      if (!isCategoryCorrect) {
-        isCorrect = false;
-      }
+      // Count correct items in this category
+      categoryItemTexts.forEach((itemText: string) => {
+        if (correctItemTexts.includes(itemText)) {
+          correctItemsCount++;
+        }
+      });
 
       // Add feedback for each item in this category
       category.items?.forEach((item: Item) => {
-        const correctCategory = Object.entries(question.correctSorting).find(
-          ([_, items]) => items.includes(item.text || '')
-        )?.[0];
-        
-        const isItemCorrect = correctCategory === category.text;
+        const itemText = item.text || '';
+        const correctCategoryId = itemToCorrectCategory.get(itemText);
+        const correctCategory = question.categories.find(c => c.text === correctCategoryId);
+        const isItemCorrect = correctCategoryId === category.text;
         
         itemFeedbacks.push({
           itemId: item.id,
-          itemText: item.text || '',
+          itemText: item.text || item.id,
           isCorrect: isItemCorrect,
           currentCategory: category.text,
-          correctCategory: isItemCorrect ? undefined : correctCategory
+          correctCategory: isItemCorrect ? undefined : correctCategory?.text
         });
       });
     });
     
+    // Calculate score based on correct items
+    const score = (correctItemsCount / totalItems) * question.marks;
+    const isFullyCorrect = correctItemsCount === totalItems;
+    
+    // Update state with results
+    setScore(parseFloat(score.toFixed(2)));
+    setCorrectItemsCount(correctItemsCount);
+    setTotalItems(totalItems);
+
     // Update the UI state
     setCategories(currentCategories);
     setFeedback({
-      isCorrect,
-      message: isCorrect 
+      isCorrect: isFullyCorrect,
+      message: isFullyCorrect 
         ? 'Perfect! All items are in their correct categories!' 
-        : 'Some items need to be moved to different categories',
+        : `${correctItemsCount} out of ${totalItems} items are in the correct category`,
       explanation: question.explanation,
       itemFeedbacks,
       correctAnswers
@@ -318,7 +336,7 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     setIsSubmitted(true);
     
     // Notify parent component
-    onAnswer(sortedAnswers, isCorrect, isCorrect ? question.marks : 0);
+    onAnswer(sortedAnswers, isFullyCorrect, score);
   };
 
   // Render category header with audio if available
@@ -342,7 +360,7 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     <div className="w-full max-w-4xl mx-auto p-4">
       <DndProvider backend={HTML5Backend}>
         {/* Question Header */}
-        <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-xl mb-6 shadow-sm">
+        {/* <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-xl mb-6 shadow-sm">
           <div className="flex items-center gap-3">
             <svg 
               className="w-6 h-6 text-blue-500" 
@@ -355,7 +373,7 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
               Sorting <span className="text-gray-500 font-normal text-base">({question.marks} marks)</span>
             </h2>
           </div>
-        </div>
+        </div> */}
 
         {/* Question Content */}
         {question.question.image && (
@@ -550,18 +568,26 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
         )}
 
         {/* Buttons */}
-        <div className="flex justify-end mt-6">
-          {!feedback ? (
-            <button
-              onClick={handleSubmit}
-              disabled={disabled}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              Submit Answer
-            </button>
-          ) : (
-            <></>
-          )}
+        <div className="flex justify-between items-center mb-4">
+          <div>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Sort the items into the correct categories
+            </h2>
+            {isSubmitted && (
+              <div className="text-sm text-gray-600 mt-1">
+                Score: <span className="font-medium">{score.toFixed(1)}</span> / {question.marks} marks
+                <span className="mx-2">•</span>
+                {correctItemsCount} of {totalItems} items correct
+              </div>
+            )}
+          </div>
+          <button
+            onClick={handleSubmit}
+            disabled={disabled || isSubmitted}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitted ? 'Submitted' : 'Submit Answers'}
+          </button>
         </div>
       </DndProvider>
     </div>

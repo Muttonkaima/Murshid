@@ -18,7 +18,7 @@ interface FillInTheBlanksQuestionProps {
     alternatives?: string[];
     explanation?: string;
   };
-  onAnswer?: (answer: string, isCorrect: boolean) => void;
+  onAnswer?: (answer: string, isCorrect: boolean, scoreObtained: number) => void;
   showFeedback?: boolean;
   disabled?: boolean;
   userAnswer?: { answer: string; isCorrect: boolean };
@@ -71,10 +71,11 @@ const FillInTheBlanksQuestion: React.FC<FillInTheBlanksQuestionProps> = ({
     if (disabled || !answer.trim() || isSubmitted) return;
     
     const correct = checkAnswer(answer);
+    const scoreObtained = correct ? question.marks : 0;
     setIsSubmitted(true);
     
     if (onAnswer) {
-      onAnswer(answer, correct);
+      onAnswer(answer, correct, scoreObtained);
     }
     
     setShowExplanation(true);

@@ -31,14 +31,15 @@ const QuizPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [questions, setQuestions] = useState<any[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [userAnswers, setUserAnswers] = useState<{[key: string]: {answer: any, isCorrect: boolean}}>({});
+  const [userAnswers, setUserAnswers] = useState<Record<number, UserAnswer>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [showResults, setShowResults] = useState(false);
   const [showDetailedResults, setShowDetailedResults] = useState(false);
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(0);
   const [score, setScore] = useState(0);
-  const [totalPossibleMarks, setTotalPossibleMarks] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
+  // Calculate total possible marks from all questions
+  const totalPossibleMarks = questions.reduce((sum, q) => sum + (q.marks || 1), 0);
   const [currentAnswer, setCurrentAnswer] = useState<any>(null);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
   const [timeElapsed, setTimeElapsed] = useState(0);
@@ -46,10 +47,20 @@ const QuizPage = () => {
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [isTimeUp, setIsTimeUp] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Calculate score and statistics
   const totalQuestions = questions.length;
+  
+  // Type guard for UserAnswer
+  const isUserAnswer = (obj: any): obj is UserAnswer => {
+    return obj && typeof obj === 'object' && 'marksObtained' in obj;
+  };
+  
+  // Calculate correct answers count
   const correctAnswers = Object.values(userAnswers).filter(answer => answer?.isCorrect).length;
+  
+  // Calculate score percentage based on obtained marks and total possible marks
   const scorePercentage = totalPossibleMarks > 0 ? Math.round((score / totalPossibleMarks) * 100) : 0;
   const timePerQuestion = totalQuestions > 0 ? Math.round(timeElapsed / totalQuestions) : 0;
   
@@ -311,10 +322,6 @@ const QuizPage = () => {
         // Final shuffle to mix the questions from different types
         selectedQuestions = selectedQuestions.sort(() => 0.5 - Math.random());
         
-        // Calculate total possible marks from all questions
-        const totalMarks = selectedQuestions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
-        setTotalPossibleMarks(totalMarks);
-        
         // Initialize score to 0
         setScore(0);
         
@@ -337,84 +344,76 @@ const QuizPage = () => {
     maxMarks: number;
   }
 
-  const calculateMarksObtained = (question: any, answer: any, isCorrect: boolean): number => {
-    // Default to full marks if no marks specified
-    const maxMarks = question.marks || 1;
+  const handleAnswer = (answer: any, isCorrectOrComplete: boolean, scoreOrAnswer?: any) => {
+    if (isSubmitting) return;
     
-    // If answer is incorrect, return 0
-    if (!isCorrect) return 0;
+    // Set submitting state
+    setIsSubmitting(true);
     
-    // For partial marking in specific question types
-    switch (question.type) {
-      case 'match-the-following':
-      case 'sorting':
-      case 'reordering':
-        // For these types, we might have partial marks
-        // Assuming answer contains a 'score' property with the partial score (0-1)
-        if (answer?.score !== undefined) {
-          return Math.round(maxMarks * answer.score);
-        }
-        return isCorrect ? maxMarks : 0;
-      
-      case 'fill-in-the-blanks':
-        // For fill in blanks, check if there are alternatives
-        if (question.alternatives && question.alternatives.length > 0) {
-          // If answer matches any alternative, return full marks
-          return question.alternatives.includes(answer) ? maxMarks : 0;
-        }
-        return isCorrect ? maxMarks : 0;
-      
-      default:
-        // For other types (MCQ, True/False), it's all or nothing
-        return isCorrect ? maxMarks : 0;
-    }
-  };
-
-  const handleAnswer = (answer: any, isCorrect: boolean) => {
+    // Set the current answer
     setCurrentAnswer(answer);
     
+    // Get current question details
     const currentQuestion = questions[currentQuestionIndex];
     const maxMarks = currentQuestion.marks || 1;
-    let marksObtained = 0;
     
-    // Calculate marks based on question type and answer
-    if (isCorrect) {
-      if (currentQuestion.type === 'match-the-following' || 
-          currentQuestion.type === 'sorting' || 
-          currentQuestion.type === 'reordering') {
-        // For these types, check if answer has a score property for partial marks
-        marksObtained = answer?.score ? Math.round(maxMarks * answer.score) : maxMarks;
-      } else if (currentQuestion.type === 'fill-in-blanks' && currentQuestion.alternatives) {
-        // For fill in blanks with alternatives, check if answer matches any alternative
-        marksObtained = currentQuestion.alternatives.includes(answer) ? maxMarks : 0;
-      } else {
-        // For other types, it's all or nothing
-        marksObtained = isCorrect ? maxMarks : 0;
-      }
+    // Handle different parameter orders from different question components
+    let isCorrect: boolean;
+    let scoreObtained: number;
+    
+    // Check if the second parameter is a boolean (isCorrect) and the third is a number (scoreObtained)
+    if (typeof isCorrectOrComplete === 'boolean' && typeof scoreOrAnswer === 'number') {
+      isCorrect = isCorrectOrComplete;
+      scoreObtained = scoreOrAnswer;
+    }
+    // Handle case where the second parameter is the score (from MultiSelectQuestion)
+    else if (typeof isCorrectOrComplete === 'number') {
+      scoreObtained = isCorrectOrComplete;
+      isCorrect = scoreObtained > 0; // If score > 0, consider it correct
+    } else {
+      // Default case
+      isCorrect = false;
+      scoreObtained = 0;
     }
     
-    const newUserAnswers: Record<number, UserAnswer> = {
-      ...userAnswers,
-      [currentQuestionIndex]: { 
-        answer, 
-        isCorrect,
-        marksObtained,
-        maxMarks
-      }
+    // Ensure score is within bounds
+    const marksObtained = Math.max(0, Math.min(scoreObtained || 0, maxMarks));
+    
+    console.log("Answer:", answer);
+    console.log("Is Correct:", isCorrect);
+    console.log("Marks Obtained:", marksObtained, "Max Marks:", maxMarks);
+    
+    // Create the user answer object with proper type
+    const userAnswer: UserAnswer = { 
+      answer, 
+      isCorrect,
+      marksObtained,
+      maxMarks
     };
     
-    setUserAnswers(newUserAnswers);
+    // Update user answers with the new answer
+    const updatedUserAnswers = {
+      ...userAnswers,
+      [currentQuestionIndex]: userAnswer
+    };
     
-    // Calculate total score based on marks obtained
-    const totalMarksObtained = Object.values<UserAnswer>(newUserAnswers).reduce<number>(
-      (acc: number, ans) => acc + (ans?.marksObtained || 0), 
-      0
-    );
+    // Calculate total score by summing up marksObtained from all answers
+    let totalMarksObtained = 0;
+    Object.values(updatedUserAnswers).forEach((answer) => {
+      if (answer) {
+        totalMarksObtained += answer.marksObtained || 0;
+      }
+    });
     
+    console.log("Total Marks Obtained:", totalMarksObtained);
+    
+    // Update states
+    setUserAnswers(updatedUserAnswers);
     setScore(totalMarksObtained);
     
-    // Mark answer as submitted
+    // Mark as submitted
     setIsAnswerSubmitted(true);
+    setIsSubmitting(false);
   };
 
   const goToNext = () => {
@@ -554,7 +553,7 @@ const QuizPage = () => {
                 <div className="bg-green-50 p-4 rounded-lg">
                   <p className="text-sm text-green-600">Score</p>
                   <p className="text-2xl font-bold text-green-600">
-                    {score} <span className="text-sm font-normal text-gray-500">/ {Object.values(userAnswers as Record<string, UserAnswer>).reduce<number>((acc, ans) => acc + (ans?.maxMarks || 0), 0)}</span>
+                    {score.toFixed(1)} <span className="text-sm font-normal text-gray-500">/ {totalPossibleMarks}</span>
                   </p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg">
