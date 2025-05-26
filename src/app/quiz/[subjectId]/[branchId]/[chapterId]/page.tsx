@@ -27,7 +27,7 @@ const QuizPage = () => {
   const [showDetailedResults, setShowDetailedResults] = useState(false);
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(0);
   const [score, setScore] = useState(0);
-  const [totalMarks, setTotalMarks] = useState(0);
+  const [totalPossibleMarks, setTotalPossibleMarks] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
   const [currentAnswer, setCurrentAnswer] = useState<any>(null);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
@@ -40,7 +40,7 @@ const QuizPage = () => {
   // Calculate score and statistics
   const totalQuestions = questions.length;
   const correctAnswers = Object.values(userAnswers).filter(answer => answer?.isCorrect).length;
-  const scorePercentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const scorePercentage = totalPossibleMarks > 0 ? Math.round((score / totalPossibleMarks) * 100) : 0;
   const timePerQuestion = totalQuestions > 0 ? Math.round(timeElapsed / totalQuestions) : 0;
   
   // Get performance message based on score
@@ -52,10 +52,17 @@ const QuizPage = () => {
   };
   
   // Get performance color based on score
-  const getPerformanceColor = () => {
-    if (scorePercentage >= 75) return 'text-emerald-600';
-    if (scorePercentage >= 50) return 'text-amber-500';
-    return 'text-red-500';
+  const getPerformanceColor = (forSvg = false) => {
+    if (scorePercentage >= 75) return forSvg ? 'rgb(5, 150, 105)' : 'text-emerald-600';
+    if (scorePercentage >= 50) return forSvg ? 'rgb(245, 158, 11)' : 'text-amber-500';
+    return forSvg ? 'rgb(239, 68, 68)' : 'text-red-500';
+  };
+  
+  // Get performance color for SVG
+  const getSvgPerformanceColor = () => {
+    if (scorePercentage >= 75) return 'rgb(5, 150, 105)'; // emerald-600
+    if (scorePercentage >= 50) return 'rgb(245, 158, 11)'; // amber-500
+    return 'rgb(239, 68, 68)'; // red-500
   };
   
   // Get performance emoji based on score
@@ -74,7 +81,7 @@ const QuizPage = () => {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
   
-  const renderAnswerText = (answer: any) => {
+  const renderAnswerText = (answer: any): React.ReactNode => {
     if (!answer) return null;
     
     // Handle array answers (for multi-select, matching, etc.)
@@ -91,6 +98,25 @@ const QuizPage = () => {
       // For fill-in-blanks
       if (answer.text !== undefined) {
         return answer.text;
+      }
+      // For question/answer objects with hide_text, text, read_text, image
+      if ('text' in answer || 'hide_text' in answer || 'read_text' in answer) {
+        return (
+          <div className="space-y-2">
+            {answer.text && <div>{answer.text}</div>}
+            {answer.hide_text && <div className="font-medium">{answer.hide_text}</div>}
+            {answer.read_text && <div className="text-sm text-gray-600">{answer.read_text}</div>}
+            {answer.image && (
+              <div className="mt-2">
+                <img 
+                  src={answer.image} 
+                  alt="Question illustration" 
+                  className="max-w-full h-auto rounded-md border border-gray-200"
+                />
+              </div>
+            )}
+          </div>
+        );
       }
       // Fallback for other object types
       return JSON.stringify(answer);
@@ -123,27 +149,57 @@ const QuizPage = () => {
     setTimeLeft(timeLimit);
   }, [timeLimit]);
 
-  // Timer effect
+  // Move handleFinishQuiz before it's used in effects
+  const handleFinishQuiz = useCallback(() => {
+    if (!showResults) {
+      setIsTimerRunning(false);
+      setShowResults(true);
+      
+      // Mark unanswered questions as incorrect
+      const unansweredQuestions = questions.reduce((acc, _, index) => {
+        if (!userAnswers[index]) {
+          return { ...acc, [index]: { answer: null, isCorrect: false, marksObtained: 0, maxMarks: questions[index].marks || 1 } };
+        }
+        return acc;
+      }, {});
+      
+      if (Object.keys(unansweredQuestions).length > 0) {
+        setUserAnswers(prev => ({
+          ...prev,
+          ...unansweredQuestions
+        }));
+      }
+    }
+  }, [questions, showResults, userAnswers]);
+
+  // Timer effect - client-side only
   useEffect(() => {
+    // Only run on client
+    if (typeof window === 'undefined') return;
+    
     let interval: NodeJS.Timeout;
     
+    const handleTimerTick = () => {
+      setTimeElapsed(prev => prev + 1);
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setIsTimeUp(true);
+          handleFinishQuiz();
+          return 0;
+        }
+        return prev - 1;
+      });
+    };
+    
     if (isTimerRunning && !showResults && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeElapsed(prev => prev + 1);
-        setTimeLeft(prev => {
-          if (prev <= 1) {
-            clearInterval(interval);
-            setIsTimeUp(true);
-            handleFinishQuiz();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
+      interval = setInterval(handleTimerTick, 1000);
     }
     
-    return () => clearInterval(interval);
-  }, [isTimerRunning, showResults, timeLeft]);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isTimerRunning, showResults, timeLeft, handleFinishQuiz]);
   
   // Calculate progress percentage based on answered questions
   const progress = questions.length > 0 
@@ -154,8 +210,11 @@ const QuizPage = () => {
   const questionType = searchParams.get('type') as QuestionType || 'mcq';
   const questionCount = parseInt(searchParams.get('count') || '10', 10);
 
-  // Set time limit based on question count
+  // Set time limit based on question count - client-side only
   useEffect(() => {
+    // Only run on client
+    if (typeof window === 'undefined') return;
+    
     // 30 seconds per question as default
     const calculatedTime = questionCount * 12;
     setTimeLimit(calculatedTime);
@@ -193,9 +252,12 @@ const QuizPage = () => {
             .slice(0, questionCount);
         }
         
-        // Calculate total marks
-        const marks = questions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
-        setTotalMarks(marks);
+        // Calculate total possible marks from all questions
+        const totalMarks = questions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
+        setTotalPossibleMarks(totalMarks);
+        
+        // Initialize score to 0
+        setScore(0);
         
         setQuestions(questions);
       } catch (error) {
@@ -212,22 +274,85 @@ const QuizPage = () => {
   interface UserAnswer {
     answer: any;
     isCorrect: boolean;
+    marksObtained: number;
+    maxMarks: number;
   }
+
+  const calculateMarksObtained = (question: any, answer: any, isCorrect: boolean): number => {
+    // Default to full marks if no marks specified
+    const maxMarks = question.marks || 1;
+    
+    // If answer is incorrect, return 0
+    if (!isCorrect) return 0;
+    
+    // For partial marking in specific question types
+    switch (question.type) {
+      case 'match-the-following':
+      case 'sorting':
+      case 'reordering':
+        // For these types, we might have partial marks
+        // Assuming answer contains a 'score' property with the partial score (0-1)
+        if (answer?.score !== undefined) {
+          return Math.round(maxMarks * answer.score);
+        }
+        return isCorrect ? maxMarks : 0;
+      
+      case 'fill-in-the-blanks':
+        // For fill in blanks, check if there are alternatives
+        if (question.alternatives && question.alternatives.length > 0) {
+          // If answer matches any alternative, return full marks
+          return question.alternatives.includes(answer) ? maxMarks : 0;
+        }
+        return isCorrect ? maxMarks : 0;
+      
+      default:
+        // For other types (MCQ, True/False), it's all or nothing
+        return isCorrect ? maxMarks : 0;
+    }
+  };
 
   const handleAnswer = (answer: any, isCorrect: boolean) => {
     setCurrentAnswer(answer);
+    
+    const currentQuestion = questions[currentQuestionIndex];
+    const maxMarks = currentQuestion.marks || 1;
+    let marksObtained = 0;
+    
+    // Calculate marks based on question type and answer
+    if (isCorrect) {
+      if (currentQuestion.type === 'match-the-following' || 
+          currentQuestion.type === 'sorting' || 
+          currentQuestion.type === 'reordering') {
+        // For these types, check if answer has a score property for partial marks
+        marksObtained = answer?.score ? Math.round(maxMarks * answer.score) : maxMarks;
+      } else if (currentQuestion.type === 'fill-in-blanks' && currentQuestion.alternatives) {
+        // For fill in blanks with alternatives, check if answer matches any alternative
+        marksObtained = currentQuestion.alternatives.includes(answer) ? maxMarks : 0;
+      } else {
+        // For other types, it's all or nothing
+        marksObtained = isCorrect ? maxMarks : 0;
+      }
+    }
+    
     const newUserAnswers: Record<number, UserAnswer> = {
       ...userAnswers,
-      [currentQuestionIndex]: { answer, isCorrect }
+      [currentQuestionIndex]: { 
+        answer, 
+        isCorrect,
+        marksObtained,
+        maxMarks
+      }
     };
+    
     setUserAnswers(newUserAnswers);
     
-    // Calculate score
-    const newScore = Object.values<UserAnswer>(newUserAnswers).reduce<number>(
-      (acc: number, { isCorrect }: UserAnswer) => isCorrect ? acc + 1 : acc, 
+    // Calculate total score based on marks obtained
+    const totalMarksObtained = Object.values<UserAnswer>(newUserAnswers).reduce<number>(
+      (acc: number, ans) => acc + (ans?.marksObtained || 0), 
       0
     );
-    setScore(newScore);
+    
+    setScore(totalMarksObtained);
     
     // Mark answer as submitted
     setIsAnswerSubmitted(true);
@@ -253,27 +378,7 @@ const QuizPage = () => {
     }
   };
   
-  const handleFinishQuiz = useCallback(() => {
-    if (!showResults) {
-      setIsTimerRunning(false);
-      setShowResults(true);
-      
-      // Mark unanswered questions as incorrect
-      const unansweredQuestions = questions.reduce((acc, _, index) => {
-        if (!userAnswers[index]) {
-          return { ...acc, [index]: { answer: null, isCorrect: false } };
-        }
-        return acc;
-      }, {});
-      
-      if (Object.keys(unansweredQuestions).length > 0) {
-        setUserAnswers(prev => ({
-          ...prev,
-          ...unansweredQuestions
-        }));
-      }
-    }
-  }, [questions, showResults, userAnswers]);
+
 
   const goToNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -360,7 +465,7 @@ const QuizPage = () => {
                         style={{
                           strokeDasharray: '251.2',
                           strokeDashoffset: `${251.2 * (1 - scorePercentage / 100)}`,
-                          stroke: getPerformanceColor().replace('text-', ''),
+                          stroke: getSvgPerformanceColor(),
                           transform: 'rotate(-90deg)',
                           transformOrigin: '50% 50%'
                         }}
@@ -383,12 +488,14 @@ const QuizPage = () => {
               {/* Stats */}
               <div className="p-6 grid grid-cols-2 gap-4">
                 <div className="bg-green-50 p-4 rounded-lg">
-                  <p className="text-sm text-green-600">Correct</p>
-                  <p className="text-2xl font-bold text-green-600">{correctAnswers} <span className="text-sm font-normal text-gray-500">/{totalQuestions}</span></p>
+                  <p className="text-sm text-green-600">Score</p>
+                  <p className="text-2xl font-bold text-green-600">
+                    {score} <span className="text-sm font-normal text-gray-500">/ {Object.values(userAnswers as Record<string, UserAnswer>).reduce<number>((acc, ans) => acc + (ans?.maxMarks || 0), 0)}</span>
+                  </p>
                 </div>
-                <div className="bg-red-50 p-4 rounded-lg">
-                  <p className="text-sm text-red-600">Incorrect</p>
-                  <p className="text-2xl font-bold text-red-600">{totalQuestions - correctAnswers} <span className="text-sm font-normal text-gray-500">/{totalQuestions}</span></p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="text-sm text-blue-600">Percentage</p>
+                  <p className="text-2xl font-bold text-blue-600">{scorePercentage}%</p>
                 </div>
                 <div className="bg-purple-50 p-4 rounded-lg">
                   <p className="text-sm text-purple-600">Time Taken</p>
