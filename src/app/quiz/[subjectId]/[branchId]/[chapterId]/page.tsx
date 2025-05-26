@@ -243,8 +243,8 @@ const QuizPage = () => {
         setTimeElapsed(0);
         setIsTimerRunning(true);
         
-        let allQuestions: any[] = [];
         const typesToLoad = questionType === 'all' ? ALL_QUESTION_TYPES : [questionType];
+        const questionsByType: Record<string, any[]> = {};
         
         // Load questions from all specified types
         for (const type of typesToLoad) {
@@ -252,11 +252,11 @@ const QuizPage = () => {
             const module = await import(
               `@/data/10/STATE/subjects/${subjectId}/${branchId}/${chapterId}/${type}.json`
             );
-            if (module.questions && module.questions.length > 0) {
-              allQuestions = [...allQuestions, ...module.questions.map((q: any) => ({
+            if (module.questions?.length > 0) {
+              questionsByType[type] = module.questions.map((q: any) => ({
                 ...q,
                 originalType: type // Store the original type for rendering
-              }))];
+              }));
             }
           } catch (e) {
             console.warn(`Failed to load questions for type: ${type}`, e);
@@ -264,17 +264,52 @@ const QuizPage = () => {
           }
         }
         
-        if (allQuestions.length === 0) {
+        // Check if we have any questions at all
+        const totalQuestions = Object.values(questionsByType).reduce((sum, qs) => sum + qs.length, 0);
+        if (totalQuestions === 0) {
           throw new Error('No questions found for the selected types');
         }
         
-        // Shuffle all questions
-        const shuffledQuestions = [...allQuestions].sort(() => 0.5 - Math.random());
+        let selectedQuestions: any[] = [];
         
-        // Take the requested number of questions
-        const selectedQuestions = questionCount 
-          ? shuffledQuestions.slice(0, Math.min(questionCount, shuffledQuestions.length))
-          : shuffledQuestions;
+        if (questionType === 'all') {
+          // For 'all' type, distribute questions evenly across all available types
+          const typesWithQuestions = Object.entries(questionsByType)
+            .filter(([_, qs]) => qs.length > 0)
+            .map(([type]) => type);
+          
+          const questionsPerType = Math.max(1, Math.floor(questionCount / typesWithQuestions.length));
+          
+          for (const type of typesWithQuestions) {
+            const availableQuestions = [...questionsByType[type]].sort(() => 0.5 - Math.random());
+            const questionsToTake = Math.min(questionsPerType, availableQuestions.length);
+            selectedQuestions.push(...availableQuestions.slice(0, questionsToTake));
+          }
+          
+          // If we don't have enough questions, add more from types that have them
+          if (selectedQuestions.length < questionCount) {
+            const remaining = questionCount - selectedQuestions.length;
+            const allShuffled = Object.values(questionsByType)
+              .flat()
+              .sort(() => 0.5 - Math.random());
+            
+            selectedQuestions = [
+              ...selectedQuestions,
+              ...allShuffled
+                .filter(q => !selectedQuestions.includes(q))
+                .slice(0, remaining)
+            ];
+          }
+        } else {
+          // For single question type, just take the requested number of questions
+          const questions = questionsByType[questionType] || [];
+          selectedQuestions = [...questions]
+            .sort(() => 0.5 - Math.random())
+            .slice(0, questionCount);
+        }
+        
+        // Final shuffle to mix the questions from different types
+        selectedQuestions = selectedQuestions.sort(() => 0.5 - Math.random());
         
         // Calculate total possible marks from all questions
         const totalMarks = selectedQuestions.reduce((sum: number, q: any) => sum + (q.marks || 1), 0);
