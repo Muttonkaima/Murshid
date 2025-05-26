@@ -672,72 +672,95 @@ const QuizPage = () => {
           ) : (
             // Modern Quiz Screen
             <div className="max-w-4xl mx-auto">
-              {/* Header */}
-              <div className="bg-white rounded-t-2xl shadow-sm p-6 pb-4 mb-6">
-                <div className="flex flex-col flex-row md:items-center md:justify-between gap-4 mb-6">
-                  <div>
-                    <h1 className="text-2xl font-bold text-gray-900">
-                      {questionType.charAt(0).toUpperCase() + questionType.slice(1).replace('-', ' ')} Quiz
-                    </h1>
-                    <p className="text-gray-500 text-sm mt-1">Test your knowledge</p>
-                  </div>
+              {/* Modern Header */}
+              <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-gray-100">
+                <div className="relative">
+                  {/* Decorative accent */}
+                  <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--primary-color)]"></div>
                   
-                  {/* Timer - Modern Card */}
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-18 h-18 flex-shrink-0">
-                        <svg className="w-full h-full" viewBox="0 0 100 100">
-                          <circle
-                            className="text-blue-100"
-                            strokeWidth="8"
-                            stroke="currentColor"
-                            fill="transparent"
-                            r="38"
-                            cx="50"
-                            cy="50"
-                          />
-                          <circle
-                            className="transition-[stroke-dashoffset] duration-300 ease-[cubic-bezier(0.4, 0, 0.2, 1)]"
-                            style={{
-                              stroke: getTimeBarColor(timePercentage),
-                              strokeDasharray: '239',
-                              strokeDashoffset: 239 - (239 * timePercentage / 100),
-                              transitionProperty: 'stroke-dashoffset',
-                              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                              transitionDuration: '300ms'
-                            }}
-                            strokeWidth="8"
-                            strokeLinecap="round"
-                            fill="transparent"
-                            r="38"
-                            cx="50"
-                            cy="50"
-                            transform="rotate(-90 50 50)"
-                          />
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-sm font-bold text-gray-800">
-                            {formatTime(timeLeft)}
-                          </span>
+                  <div className="p-6 pb-4">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                      <div className="space-y-1 flex-1">
+                        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                          {questionType.charAt(0).toUpperCase() + questionType.slice(1).replace(/-/g, ' ')} Quiz
+                        </h1>
+                        <p className="text-gray-500 text-sm flex items-center">
+                          <svg className="w-4 h-4 mr-1.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>Test your knowledge and improve your skills</span>
+                        </p>
+                      </div>
+                      
+                      {/* Timer - Modern Card */}
+                      <div 
+                        className={`p-3 rounded-xl border transition-colors duration-300 ${
+                          timePercentage > 60 
+                            ? 'bg-green-100 border-green-400' 
+                            : timePercentage > 30 
+                            ? 'bg-amber-100 border-amber-400'
+                            : 'bg-red-100 border-red-400'
+                        }`}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="relative w-14 h-14 flex-shrink-0">
+                            <svg className="w-full h-full" viewBox="0 0 100 100">
+                              <circle
+                                className="text-white"
+                                strokeWidth="8"
+                                stroke="currentColor"
+                                fill="transparent"
+                                r="36"
+                                cx="50"
+                                cy="50"
+                              />
+                              <circle
+                                className="transition-all duration-300 ease-out"
+                                style={{
+                                  stroke: getTimeBarColor(timePercentage),
+                                  strokeDasharray: '226',
+                                  strokeDashoffset: 226 - (226 * timePercentage / 100),
+                                  transform: 'rotate(-90deg)',
+                                  transformOrigin: '50% 50%'
+                                }}
+                                strokeWidth="8"
+                                strokeLinecap="round"
+                                fill="transparent"
+                                r="36"
+                                cx="50"
+                                cy="50"
+                              />
+                            </svg>
+                          </div>
+                          <div className="min-w-[80px]">
+                            <p className="text-xs font-medium text-gray-500 mb-0.5">TIME REMAINING</p>
+                            <div className="flex items-baseline">
+                              <span className="text-xl font-bold text-gray-800">{Math.floor(timeLeft / 60)}</span>
+                              <span className="text-sm text-gray-500 ml-0.5">m</span>
+                              <span className="text-xl font-bold text-gray-800 mx-1">:</span>
+                              <span className="text-xl font-bold text-gray-800">{(timeLeft % 60).toString().padStart(2, '0')}</span>
+                              <span className="text-sm text-gray-500 ml-0.5">s</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                {/* Progress Bar */}
-                <div className="mt-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <p className="text-sm font-medium text-gray-600">
-                      Question <span className="font-bold">{currentQuestionIndex + 1}</span> of {questions.length}
-                    </p>
-                    <span className="text-sm font-medium text-gray-600">{Math.round(progress)}% Complete</span>
-                  </div>
-                  <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-blue-500 to-indigo-600 h-full rounded-full transition-all duration-300 ease-out shadow-sm"
-                      style={{ width: `${progress}%` }}
-                    />
+                    {/* Progress Bar */}
+                    <div className="mt-6">
+                      <div className="flex justify-between items-center mb-2">
+                        <p className="text-sm font-medium text-gray-600">
+                          Question <span className="font-bold">{currentQuestionIndex + 1}</span> of {questions.length}
+                        </p>
+                        <span className="text-sm font-medium text-gray-600">{Math.round(progress)}% Complete</span>
+                      </div>
+                      <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-indigo-600 h-full rounded-full transition-all duration-300 ease-out shadow-sm"
+                          style={{ width: `${progress}%` }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
