@@ -27,17 +27,17 @@ const QuestionContent: React.FC<QuestionContentProps> = ({
     read_text_value
   } = content;
 
+  // Handle audio button click to prevent event propagation
+  const handleAudioClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <div className={`space-y-4 ${className}`}>
       {/* Audio Player */}
       {read_text && read_text_url && (
-        <div className="mb-4">
+        <div className="mb-4" onClick={handleAudioClick}>
           <AudioPlayer audioUrl={read_text_url} />
-          {!hide_text && read_text_value && (
-            <div className="mt-2 text-sm text-gray-600 italic">
-              "{read_text_value}"
-            </div>
-          )}
         </div>
       )}
 

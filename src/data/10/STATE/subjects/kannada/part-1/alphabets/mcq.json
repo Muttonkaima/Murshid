@@ -395,7 +395,7 @@
         {
           "hide_text": false,
           "text": "ದಶಕ",
-          "read_text": true,
+          "read_text": false,
           "read_text_value": "ದಶಕ",
           "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1d43a57c-b2bf-4fa1-9e9b-59cc2a882420.mp3",
           "image": ""
@@ -403,7 +403,7 @@
         {
           "hide_text": false,
           "text": "ಊಟದ ಸಮಯ",
-          "read_text": true,
+          "read_text": false,
           "read_text_value": "ಊಟದ ಸಮಯ",
           "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d0d63bf1-43d2-48b3-8090-c7bcb6c59c9b.mp3",
           "image": ""
@@ -411,7 +411,7 @@
         {
           "hide_text": false,
           "text": "ಸಲಗ",
-          "read_text": true,
+          "read_text": false,
           "read_text_value": "ಸಲಗ",
           "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eefb07f9-7a3c-4ad3-944a-9776376854ad.mp3",
           "image": ""
@@ -419,7 +419,7 @@
         {
           "hide_text": false,
           "text": "ಹರಹರ",
-          "read_text": true,
+          "read_text": false,
           "read_text_value": "ಹರಹರ",
           "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/107e69f2-6ecf-42c7-a725-8d6fcb2c50d4.mp3",
           "image": ""

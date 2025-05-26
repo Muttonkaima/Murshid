@@ -94,7 +94,7 @@ const FillInTheBlanksQuestion: React.FC<FillInTheBlanksQuestionProps> = ({
       {/* Question */}
       <div className="mb-6">
         <div className="text-lg font-medium text-gray-800 mb-6">
-          {questionText}
+        <QuestionContent content={question.question} />
         </div>
         
         <div className="flex flex-col gap-4">
