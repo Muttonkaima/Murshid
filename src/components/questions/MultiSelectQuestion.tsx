@@ -29,24 +29,33 @@ interface MultiSelectQuestionProps {
   onAnswer?: (selectedOptions: string[], isComplete: boolean) => void;
   showFeedback?: boolean;
   disabled?: boolean;
+  userAnswer?: { answer: string[], isCorrect: boolean }; // Add userAnswer prop
 }
 
-const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = ({
-  question,
-  onAnswer,
-  showFeedback = false,
-  disabled = false,
-}) => {
+const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
+  const {
+    question,
+    onAnswer,
+    showFeedback = true,
+    disabled = false,
+    userAnswer
+  } = props;
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
   
-  // Reset when question changes
+  // Initialize state from userAnswer or reset when question changes
   useEffect(() => {
-    setSelectedOptions([]);
-    setIsSubmitted(false);
-    setShowExplanation(false);
-  }, [question.id]);
+    if (props.userAnswer) {
+      setSelectedOptions(props.userAnswer.answer);
+      setIsSubmitted(true);
+      setShowExplanation(true);
+    } else {
+      setSelectedOptions([]);
+      setIsSubmitted(false);
+      setShowExplanation(false);
+    }
+  }, [question.id, props.userAnswer]);
 
   const toggleOption = (optionText: string) => {
     if (disabled || isSubmitted) return;
@@ -62,10 +71,15 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = ({
 
   const handleSubmit = () => {
     if (disabled || selectedOptions.length === 0) return;
+    const isComplete = selectedOptions.length > 0;
+    const isCorrect = isComplete && selectedOptions.every(opt => 
+      question.correctAnswers.includes(opt)
+    ) && selectedOptions.length === question.correctAnswers.length;
+    
     setIsSubmitted(true);
+    setShowExplanation(true);
     
     if (onAnswer) {
-      const isComplete = selectedOptions.length > 0;
       onAnswer(selectedOptions, isComplete);
     }
   };
@@ -217,10 +231,10 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = ({
                 </svg>
               )}
               <div>
-                <h3 className="font-medium">
+                <h3 className="font-medium text-gray-900">
                   {calculateScore() > 0 ? 'Good job!' : 'Incorrect'}
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm text-gray-600">
                   Score: {calculateScore().toFixed(1)}/{question.marks}
                 </p>
               </div>

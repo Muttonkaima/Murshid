@@ -1,23 +1,19 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import QuestionContent from './QuestionContent';
 
-// Dynamically import AudioPlayer with SSR disabled to prevent hydration issues
-const AudioPlayer = dynamic(
-  () => import('./AudioPlayer'),
-  { ssr: false }
-);
-
-interface MatchItem {
+interface Item {
   hide_text: boolean;
   text: string;
   read_text: boolean;
   read_text_url?: string;
-  read_text_value?: string;
   image: string;
+  read_text_value?: string;
+}
+
+interface MatchPair {
+  left: string;
+  right: string;
 }
 
 interface MatchTheFollowingQuestionProps {
@@ -25,23 +21,16 @@ interface MatchTheFollowingQuestionProps {
     id: string | number;
     type: string;
     marks: number;
-    question: {
-      hide_text: boolean;
-      text: string;
-      read_text: boolean;
-      read_text_url?: string;
-      image: string;
-      read_text_value?: string;
-    };
-    leftItems: MatchItem[];
-    rightItems: MatchItem[];
-    correctMatches: Array<{left: string; right: string}>;
+    question: Item;
+    leftItems: Item[];
+    rightItems: Item[];
+    correctPairs: MatchPair[];
     explanation?: string;
   };
-  onAnswer?: (matches: Record<string, string>, isCorrect: boolean) => void;
+  onAnswer?: (pairs: MatchPair[], isCorrect: boolean) => void;
   showFeedback?: boolean;
   disabled?: boolean;
-  userAnswer?: { answer: Record<string, string>, isCorrect: boolean };
+  userAnswer?: { answer: MatchPair[], isCorrect: boolean };
 }
 
 const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
@@ -51,161 +40,192 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
   disabled = false,
   userAnswer,
 }) => {
-  // Helper function to normalize strings for comparison
-  const normalize = (str: string) => String(str || '').trim().toLowerCase();
-  type MatchResult = {
-    score: number;
-    total: number;
-    evaluation: Record<string, boolean>;
-    correctMatches: number;
-    totalPossible: number;
-    isPerfect: boolean;
-  };
-
-  const [matches, setMatches] = useState<Record<string, string>>({});
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [pairs, setPairs] = useState<MatchPair[]>([]);
   const [showExplanation, setShowExplanation] = useState(false);
-  const [score, setScore] = useState<{obtained: number; total: number} | null>(null);
-  const [evaluation, setEvaluation] = useState<Record<string, boolean>>({});
-  const [matchResult, setMatchResult] = useState<MatchResult | null>(null);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [score, setScore] = useState<{ correct: number; total: number; percentage: number } | null>(null);
 
-  // Initialize with user's previous answer if it exists
+  // Initialize state from userAnswer if provided
   useEffect(() => {
     if (userAnswer) {
-      setMatches(userAnswer.answer);
+      setPairs(userAnswer.answer);
       setHasSubmitted(true);
       setShowExplanation(true);
-      // Evaluate existing answer
-      const result = evaluateMatches(userAnswer.answer);
-      setMatchResult(result);
-      setScore({ 
-        obtained: result.score, 
-        total: result.total 
-      });
-      setEvaluation(result.evaluation);
     } else {
-      setMatches({});
+      setPairs([]);
       setSelectedLeft(null);
       setSelectedRight(null);
       setHasSubmitted(false);
       setShowExplanation(false);
-      setMatchResult(null);
-      setScore(null);
-      setEvaluation({});
     }
   }, [question.id, userAnswer]);
 
-  const isCorrect = (leftItem: string, rightItem: string): boolean => {
-    if (!question.correctMatches || !Array.isArray(question.correctMatches)) return false;
-    
-    const normalizedLeft = normalize(leftItem);
-    const normalizedRight = normalize(rightItem);
-    
-    // Check if there's a matching pair in correctMatches
-    return question.correctMatches.some(pair => 
-      normalize(pair.left) === normalizedLeft && 
-      normalize(pair.right) === normalizedRight
+  const isPaired = (leftText: string, rightText: string) => {
+    return pairs.some(pair => 
+      pair.left === leftText && pair.right === rightText
     );
   };
 
-  const isItemMatched = (itemText: string, isLeft: boolean) => {
-    if (isLeft) {
-      return Object.keys(matches).includes(itemText);
-    } else {
-      return Object.values(matches).includes(itemText);
-    }
+  const isCorrectPair = (leftText: string, rightText: string) => {
+    if (!showFeedback) return false;
+    return question.correctPairs.some(pair => 
+      pair.left === leftText && pair.right === rightText
+    );
   };
 
-  const handleItemClick = (item: MatchItem, isLeft: boolean) => {
+  const isIncorrectPair = (leftText: string, rightText: string) => {
+    if (!showFeedback) return false;
+    return pairs.some(pair => 
+      pair.left === leftText && pair.right === rightText && 
+      !question.correctPairs.some(cp => cp.left === leftText && cp.right === rightText)
+    );
+  };
+
+  const handleLeftItemClick = (leftText: string) => {
     if (disabled || hasSubmitted) return;
-
-    const itemText = item.text;
-
-    if (isLeft) {
-      if (selectedLeft === itemText) {
-        setSelectedLeft(null);
-      } else if (selectedRight) {
-        // Create a match
-        const newMatches = { ...matches, [itemText]: selectedRight };
-        setMatches(newMatches);
-        setSelectedLeft(null);
-        setSelectedRight(null);
+    
+    // If already selected, deselect it
+    if (selectedLeft === leftText) {
+      setSelectedLeft(null);
+      return;
+    }
+    
+    setSelectedLeft(leftText);
+    
+    // If we have a right item selected, create a pair
+    if (selectedRight) {
+      const newPair = { left: leftText, right: selectedRight };
+      
+      // Check if this exact pair already exists
+      const pairExists = pairs.some(pair => 
+        pair.left === newPair.left && pair.right === newPair.right
+      );
+      
+      if (!pairExists) {
+        // Remove any existing pairs with the same left or right item
+        const updatedPairs = pairs.filter(
+          pair => pair.left !== newPair.left && pair.right !== newPair.right
+        );
         
-        // Submit answer if all matches are made
-        if (Object.keys(newMatches).length === question.leftItems.length) {
-          const allCorrect = Object.entries(newMatches).every(([left, right]) => 
-            isCorrect(left, right)
-          );
-          setHasSubmitted(true);
-          setShowExplanation(true);
-          if (onAnswer) {
-            onAnswer(newMatches, allCorrect);
-          }
-        }
-      } else {
-        setSelectedLeft(itemText);
-        if (selectedRight) setSelectedRight(null);
+        setPairs([...updatedPairs, newPair]);
       }
-    } else {
-      if (selectedRight === itemText) {
-        setSelectedRight(null);
-      } else if (selectedLeft) {
-        // Create a match
-        const newMatches = { ...matches, [selectedLeft]: itemText };
-        setMatches(newMatches);
-        setSelectedLeft(null);
-        setSelectedRight(null);
-        
-        // Submit answer if all matches are made
-        if (Object.keys(newMatches).length === question.leftItems.length) {
-          const allCorrect = Object.entries(newMatches).every(([left, right]) => 
-            isCorrect(left, right)
-          );
-          setHasSubmitted(true);
-          setShowExplanation(true);
-          if (onAnswer) {
-            onAnswer(newMatches, allCorrect);
-          }
-        }
-      } else {
-        setSelectedRight(itemText);
-        if (selectedLeft) setSelectedLeft(null);
-      }
+      
+      setSelectedLeft(null);
+      setSelectedRight(null);
     }
   };
 
-  const getItemClasses = (item: MatchItem, isLeft: boolean) => {
-    const itemText = item.text;
-    let classes = 'p-3 rounded-lg border-2 transition-all cursor-pointer flex items-center justify-between';
+  const handleRightItemClick = (rightText: string) => {
+    if (disabled || hasSubmitted) return;
+    
+    // If already selected, deselect it
+    if (selectedRight === rightText) {
+      setSelectedRight(null);
+      return;
+    }
+    
+    setSelectedRight(rightText);
+    
+    // If we have a left item selected, create a pair
+    if (selectedLeft) {
+      const newPair = { left: selectedLeft, right: rightText };
+      
+      // Check if this exact pair already exists
+      const pairExists = pairs.some(pair => 
+        pair.left === newPair.left && pair.right === newPair.right
+      );
+      
+      if (!pairExists) {
+        // Remove any existing pairs with the same left or right item
+        const updatedPairs = pairs.filter(
+          pair => pair.left !== newPair.left && pair.right !== newPair.right
+        );
+        
+        setPairs([...updatedPairs, newPair]);
+      }
+      
+      setSelectedLeft(null);
+      setSelectedRight(null);
+    }
+  };
+
+  const calculateScore = (): { correct: number; total: number; percentage: number } => {
+    const correctCount = pairs.filter(pair => 
+      question.correctPairs.some(cp => 
+        cp.left === pair.left && cp.right === pair.right
+      )
+    ).length;
+    
+    const total = question.correctPairs.length;
+    const percentage = Math.round((correctCount / total) * 100);
+    
+    return { correct: correctCount, total, percentage };
+  };
+
+  const handleSubmit = () => {
+    if (disabled || hasSubmitted) return;
+    
+    const score = calculateScore();
+    const isFullyCorrect = score.correct === score.total;
+    
+    if (onAnswer) {
+      onAnswer(pairs, isFullyCorrect);
+    }
+    
+    setScore(score);
+    setHasSubmitted(true);
+    setShowExplanation(true);
+  };
+
+  const isLeftItemInCorrectPair = (leftText: string): boolean => {
+    if (!hasSubmitted) return false;
+    const pair = pairs.find(p => p.left === leftText);
+    if (!pair) return false;
+    return question.correctPairs.some(cp => 
+      cp.left === pair.left && cp.right === pair.right
+    );
+  };
+
+  const isLeftItemInIncorrectPair = (leftText: string): boolean => {
+    if (!hasSubmitted) return false;
+    const pair = pairs.find(p => p.left === leftText);
+    if (!pair) return false;
+    return !question.correctPairs.some(cp => 
+      cp.left === pair.left && cp.right === pair.right
+    );
+  };
+
+  const getLeftItemClasses = (leftText: string) => {
+    let classes = 'p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all relative overflow-hidden ';
     
     if (disabled) {
       classes += 'opacity-70 cursor-not-allowed ';
     } else if (!hasSubmitted) {
-      classes += 'hover:border-blue-400 ';
+      classes += 'hover:bg-blue-50 hover:border-blue-200 ';
     }
 
-    // Handle selection state
-    if ((isLeft && selectedLeft === itemText) || (!isLeft && selectedRight === itemText)) {
+    // Check if this item is in a correct or incorrect pair
+    const inCorrectPair = isLeftItemInCorrectPair(leftText);
+    const inIncorrectPair = isLeftItemInIncorrectPair(leftText);
+
+    // Selected state (blue highlight)
+    if (selectedLeft === leftText) {
       classes += 'border-blue-500 bg-blue-50 ';
     } 
-    // Handle matched state
-    else if (isItemMatched(itemText, isLeft)) {
-      if (showFeedback) {
-        const isCorrectMatch = isLeft 
-          ? isCorrect(itemText, matches[itemText])
-          : Object.entries(matches).some(([left, right]) => 
-              right === itemText && isCorrect(left, right)
-            );
-        
-        classes += isCorrectMatch 
-          ? 'border-green-500 bg-green-50 ' 
-          : 'border-red-500 bg-red-50 ';
-      } else {
-        classes += 'border-purple-500 bg-purple-50 ';
-      }
-    } 
+    // Incorrect pair state (red highlight)
+    else if (inIncorrectPair) {
+      classes += 'border-red-500 bg-red-50 ';
+    }
+    // Correct pair state (green highlight)
+    else if (inCorrectPair) {
+      classes += 'border-green-500 bg-green-50 ';
+    }
+    // Paired but not submitted yet
+    else if (pairs.some(pair => pair.left === leftText) && !hasSubmitted) {
+      classes += 'bg-blue-50 border-blue-200 ';
+    }
     // Default state
     else {
       classes += 'border-gray-200 ';
@@ -214,262 +234,254 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     return classes;
   };
 
-  const renderItemContent = (item: MatchItem) => (
-    <div className="flex items-center space-x-2">
-      {!item.hide_text && (
-        <span className="text-gray-800">{item.text}</span>
-      )}
-      {item.read_text && item.read_text_url && (
-        <AudioPlayer 
-          audioUrl={item.read_text_url} 
-          // size="small"
-          className="ml-2"
-        />
-      )}
-      {item.image && (
-        <div className="ml-2">
-          <img 
-            src={item.image} 
-            alt="" 
-            className="h-10 w-10 object-contain"
-          />
-        </div>
-      )}
-    </div>
-  );
-
-  // Evaluate matches and calculate score
-  const evaluateMatches = (currentMatches = matches): MatchResult => {
-    if (!question.correctMatches || !Array.isArray(question.correctMatches)) {
-      return { 
-        score: 0, 
-        total: question.marks, 
-        evaluation: {},
-        correctMatches: 0,
-        totalPossible: 0,
-        isPerfect: false
-      };
-    }
-    
-    let correctCount = 0;
-    const evaluation: Record<string, boolean> = {};
-    const totalPossible = question.correctMatches.length;
-    
-    // Check each correct pair to see if it exists in user's matches
-    question.correctMatches.forEach(correctPair => {
-      const userMatch = Object.entries(currentMatches).find(
-        ([left, right]) => 
-          normalize(left) === normalize(correctPair.left) && 
-          normalize(right) === normalize(correctPair.right)
-      );
-      
-      if (userMatch) {
-        evaluation[`${userMatch[0]}->${userMatch[1]}`] = true;
-        correctCount++;
-      }
-    });
-    
-    // Calculate score based on percentage of correct matches
-    const scorePercentage = totalPossible > 0 ? (correctCount / totalPossible) : 0;
-    const obtainedScore = Math.round(scorePercentage * question.marks * 10) / 10; // 1 decimal place
-    const isPerfect = correctCount === totalPossible && correctCount > 0;
-    
-    return {
-      score: Math.min(obtainedScore, question.marks), // Ensure score doesn't exceed max marks
-      total: question.marks,
-      evaluation,
-      correctMatches: correctCount,
-      totalPossible,
-      isPerfect
-    };
-  };
-
-  // Auto-submit when all matches are made
-  useEffect(() => {
-    if (Object.keys(matches).length === question.leftItems.length && !hasSubmitted) {
-      const result = evaluateMatches(matches);
-      setMatchResult(result);
-      setScore({ 
-        obtained: result.score, 
-        total: result.total 
-      });
-      setEvaluation(result.evaluation);
-      setHasSubmitted(true);
-      setShowExplanation(true);
-      
-      if (onAnswer) {
-        onAnswer(matches, result.isPerfect);
-      }
-    }
-  }, [matches, hasSubmitted, onAnswer, question.leftItems.length, question.marks]);
-
-  // Check if a specific match is correct
-  const isMatchCorrect = (left: string, right: string): boolean => {
+  const isRightItemInCorrectPair = (rightText: string): boolean => {
     if (!hasSubmitted) return false;
-    return isCorrect(left, right);
+    const pair = pairs.find(p => p.right === rightText);
+    if (!pair) return false;
+    return question.correctPairs.some(cp => 
+      cp.left === pair.left && cp.right === pair.right
+    );
   };
 
-  // Get the correct match for a left item
-  const getCorrectMatch = (leftItem: string) => {
-    if (!question.correctMatches || !Array.isArray(question.correctMatches)) return null;
+  const isRightItemInIncorrectPair = (rightText: string): boolean => {
+    if (!hasSubmitted) return false;
+    const pair = pairs.find(p => p.right === rightText);
+    if (!pair) return false;
+    return !question.correctPairs.some(cp => 
+      cp.left === pair.left && cp.right === pair.right
+    );
+  };
+
+  const getRightItemClasses = (rightText: string) => {
+    let classes = 'p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all relative overflow-hidden ';
     
-    const normalizedLeft = normalize(leftItem);
-    const match = question.correctMatches.find(
-      pair => normalize(pair.left) === normalizedLeft
+    if (disabled) {
+      classes += 'opacity-70 cursor-not-allowed ';
+    } else if (!hasSubmitted) {
+      classes += 'hover:bg-blue-50 hover:border-blue-200 ';
+    }
+
+    // Check if this item is in a correct or incorrect pair
+    const inCorrectPair = isRightItemInCorrectPair(rightText);
+    const inIncorrectPair = isRightItemInIncorrectPair(rightText);
+
+    // Selected state (blue highlight)
+    if (selectedRight === rightText) {
+      classes += 'border-blue-500 bg-blue-50 ';
+    } 
+    // Incorrect pair state (red highlight)
+    else if (inIncorrectPair) {
+      classes += 'border-red-500 bg-red-50 ';
+    }
+    // Correct pair state (green highlight)
+    else if (inCorrectPair) {
+      classes += 'border-green-500 bg-green-50 ';
+    }
+    // Paired but not submitted yet
+    else if (pairs.some(pair => pair.right === rightText) && !hasSubmitted) {
+      classes += 'bg-blue-50 border-blue-200 ';
+    }
+    // Default state
+    else {
+      classes += 'border-gray-200 ';
+    }
+
+    return classes;
+  };
+
+  const getPairNumber = (leftText: string, rightText: string) => {
+    const pairIndex = pairs.findIndex(pair => 
+      pair.left === leftText && pair.right === rightText
     );
     
-    return match ? match.right : null;
+    if (pairIndex === -1) return null;
+    
+    // Different colors for different states
+    let bgColor = 'bg-blue-500';
+    if (hasSubmitted) {
+      const isCorrect = question.correctPairs.some(pair => 
+        pair.left === leftText && pair.right === rightText
+      );
+      bgColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
+    }
+    
+    return (
+      <span 
+        className={`absolute -left-3 -top-3 w-6 h-6 rounded-full ${bgColor} text-white flex items-center justify-center text-sm font-medium shadow-md z-10`}
+      >
+        {pairIndex + 1}
+      </span>
+    );
   };
 
-  // Check if all matches are correct
-  const allCorrect = hasSubmitted && question.correctMatches &&
-    Object.entries(matches).every(([left, right]) => isCorrect(left, right));
+  const isAllPaired = pairs.length === question.leftItems.length;
+  const isComplete = isAllPaired || hasSubmitted;
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 max-w-4xl mx-auto space-y-6">
-      {/* Question */}
+    <div className="space-y-6">
       <div className="mb-6">
-        <QuestionContent content={question.question} />
+        <QuestionContent 
+          content={question.question} 
+          className="text-lg font-medium text-gray-800 mb-2"
+        />
+        <div className="text-sm text-gray-500">
+          {!hasSubmitted && (
+            <p>Click on an item from the left and then match it with an item from the right.</p>
+          )}
+          {hasSubmitted && showFeedback && (
+            <p className={isComplete ? 'text-green-600' : 'text-yellow-600'}>
+              {isComplete ? '✓ All items matched!' : 'Some items are not matched yet.'}
+            </p>
+          )}
+        </div>
       </div>
-      
-      {/* Match the following interface */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column */}
         <div className="space-y-3">
           <h3 className="font-medium text-gray-700 mb-2">Column A</h3>
           <div className="space-y-3">
-            {question.leftItems.map((item, index) => {
-              const isMatched = isItemMatched(item.text, true);
-              return (
+            {question.leftItems.map((item, index) => (
+              <div key={`left-${index}`} className="relative">
+                {getPairNumber(item.text, pairs.find(p => p.left === item.text)?.right || '')}
                 <motion.div
-                  key={`left-${index}`}
-                  className={getItemClasses(item, true)}
-                  onClick={() => handleItemClick(item, true)}
-                  whileHover={!disabled && !hasSubmitted ? { scale: 1.02 } : {}}
-                  whileTap={!disabled && !hasSubmitted ? { scale: 0.98 } : {}}
+                  whileHover={!disabled && !hasSubmitted ? { scale: 1.01 } : {}}
+                  whileTap={!disabled && !hasSubmitted ? { scale: 0.99 } : {}}
+                  className={getLeftItemClasses(item.text)}
+                  onClick={() => handleLeftItemClick(item.text)}
                 >
-                  {renderItemContent(item)}
-                  {isMatched && (
-                    <span className="ml-2 text-green-600">
-                      ✓
+                  <div className="flex items-center">
+                    <span className={`w-5 h-5 rounded-full border-2 flex-shrink-0 mr-3 transition-colors ${
+                      selectedLeft === item.text 
+                        ? 'border-blue-500 bg-blue-100' 
+                        : isLeftItemInIncorrectPair(item.text)
+                          ? 'border-red-500 bg-red-100'
+                          : isLeftItemInCorrectPair(item.text)
+                            ? 'border-green-500 bg-green-100'
+                            : pairs.some(p => p.left === item.text) 
+                              ? 'border-blue-300 bg-blue-50' 
+                              : 'border-gray-300 bg-white'
+                    }`}>
+                      {selectedLeft === item.text && (
+                        <div className="w-3 h-3 rounded-full bg-blue-500 m-0.5"></div>
+                      )}
+                      {hasSubmitted && isLeftItemInCorrectPair(item.text) && (
+                        <div className="w-3 h-3 rounded-full bg-green-500 m-0.5"></div>
+                      )}
+                      {hasSubmitted && isLeftItemInIncorrectPair(item.text) && (
+                        <div className="w-3 h-3 rounded-full bg-red-500 m-0.5"></div>
+                      )}
                     </span>
-                  )}
+                    <QuestionContent content={item} />
+                  </div>
                 </motion.div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
-        
+
         {/* Right Column */}
         <div className="space-y-3">
           <h3 className="font-medium text-gray-700 mb-2">Column B</h3>
           <div className="space-y-3">
-            {question.rightItems.map((item, index) => {
-              const isMatched = isItemMatched(item.text, false);
-              return (
+            {question.rightItems.map((item, index) => (
+              <div key={`right-${index}`} className="relative">
+                {getPairNumber(pairs.find(p => p.right === item.text)?.left || '', item.text)}
                 <motion.div
-                  key={`right-${index}`}
-                  className={getItemClasses(item, false)}
-                  onClick={() => handleItemClick(item, false)}
-                  whileHover={!disabled && !hasSubmitted ? { scale: 1.02 } : {}}
-                  whileTap={!disabled && !hasSubmitted ? { scale: 0.98 } : {}}
+                  whileHover={!disabled && !hasSubmitted ? { scale: 1.01 } : {}}
+                  whileTap={!disabled && !hasSubmitted ? { scale: 0.99 } : {}}
+                  className={getRightItemClasses(item.text)}
+                  onClick={() => handleRightItemClick(item.text)}
                 >
-                  {renderItemContent(item)}
-                  {isMatched && (
-                    <span className="ml-2 text-green-600">
-                      ✓
+                  <div className="flex items-center">
+                    <span className={`w-5 h-5 rounded-full border-2 flex-shrink-0 mr-3 transition-colors ${
+                      selectedRight === item.text 
+                        ? 'border-blue-500 bg-blue-100' 
+                        : isRightItemInIncorrectPair(item.text)
+                          ? 'border-red-500 bg-red-100'
+                          : isRightItemInCorrectPair(item.text)
+                            ? 'border-green-500 bg-green-100'
+                            : pairs.some(p => p.right === item.text) 
+                              ? 'border-blue-300 bg-blue-50' 
+                              : 'border-gray-300 bg-white'
+                    }`}>
+                      {selectedRight === item.text && (
+                        <div className="w-3 h-3 rounded-full bg-blue-500 m-0.5"></div>
+                      )}
+                      {hasSubmitted && isRightItemInCorrectPair(item.text) && (
+                        <div className="w-3 h-3 rounded-full bg-green-500 m-0.5"></div>
+                      )}
+                      {hasSubmitted && isRightItemInIncorrectPair(item.text) && (
+                        <div className="w-3 h-3 rounded-full bg-red-500 m-0.5"></div>
+                      )}
                     </span>
-                  )}
+                    <QuestionContent content={item} />
+                  </div>
                 </motion.div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Feedback */}
-      {hasSubmitted && (
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <div className="flex justify-between items-center mb-4">
-            <div>
-              <span className="font-medium">Score: </span>
-              <span className={`font-bold ${score?.obtained === score?.total ? 'text-green-600' : 'text-blue-600'}`}>
-                {score?.obtained} / {score?.total}
-              </span>
-              {score?.obtained === score?.total && (
-                <span className="ml-2 text-green-600">✓ Perfect!</span>
-              )}
-            </div>
-            <button 
-              onClick={() => setShowExplanation(!showExplanation)}
-              className="text-blue-600 font-medium flex items-center"
+      <div className="flex justify-between items-center mt-6">
+        {hasSubmitted && score && (
+          <div className="text-lg font-medium">
+            Score: <span className={`font-bold ${
+              score.percentage >= 80 ? 'text-green-600' : 
+              score.percentage >= 50 ? 'text-yellow-600' : 'text-red-600'
+            }`}>
+              {score.correct} / {score.total} ({score.percentage}%)
+            </span>
+          </div>
+        )}
+        {!hasSubmitted && (
+          <div className="text-sm text-gray-500">
+            {pairs.length} of {question.correctPairs.length} pairs matched
+          </div>
+        )}
+        <div>
+          {!hasSubmitted ? (
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleSubmit}
+              disabled={disabled || pairs.length === 0}
+              className={`px-6 py-2 rounded-lg font-medium ${
+                disabled || pairs.length === 0
+                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
             >
-              {showExplanation ? 'Hide' : 'Show'} Explanation
-              <svg 
-                className={`ml-2 w-4 h-4 transition-transform ${showExplanation ? 'rotate-180' : ''}`} 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div>
-          
-          {showExplanation && question.explanation && (
-            <div className="mt-2 text-gray-700 bg-white p-3 rounded-lg border border-blue-100">
-              <h4 className="font-medium text-blue-800 mb-1">Explanation:</h4>
-              <p>{question.explanation}</p>
-            </div>
+              Submit
+            </motion.button>
+          ) : (
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setShowExplanation(!showExplanation)}
+              className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-700 transition-colors"
+            >
+              {showExplanation ? 'Hide Explanation' : 'Show Explanation'}
+            </motion.button>
           )}
-          
-          <div className="mt-4">
-            <h4 className="font-medium text-gray-800 mb-2">Your Matches:</h4>
-            <ul className="space-y-2">
-              {question.leftItems.map((leftItem) => {
-                const leftText = leftItem.text;
-                const userMatch = matches[leftText];
-                const isCorrectMatch = userMatch ? isMatchCorrect(leftText, userMatch) : false;
-                const correctMatch = getCorrectMatch(leftText);
-                
-                return (
-                  <li 
-                    key={leftText}
-                    className={`p-3 rounded-lg border-2 ${
-                      isCorrectMatch 
-                        ? 'bg-green-50 border-green-300' 
-                        : 'bg-red-50 border-red-200'
-                    }`}
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium">{leftText}</span>
-                      <span className="mx-2">→</span>
-                      <span className={isCorrectMatch ? 'text-green-700' : 'text-red-700'}>
-                        {userMatch || 'Not matched'}
-                      </span>
-                      {userMatch && (
-                        <span className={`ml-2 ${isCorrectMatch ? 'text-green-600' : 'text-red-600'}`}>
-                          {isCorrectMatch ? '✓' : '✗'}
-                        </span>
-                      )}
-                    </div>
-                    {!isCorrectMatch && correctMatch && (
-                      <div className="mt-1 text-sm text-gray-600">
-                        Correct answer: <span className="text-green-700 font-medium">{correctMatch}</span>
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
         </div>
-      )}
-      
-      {/* Marks */}
-      <div className="mt-4 text-sm text-gray-500 text-right">
-        {question.marks} {question.marks === 1 ? 'mark' : 'marks'}
       </div>
+
+      {showExplanation && question.explanation && (
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200"
+        >
+          <h4 className="font-medium text-blue-800 mb-2">Explanation</h4>
+          <div 
+            className="prose max-w-none text-blue-700"
+            dangerouslySetInnerHTML={{ __html: question.explanation }}
+          />
+        </motion.div>
+      )}
     </div>
   );
 };
