@@ -332,10 +332,10 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
                     </svg>
                   )}
                   <div>
-                    <h3 className="font-medium">
+                    <h3 className="font-medium text-gray-800">
                       {isCorrect ? 'Correct!' : 'Incorrect'}
                     </h3>
-                    <p className="text-sm">
+                    <p className="text-sm text-gray-600">
                       {isSubmitted && `Score: ${calculateScore().toFixed(1)}/${question.marks}`}
                     </p>
                   </div>

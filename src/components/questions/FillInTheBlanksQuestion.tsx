@@ -99,7 +99,7 @@ const FillInTheBlanksQuestion: React.FC<FillInTheBlanksQuestionProps> = ({
         
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
-            <span className="whitespace-nowrap font-medium">Your answer:</span>
+            <span className="whitespace-nowrap font-medium text-gray-800">Your answer:</span>
             <div className="relative flex-1 max-w-md">
               <input
                 type="text"
@@ -107,7 +107,7 @@ const FillInTheBlanksQuestion: React.FC<FillInTheBlanksQuestionProps> = ({
                 onChange={(e) => setAnswer(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={disabled || isSubmitted}
-                className={`w-full px-4 py-2 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                className={`w-full px-4 py-2 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800 ${
                   isSubmitted
                     ? isCorrect
                       ? 'bg-green-50 border-green-500 text-green-700'

@@ -426,7 +426,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
 
       <div className="flex justify-between items-center mt-6">
         {hasSubmitted && score && (
-          <div className="text-lg font-medium">
+          <div className="text-lg font-medium text-gray-800">
             Score: <span className={`font-bold ${
               score.percentage >= 80 ? 'text-green-600' : 
               score.percentage >= 50 ? 'text-yellow-600' : 'text-red-600'
