@@ -69,7 +69,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Portuguese": [
           "Vasco da Gama",
           "Francisco de Almeida"
@@ -152,7 +152,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Portuguese": [
           "Battle of Diu",
           "Battle of Chaul"
@@ -259,7 +259,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Portuguese": [
           "Goa",
           "Bassein"
@@ -347,7 +347,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Portuguese": [
           "Alfonso de Albuquerque",
           "Francisco de Almeida"
@@ -436,7 +436,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Portuguese": [
           "Cochin",
           "Diu"

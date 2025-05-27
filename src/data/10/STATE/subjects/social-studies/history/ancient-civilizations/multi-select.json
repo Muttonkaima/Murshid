@@ -42,7 +42,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Surat",
         "Masulipatnam"
       ],
@@ -89,7 +89,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Portuguese",
         "Dutch",
         "French",
@@ -138,7 +138,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Calcutta",
         "Bombay",
         "Madras"
@@ -186,7 +186,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Cotton",
         "Spices",
         "Tea",
@@ -235,7 +235,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Battle of Plassey",
         "Battle of Buxar",
         "Battle of Wandiwash"
@@ -283,7 +283,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Goa",
         "Daman",
         "Diu"
@@ -331,7 +331,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Calcutta",
         "Madras",
         "Bombay"
@@ -379,7 +379,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Robert Clive",
         "Dupleix",
         "La Bourdonnais"
@@ -427,7 +427,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Satara",
         "Jhansi",
         "Nagpur"
@@ -475,7 +475,7 @@
           "image": ""
         }
       ],
-      "correctAnswers": [
+      "correctAnswer": [
         "Treaty of Salbai",
         "Treaty of Bassein",
         "Treaty of Seringapatam"

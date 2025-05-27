@@ -147,7 +147,7 @@ interface ReorderingQuestionProps {
       image: string;
       read_text_value?: string;
     }>;
-    correctOrder: string[];
+    correctAnswer: string[];
     explanation?: string;
   };
   onAnswer?: (order: string[], isCorrect: boolean, scoreObtained: number) => void;
@@ -216,10 +216,10 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
   };
 
   const checkAnswer = () => {
-    if (!question.correctOrder) return false;
+    if (!question.correctAnswer) return false;
 
     const currentOrder = items.map(item => item.text);
-    return JSON.stringify(currentOrder) === JSON.stringify(question.correctOrder);
+    return JSON.stringify(currentOrder) === JSON.stringify(question.correctAnswer);
   };
 
   const handleSubmit = () => {
@@ -247,14 +247,14 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
     // Don't call onAnswer here as it would submit the empty answer
   };
 
-  const showCorrectOrder = () => {
-    if (!question.correctOrder) return null;
+  const showcorrectAnswer = () => {
+    if (!question.correctAnswer) return null;
 
     return (
       <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
         <h4 className="font-medium text-blue-700 mb-2">Correct Order:</h4>
         <ol className="list-decimal list-inside space-y-2">
-          {question.correctOrder.map((text, index) => (
+          {question.correctAnswer.map((text, index) => (
             <li key={`correct-${index}`} className="text-blue-700">
               {text}
             </li>
@@ -265,18 +265,18 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
   };
 
   const calculateScore = () => {
-    // if (!isSubmitted || !question.correctOrder) return 0;
+    // if (!isSubmitted || !question.correctAnswer) return 0;
 
     let correctCount = 0;
     const currentOrder = items.map(item => item.text);
 
     currentOrder.forEach((text, index) => {
-      if (text === question.correctOrder?.[index]) {
+      if (text === question.correctAnswer?.[index]) {
         correctCount++;
       }
     });
 
-    return (correctCount / question.correctOrder.length) * question.marks;
+    return (correctCount / question.correctAnswer.length) * question.marks;
   };
 
   return (
@@ -312,8 +312,8 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
                   moveItem={moveItem}
                   content={item.content}
                   disabled={disabled || isSubmitted}
-                  isCorrect={isSubmitted && isCorrect !== null && isCorrect && item.text === question.correctOrder?.[index]}
-                  isIncorrect={isSubmitted && isCorrect !== null && !isCorrect && item.text !== question.correctOrder?.[index]}
+                  isCorrect={isSubmitted && isCorrect !== null && isCorrect && item.text === question.correctAnswer?.[index]}
+                  isIncorrect={isSubmitted && isCorrect !== null && !isCorrect && item.text !== question.correctAnswer?.[index]}
                 />
               ))}
             </div>
@@ -361,7 +361,7 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
                   </div>
                 </div>
 
-                {!isCorrect && showCorrectOrder()}
+                {!isCorrect && showcorrectAnswer()}
 
                 {question.explanation && (
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mt-4">

@@ -33,7 +33,7 @@ interface Question {
   };
   items: Item[];
   categories: Category[];
-  correctSorting: Record<string, string[]>;
+  correctAnswer: Record<string, string[]>;
   explanation?: string;
 }
 
@@ -280,11 +280,11 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     let correctItemsCount = 0;
     let totalItems = 0;
     const itemFeedbacks: ItemFeedback[] = [];
-    const correctAnswers = { ...question.correctSorting };
+    const correctAnswers = { ...question.correctAnswer };
     
     // Create a map of item text to its correct category
     const itemToCorrectCategory = new Map<string, string>();
-    Object.entries(question.correctSorting).forEach(([categoryId, items]) => {
+    Object.entries(question.correctAnswer).forEach(([categoryId, items]) => {
       items.forEach(itemText => {
         itemToCorrectCategory.set(itemText, categoryId);
       });
@@ -295,9 +295,9 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     // Check each category
     currentCategories.forEach((category: Category) => {
       const categoryItemTexts = category.items?.map((item: Item) => item.text || '') || [];
-      sortedAnswers[category.id] = categoryItemTexts;
+      sortedAnswers[category.text] = categoryItemTexts;
       
-      const correctItemTexts = question.correctSorting[category.text] || [];
+      const correctItemTexts = question.correctAnswer[category.text] || [];
       
       // Count correct items in this category
       categoryItemTexts.forEach((itemText: string) => {
@@ -494,9 +494,16 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
                   </div>
                 )}
                 <div>
-                  <h3 className="text-sm font-medium text-red-900">
+                  {feedback.isCorrect ? (
+                    <h3 className="text-sm font-bold text-green-900">
                     {feedback.message}
                   </h3>
+                  ): (
+                    <h3 className="text-sm font-bold text-red-900">
+                    {feedback.message}
+                  </h3>
+                  )}
+                  
                   {feedback.explanation && (
                     <p className="mt-1 text-sm text-gray-600">
                       {feedback.explanation}

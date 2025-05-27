@@ -24,7 +24,7 @@ interface MatchTheFollowingQuestionProps {
     question: Item;
     leftItems: Item[];
     rightItems: Item[];
-    correctPairs: MatchPair[];
+    correctAnswer: MatchPair[];
     explanation?: string;
   };
   onAnswer?: (pairs: MatchPair[], isCorrect: boolean, scoreObtained: number) => void;
@@ -77,7 +77,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
 
   const isCorrectPair = (leftText: string, rightText: string) => {
     if (!showFeedback) return false;
-    return question.correctPairs.some(pair =>
+    return question.correctAnswer.some(pair =>
       pair.left === leftText && pair.right === rightText
     );
   };
@@ -86,7 +86,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (!showFeedback) return false;
     return pairs.some(pair =>
       pair.left === leftText && pair.right === rightText &&
-      !question.correctPairs.some(cp => cp.left === leftText && cp.right === rightText)
+      !question.correctAnswer.some(cp => cp.left === leftText && cp.right === rightText)
     );
   };
 
@@ -160,12 +160,12 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
 
   const calculateScore = (): { correct: number; total: number; percentage: number } => {
     const correctCount = pairs.filter(pair =>
-      question.correctPairs.some(cp =>
+      question.correctAnswer.some(cp =>
         cp.left === pair.left && cp.right === pair.right
       )
     ).length;
 
-    const total = question.correctPairs.length;
+    const total = question.correctAnswer.length;
     const percentage = Math.round((correctCount / total) * 100);
 
     return { correct: correctCount, total, percentage };
@@ -175,11 +175,12 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (disabled || hasSubmitted) return;
 
     const score = calculateScore();
-    setIsFullyCorrect(score.correct === score.total);
+    const isAllCorrect = score.correct === score.total;
+    setIsFullyCorrect(isAllCorrect);
     const scoreObtained = (score.correct / score.total) * question.marks;
 
     if (onAnswer) {
-      onAnswer(pairs, isFullyCorrect, scoreObtained);
+      onAnswer(pairs, isAllCorrect, scoreObtained);
     }
 
     setScore(score);
@@ -191,7 +192,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (!hasSubmitted) return false;
     const pair = pairs.find(p => p.left === leftText);
     if (!pair) return false;
-    return question.correctPairs.some(cp =>
+    return question.correctAnswer.some(cp =>
       cp.left === pair.left && cp.right === pair.right
     );
   };
@@ -200,7 +201,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (!hasSubmitted) return false;
     const pair = pairs.find(p => p.left === leftText);
     if (!pair) return false;
-    return !question.correctPairs.some(cp =>
+    return !question.correctAnswer.some(cp =>
       cp.left === pair.left && cp.right === pair.right
     );
   };
@@ -246,7 +247,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (!hasSubmitted) return false;
     const pair = pairs.find(p => p.right === rightText);
     if (!pair) return false;
-    return question.correctPairs.some(cp =>
+    return question.correctAnswer.some(cp =>
       cp.left === pair.left && cp.right === pair.right
     );
   };
@@ -255,7 +256,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     if (!hasSubmitted) return false;
     const pair = pairs.find(p => p.right === rightText);
     if (!pair) return false;
-    return !question.correctPairs.some(cp =>
+    return !question.correctAnswer.some(cp =>
       cp.left === pair.left && cp.right === pair.right
     );
   };
@@ -307,7 +308,7 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
     // Different colors for different states
     let bgColor = 'bg-blue-500';
     if (hasSubmitted) {
-      const isCorrect = question.correctPairs.some(pair =>
+      const isCorrect = question.correctAnswer.some(pair =>
         pair.left === leftText && pair.right === rightText
       );
       bgColor = isCorrect ? 'bg-green-500' : 'bg-red-500';
@@ -497,10 +498,10 @@ const MatchTheFollowingQuestion: React.FC<MatchTheFollowingQuestionProps> = ({
                 </button>
                 <button
                   onClick={handleSubmit}
-                  disabled={disabled || pairs.length < question.correctPairs.length}
+                  disabled={disabled || pairs.length < question.correctAnswer.length}
                   className="order-1 sm:order-2 w-full sm:w-auto px-6 py-2.5 bg-blue-500 text-white font-medium text-sm sm:text-base rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  {pairs.length === question.correctPairs.length ? 'Submit Answer' : `Match All Items (${pairs.length}/${question.correctPairs.length})`}
+                  {pairs.length === question.correctAnswer.length ? 'Submit Answer' : `Match All Items (${pairs.length}/${question.correctAnswer.length})`}
                 </button>
               </div>
             ) : (

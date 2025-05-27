@@ -76,7 +76,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Vasco da Gama",
           "right": "Discovered a new sea route to India"
@@ -174,7 +174,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Constantinople",
           "right": "A major trade centre and 'Gateway of European Trade'"
@@ -272,7 +272,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "First Carnatic War",
           "right": "Ended with the 'Treaty of Aix-la-Chapelle'"
@@ -370,7 +370,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Dupleix",
           "right": "French Governor-General with ambitions in South India."
@@ -468,7 +468,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "East India Company",
           "right": "Granted a charter by Queen Elizabeth I to trade with Eastern countries"

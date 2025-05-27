@@ -24,7 +24,7 @@ interface MultiSelectQuestionProps {
       read_text_value?: string;
     };
     options: Option[];
-    correctAnswers: string[];
+    correctAnswer: string[];
     explanation?: string;
   };
   onAnswer?: (selectedOptions: string[], isComplete: boolean, scoreObtained: number) => void;
@@ -76,8 +76,8 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
     // First calculate everything we need before state updates
     const isComplete = selectedOptions.length > 0;
     const isCorrect = isComplete && selectedOptions.every(opt => 
-      question.correctAnswers.includes(opt)
-    ) && selectedOptions.length === question.correctAnswers.length;
+      question.correctAnswer.includes(opt)
+    ) && selectedOptions.length === question.correctAnswer.length;
     
     // Temporarily set isSubmitted to true for score calculation
     const wasSubmitted = isSubmitted;
@@ -97,7 +97,7 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
   };
 
   const isOptionCorrect = (optionText: string) => {
-    return question.correctAnswers.includes(optionText);
+    return question.correctAnswer.includes(optionText);
   };
 
   const isOptionSelected = (optionText: string) => {
@@ -137,11 +137,11 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
     // if (!isSubmitted) return 0;
     
     const correctSelections = selectedOptions.filter(opt => 
-      question.correctAnswers.includes(opt)
+      question.correctAnswer.includes(opt)
     ).length;
     
     // Calculate the percentage of correct answers
-    const percentage = correctSelections / question.correctAnswers.length;
+    const percentage = correctSelections / question.correctAnswer.length;
     
     // Calculate score based on the percentage and question marks
     const score = percentage * question.marks;
@@ -298,7 +298,7 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
                   <h4 className="font-medium">Correct Answers</h4>
                 </div>
                 <ul className="space-y-2">
-                  {question.correctAnswers.map((answer, idx) => (
+                  {question.correctAnswer.map((answer, idx) => (
                     <li key={`correct-${idx}`} className="flex items-start">
                       <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-50 text-green-600 text-xs font-medium mr-2 flex-shrink-0">
                         {idx + 1}
@@ -318,7 +318,7 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
                 <ul className="space-y-2">
                   {selectedOptions.length > 0 ? (
                     selectedOptions.map((answer, idx) => {
-                      const isCorrect = question.correctAnswers.includes(answer);
+                      const isCorrect = question.correctAnswer.includes(answer);
                       return (
                         <li key={`selected-${idx}`} className="flex items-start">
                           <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-medium mr-2 flex-shrink-0 ${

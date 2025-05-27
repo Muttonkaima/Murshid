@@ -27,7 +27,7 @@ const ALL_QUESTION_TYPES: QuestionType[] = [
 const QuizPage = () => {
   const { subjectId, branchId, chapterId } = useParams();
   const searchParams = useSearchParams();
-  
+
   const [error, setError] = useState<string | null>(null);
   const [questions, setQuestions] = useState<any[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -48,22 +48,22 @@ const QuizPage = () => {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   // Calculate score and statistics
   const totalQuestions = questions.length;
-  
+
   // Type guard for UserAnswer
   const isUserAnswer = (obj: any): obj is UserAnswer => {
     return obj && typeof obj === 'object' && 'marksObtained' in obj;
   };
-  
+
   // Calculate correct answers count
   const correctAnswers = Object.values(userAnswers).filter(answer => answer?.isCorrect).length;
-  
+
   // Calculate score percentage based on obtained marks and total possible marks
   const scorePercentage = totalPossibleMarks > 0 ? Math.round((score / totalPossibleMarks) * 100) : 0;
   const timePerQuestion = totalQuestions > 0 ? Math.round(timeElapsed / totalQuestions) : 0;
-  
+
   // Get performance message based on score
   const getPerformanceMessage = () => {
     if (scorePercentage >= 90) return 'Outstanding! 🎯';
@@ -71,21 +71,21 @@ const QuizPage = () => {
     if (scorePercentage >= 50) return 'Good Effort! 👍';
     return 'Keep Practicing! 💪';
   };
-  
+
   // Get performance color based on score
   const getPerformanceColor = (forSvg = false) => {
     if (scorePercentage >= 75) return forSvg ? 'rgb(5, 150, 105)' : 'text-emerald-600';
     if (scorePercentage >= 50) return forSvg ? 'rgb(245, 158, 11)' : 'text-amber-500';
     return forSvg ? 'rgb(239, 68, 68)' : 'text-red-500';
   };
-  
+
   // Get performance color for SVG
   const getSvgPerformanceColor = () => {
     if (scorePercentage >= 75) return 'rgb(5, 150, 105)'; // emerald-600
     if (scorePercentage >= 50) return 'rgb(245, 158, 11)'; // amber-500
     return 'rgb(239, 68, 68)'; // red-500
   };
-  
+
   // Get performance emoji based on score
   const getPerformanceEmoji = () => {
     if (scorePercentage >= 90) return '🏆';
@@ -94,62 +94,79 @@ const QuizPage = () => {
     return '💡';
   };
 
-  
+
   // Format time as MM:SS
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
-  
+
   const renderAnswerText = (answer: any): React.ReactNode => {
-    if (!answer) return null;
-    
-    // Handle array answers (for multi-select, matching, etc.)
+    if (answer === null || answer === undefined) return 'Not answered';
+
+    // ✅ Matching pairs array: [{left: "", right: ""}, ...]
+    if (Array.isArray(answer) && answer.length && typeof answer[0] === 'object' && 'left' in answer[0] && 'right' in answer[0]) {
+      return (
+        <ul className="list-disc list-inside space-y-1">
+          {answer.map((pair: any, idx: number) => (
+            <li key={idx}>
+              <strong>{pair.left}</strong> → {pair.right}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    // ✅ Array of primitives (strings, booleans, etc.)
     if (Array.isArray(answer)) {
       return answer.join(', ');
     }
-    
-    // Handle object answers (for matching, fill-in-blanks, etc.)
-    if (typeof answer === 'object') {
-      // For matching questions
-      if (answer.pair1 && answer.pair2) {
-        return `${answer.pair1} → ${answer.pair2}`;
-      }
-      // For fill-in-blanks
-      if (answer.text !== undefined) {
-        return answer.text;
-      }
-      // For question/answer objects with hide_text, text, read_text, image
-      if ('text' in answer || 'hide_text' in answer || 'read_text' in answer) {
-        return (
-          <div className="space-y-2">
-            {answer.text && <div>{answer.text}</div>}
-            {answer.hide_text && <div className="font-medium">{answer.hide_text}</div>}
-            {answer.read_text && <div className="text-sm text-gray-600">{answer.read_text}</div>}
-            {answer.image && (
-              <div className="mt-2">
-                <img 
-                  src={answer.image} 
-                  alt="Question illustration" 
-                  className="max-w-full h-auto rounded-md border border-gray-200"
-                />
-              </div>
-            )}
-          </div>
-        );
-      }
-      // Fallback for other object types
-      return JSON.stringify(answer);
+
+    // ✅ Primitive: string, number, boolean
+    if (typeof answer === 'string' || typeof answer === 'number' || typeof answer === 'boolean') {
+      return String(answer);
     }
-    
-    // Handle primitive types
-    return String(answer);
+
+    // ✅ Matching pair object
+    if ('pair1' in answer && 'pair2' in answer) {
+      return `${answer.pair1} → ${answer.pair2}`;
+    }
+
+    // ✅ Fill-in-the-blank style object
+    if ('text' in answer || 'hide_text' in answer || 'read_text' in answer || 'image' in answer) {
+      return (
+        <div className="space-y-2">
+          {answer.text && <div>{answer.text}</div>}
+          {answer.hide_text && <div className="font-medium">{answer.hide_text}</div>}
+          {answer.read_text && <div className="text-sm text-gray-600">{answer.read_text}</div>}
+          {answer.image && (
+            <div className="mt-2">
+              <img
+                src={answer.image}
+                alt="Answer illustration"
+                className="max-w-full h-auto rounded-md border border-gray-200"
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ✅ Malformed: { undefined: [...] }
+    const keys = Object.keys(answer);
+    if (keys.length === 1 && Array.isArray(answer[keys[0]])) {
+      return answer[keys[0]].join(', ');
+    }
+
+    // ✅ Fallback: show JSON
+    return <pre className="text-xs text-gray-500">{JSON.stringify(answer, null, 2)}</pre>;
   };
-  
+
+
   // Calculate time percentage for progress and get color based on remaining time
   const timePercentage = (timeLeft / timeLimit) * 100;
-  
+
   // Get color based on time percentage (smooth transition between green, orange, and red)
   const getTimeBarColor = (percentage: number) => {
     if (percentage > 60) {
@@ -164,7 +181,7 @@ const QuizPage = () => {
       return `rgb(239, 68, 68)`; // Red-500 with opacity
     }
   };
-  
+
   // Initialize timer with correct initial value
   useEffect(() => {
     setTimeLeft(timeLimit);
@@ -175,7 +192,7 @@ const QuizPage = () => {
     if (!showResults) {
       setIsTimerRunning(false);
       setShowResults(true);
-      
+
       // Mark unanswered questions as incorrect
       const unansweredQuestions = questions.reduce((acc, _, index) => {
         if (!userAnswers[index]) {
@@ -183,7 +200,7 @@ const QuizPage = () => {
         }
         return acc;
       }, {});
-      
+
       if (Object.keys(unansweredQuestions).length > 0) {
         setUserAnswers(prev => ({
           ...prev,
@@ -197,9 +214,9 @@ const QuizPage = () => {
   useEffect(() => {
     // Only run on client
     if (typeof window === 'undefined') return;
-    
+
     let interval: NodeJS.Timeout;
-    
+
     const handleTimerTick = () => {
       setTimeElapsed(prev => prev + 1);
       setTimeLeft(prev => {
@@ -212,21 +229,21 @@ const QuizPage = () => {
         return prev - 1;
       });
     };
-    
+
     if (isTimerRunning && !showResults && timeLeft > 0) {
       interval = setInterval(handleTimerTick, 1000);
     }
-    
+
     return () => {
       if (interval) clearInterval(interval);
     };
   }, [isTimerRunning, showResults, timeLeft, handleFinishQuiz]);
-  
+
   // Calculate progress percentage based on answered questions
-  const progress = questions.length > 0 
-    ? (Object.keys(userAnswers).length / questions.length) * 100 
+  const progress = questions.length > 0
+    ? (Object.keys(userAnswers).length / questions.length) * 100
     : 0;
-  
+
   // Get quiz settings from URL
   const questionType = searchParams.get('type') as QuestionType || 'mcq';
   const questionCount = parseInt(searchParams.get('count') || '10', 10);
@@ -235,7 +252,7 @@ const QuizPage = () => {
   useEffect(() => {
     // Only run on client
     if (typeof window === 'undefined') return;
-    
+
     // 30 seconds per question as default
     const calculatedTime = questionCount * 12;
     setTimeLimit(calculatedTime);
@@ -253,10 +270,10 @@ const QuizPage = () => {
         setCurrentQuestionIndex(0);
         setTimeElapsed(0);
         setIsTimerRunning(true);
-        
+
         const typesToLoad = questionType === 'all' ? ALL_QUESTION_TYPES : [questionType];
         const questionsByType: Record<string, any[]> = {};
-        
+
         // Load questions from all specified types
         for (const type of typesToLoad) {
           try {
@@ -274,36 +291,36 @@ const QuizPage = () => {
             // Continue with other types even if one fails
           }
         }
-        
+
         // Check if we have any questions at all
         const totalQuestions = Object.values(questionsByType).reduce((sum, qs) => sum + qs.length, 0);
         if (totalQuestions === 0) {
           throw new Error('No questions found for the selected types');
         }
-        
+
         let selectedQuestions: any[] = [];
-        
+
         if (questionType === 'all') {
           // For 'all' type, distribute questions evenly across all available types
           const typesWithQuestions = Object.entries(questionsByType)
             .filter(([_, qs]) => qs.length > 0)
             .map(([type]) => type);
-          
+
           const questionsPerType = Math.max(1, Math.floor(questionCount / typesWithQuestions.length));
-          
+
           for (const type of typesWithQuestions) {
             const availableQuestions = [...questionsByType[type]].sort(() => 0.5 - Math.random());
             const questionsToTake = Math.min(questionsPerType, availableQuestions.length);
             selectedQuestions.push(...availableQuestions.slice(0, questionsToTake));
           }
-          
+
           // If we don't have enough questions, add more from types that have them
           if (selectedQuestions.length < questionCount) {
             const remaining = questionCount - selectedQuestions.length;
             const allShuffled = Object.values(questionsByType)
               .flat()
               .sort(() => 0.5 - Math.random());
-            
+
             selectedQuestions = [
               ...selectedQuestions,
               ...allShuffled
@@ -318,13 +335,13 @@ const QuizPage = () => {
             .sort(() => 0.5 - Math.random())
             .slice(0, questionCount);
         }
-        
+
         // Final shuffle to mix the questions from different types
         selectedQuestions = selectedQuestions.sort(() => 0.5 - Math.random());
-        
+
         // Initialize score to 0
         setScore(0);
-        
+
         setQuestions(selectedQuestions);
       } catch (error) {
         console.error('Error loading questions:', error);
@@ -346,21 +363,21 @@ const QuizPage = () => {
 
   const handleAnswer = (answer: any, isCorrectOrComplete: boolean, scoreOrAnswer?: any) => {
     if (isSubmitting) return;
-    
+
     // Set submitting state
     setIsSubmitting(true);
-    
+
     // Set the current answer
     setCurrentAnswer(answer);
-    
+
     // Get current question details
     const currentQuestion = questions[currentQuestionIndex];
     const maxMarks = currentQuestion.marks || 1;
-    
+
     // Handle different parameter orders from different question components
     let isCorrect: boolean;
     let scoreObtained: number;
-    
+
     // Check if the second parameter is a boolean (isCorrect) and the third is a number (scoreObtained)
     if (typeof isCorrectOrComplete === 'boolean' && typeof scoreOrAnswer === 'number') {
       isCorrect = isCorrectOrComplete;
@@ -375,28 +392,28 @@ const QuizPage = () => {
       isCorrect = false;
       scoreObtained = 0;
     }
-    
+
     // Ensure score is within bounds
     const marksObtained = Math.max(0, Math.min(scoreObtained || 0, maxMarks));
-    
+
     console.log("Answer:", answer);
     console.log("Is Correct:", isCorrect);
     console.log("Marks Obtained:", marksObtained, "Max Marks:", maxMarks);
-    
+
     // Create the user answer object with proper type
-    const userAnswer: UserAnswer = { 
-      answer, 
+    const userAnswer: UserAnswer = {
+      answer,
       isCorrect,
       marksObtained,
       maxMarks
     };
-    
+
     // Update user answers with the new answer
     const updatedUserAnswers = {
       ...userAnswers,
       [currentQuestionIndex]: userAnswer
     };
-    
+
     // Calculate total score by summing up marksObtained from all answers
     let totalMarksObtained = 0;
     Object.values(updatedUserAnswers).forEach((answer) => {
@@ -404,13 +421,14 @@ const QuizPage = () => {
         totalMarksObtained += answer.marksObtained || 0;
       }
     });
-    
+
     console.log("Total Marks Obtained:", totalMarksObtained);
-    
+
     // Update states
     setUserAnswers(updatedUserAnswers);
+    console.log("Updated User Answers:", updatedUserAnswers);
     setScore(totalMarksObtained);
-    
+
     // Mark as submitted
     setIsAnswerSubmitted(true);
     setIsSubmitting(false);
@@ -502,14 +520,14 @@ const QuizPage = () => {
                   <div>
                     <h1 className="text-2xl font-bold">Quiz Completed!</h1>
                     <p className="text-blue-100">
-                      You've completed the {questionType === 'all' 
-                        ? 'Mixed Question Types' 
+                      You've completed the {questionType === 'all'
+                        ? 'Mixed Question Types'
                         : questionType.replace(/-/g, ' ')} quiz
                     </p>
                   </div>
                   <div className="text-5xl">{getPerformanceEmoji()}</div>
                 </div>
-                
+
                 {/* Score Circle */}
                 <div className="mt-8 flex flex-col items-center">
                   <div className="relative w-32 h-32">
@@ -547,7 +565,7 @@ const QuizPage = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Stats */}
               <div className="p-6 grid grid-cols-2 gap-4">
                 <div className="bg-green-50 p-4 rounded-lg">
@@ -569,7 +587,7 @@ const QuizPage = () => {
                   <p className="text-xl font-bold text-blue-600">{timePerQuestion}s</p>
                 </div>
               </div>
-              
+
               {/* Performance Message */}
               <div className="px-6 pb-6">
                 <div className="bg-white border border-gray-100 rounded-lg p-4 shadow-sm">
@@ -578,17 +596,17 @@ const QuizPage = () => {
                     <div>
                       <h3 className="font-medium text-gray-900">{getPerformanceMessage()}</h3>
                       <p className="text-sm text-gray-500">
-                        {scorePercentage >= 75 
+                        {scorePercentage >= 75
                           ? 'You have a solid understanding of this topic! Keep up the great work!'
                           : scorePercentage >= 50
-                          ? 'Good effort! Review the questions to improve your score.'
-                          : 'Keep practicing! You\'ll get better with more practice.'}
+                            ? 'Good effort! Review the questions to improve your score.'
+                            : 'Keep practicing! You\'ll get better with more practice.'}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* Action Buttons */}
               <div className="px-6 pb-6 flex gap-3">
                 <button
@@ -598,52 +616,47 @@ const QuizPage = () => {
                   {showDetailedResults ? 'Hide Details' : 'View Details'}
                 </button>
               </div>
-              
+
               {/* Detailed Results */}
               {showDetailedResults && (
                 <div className="border-t border-gray-100 p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Question Review</h3>
                   <div className="space-y-4">
                     {questions.map((question, index) => (
-                      <div 
-                        key={index} 
-                        className={`border rounded-lg overflow-hidden transition-all duration-200 ${
-                          expandedQuestion === index ? 'border-blue-300 shadow-md' : 'border-gray-200 hover:border-gray-300'
-                        }`}
+                      <div
+                        key={index}
+                        className={`border rounded-lg overflow-hidden transition-all duration-200 ${expandedQuestion === index ? 'border-blue-300 shadow-md' : 'border-gray-200 hover:border-gray-300'
+                          }`}
                       >
                         <button
-                          className={`w-full text-left p-4 flex justify-between items-center focus:outline-none ${
-                            userAnswers[index]?.isCorrect ? 'bg-green-50' : 'bg-red-50'
-                          }`}
+                          className={`w-full text-left p-4 flex justify-between items-center focus:outline-none cursor-pointer ${userAnswers[index]?.isCorrect ? 'bg-green-50' : 'bg-red-50'
+                            }`}
                           onClick={() => setExpandedQuestion(expandedQuestion === index ? null : index)}
                         >
                           <div className="flex items-center">
-                            <span className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
-                              userAnswers[index]?.isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-                            }`}>
+                            <span className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 ${userAnswers[index]?.isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                              }`}>
                               {userAnswers[index]?.isCorrect ? '✓' : '✗'}
                             </span>
-                            <span className="font-medium">Question {index + 1}</span>
+                            <span className="font-medium text-gray-900">Question {index + 1}</span>
                           </div>
-                          <svg 
-                            className={`w-5 h-5 text-gray-500 transition-transform ${
-                              expandedQuestion === index ? 'transform rotate-180' : ''
-                            }`}
-                            fill="none" 
-                            viewBox="0 0 24 24" 
+                          <svg
+                            className={`w-5 h-5 text-gray-500 transition-transform ${expandedQuestion === index ? 'transform rotate-180' : ''
+                              }`}
+                            fill="none"
+                            viewBox="0 0 24 24"
                             stroke="currentColor"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </button>
-                        
+
                         {expandedQuestion === index && (
                           <div className="p-4 bg-white">
-                            <p className="font-medium mb-2">{question.question}</p>
+                            <p className="font-medium mb-2 text-gray-900">{question.question.text}</p>
                             <div className="mt-3">
-                              <p className="text-sm text-gray-600">Your answer: <span className={`font-medium ${
-                                userAnswers[index]?.isCorrect ? 'text-green-600' : 'text-red-600'
-                              }`}>
+                              <p className="text-sm text-gray-600">Your answer: <span className={`font-medium ${userAnswers[index]?.isCorrect ? 'text-green-600' : 'text-red-600'
+                                }`}>
                                 {renderAnswerText(userAnswers[index]?.answer) || 'Not answered'}
                               </span></p>
                               {!userAnswers[index]?.isCorrect && (
@@ -653,6 +666,7 @@ const QuizPage = () => {
                                   </span>
                                 </p>
                               )}
+
                               {question.explanation && (
                                 <div className="mt-2 p-3 bg-blue-50 rounded-md">
                                   <p className="text-sm text-blue-700">
@@ -677,7 +691,7 @@ const QuizPage = () => {
                 <div className="relative">
                   {/* Decorative accent */}
                   <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--primary-color)]"></div>
-                  
+
                   <div className="p-6 pb-4">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                       <div className="space-y-1 flex-1">
@@ -691,16 +705,15 @@ const QuizPage = () => {
                           <span>Test your knowledge and improve your skills</span>
                         </p>
                       </div>
-                      
+
                       {/* Timer - Modern Card */}
-                      <div 
-                        className={`p-3 rounded-xl border transition-colors duration-300 ${
-                          timePercentage > 60 
-                            ? 'bg-green-100 border-green-400' 
-                            : timePercentage > 30 
-                            ? 'bg-amber-100 border-amber-400'
-                            : 'bg-red-100 border-red-400'
-                        }`}
+                      <div
+                        className={`p-3 rounded-xl border transition-colors duration-300 ${timePercentage > 60
+                            ? 'bg-green-100 border-green-400'
+                            : timePercentage > 30
+                              ? 'bg-amber-100 border-amber-400'
+                              : 'bg-red-100 border-red-400'
+                          }`}
                       >
                         <div className="flex items-center gap-4">
                           <div className="relative w-14 h-14 flex-shrink-0">
@@ -772,24 +785,24 @@ const QuizPage = () => {
                 </div>
               </div>
 
-                {/* Navigation Buttons */}
-                <div className="flex justify-between mt-6">
-                  <button
-                    onClick={goToPrevious}
-                    disabled={currentQuestionIndex === 0}
-                    className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50 transition-colors"
-                  >
-                    Previous
-                  </button>
-                  
-                  <button
-                    onClick={currentQuestionIndex >= questions.length - 1 ? handleFinishQuiz : goToNext}
-                    className="px-6 py-2 bg-[var(--primary-color)] text-white rounded hover:bg-[var(--primary-hover)] disabled:opacity-50 transition-colors cursor-pointer"
-                  >
-                    {currentQuestionIndex >= questions.length - 1 ? 'Finish' : 'Next'}
-                  </button>
-                </div>
+              {/* Navigation Buttons */}
+              <div className="flex justify-between mt-6">
+                <button
+                  onClick={goToPrevious}
+                  disabled={currentQuestionIndex === 0}
+                  className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:opacity-50 transition-colors"
+                >
+                  Previous
+                </button>
+
+                <button
+                  onClick={currentQuestionIndex >= questions.length - 1 ? handleFinishQuiz : goToNext}
+                  className="px-6 py-2 bg-[var(--primary-color)] text-white rounded hover:bg-[var(--primary-hover)] disabled:opacity-50 transition-colors cursor-pointer"
+                >
+                  {currentQuestionIndex >= questions.length - 1 ? 'Finish' : 'Next'}
+                </button>
               </div>
+            </div>
           )}
         </div>
       </div>
