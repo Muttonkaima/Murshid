@@ -766,7 +766,7 @@ const QuizPage = () => {
               </div>
 
               {/* Question Content */}
-              <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
+              <div className="bg-white rounded-xl shadow-sm p-0 mb-6">
                 <div className="prose max-w-none">
                   {renderQuestion()}
                 </div>
