@@ -281,7 +281,7 @@ const ReorderingQuestion: React.FC<ReorderingQuestionProps> = ({
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full max-w-3xl mx-auto transition-all duration-200 hover:shadow-md overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full transition-all duration-200 hover:shadow-md overflow-hidden">
         <div className="px-4 sm:px-6 pt-4 sm:pt-6">
           {/* Question Header */}
           <div className="mb-6">

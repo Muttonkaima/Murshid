@@ -367,7 +367,7 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
   );
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full max-w-3xl mx-auto transition-all duration-200 hover:shadow-md overflow-hidden">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full transition-all duration-200 hover:shadow-md overflow-hidden">
       <div className='px-4 sm:px-6 pt-4 sm:pt-6'>
       <DndProvider backend={HTML5Backend}>
 
@@ -407,10 +407,6 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
           </div>
         )}
 
-        {/* Instructions */}
-        {/* <div className="bg-gray-50 p-4 rounded-lg mb-6 text-gray-900">
-          <p><strong className="text-blue-600">Instructions:</strong> Drag and drop the items into their correct categories.</p>
-        </div> */}
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -565,13 +561,16 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
 
         {/* Buttons */}
         <div className="flex justify-end items-center mb-4">
+          {!isSubmitted?
           <button
-            onClick={handleSubmit}
-            disabled={disabled || isSubmitted}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitted ? 'Submitted' : 'Submit Answers'}
-          </button>
+          onClick={handleSubmit}
+          disabled={disabled || isSubmitted}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Submit Answers
+        </button>:
+        null}
+          
         </div>
       </DndProvider>
       </div>

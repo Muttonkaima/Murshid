@@ -497,7 +497,7 @@ const QuizPage = () => {
             // Results screen
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden max-w-2xl w-full mx-auto">
               {/* Header with score */}
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+              <div className="bg-gradient-to-r from-[var(--primary-color)] to-black p-6 text-white">
                 <div className="flex justify-between items-center">
                   <div>
                     <h1 className="text-2xl font-bold">Quiz Completed!</h1>
