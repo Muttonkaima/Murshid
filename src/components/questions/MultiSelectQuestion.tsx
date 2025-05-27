@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuestionContent from './QuestionContent';
+import { motion } from 'framer-motion';
 
 interface Option {
   hide_text: boolean;
@@ -150,19 +151,27 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 max-w-3xl mx-auto">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full max-w-3xl mx-auto transition-all duration-200 hover:shadow-md overflow-hidden">
+      <div className="px-4 sm:px-6 pt-4 sm:pt-6">
       {/* Question */}
-      <div className="mb-6">
-        <QuestionContent content={question.question} />
-        <p className="text-sm text-gray-500 mt-1">
-          Select all that apply. {question.correctAnswers.length > 1 ? 
-            `(There are ${question.correctAnswers.length} correct answers)` : 
-            '(There is 1 correct answer)'}
-        </p>
+      <div className="mb-6 sm:mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+          <div className="flex-1">
+            <div className="text-lg sm:text-xl font-semibold text-gray-900">
+              <QuestionContent content={question.question} />
+            </div>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2 font-medium">
+              Select all that apply
+            </p>
+          </div>
+          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-50 text-blue-700 whitespace-nowrap">
+            {question.marks} {question.marks === 1 ? 'mark' : 'marks'}
+          </span>
+        </div>
       </div>
 
       {/* Options */}
-      <div className="space-y-3 mb-6">
+      <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
         {question.options.map((option, index) => {
           const optionText = option.text;
           const optionKey = `${question.id}-option-${index}`;
@@ -172,43 +181,45 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
           return (
             <div 
               key={optionKey}
-              className={getOptionClasses(optionText)}
+              className={`${getOptionClasses(optionText).replace('p-4', 'p-3 sm:p-4')} group`}
               onClick={() => toggleOption(optionText)}
             >
-              <div className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center mr-3 mt-0.5 ${
+              <div className={`flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-lg border-2 flex items-center justify-center mr-3 sm:mr-4 transition-all duration-200 ${
                 isSubmitted
                   ? isCorrect
                     ? isSelected
-                      ? 'bg-green-100 border-green-500 text-green-700'
-                      : 'bg-yellow-100 border-yellow-400 text-yellow-700'
+                      ? 'bg-green-50 border-green-500 text-green-600 shadow-sm'
+                      : 'bg-yellow-50 border-yellow-400 text-yellow-600 shadow-sm'
                     : isSelected
-                      ? 'bg-red-100 border-red-500 text-red-700'
-                      : 'border-gray-300'
+                      ? 'bg-red-50 border-red-400 text-red-600 shadow-sm'
+                      : 'border-gray-200 group-hover:border-gray-300'
                   : isSelected
-                    ? 'bg-blue-100 border-blue-500 text-blue-700'
-                    : 'border-gray-300'
+                    ? 'bg-blue-50 border-blue-500 text-blue-600 shadow-sm'
+                    : 'border-gray-200 group-hover:border-blue-400 group-hover:bg-blue-50/50'
               }`}>
                 {isSubmitted ? (
                   isCorrect ? (
                     isSelected ? (
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     ) : (
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     )
                   ) : isSelected ? (
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                    <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   ) : null
                 ) : isSelected ? (
-                  <div className="w-3 h-3 bg-blue-500 rounded-sm"></div>
-                ) : null}
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-500 rounded-sm transition-all duration-200"></div>
+                ) : (
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-sm bg-transparent group-hover:bg-gray-200 transition-colors duration-200"></div>
+                )}
               </div>
-              <div className="flex-1">
+              <div className="flex-1 -mt-0.5 text-sm sm:text-base">
                 <QuestionContent content={option} />
               </div>
             </div>
@@ -218,107 +229,155 @@ const MultiSelectQuestion: React.FC<MultiSelectQuestionProps> = (props) => {
 
       {/* Submit Button */}
       {!isSubmitted && (
-        <button
-          onClick={handleSubmit}
-          disabled={disabled || selectedOptions.length === 0}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        >
-          Submit Answer
-        </button>
+        <div className="flex justify-end">
+          <button
+            onClick={handleSubmit}
+            disabled={disabled || selectedOptions.length === 0}
+            className="w-full sm:w-auto px-4 sm:px-6 py-2.5 bg-blue-500 text-white font-medium text-sm sm:text-base rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Submit Answer
+            {selectedOptions.length > 0 && (
+              <span className="ml-2 bg-blue-600 px-2 py-0.5 rounded-full text-xs whitespace-nowrap">
+                {selectedOptions.length} selected
+              </span>
+            )}
+          </button>
+        </div>
       )}
 
       {/* Feedback */}
       {isSubmitted && (
-        <div className="mb-6">
-          <div className={`p-4 rounded-lg mb-4 ${
-            calculateScore() > 0 ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'
-          }`}>
-            <div className="flex items-center">
-              {calculateScore() > 0 ? (
-                <svg className="w-6 h-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className={`p-4 rounded-lg flex items-start ${calculateScore() > 0
+                ? 'bg-green-50 border-l-4 border-green-500'
+                : 'bg-red-50 border-l-4 border-red-500'
+              }`}>
+              <svg
+                className={`h-5 w-5 mt-0.5 mr-2 flex-shrink-0 ${calculateScore() > 0 ? 'text-green-500' : 'text-red-500'
+                  }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {calculateScore() > 0 ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6 text-red-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              )}
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                )}
+              </svg>
               <div>
-                <h3 className="font-medium text-gray-900">
-                  {calculateScore() > 0 ? 'Good job!' : 'Incorrect'}
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Score: {calculateScore().toFixed(1)}/{question.marks}
+                <p className={`font-medium ${calculateScore() > 0 ? 'text-green-800' : 'text-red-800'}`}>
+                  {calculateScore() > 0 ? (
+                    `Good job! You scored ${calculateScore().toFixed(1)}/${question.marks} (${(calculateScore() / question.marks * 100).toFixed(0)}%)`
+                  ) : (
+                    `Incorrect. You scored: ${calculateScore().toFixed(1)}/${question.marks}`
+                  )}
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div className="p-3 bg-green-50 rounded-lg border border-green-200">
-              <h4 className="font-medium text-green-700 mb-1">Correct Answers:</h4>
-              <ul className="list-disc list-inside text-sm text-green-700">
-                {question.correctAnswers.map((answer, idx) => (
-                  <li key={`correct-${idx}`} className="mb-1">{answer}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="p-3 bg-red-50 rounded-lg border border-red-200">
-              <h4 className="font-medium text-red-700 mb-1">Your Answers:</h4>
-              <ul className="list-disc list-inside text-sm text-red-700">
-                {selectedOptions.length > 0 ? (
-                  selectedOptions.map((answer, idx) => (
-                    <li 
-                      key={`selected-${idx}`} 
-                      className={`mb-1 ${question.correctAnswers.includes(answer) ? 'text-green-700' : 'text-red-700'}`}
-                    >
-                      {answer}
-                      {question.correctAnswers.includes(answer) ? (
-                        <span className="ml-1 text-green-500">✓</span>
-                      ) : (
-                        <span className="ml-1 text-red-500">✗</span>
-                      )}
+          <motion.div
+            className="overflow-hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="p-4 bg-white rounded-xl border border-green-100 shadow-sm">
+                <div className="flex items-center text-green-700 mb-2">
+                  <svg className="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <h4 className="font-medium">Correct Answers</h4>
+                </div>
+                <ul className="space-y-2">
+                  {question.correctAnswers.map((answer, idx) => (
+                    <li key={`correct-${idx}`} className="flex items-start">
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-50 text-green-600 text-xs font-medium mr-2 flex-shrink-0">
+                        {idx + 1}
+                      </span>
+                      <span className="text-gray-800">{answer}</span>
                     </li>
-                  ))
-                ) : (
-                  <li className="text-gray-500">No answers selected</li>
-                )}
-              </ul>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                <div className="flex items-center text-gray-700 mb-2">
+                  <svg className="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <h4 className="font-medium">Your Answers</h4>
+                </div>
+                <ul className="space-y-2">
+                  {selectedOptions.length > 0 ? (
+                    selectedOptions.map((answer, idx) => {
+                      const isCorrect = question.correctAnswers.includes(answer);
+                      return (
+                        <li key={`selected-${idx}`} className="flex items-start">
+                          <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-medium mr-2 flex-shrink-0 ${
+                            isCorrect ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'
+                          }`}>
+                            {isCorrect ? '✓' : '✗'}
+                          </span>
+                          <span className={isCorrect ? 'text-gray-800' : 'text-gray-600 line-through'}>
+                            {answer}
+                          </span>
+                        </li>
+                      );
+                    })
+                  ) : (
+                    <li className="text-gray-500">No answers selected</li>
+                  )}
+                </ul>
+              </div>
             </div>
-          </div>
+
+          </motion.div>
         </div>
       )}
 
       {/* Explanation */}
       {isSubmitted && question.explanation && (
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-          <button 
-            onClick={() => setShowExplanation(!showExplanation)}
-            className="text-blue-600 font-medium flex items-center"
-          >
-            {showExplanation ? 'Hide' : 'Show'} Explanation
-            <svg 
-              className={`ml-2 w-4 h-4 transition-transform ${showExplanation ? 'rotate-180' : ''}`} 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        <motion.div
+        className="overflow-hidden"
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mt-4">
+          <div className="flex">
+            <svg className="h-5 w-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-          </button>
-          
-          {showExplanation && (
-            <div className="mt-2 text-gray-700">
-              {question.explanation}
+            <div>
+              <p className="font-medium text-blue-800 mb-1">Explanation</p>
+              <p className="text-blue-700">{question.explanation}</p>
             </div>
-          )}
+          </div>
         </div>
+      </motion.div>
       )}
 
-      {/* Marks */}
-      <div className="mt-4 text-sm text-gray-500 text-right">
-        {question.marks} {question.marks === 1 ? 'mark' : 'marks'}
-        {isSubmitted && ` (Your score: ${calculateScore().toFixed(1)})`}
+      </div>
+      
+      {/* Card Footer */}
+      <div className="w-full mt-3 bg-gray-50 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 sm:px-6 py-3 gap-2 sm:gap-0">
+        <div className="flex items-center text-xs sm:text-sm text-gray-500">
+          <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-gray-400 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          <span>Multi-Select Question</span>
+        </div>
+        <div className="text-xs sm:text-sm font-medium text-gray-600 bg-white px-2.5 sm:px-3 py-1 rounded-full border border-gray-200">
+          {question.marks} {question.marks === 1 ? 'mark' : 'marks'}
+        </div>
       </div>
     </div>
   );

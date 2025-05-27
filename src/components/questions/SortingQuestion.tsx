@@ -257,11 +257,21 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
     
     // Check if all items are sorted
     if (!allItemsSorted()) {
-      setFeedback({
-        isCorrect: false,
-        message: 'Please sort all items into their correct categories before submitting.',
-        explanation: ''
-      });
+      // Don't set feedback state as it disables drag-and-drop
+      // Instead, we'll show a temporary message without changing the state
+      const tempMessage = document.createElement('div');
+      tempMessage.className = 'fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded';
+      tempMessage.role = 'alert';
+      tempMessage.innerHTML = '<span class="font-bold">Notice:</span> Please sort all items into their correct categories before submitting.';
+      document.body.appendChild(tempMessage);
+      
+      // Remove the message after 3 seconds
+      setTimeout(() => {
+        if (document.body.contains(tempMessage)) {
+          document.body.removeChild(tempMessage);
+        }
+      }, 3000);
+      
       return;
     }
     
@@ -357,23 +367,9 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 w-full max-w-3xl mx-auto transition-all duration-200 hover:shadow-md overflow-hidden">
+      <div className='px-4 sm:px-6 pt-4 sm:pt-6'>
       <DndProvider backend={HTML5Backend}>
-        {/* Question Header */}
-        {/* <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-xl mb-6 shadow-sm">
-          <div className="flex items-center gap-3">
-            <svg 
-              className="w-6 h-6 text-blue-500" 
-              fill="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
-            </svg>
-            <h2 className="text-xl font-semibold text-blue-600">
-              Sorting <span className="text-gray-500 font-normal text-base">({question.marks} marks)</span>
-            </h2>
-          </div>
-        </div> */}
 
         {/* Question Content */}
         {question.question.image && (
@@ -412,9 +408,9 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
         )}
 
         {/* Instructions */}
-        <div className="bg-gray-50 p-4 rounded-lg mb-6 text-gray-900">
+        {/* <div className="bg-gray-50 p-4 rounded-lg mb-6 text-gray-900">
           <p><strong className="text-blue-600">Instructions:</strong> Drag and drop the items into their correct categories.</p>
-        </div>
+        </div> */}
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -568,19 +564,7 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
         )}
 
         {/* Buttons */}
-        <div className="flex justify-between items-center mb-4">
-          <div>
-            <h2 className="text-xl font-semibold text-gray-900">
-              Sort the items into the correct categories
-            </h2>
-            {isSubmitted && (
-              <div className="text-sm text-gray-600 mt-1">
-                Score: <span className="font-medium">{score.toFixed(1)}</span> / {question.marks} marks
-                <span className="mx-2">•</span>
-                {correctItemsCount} of {totalItems} items correct
-              </div>
-            )}
-          </div>
+        <div className="flex justify-end items-center mb-4">
           <button
             onClick={handleSubmit}
             disabled={disabled || isSubmitted}
@@ -590,6 +574,18 @@ const SortingQuestion: React.FC<SortingQuestionProps> = (props) => {
           </button>
         </div>
       </DndProvider>
+      </div>
+      <div className="w-full mt-3 bg-gray-50 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 sm:px-6 py-3 gap-2 sm:gap-0">
+        <div className="flex items-center text-xs sm:text-sm text-gray-500">
+          <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-gray-400 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          <span>Sorting Question</span>
+        </div>
+        <div className="text-xs sm:text-sm font-medium text-gray-600 bg-white px-2.5 sm:px-3 py-1 rounded-full border border-gray-200">
+          {question.marks} {question.marks === 1 ? 'mark' : 'marks'}
+        </div>
+      </div>
     </div>
   );
 };
