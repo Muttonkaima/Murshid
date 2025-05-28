@@ -106,7 +106,13 @@ const QuizPage = () => {
     if (answer === null || answer === undefined) return 'Not answered';
 
     // ✅ Matching pairs array: [{left: "", right: ""}, ...]
-    if (Array.isArray(answer) && answer.length && typeof answer[0] === 'object' && 'left' in answer[0] && 'right' in answer[0]) {
+    if (
+      Array.isArray(answer) &&
+      answer.length &&
+      typeof answer[0] === 'object' &&
+      'left' in answer[0] &&
+      'right' in answer[0]
+    ) {
       return (
         <ul className="list-disc list-inside space-y-1">
           {answer.map((pair: any, idx: number) => (
@@ -118,7 +124,7 @@ const QuizPage = () => {
       );
     }
 
-    // ✅ Array of primitives (strings, booleans, etc.)
+    // ✅ Array of primitives
     if (Array.isArray(answer)) {
       return answer.join(', ');
     }
@@ -153,6 +159,25 @@ const QuizPage = () => {
       );
     }
 
+    // ✅ Object with keys mapping to arrays (like { English: [...], Dutch: [...] })
+    // ✅ Object with keys mapping to arrays (like { English: [...], Dutch: [...] })
+    if (
+      typeof answer === 'object' &&
+      !Array.isArray(answer) &&
+      Object.values(answer).every((val) => Array.isArray(val))
+    ) {
+      return (
+        <div className="space-y-2">
+          {(Object.entries(answer) as [string, any[]][]).map(([language, names]) => (
+            <div key={language}>
+              <strong>{language}:</strong> {names.join(', ')}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+
     // ✅ Malformed: { undefined: [...] }
     const keys = Object.keys(answer);
     if (keys.length === 1 && Array.isArray(answer[keys[0]])) {
@@ -162,6 +187,7 @@ const QuizPage = () => {
     // ✅ Fallback: show JSON
     return <pre className="text-xs text-gray-500">{JSON.stringify(answer, null, 2)}</pre>;
   };
+
 
 
   // Calculate time percentage for progress and get color based on remaining time
@@ -341,7 +367,7 @@ const QuizPage = () => {
 
         // Initialize score to 0
         setScore(0);
-
+        console.log("Selected Questions:", selectedQuestions);
         setQuestions(selectedQuestions);
       } catch (error) {
         console.error('Error loading questions:', error);
@@ -652,31 +678,63 @@ const QuizPage = () => {
                         </button>
 
                         {expandedQuestion === index && (
-                          <div className="p-4 bg-white">
-                            <p className="font-medium mb-2 text-gray-900">{question.question.text}</p>
-                            <div className="mt-3">
-                              <p className="text-sm text-gray-600">Your answer: <span className={`font-medium ${userAnswers[index]?.isCorrect ? 'text-green-600' : 'text-red-600'
-                                }`}>
-                                {renderAnswerText(userAnswers[index]?.answer) || 'Not answered'}
-                              </span></p>
+                          <div className="p-5 bg-white rounded-xl shadow-lg transition-all duration-300 border border-gray-200">
+                            <div className="mb-4">
+                              <p className="text-sm font-semibold text-gray-700 uppercase tracking-wide flex items-center gap-2">
+                                <span className="text-blue-600">📘 Question Type:</span>
+                                <span className="text-gray-900 font-medium">
+                                  {
+                                    question.originalType === 'true-false' ? 'True or False' :
+                                      question.originalType === 'match-the-following' ? 'Match The Following' :
+                                        question.originalType === 'fill-in-blanks' ? 'Fill in the Blanks' :
+                                          question.originalType === 'sorting' ? 'Sorting' :
+                                            question.originalType === 'reordering' ? 'Reordering' :
+                                              question.originalType === 'mcq' ? 'Choose the correct answer' :
+                                                question.originalType === 'multi-select' ? 'Multi Select' :
+                                                  question.originalType
+                                  }
+                                </span>
+                              </p>
+                            </div>
+
+                            <div className="mb-4">
+                              <p className="text-base text-gray-800 font-medium">
+                                📝 <span className="font-bold">Question:</span> {question.question.text}
+                              </p>
+                            </div>
+
+                            <div className="space-y-2">
+                              <p className="text-sm text-gray-700">
+                                ✅ <span className="font-bold">Your answer:</span>{' '}
+                                <span
+                                  className={`font-semibold ${userAnswers[index]?.isCorrect ? 'text-green-600' : 'text-red-600'
+                                    }`}
+                                >
+                                  {renderAnswerText(userAnswers[index]?.answer) || 'Not answered'}
+                                </span>
+                              </p>
+
                               {!userAnswers[index]?.isCorrect && (
-                                <p className="text-sm text-gray-600 mt-1">
-                                  Correct answer: <span className="font-medium text-green-600">
+                                <p className="text-sm text-gray-700">
+                                  🎯 <span className="font-bold">Correct answer:</span>{' '}
+                                  <span className="text-green-600 font-semibold">
                                     {renderAnswerText(question.correctAnswer)}
                                   </span>
                                 </p>
                               )}
 
                               {question.explanation && (
-                                <div className="mt-2 p-3 bg-blue-50 rounded-md">
-                                  <p className="text-sm text-blue-700">
-                                    <span className="font-medium">Explanation:</span> {question.explanation}
+                                <div className="mt-3 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-md">
+                                  <p className="text-sm text-blue-800">
+                                    💡 <span className="font-bold">Explanation:</span>{' '}
+                                    {question.explanation}
                                   </p>
                                 </div>
                               )}
                             </div>
                           </div>
                         )}
+
                       </div>
                     ))}
                   </div>
@@ -709,10 +767,10 @@ const QuizPage = () => {
                       {/* Timer - Modern Card */}
                       <div
                         className={`p-3 rounded-xl border transition-colors duration-300 ${timePercentage > 60
-                            ? 'bg-green-100 border-green-400'
-                            : timePercentage > 30
-                              ? 'bg-amber-100 border-amber-400'
-                              : 'bg-red-100 border-red-400'
+                          ? 'bg-green-100 border-green-400'
+                          : timePercentage > 30
+                            ? 'bg-amber-100 border-amber-400'
+                            : 'bg-red-100 border-red-400'
                           }`}
                       >
                         <div className="flex items-center gap-4">
