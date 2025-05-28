@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import MCQQuestion from '@/components/questions/MCQQuestion';
@@ -48,6 +48,9 @@ const QuizPage = () => {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showNav, setShowNav] = window.innerWidth < 768 ? useState(false) : useState(true);
+  const navRef = useRef<HTMLDivElement>(null);
+  const navToggleRef = useRef<HTMLButtonElement>(null);
 
   // Calculate score and statistics
   const totalQuestions = questions.length;
@@ -474,6 +477,26 @@ const QuizPage = () => {
     }
   };
 
+  const scrollToQuestion = (index: number) => {
+    // Update the current question index
+    setCurrentQuestionIndex(index);
+    // Reset answer submission state
+    setIsAnswerSubmitted(false);
+    // Close the mobile navigation drawer if open
+   
+    if (window.innerWidth < 768) {
+      setShowNav(false);
+    }
+    
+  
+
+    // Scroll to the top of the question container
+    const questionContainer = document.getElementById('question-container');
+    if (questionContainer) {
+      questionContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const renderQuestion = () => {
     if (isLoading) {
       return <div className="flex justify-center items-center h-64">
@@ -533,10 +556,108 @@ const QuizPage = () => {
     }
   };
 
+  // Close navigation when showing results
+  useEffect(() => {
+    if (showResults) {
+      setShowNav(false);
+    }
+  }, [showResults]);
+
+  // Close nav when clicking outside on mobile
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (showNav && navRef.current && !navRef.current.contains(target) && navToggleRef.current && !navToggleRef.current.contains(target)) {
+      setShowNav(false);
+    }
+  }, [showNav]);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto p-4 md:p-8">
+      <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
+      
+        {/* Question Navigator */}
+        {showNav && (
+          <>
+        <div 
+          ref={navRef}
+          className={`fixed inset-y-0 right-0 w-72 bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:max-h-[calc(100vh)] md:sticky md:top-0 md:relative md:translate-x-0 md:w-72 ${showNav ? 'translate-x-0' : 'translate-x-full md:translate-x-0'} border-l border-gray-200`}
+        >
+          {/* Header */}
+          <div className="p-5 border-b border-gray-200 bg-gradient-to-r from-white to-gray-50">
+            <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
+              🧩 Questions
+            </h2>
+            <p className="text-sm text-gray-500">
+              {Object.keys(userAnswers).length} of {totalQuestions} answered
+            </p>
+          </div>
+
+          {/* Question Buttons */}
+          <div className="p-4 overflow-y-auto max-h-[calc(100vh-140px)]">
+            <div className="grid grid-cols-5 gap-3">
+              {questions.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToQuestion(index)}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-semibold border cursor-pointer
+            transition-all duration-200 ease-in-out shadow-sm
+            ${currentQuestionIndex === index
+                      ? 'bg-blue-600 text-white border-blue-600 ring-2 ring-blue-200'
+                      : index in userAnswers
+                        ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)] hover:bg-[var(--primary-color)]'
+                        : 'bg-gray-100 text-gray-600 border-gray-300 hover:bg-gray-200'
+                    }`}
+                  aria-label={`Go to question ${index + 1}`}
+                >
+                  {index + 1}
+                </button>
+
+              ))}
+            </div>
+
+            {/* Legend */}
+            <div className="mt-6 space-y-3 text-sm">
+              <div className="flex items-center gap-2 shadow-md bg-transparent p-4 rounded-lg">
+                <div className="w-3 h-3 rounded-full bg-blue-600 ring-2 ring-blue-200"></div>
+                <span className="text-blue-600">Current</span>
+              </div>
+              <div className="flex items-center gap-2 shadow-md bg-transparent p-4 rounded-lg">
+                <div className="w-3 h-3 rounded-full bg-[var(--primary-color)] border border-[var(--primary-color)]"></div>
+                <span className="text-[var(--primary-color)]">Answered</span>
+              </div>
+              <div className="flex items-center gap-2 shadow-md bg-transparent p-4 rounded-lg">
+                <div className="w-3 h-3 rounded-full bg-gray-300 border border-gray-500"></div>
+                <span className="text-gray-500">Unanswered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </>
+      )}
+
+        {/* Main Content */}
+        <div className="flex-1 max-w-4xl mx-auto p-4 md:p-8">
+          <div className="md:hidden mb-6">
+            <div className="flex items-center justify-between bg-white p-3 rounded-lg shadow">
+              <span className="text-sm font-medium text-gray-700">
+                Question {currentQuestionIndex + 1} of {totalQuestions}
+              </span>
+              <button
+                onClick={() => setShowNav(true)}
+                className="text-blue-600 text-sm font-medium"
+              >
+                View All
+              </button>
+            </div>
+          </div>
+
           {showResults ? (
             // Results screen
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden max-w-2xl w-full mx-auto">
@@ -685,13 +806,13 @@ const QuizPage = () => {
                                 <span className="text-gray-900 font-medium">
                                   {
                                     question.originalType === 'true-false' ? 'True or False' :
-                                      question.originalType === 'match-the-following' ? 'Match The Following' :
-                                        question.originalType === 'fill-in-blanks' ? 'Fill in the Blanks' :
-                                          question.originalType === 'sorting' ? 'Sorting' :
-                                            question.originalType === 'reordering' ? 'Reordering' :
-                                              question.originalType === 'mcq' ? 'Choose the correct answer' :
-                                                question.originalType === 'multi-select' ? 'Multi Select' :
-                                                  question.originalType
+                                    question.originalType === 'match-the-following' ? 'Match The Following' :
+                                    question.originalType === 'fill-in-blanks' ? 'Fill in the Blanks' :
+                                    question.originalType === 'sorting' ? 'Sorting' :
+                                    question.originalType === 'reordering' ? 'Reordering' :
+                                    question.originalType === 'mcq' ? 'Choose the correct answer' :
+                                    question.originalType === 'multi-select' ? 'Multi Select' :
+                                    question.originalType
                                   }
                                 </span>
                               </p>
@@ -766,11 +887,11 @@ const QuizPage = () => {
 
                       {/* Timer - Modern Card */}
                       <div
-                        className={`p-3 rounded-xl border transition-colors duration-300 ${timePercentage > 60
-                          ? 'bg-green-100 border-green-400'
+                        className={`p-3 rounded-xl shadow-lg transition-colors duration-300 ${timePercentage > 60
+                          ? 'bg-green-100 '
                           : timePercentage > 30
-                            ? 'bg-amber-100 border-amber-400'
-                            : 'bg-red-100 border-red-400'
+                            ? 'bg-amber-100'
+                            : 'bg-red-100'
                           }`}
                       >
                         <div className="flex items-center gap-4">
