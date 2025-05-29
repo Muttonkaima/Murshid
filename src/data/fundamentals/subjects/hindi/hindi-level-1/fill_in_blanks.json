@@ -1,0 +1,176 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 201,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "क",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b6bf2865-4260-420e-bf4b-400086aed4b4.mp3",
+        "image": ""
+      },
+      "correctAnswer": "क",
+      "alternatives": [
+        "क"
+      ],
+      "explanation": "यह व्यंजन 'क' है।"
+    },
+    {
+      "id": 202,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ख",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a0f0097b-ddf2-413d-91bc-9b4b9bcd209a.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ख",
+      "alternatives": [
+        "ख"
+      ],
+      "explanation": "यह व्यंजन 'ख' है।"
+    },
+    {
+      "id": 203,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ग",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8709eb77-7159-4609-9547-377cf4df3802.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ग",
+      "alternatives": [
+        "ग"
+      ],
+      "explanation": "यह व्यंजन 'ग' है।"
+    },
+    {
+      "id": 204,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "घ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5800d66c-752b-4105-b06c-372f7ae65f3a.mp3",
+        "image": ""
+      },
+      "correctAnswer": "घ",
+      "alternatives": [
+        "घ"
+      ],
+      "explanation": "यह व्यंजन 'घ' है।"
+    },
+    {
+      "id": 205,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "च",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fad62d6d-2008-4290-ba0c-edbd026270fe.mp3",
+        "image": ""
+      },
+      "correctAnswer": "च",
+      "alternatives": [
+        "च"
+      ],
+      "explanation": "यह व्यंजन 'च' है।"
+    },
+    {
+      "id": 206,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ट",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f1099bb4-46b5-4081-8f32-56a85fd63473.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ट",
+      "alternatives": [
+        "ट"
+      ],
+      "explanation": "यह व्यंजन 'ट' है।"
+    },
+    {
+      "id": 207,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ठ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4b5f89a4-4aaf-4caf-aa4d-d4bf993cc16c.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ठ",
+      "alternatives": [
+        "ठ"
+      ],
+      "explanation": "यह व्यंजन 'ठ' है।"
+    },
+    {
+      "id": 208,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "अ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c5b2571f-4d6c-45fd-919b-8f8fb8b21b59.mp3",
+        "image": ""
+      },
+      "correctAnswer": "अ",
+      "alternatives": [
+        "अ"
+      ],
+      "explanation": "यह स्वर 'अ' है।"
+    },
+    {
+      "id": 209,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "आ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/081e3825-88a2-4bdf-b10c-f199d68d3fd7.mp3",
+        "image": ""
+      },
+      "correctAnswer": "आ",
+      "alternatives": [
+        "आ"
+      ],
+      "explanation": "यह स्वर 'आ' है।"
+    },
+    {
+      "id": 210,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "इ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9afb8203-e9b1-4160-915b-d9770c17a7cf.mp3",
+        "image": ""
+      },
+      "correctAnswer": "इ",
+      "alternatives": [
+        "इ"
+      ],
+      "explanation": "यह स्वर 'इ' है।"
+    }
+  ]
+}

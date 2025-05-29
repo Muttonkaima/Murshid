@@ -1,0 +1,201 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 701,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर शब्द बनाएँ।) Arrange the given syllables to form meaningful words:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "कुला",
+          "read_text": true,
+          "read_text_value": "कुला",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fe7e32e3-0a6d-4c1c-bba8-2e73ad98944a.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "किला",
+          "read_text": true,
+          "read_text_value": "किला",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7550a5ad-6420-45e2-9f16-b185e8777889.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "कु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "कि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "कुला": [
+          "कु",
+          "ला"
+        ],
+        "किला": [
+          "कि",
+          "ला"
+        ]
+      },
+      "explanation": "Match the vowel-consonant syllables to form correct words like 'कुला' and 'किला'."
+    },
+    {
+      "id": 702,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर शब्द बनाएँ।) Arrange the given syllables to form meaningful words:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "नाला",
+          "read_text": true,
+          "read_text_value": "नाला",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b6f7442d-c589-432f-a81e-8a816f22813c.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "नीला",
+          "read_text": true,
+          "read_text_value": "नीला",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7035d1c7-82c2-4eab-8398-fd47ce26dad1.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ना",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "नी",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "नाला": [
+          "ना",
+          "ला"
+        ],
+        "नीला": [
+          "नी",
+          "ला"
+        ]
+      },
+      "explanation": "Combine syllables like 'ना', 'नी' with 'ला' to form meaningful words."
+    },
+    {
+      "id": 703,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर शब्द बनाएँ।) Arrange the given syllables to form meaningful words:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "तोल",
+          "read_text": true,
+          "read_text_value": "तोल",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/911e9725-a37b-4d46-8cc0-eeb3c31969c7.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "तिल",
+          "read_text": true,
+          "read_text_value": "तिल",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b3bad8b2-f5af-473c-9e4a-4224a2b05687.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "तो",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ति",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "तोल": [
+          "तो",
+          "ल"
+        ],
+        "तिल": [
+          "ति",
+          "ल"
+        ]
+      },
+      "explanation": "Use 'तो' and 'ति' with 'ल' to form correct words 'तोल' and 'तिल'."
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 25,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the part of a plant to its function:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Leaves",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Flowers",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Stem",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Roots",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Fruits",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Absorb water",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Make food",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Support plant",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Attract pollinators",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Carry seeds",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Roots",
+          "right": "Absorb water"
+        },
+        {
+          "left": "Leaves",
+          "right": "Make food"
+        },
+        {
+          "left": "Stem",
+          "right": "Support plant"
+        },
+        {
+          "left": "Flowers",
+          "right": "Attract pollinators"
+        },
+        {
+          "left": "Fruits",
+          "right": "Carry seeds"
+        }
+      ],
+      "explanation": "Each part of the plant performs a unique function important for survival."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the sense organ to the correct sense:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Tongue",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Ears",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Nose",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Eyes",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Skin",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Hearing",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Taste",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Smell",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Sight",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Touch",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Eyes",
+          "right": "Sight"
+        },
+        {
+          "left": "Ears",
+          "right": "Hearing"
+        },
+        {
+          "left": "Nose",
+          "right": "Smell"
+        },
+        {
+          "left": "Tongue",
+          "right": "Taste"
+        },
+        {
+          "left": "Skin",
+          "right": "Touch"
+        }
+      ],
+      "explanation": "Each sense organ is responsible for a specific sense."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the animals to their category:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Parrot",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Lion",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Fish",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Frog",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Snake",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Bird",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Amphibian",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Aquatic",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Mammal",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Reptile",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Frog",
+          "right": "Amphibian"
+        },
+        {
+          "left": "Lion",
+          "right": "Mammal"
+        },
+        {
+          "left": "Parrot",
+          "right": "Bird"
+        },
+        {
+          "left": "Fish",
+          "right": "Aquatic"
+        },
+        {
+          "left": "Snake",
+          "right": "Reptile"
+        }
+      ],
+      "explanation": "Animals are grouped based on their features and habitats."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the layer of Earth to its description:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Outer Core",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Mantle",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Inner Core",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Crust",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Soil",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Solid metal center",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Semi-solid rock",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Liquid iron and nickel",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Thinnest layer",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Top layer where plants grow",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Crust",
+          "right": "Thinnest layer"
+        },
+        {
+          "left": "Mantle",
+          "right": "Semi-solid rock"
+        },
+        {
+          "left": "Outer Core",
+          "right": "Liquid iron and nickel"
+        },
+        {
+          "left": "Inner Core",
+          "right": "Solid metal center"
+        },
+        {
+          "left": "Soil",
+          "right": "Top layer where plants grow"
+        }
+      ],
+      "explanation": "Earth is made up of different layers, each with unique properties."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the example to the type of simple machine:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Pulley",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Scissors",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Ramp",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Wheelbarrow",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Screw",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Lever",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Used to lift bucket",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Second class lever",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Inclined plane",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Used to hold things tightly",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "Scissors",
+          "right": "Lever"
+        },
+        {
+          "left": "Wheelbarrow",
+          "right": "Second class lever"
+        },
+        {
+          "left": "Ramp",
+          "right": "Inclined plane"
+        },
+        {
+          "left": "Pulley",
+          "right": "Used to lift bucket"
+        },
+        {
+          "left": "Screw",
+          "right": "Used to hold things tightly"
+        }
+      ],
+      "explanation": "Simple machines make work easier and are used in tools we use daily."
+    }
+  ]
+}

@@ -1,0 +1,714 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 500,
+  "questions": [
+    {
+      "id": 201,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಪ್ರೀತಿ",
+          "read_text": true,
+          "read_text_value": "ಪ್ರೀತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8b514b73-cde3-456e-a738-025d54a2ceb9.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಜೂಜೂ",
+          "read_text": true,
+          "read_text_value": "ಜೂಜೂ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/387b348f-7b45-461f-9af0-98b362e17fd3.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ದೃತಿ",
+          "read_text": true,
+          "read_text_value": "ದೃತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/25b84147-48db-41ca-94cc-223e26ecaad4.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಜೂಜೂ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ್ರೀತಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ದೃತಿ"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಪ್ರೀತಿ",
+          "right": "ಪ್ರೀತಿ"
+        },
+        {
+          "left": "ಜೂಜೂ",
+          "right": "ಜೂಜೂ"
+        },
+        {
+          "left": "ದೃತಿ",
+          "right": "ದೃತಿ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 202,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ತೃಣ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಪರಿಮಳ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತೇರು",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ತೇರು",
+          "read_text": true,
+          "read_text_value": "ತೇರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/af53a854-a6b3-435b-80ce-49f362e2e5b4.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪರಿಮಳ",
+          "read_text": true,
+          "read_text_value": "ಪರಿಮಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fe90a5b7-3171-4f2b-9ac7-cffa22467d8c.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ತೃಣ",
+          "read_text": true,
+          "read_text_value": "ತೃಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5a325b8f-75f6-4506-abfb-db916295f912.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ತೃಣ",
+          "right": "ತೃಣ"
+        },
+        {
+          "left": "ಪರಿಮಳ",
+          "right": "ಪರಿಮಳ"
+        },
+        {
+          "left": "ತೇರು",
+          "right": "ತೇರು"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 203,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ತುಳಸಿ",
+          "read_text": true,
+          "read_text_value": "ತುಳಸಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c74e1ac7-4e96-420a-a4ec-a9cd1f57a86c.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪರಮ",
+          "read_text": true,
+          "read_text_value": "ಪರಮ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/81acedc3-ccd4-4fcb-be8f-7a9df6a72fee.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಿಳಿ",
+          "read_text": true,
+          "read_text_value": "ಗಿಳಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fa8cfc72-1c4e-49c0-ae5b-a3b08f29378e.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಪರಮ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತುಳಸಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಿಳಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ತುಳಸಿ",
+          "right": "ತುಳಸಿ"
+        },
+        {
+          "left": "ಪರಮ",
+          "right": "ಪರಮ"
+        },
+        {
+          "left": "ಗಿಳಿ",
+          "right": "ಗಿಳಿ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 204,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ನೊರೆ",
+          "read_text": true,
+          "read_text_value": "ನೊರೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7af9bdc8-8ecb-4d8b-af89-7f972a2033c1.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪ್ರೀತಿ",
+          "read_text": true,
+          "read_text_value": "ಪ್ರೀತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/91a63c2a-6a6e-4be9-ae2b-61a636fa45c1.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಜೂಜೂ",
+          "read_text": true,
+          "read_text_value": "ಜೂಜೂ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8bfcb347-5d94-44ad-b295-7a26531716b7.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಜೂಜೂ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ್ರೀತಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನೊರೆ"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ನೊರೆ",
+          "right": "ನೊರೆ"
+        },
+        {
+          "left": "ಪ್ರೀತಿ",
+          "right": "ಪ್ರೀತಿ"
+        },
+        {
+          "left": "ಜೂಜೂ",
+          "right": "ಜೂಜೂ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 205,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ದೃತಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತೃಣ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಪರಿಮಳ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಪರಿಮಳ",
+          "read_text": true,
+          "read_text_value": "ಪರಿಮಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/907c1f1f-d486-4141-a2c6-db1566a4d0a1.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ದೃತಿ",
+          "read_text": true,
+          "read_text_value": "ದೃತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dde9711d-6e8a-4fef-ab80-40981262bbc8.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ತೃಣ",
+          "read_text": true,
+          "read_text_value": "ತೃಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/182cdaef-f244-4fdb-b9c4-0ab0746982ef.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ದೃತಿ",
+          "right": "ದೃತಿ"
+        },
+        {
+          "left": "ತೃಣ",
+          "right": "ತೃಣ"
+        },
+        {
+          "left": "ಪರಿಮಳ",
+          "right": "ಪರಿಮಳ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 206,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ತೇರು",
+          "read_text": true,
+          "read_text_value": "ತೇರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a3815cda-545e-4e25-a7f6-419d9e17fefb.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ತುಳಸಿ",
+          "read_text": true,
+          "read_text_value": "ತುಳಸಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fb369c97-5364-4c04-a089-bdb7961a166d.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪರಮ",
+          "read_text": true,
+          "read_text_value": "ಪರಮ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/434bf0fd-f085-4f26-910e-15fa1cc39b86.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಪರಮ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತೇರು",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತುಳಸಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ತೇರು",
+          "right": "ತೇರು"
+        },
+        {
+          "left": "ತುಳಸಿ",
+          "right": "ತುಳಸಿ"
+        },
+        {
+          "left": "ಪರಮ",
+          "right": "ಪರಮ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 207,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಗಿಳಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ನೊರೆ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ್ರೀತಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ನೊರೆ",
+          "read_text": true,
+          "read_text_value": "ನೊರೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/471efaa6-2b2c-4f4d-96d4-bd704567ac93.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಿಳಿ",
+          "read_text": true,
+          "read_text_value": "ಗಿಳಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f24203cc-a103-4d5f-96de-b9899e61e816.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪ್ರೀತಿ",
+          "read_text": true,
+          "read_text_value": "ಪ್ರೀತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3136b12b-1971-4bc6-8a49-f4bef8f16122.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಗಿಳಿ",
+          "right": "ಗಿಳಿ"
+        },
+        {
+          "left": "ನೊರೆ",
+          "right": "ನೊರೆ"
+        },
+        {
+          "left": "ಪ್ರೀತಿ",
+          "right": "ಪ್ರೀತಿ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 208,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಜೂಜೂ",
+          "read_text": true,
+          "read_text_value": "ಜೂಜೂ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1ed87270-de6f-4246-8c9b-c509fa339130.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ದೃತಿ",
+          "read_text": true,
+          "read_text_value": "ದೃತಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/21d7eec9-e97b-4974-bf5b-5a01e0807ef4.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ತೃಣ",
+          "read_text": true,
+          "read_text_value": "ತೃಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f7ad5fa2-c80e-47a7-88d1-a60301bc44b7.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ತೃಣ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಜೂಜೂ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ದೃತಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಜೂಜೂ",
+          "right": "ಜೂಜೂ"
+        },
+        {
+          "left": "ದೃತಿ",
+          "right": "ದೃತಿ"
+        },
+        {
+          "left": "ತೃಣ",
+          "right": "ತೃಣ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 209,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಪರಿಮಳ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತೇರು",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ತುಳಸಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ತುಳಸಿ",
+          "read_text": true,
+          "read_text_value": "ತುಳಸಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3bf9a743-8873-4c2d-9279-0278846b3721.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪರಿಮಳ",
+          "read_text": true,
+          "read_text_value": "ಪರಿಮಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a80887a2-9b6d-49c1-94c8-d88e0badda1d.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ತೇರು",
+          "read_text": true,
+          "read_text_value": "ತೇರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/21c209d2-c54d-43ae-8a80-68aef2bf2178.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಪರಿಮಳ",
+          "right": "ಪರಿಮಳ"
+        },
+        {
+          "left": "ತೇರು",
+          "right": "ತೇರು"
+        },
+        {
+          "left": "ತುಳಸಿ",
+          "right": "ತುಳಸಿ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 210,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಪರಮ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಿಳಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ನೊರೆ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ನೊರೆ",
+          "read_text": true,
+          "read_text_value": "ನೊರೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/658b609f-fb0a-4a62-b7f1-4e0f41494944.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಿಳಿ",
+          "read_text": true,
+          "read_text_value": "ಗಿಳಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/144be28f-24a5-46c1-9034-1a4a5853f417.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪರಮ",
+          "read_text": true,
+          "read_text_value": "ಪರಮ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ac97bae6-3729-4a25-808e-999adc473f7a.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಪರಮ",
+          "right": "ಪರಮ"
+        },
+        {
+          "left": "ಗಿಳಿ",
+          "right": "ಗಿಳಿ"
+        },
+        {
+          "left": "ನೊರೆ",
+          "right": "ನೊರೆ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    }
+  ]
+}

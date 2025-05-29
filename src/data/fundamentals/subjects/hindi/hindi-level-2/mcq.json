@@ -1,0 +1,406 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 401,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए (Select the letter you hear)",
+        "read_text": true,
+        "read_text_value": "का",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d5e07abd-e03f-47c5-91de-4d318963ef5d.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "कि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "का",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "कु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "की",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "का",
+      "explanation": "The letter heard is 'का'."
+    },
+    {
+      "id": 402,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "मि",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/445fbed1-a035-4787-b497-0d42bea33091.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "मा",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "मी",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "मि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "मु",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "मि",
+      "explanation": "The letter heard is 'मि'."
+    },
+    {
+      "id": 403,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "ते",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/46a38a9a-e985-4459-af87-b38662fca1d3.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ता",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ते",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "तु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "तो",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "ते",
+      "explanation": "The letter heard is 'ते'."
+    },
+    {
+      "id": 404,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "पु",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6605738f-4476-49d9-9c78-229797ac5289.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "पा",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "पु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "पि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "पी",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "पु",
+      "explanation": "The letter heard is 'पु'."
+    },
+    {
+      "id": 405,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "सी",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/27c6bf35-299a-4bae-aa29-e96f569d0b95.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "सी",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "सु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "सा",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "से",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "सी",
+      "explanation": "The letter heard is 'सी'."
+    },
+    {
+      "id": 406,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "चै",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ff3c8c22-5365-45b1-b980-a670b6376c78.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "चि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "चे",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "चै",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "चा",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "चै",
+      "explanation": "The letter heard is 'चै'."
+    },
+    {
+      "id": 407,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "धो",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ded4a581-c58f-47f0-8214-1c5b62811619.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "धो",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "धा",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "धि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "धु",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "धो",
+      "explanation": "The letter heard is 'धो'."
+    },
+    {
+      "id": 408,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "ना",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/516b32e7-9c38-4870-b409-5ebc89ad4cd6.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ना",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "नि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "नु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ने",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "ना",
+      "explanation": "The letter heard is 'ना'."
+    },
+    {
+      "id": 409,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "गे",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8bfb6ae6-3573-409d-acb3-1d1bfae723e5.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "गु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "गे",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "गा",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "गि",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "गे",
+      "explanation": "The letter heard is 'गे'."
+    },
+    {
+      "id": 410,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "आप जो अक्षर सुनते हैं उसे चुनिए",
+        "read_text": true,
+        "read_text_value": "ली",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/498a528f-0fcf-41c3-bc76-fc4da8fac7dc.mp3",
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ली",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "लु",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ले",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "ली",
+      "explanation": "The letter heard is 'ली'."
+    }
+  ]
+}

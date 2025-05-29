@@ -1,0 +1,176 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 501,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "यह एक किताब है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/cc3aa307-f72a-4434-8687-60061899ee41.mp3",
+        "image": ""
+      },
+      "correctAnswer": "यह एक किताब है।",
+      "alternatives": [
+        "यह एक किताब है।"
+      ],
+      "explanation": "यह सरल वाक्य है जिसका अर्थ है कि यह वस्तु एक किताब है।"
+    },
+    {
+      "id": 502,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "मेरा नाम अमित है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ecde7f27-3d70-4c04-bc07-59617dbd1a22.mp3",
+        "image": ""
+      },
+      "correctAnswer": "मेरा नाम अमित है।",
+      "alternatives": [
+        "मेरा नाम अमित है।"
+      ],
+      "explanation": "यह वाक्य स्वयं के नाम को बताता है।"
+    },
+    {
+      "id": 503,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "वह स्कूल जाता है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3bf39e13-b6c9-46ce-a2c6-9cbd79a26c70.mp3",
+        "image": ""
+      },
+      "correctAnswer": "वह स्कूल जाता है।",
+      "alternatives": [
+        "वह स्कूल जाता है।"
+      ],
+      "explanation": "यह वाक्य एक व्यक्ति के स्कूल जाने की क्रिया को दर्शाता है।"
+    },
+    {
+      "id": 504,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "आज मौसम अच्छा है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e4f3650c-a9f3-4045-8a51-b01e57c024f3.mp3",
+        "image": ""
+      },
+      "correctAnswer": "आज मौसम अच्छा है।",
+      "alternatives": [
+        "आज मौसम अच्छा है।"
+      ],
+      "explanation": "यह वाक्य मौसम की स्थिति के बारे में बताता है।"
+    },
+    {
+      "id": 505,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "मुझे आम पसंद हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5bf966e7-e065-4a04-8221-2151bd189d08.mp3",
+        "image": ""
+      },
+      "correctAnswer": "मुझे आम पसंद हैं।",
+      "alternatives": [
+        "मुझे आम पसंद हैं।"
+      ],
+      "explanation": "यह वाक्य पसंद की भावना व्यक्त करता है।"
+    },
+    {
+      "id": 506,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "हम पार्क में खेलते हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a475e2e8-717b-4151-b239-defd0b1f6853.mp3",
+        "image": ""
+      },
+      "correctAnswer": "हम पार्क में खेलते हैं।",
+      "alternatives": [
+        "हम पार्क में खेलते हैं।"
+      ],
+      "explanation": "यह वाक्य खेल गतिविधि के स्थान को बताता है।"
+    },
+    {
+      "id": 507,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "मेरी माँ खाना बनाती है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3b3d9f01-e9df-4cbc-a81e-634d29a2a099.mp3",
+        "image": ""
+      },
+      "correctAnswer": "मेरी माँ खाना बनाती है।",
+      "alternatives": [
+        "मेरी माँ खाना बनाती है।"
+      ],
+      "explanation": "यह वाक्य घरेलू कार्य को दर्शाता है।"
+    },
+    {
+      "id": 508,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "बच्चे स्कूल जा रहे हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e6ae48a3-46dd-4532-9359-719831acb096.mp3",
+        "image": ""
+      },
+      "correctAnswer": "बच्चे स्कूल जा रहे हैं।",
+      "alternatives": [
+        "बच्चे स्कूल जा रहे हैं।"
+      ],
+      "explanation": "यह वाक्य बच्चों की गतिविधि को बताता है।"
+    },
+    {
+      "id": 509,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "सूरज आकाश में चमक रहा है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c9e0e3fd-37ad-4358-a103-bbc7487b14d5.mp3",
+        "image": ""
+      },
+      "correctAnswer": "सूरज आकाश में चमक रहा है।",
+      "alternatives": [
+        "सूरज आकाश में चमक रहा है।"
+      ],
+      "explanation": "यह वाक्य सूरज की स्थिति और क्रिया को दर्शाता है।"
+    },
+    {
+      "id": 510,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "वाक्य को सुनिए और खाली स्थान भरिए। (Listen to the sentence and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "मैं बाजार जा रहा हूँ।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/788872b4-4de4-4698-9a8e-72e6b5177906.mp3",
+        "image": ""
+      },
+      "correctAnswer": "मैं बाजार जा रहा हूँ।",
+      "alternatives": [
+        "मैं बाजार जा रहा हूँ।"
+      ],
+      "explanation": "यह वाक्य किसी व्यक्ति की क्रिया और स्थान को दर्शाता है।"
+    }
+  ]
+}

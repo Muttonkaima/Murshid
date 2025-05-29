@@ -1,0 +1,278 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 601,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(नीचे दिए गए अक्षरों को छांटकर शब्द बनाएँ। प्रत्येक श्रेणी का लेबल सुनें।) Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "कलश",
+          "read_text": true,
+          "read_text_value": "कलश",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/79b8512b-5c63-4b2a-9b53-9ab0226c407f.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "शक्ति",
+          "read_text": true,
+          "read_text_value": "शक्ति",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/736f0341-0529-4be6-bcbf-2d4d90b5a4a5.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "क",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "श",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ष",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "श",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "त",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ि",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "क",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "कलश": [
+          "क",
+          "ल",
+          "श"
+        ],
+        "शक्ति": [
+          "श",
+          "क",
+          "त",
+          "ि"
+        ]
+      },
+      "explanation": "Scrambled letters should be arranged to form the target Hindi words."
+    },
+    {
+      "id": 602,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(नीचे दिए गए अक्षरों को छांटकर शब्द बनाएँ। प्रत्येक श्रेणी का लेबल सुनें।) Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "नदी",
+          "read_text": true,
+          "read_text_value": "नदी",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/21b3b80d-a602-450d-91b2-528a0a4326b4.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "दीपक",
+          "read_text": true,
+          "read_text_value": "दीपक",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8ae651ae-52ad-4802-9a87-5666af868fcb.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "न",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "द",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ी",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "प",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "क",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ी",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "द",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "नदी": [
+          "न",
+          "द",
+          "ी"
+        ],
+        "दीपक": [
+          "द",
+          "ी",
+          "प",
+          "क"
+        ]
+      },
+      "explanation": "Arrange letters to form the correct Hindi words."
+    },
+    {
+      "id": 603,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(नीचे दिए गए अक्षरों को छांटकर शब्द बनाएँ। प्रत्येक श्रेणी का लेबल सुनें।) Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false,
+        "image": ""
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "कमल",
+          "read_text": true,
+          "read_text_value": "कमल",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4aa09b4f-0990-42ca-8980-7fb9fb92109a.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "लालटेन",
+          "read_text": true,
+          "read_text_value": "लालटेन",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a317ce65-8255-4e3e-89d4-ee970afffd1b.mp3",
+          "image": ""
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "क",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "म",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ट",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "े",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "न",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ा",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctSorting": {
+        "कमल": [
+          "क",
+          "म",
+          "ल"
+        ],
+        "लालटेन": [
+          "ल",
+          "ा",
+          "ल",
+          "ट",
+          "े",
+          "न"
+        ]
+      },
+      "explanation": "Drag the letters into the correct category to form valid words."
+    }
+  ]
+}

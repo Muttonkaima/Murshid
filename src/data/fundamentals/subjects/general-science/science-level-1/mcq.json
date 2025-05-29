@@ -1,0 +1,386 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of these is a living thing?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Rock",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Chair",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Tree",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Toy",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Tree",
+      "explanation": "A tree grows and needs water, so it is a living thing."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which sense helps us taste food?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Sight",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Touch",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Smell",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Taste",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Taste",
+      "explanation": "The tongue helps us taste different flavors."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What do we see in the sky at night?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Sun",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Moon",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Rainbow",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Clouds",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Moon",
+      "explanation": "The moon is visible at night along with stars."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which part of the plant takes in water?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Leaves",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Flowers",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Stem",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Roots",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Roots",
+      "explanation": "Roots absorb water from the soil."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of these is a pet animal?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Lion",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Tiger",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Cow",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Dog",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Dog",
+      "explanation": "Dogs are commonly kept as pets."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of these is a simple machine?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Fan",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Bicycle",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Lever",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Bulb",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Lever",
+      "explanation": "A lever is a simple machine used to lift things."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What forms clouds in the sky?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Dust",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Smoke",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Steam",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Water vapor",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Water vapor",
+      "explanation": "Water vapor cools and forms clouds in the sky."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which season is the coldest?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Summer",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Winter",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Rainy",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Spring",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Winter",
+      "explanation": "Winter is the coldest season of the year."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which sense helps us hear music?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Touch",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Hearing",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Smell",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Taste",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Hearing",
+      "explanation": "Ears help us hear sounds and music."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which one is a non-living thing?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Bird",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Fish",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Car",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Cat",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Car",
+      "explanation": "A car cannot grow or reproduce, so it is non-living."
+    }
+  ]
+}

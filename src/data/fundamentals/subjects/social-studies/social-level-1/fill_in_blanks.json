@@ -1,0 +1,56 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 13,
+  "questions": [
+    {
+      "id": 201,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Enter the name of the Indian state shown in the image.",
+        "read_text": false,
+        "image": "https://www.researchgate.net/publication/321141433/figure/fig1/AS:11431281271281204@1723579879810/Map-of-India-with-Karnataka-highlighted-Images-available-from.tif"
+      },
+      "correctAnswer": "Karnataka",
+      "alternatives": [
+        "Karnataka",
+        "karnakata"
+      ],
+      "explanation": "The image shows the outline of Karnataka state."
+    },
+    {
+      "id": 202,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Identify the state in the image, famous for the Taj Mahal.",
+        "read_text": false,
+        "image": "data:image/jpeg;base64,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"
+      },
+      "correctAnswer": "Uttar Pradesh",
+      "alternatives": [
+        "Uttar Pradesh",
+        "UP",
+        "up",
+        "uttar pradesh"
+      ],
+      "explanation": "Taj Mahal is located in Agra, Uttar Pradesh."
+    },
+    {
+      "id": 203,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which coastal state is shown in the image?",
+        "read_text": false,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/India_map_kerala.png"
+      },
+      "correctAnswer": "Kerala",
+      "alternatives": [
+        "Kerala",
+        "kerala"
+      ],
+      "explanation": "Kerala is located on the southwestern coast of India."
+    }
+  ]
+}

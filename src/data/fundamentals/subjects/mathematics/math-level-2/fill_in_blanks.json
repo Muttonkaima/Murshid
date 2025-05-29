@@ -1,0 +1,158 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The result of 15 + 27 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "42",
+      "alternatives": [
+        "42"
+      ],
+      "explanation": "Adding 15 and 27 gives 42."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The result of 100 - 58 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "42",
+      "alternatives": [
+        "42"
+      ],
+      "explanation": "100 minus 58 equals 42."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The product of 7 and 6 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "42",
+      "alternatives": [
+        "42"
+      ],
+      "explanation": "7 multiplied by 6 equals 42."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The quotient of 84 divided by 2 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "42",
+      "alternatives": [
+        "42"
+      ],
+      "explanation": "84 divided by 2 gives 42."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The additive identity is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "0",
+      "alternatives": [
+        "0",
+        "zero"
+      ],
+      "explanation": "Any number added to 0 gives the same number."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The multiplicative identity is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "1",
+      "alternatives": [
+        "1"
+      ],
+      "explanation": "Any number multiplied by 1 gives the same number."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "10 more than 33 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "43",
+      "alternatives": [
+        "43"
+      ],
+      "explanation": "33 + 10 equals 43."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "20 less than 75 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "55",
+      "alternatives": [
+        "55"
+      ],
+      "explanation": "75 - 20 equals 55."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "If you divide 144 by 12, you get _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "12",
+      "alternatives": [
+        "12"
+      ],
+      "explanation": "144 ÷ 12 = 12."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The result of multiplying any number by 0 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "0",
+      "alternatives": [
+        "0",
+        "zero"
+      ],
+      "explanation": "Any number multiplied by 0 results in 0."
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following is a prime number?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "6",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "2",
+      "explanation": "2 is the smallest and only even prime number."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What type of number is divisible only by 1 and itself?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Composite Number",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Prime Number",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Even Number",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Odd Number",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Prime Number",
+      "explanation": "Prime numbers have only two divisors: 1 and itself."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which number is NOT a natural number?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "10",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "0",
+      "explanation": "Natural numbers start from 1 onwards, zero is not included."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "In which number system is the digit ‘F’ used?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Binary",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Octal",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Decimal",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Hexadecimal",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Hexadecimal",
+      "explanation": "Hexadecimal uses digits 0-9 and letters A-F."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following numbers is an even number?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "7",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "13",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "20",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "15",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "20",
+      "explanation": "Even numbers are divisible by 2."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the smallest composite number?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "4",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "4",
+      "explanation": "4 is the smallest composite number (has factors other than 1 and itself)."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the cube of 3?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "6",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "9",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "27",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "81",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "27",
+      "explanation": "Cube of 3 is 3 × 3 × 3 = 27."
+    }
+  ]
+}

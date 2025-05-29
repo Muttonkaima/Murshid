@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   FiZap,
   FiGlobe,
@@ -40,7 +41,7 @@ const subjects = subjectsData.subjects
   .filter(subject => subject.isVisible !== false) // Only show visible subjects
   .map(subject => ({
     ...subject,
-    icon: iconComponents[subject.icon] || iconComponents[subject.id] || <FiBookOpen className="text-2xl text-white" />
+    icon: iconComponents[subject.icon] || iconComponents[subject.slug] || <FiBookOpen className="text-2xl text-white" />
   }));
 
 // Level component for the modal
@@ -91,11 +92,13 @@ const LevelCard = ({ level, isActive, subjectColor, onClick, isLocked, lockedMes
 const LevelModal = ({
   isOpen,
   onClose,
-  subject
+  subject,
+  router
 }: {
   isOpen: boolean;
   onClose: () => void;
-  subject: any
+  subject: any;
+  router: any;
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -130,7 +133,7 @@ const LevelModal = ({
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors cursor-pointer"
+                className="p-2 rounded-full hover:bg-white hover:bg-opacity-20 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 <FiX className="w-6 h-6" />
               </button>
@@ -145,7 +148,7 @@ const LevelModal = ({
                   const isLocked = index > 0; // Only first level is unlocked by default
                   return (
                     <LevelCard
-                      key={level.id || index}
+                      key={level.slug || index}
                       level={index + 1}
                       isActive={index === 0}
                       subjectColor={subject.color}
@@ -153,8 +156,7 @@ const LevelModal = ({
                       lockedMessage={isLocked ? '' : undefined}
                       onClick={() => {
                         if (!isLocked) {
-                          console.log(`Starting ${subject.name} - ${level.name || `Level ${index + 1}`}`);
-                          // Here you would typically navigate to the level or open it
+                          router.push(`/fundamental-quiz/${subject.slug}/${level.slug}?type=${level.type || 'all'}&count=${level.totalQuestions || 15}`);
                         }
                       }}
                     />
@@ -198,7 +200,7 @@ const LevelModal = ({
               </p>
               <button
                 onClick={onClose}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
+                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -215,6 +217,7 @@ export default function FundamentalsPage() {
   const [selectedSubject, setSelectedSubject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsClient(true);
@@ -281,7 +284,7 @@ export default function FundamentalsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {subjects.map((subject) => (
                 <div
-                  key={subject.id}
+                  key={subject.slug}
                   onClick={() => handleSubjectClick(subject)}
                   className={`relative group rounded-2xl overflow-hidden transition-all duration-300 transform border-t-5 ${subject.borderColor} ${
                     subject.isLocked 
@@ -331,6 +334,7 @@ export default function FundamentalsPage() {
         isOpen={isModalOpen}
         onClose={closeModal}
         subject={selectedSubject}
+        router={router}
       />
     </div>
   );

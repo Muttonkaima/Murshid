@@ -1,0 +1,714 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 500,
+  "questions": [
+    {
+      "id": 201,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಮಣ್ಣು",
+          "read_text": true,
+          "read_text_value": "ಮಣ್ಣು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/933e62a7-5bf0-4090-a13c-e0b232222305.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜಿಗೆ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜಿಗೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8375e209-a674-403c-b3cc-c9f2c2ce904a.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಬಿಜ್ಜಳ",
+          "read_text": true,
+          "read_text_value": "ಬಿಜ್ಜಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/91f5468a-8bc5-4f43-8e33-5dffd789bbc2.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜಿಗೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಮಣ್ಣು"
+        },
+        {
+          "hide_text": false,
+          "text": "ಬಿಜ್ಜಳ"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಮಣ್ಣು",
+          "right": "ಮಣ್ಣು"
+        },
+        {
+          "left": "ಮಜ್ಜಿಗೆ",
+          "right": "ಮಜ್ಜಿಗೆ"
+        },
+        {
+          "left": "ಬಿಜ್ಜಳ",
+          "right": "ಬಿಜ್ಜಳ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 202,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": true,
+          "read_text_value": "ಮುಟ್ಟಿಮೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e5778559-be25-4fe6-a580-7956c9932342.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": true,
+          "read_text_value": "ಹಬ್ಬಾಗಿಲು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2a0eefba-4ac0-437f-83e1-65685002e055.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": true,
+          "read_text_value": "ಪಟ್ಟಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/358d5f4c-90e3-4c14-b41b-b8ca3749ebff.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಪಟ್ಟಣ",
+          "right": "ಪಟ್ಟಣ"
+        },
+        {
+          "left": "ಮುಟ್ಟಿಮೆ",
+          "right": "ಮುಟ್ಟಿಮೆ"
+        },
+        {
+          "left": "ಹಬ್ಬಾಗಿಲು",
+          "right": "ಹಬ್ಬಾಗಿಲು"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 203,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": true,
+          "read_text_value": "ಗುಡ್ಗಾದು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/926e7375-abdc-496c-8b8c-1c31c8d98d71.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": true,
+          "read_text_value": "ಗಜ್ಜರಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a73c4ef5-2fcf-42b0-b14d-5725dae7ae13.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜನ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ab6a020c-0284-4068-96fe-4edd2680335a.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜನ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಗುಡ್ಗಾದು",
+          "right": "ಗುಡ್ಗಾದು"
+        },
+        {
+          "left": "ಗಜ್ಜರಿ",
+          "right": "ಗಜ್ಜರಿ"
+        },
+        {
+          "left": "ಮಜ್ಜನ",
+          "right": "ಮಜ್ಜನ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 204,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಹೆಬ್ಬಲಿ",
+          "read_text": true,
+          "read_text_value": "ಹೆಬ್ಬಲಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0f221145-7a7f-42b5-a090-6e004f5138f4.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಣ್ಣು",
+          "read_text": true,
+          "read_text_value": "ಮಣ್ಣು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6525b44d-cb6c-47df-84cd-f21d1c14f165.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜಿಗೆ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜಿಗೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/7cae164b-01b6-4a0c-ae6d-346d8efdbf18.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಮಣ್ಣು"
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆಬ್ಬಲಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜಿಗೆ"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಹೆಬ್ಬಲಿ",
+          "right": "ಹೆಬ್ಬಲಿ"
+        },
+        {
+          "left": "ಮಣ್ಣು",
+          "right": "ಮಣ್ಣು"
+        },
+        {
+          "left": "ಮಜ್ಜಿಗೆ",
+          "right": "ಮಜ್ಜಿಗೆ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 205,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಬಿಜ್ಜಳ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": true,
+          "read_text_value": "ಮುಟ್ಟಿಮೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36c4b13c-0881-44ad-b447-6616d7cdf20e.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಬಿಜ್ಜಳ",
+          "read_text": true,
+          "read_text_value": "ಬಿಜ್ಜಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/58afba70-9e44-464b-996c-a3d162e593ae.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": true,
+          "read_text_value": "ಪಟ್ಟಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a440ac86-b754-4ac2-838c-6c9526af1a1a.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಬಿಜ್ಜಳ",
+          "right": "ಬಿಜ್ಜಳ"
+        },
+        {
+          "left": "ಪಟ್ಟಣ",
+          "right": "ಪಟ್ಟಣ"
+        },
+        {
+          "left": "ಮುಟ್ಟಿಮೆ",
+          "right": "ಮುಟ್ಟಿಮೆ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 206,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": true,
+          "read_text_value": "ಹಬ್ಬಾಗಿಲು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/03c6cf6b-ff7f-492e-bb23-d40975c2ec15.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": true,
+          "read_text_value": "ಗುಡ್ಗಾದು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d907a1f4-fc0e-4cbe-acf6-e81eaa018e3e.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": true,
+          "read_text_value": "ಗಜ್ಜರಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ef4ee71b-3209-43b1-864e-cc5ebad45771.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಹಬ್ಬಾಗಿಲು",
+          "right": "ಹಬ್ಬಾಗಿಲು"
+        },
+        {
+          "left": "ಗುಡ್ಗಾದು",
+          "right": "ಗುಡ್ಗಾದು"
+        },
+        {
+          "left": "ಗಜ್ಜರಿ",
+          "right": "ಗಜ್ಜರಿ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 207,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜನ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆಬ್ಬಲಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಮಣ್ಣು",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜನ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fa89be6e-3bc4-4f30-9757-b7e83cc58d10.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಹೆಬ್ಬಲಿ",
+          "read_text": true,
+          "read_text_value": "ಹೆಬ್ಬಲಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2fd206ec-e485-43ee-9532-65088eb8a6f9.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಣ್ಣು",
+          "read_text": true,
+          "read_text_value": "ಮಣ್ಣು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/71f4677b-038a-4ed6-969e-b709e1abee5b.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಮಜ್ಜನ",
+          "right": "ಮಜ್ಜನ"
+        },
+        {
+          "left": "ಹೆಬ್ಬಲಿ",
+          "right": "ಹೆಬ್ಬಲಿ"
+        },
+        {
+          "left": "ಮಣ್ಣು",
+          "right": "ಮಣ್ಣು"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 208,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the audio forms of Kannada words:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜಿಗೆ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜಿಗೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/90be860e-62e2-4bac-8d72-a8ed1051d3ff.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಬಿಜ್ಜಳ",
+          "read_text": true,
+          "read_text_value": "ಬಿಜ್ಜಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f17c632d-578e-4f7c-9558-9138a3a5ba9a.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": true,
+          "read_text_value": "ಪಟ್ಟಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4deca1d9-e557-4c9a-a731-dc9f78d9885a.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "ಬಿಜ್ಜಳ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜಿಗೆ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಟ್ಟಣ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಮಜ್ಜಿಗೆ",
+          "right": "ಮಜ್ಜಿಗೆ"
+        },
+        {
+          "left": "ಬಿಜ್ಜಳ",
+          "right": "ಬಿಜ್ಜಳ"
+        },
+        {
+          "left": "ಪಟ್ಟಣ",
+          "right": "ಪಟ್ಟಣ"
+        }
+      ],
+      "explanation": "Each Kannada word audio is correctly matched with its audio equivalent."
+    },
+    {
+      "id": 209,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಗುಡ್ಗಾದು",
+          "read_text": true,
+          "read_text_value": "ಗುಡ್ಗಾದು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1a23dcfb-cc43-4d7d-9d78-aa920711bb28.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮುಟ್ಟಿಮೆ",
+          "read_text": true,
+          "read_text_value": "ಮುಟ್ಟಿಮೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f5f6cc19-fdf9-4166-bc16-227b2a12ea50.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಹಬ್ಬಾಗಿಲು",
+          "read_text": true,
+          "read_text_value": "ಹಬ್ಬಾಗಿಲು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e938cdff-3e20-4760-80cc-ad0911e9778c.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಮುಟ್ಟಿಮೆ",
+          "right": "ಮುಟ್ಟಿಮೆ"
+        },
+        {
+          "left": "ಹಬ್ಬಾಗಿಲು",
+          "right": "ಹಬ್ಬಾಗಿಲು"
+        },
+        {
+          "left": "ಗುಡ್ಗಾದು",
+          "right": "ಗುಡ್ಗಾದು"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    },
+    {
+      "id": 210,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "Match the Kannada words with their spoken forms:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಮಜ್ಜನ",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆಬ್ಬಲಿ",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": true,
+          "text": "ಹೆಬ್ಬಲಿ",
+          "read_text": true,
+          "read_text_value": "ಹೆಬ್ಬಲಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4ac9fe98-c0b9-4b07-831a-76b15c6b10b4.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಮಜ್ಜನ",
+          "read_text": true,
+          "read_text_value": "ಮಜ್ಜನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/aaf3d5f5-c58a-4069-953e-1ac12c284f02.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಜ್ಜರಿ",
+          "read_text": true,
+          "read_text_value": "ಗಜ್ಜರಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/145fba44-20e9-4ad6-a888-6113ff910654.mp3",
+          "image": ""
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "ಗಜ್ಜರಿ",
+          "right": "ಗಜ್ಜರಿ"
+        },
+        {
+          "left": "ಮಜ್ಜನ",
+          "right": "ಮಜ್ಜನ"
+        },
+        {
+          "left": "ಹೆಬ್ಬಲಿ",
+          "right": "ಹೆಬ್ಬಲಿ"
+        }
+      ],
+      "explanation": "Each Kannada word is correctly matched with its spoken equivalent."
+    }
+  ]
+}

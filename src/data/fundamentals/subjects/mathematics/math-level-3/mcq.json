@@ -1,0 +1,386 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is 1/2 + 1/4?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "3/4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2/4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5/4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1/8",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "3/4",
+      "explanation": "1/2 is equivalent to 2/4, and 2/4 + 1/4 = 3/4."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Convert 0.75 into a fraction in simplest form.",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "3/4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "7/10",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1/2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "4/5",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "3/4",
+      "explanation": "0.75 = 75/100 = 3/4 after simplification."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following is equal to 1/5?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0.2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.25",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.1",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "0.2",
+      "explanation": "1 divided by 5 is 0.2."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is 2.5 × 4?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "10",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "6.5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "8.5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "12.5",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "10",
+      "explanation": "2.5 × 4 = 10.0"
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the decimal equivalent of 3/8?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0.375",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.25",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.125",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "0.375",
+      "explanation": "3 ÷ 8 = 0.375"
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following is the largest?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0.9",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "9/10",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "7/8",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0.85",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "0.9",
+      "explanation": "0.9 = 9/10 > 7/8 ≈ 0.875 > 0.85"
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is 1.25 + 2.75?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3.75",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5.25",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "4",
+      "explanation": "1.25 + 2.75 = 4.0"
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Simplify the fraction 20/100.",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "1/5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2/5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1/4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1/2",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "1/5",
+      "explanation": "Divide numerator and denominator by 20: 20 ÷ 20 = 1, 100 ÷ 20 = 5"
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following is equal to 5.5?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "11/2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5/2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "22/5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "55/10",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "11/2",
+      "explanation": "11 ÷ 2 = 5.5"
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is 3.6 ÷ 0.6?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "6",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "4",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "6",
+      "explanation": "3.6 ÷ 0.6 = 6"
+    }
+  ]
+}

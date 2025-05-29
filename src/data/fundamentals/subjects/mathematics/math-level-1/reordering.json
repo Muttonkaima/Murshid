@@ -1,0 +1,170 @@
+{
+  "questionType": "reordering",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Rearrange the following numbers in ascending order and identify which are natural numbers:",
+        "read_text": false,
+        "image": ""
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "-3",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "12",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "7",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "-1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctOrder": [
+        "-3",
+        "-1",
+        "0",
+        "0",
+        "5",
+        "7",
+        "12"
+      ],
+      "explanation": "Numbers are arranged from smallest to largest. Natural numbers in the list are 5, 7, and 12."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Given the digits 3, 7, 2, and 9, reorder them to form the largest even number possible.",
+        "read_text": false,
+        "image": ""
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "7",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "9",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctOrder": [
+        "9",
+        "7",
+        "3",
+        "2"
+      ],
+      "explanation": "To form the largest even number, arrange digits in descending order ending with the even digit 2."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Rearrange these integers in descending order:",
+        "read_text": false,
+        "image": ""
+      },
+      "items": [
+        {
+          "hide_text": false,
+          "text": "14",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "27",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "8",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "19",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "6",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctOrder": [
+        "27",
+        "19",
+        "14",
+        "8",
+        "6",
+        "3"
+      ],
+      "explanation": "Numbers are ordered from largest to smallest."
+    }
+  ]
+}

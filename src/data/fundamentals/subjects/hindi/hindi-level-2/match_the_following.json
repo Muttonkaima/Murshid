@@ -1,0 +1,138 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 100,
+  "questions": [
+    {
+      "id": 501,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "नीचे दिए गए स्वर और व्यंजन को मिलाकर बने अक्षर मिलाइए:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "का",
+          "read_text": true,
+          "read_text_value": "का",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/80b13246-9eee-433e-884b-9428dd7429ee.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "की",
+          "read_text": true,
+          "read_text_value": "की",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/64b6ccdc-f8b8-4ee8-bdc3-4c78ab419a39.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "कु",
+          "read_text": true,
+          "read_text_value": "कु",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e0424ff6-58f0-4e29-86d3-eedeeb57804c.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "का"
+        },
+        {
+          "hide_text": false,
+          "text": "की"
+        },
+        {
+          "hide_text": false,
+          "text": "कु"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "का",
+          "right": "का"
+        },
+        {
+          "left": "की",
+          "right": "की"
+        },
+        {
+          "left": "कु",
+          "right": "कु"
+        }
+      ],
+      "explanation": "प्रत्येक स्वर-व्यंजन संयोजन को सही अक्षर से जोड़ा गया है।"
+    },
+    {
+      "id": 502,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "स्वर और व्यंजन को मिलाकर बने शब्द मिलाइए:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "मू",
+          "read_text": true,
+          "read_text_value": "मू",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a8ed962c-a0bc-4bc1-b6f5-888f2d0bfbc2.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "ना",
+          "read_text": true,
+          "read_text_value": "ना",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dff301b8-aec4-4a71-92f6-3fe9d9504884.mp3",
+          "image": ""
+        },
+        {
+          "hide_text": true,
+          "text": "पा",
+          "read_text": true,
+          "read_text_value": "पा",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/366208cd-fc5d-4bff-a6fb-cecbc8f37520.mp3",
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "मूर्ख"
+        },
+        {
+          "hide_text": false,
+          "text": "पानी"
+        },
+        {
+          "hide_text": false,
+          "text": "नानी"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "मू",
+          "right": "मूर्ख"
+        },
+        {
+          "left": "पा",
+          "right": "पानी"
+        },
+        {
+          "left": "ना",
+          "right": "नानी"
+        }
+      ],
+      "explanation": "प्रत्येक स्वर-व्यंजन को उनके बने हुए शब्द से जोड़ा गया है।"
+    }
+  ]
+}

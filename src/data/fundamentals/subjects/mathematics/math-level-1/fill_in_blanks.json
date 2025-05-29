@@ -1,0 +1,160 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The smallest natural number is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "1",
+      "alternatives": [
+        "1"
+      ],
+      "explanation": "Natural numbers begin from 1 and continue onward without decimals or fractions."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The set of whole numbers includes all natural numbers and _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "0",
+      "alternatives": [
+        "0"
+      ],
+      "explanation": "Whole numbers are natural numbers plus zero."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "An example of an even number is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "4",
+      "alternatives": [
+        "2",
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "explanation": "Even numbers are divisible by 2 without a remainder."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The number _______ is the only even prime number.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "2",
+      "alternatives": [
+        "2"
+      ],
+      "explanation": "2 is the smallest and only even number that is prime."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Numbers that have exactly two distinct factors (1 and itself) are called _______ numbers.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "prime",
+      "alternatives": [
+        "prime"
+      ],
+      "explanation": "Prime numbers have exactly two distinct divisors: 1 and the number itself."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The number _______ is neither prime nor composite.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "1",
+      "alternatives": [
+        "1"
+      ],
+      "explanation": "1 is a unique number that is not classified as either prime or composite."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The place value of 5 in the number 4527 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "500",
+      "alternatives": [
+        "500"
+      ],
+      "explanation": "In the number 4527, the digit 5 is in the hundreds place, so its place value is 500."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "All numbers divisible by 2 are called _______ numbers.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "even",
+      "alternatives": [
+        "even"
+      ],
+      "explanation": "Even numbers are divisible by 2 with no remainder."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The difference between the greatest and smallest 2-digit number is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "89",
+      "alternatives": [
+        "89"
+      ],
+      "explanation": "Greatest 2-digit number is 99, smallest is 10, so 99 - 10 = 89."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "The face value of 7 in the number 379 is _______.",
+        "read_text": false,
+        "image": ""
+      },
+      "correctAnswer": "7",
+      "alternatives": [
+        "7"
+      ],
+      "explanation": "Face value of a digit is the digit itself, regardless of position."
+    }
+  ]
+}

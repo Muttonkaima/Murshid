@@ -14,46 +14,46 @@
       "borderColor": "border-amber-400",
       "levels": [
         {
-          "id": "level_001",
+          "id": "level_017",
           "subjectId": "subj_001",
           "name": "Numbers & Number System",
-          "slug": "level_1",
+          "slug": "math-level-1",
           "description": "Practice Numbers & Number System",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_002",
+          "id": "level_018",
           "subjectId": "subj_001",
           "name": "Basic Operations",
-          "slug": "level_2",
+          "slug": "math-level-2",
           "description": "Practice Basic Operations",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_003",
+          "id": "level_019",
           "subjectId": "subj_001",
           "name": "Fractions & Decimals",
-          "slug": "level_3",
+          "slug": "math-level-3",
           "description": "Practice Fractions & Decimals",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_004",
+          "id": "level_020",
           "subjectId": "subj_001",
           "name": "Factors and Multiples",
-          "slug": "level_4",
+          "slug": "math-level-4",
           "description": "Practice Factors and Multiples",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_005",
+          "id": "level_021",
           "subjectId": "subj_001",
           "name": "general geometry",
-          "slug": "level_5",
+          "slug": "math-level-5",
           "description": "Practice general geometry",
           "type": "all",
           "totalQuestions": 15
@@ -77,7 +77,7 @@
           "id": "level_001",
           "subjectId": "subj_002",
           "name": "Map Reader",
-          "slug": "level_1",
+          "slug": "social-level-1",
           "description": "Practice Geography",
           "type": "all",
           "totalQuestions": 15
@@ -86,7 +86,7 @@
           "id": "level_002",
           "subjectId": "subj_002",
           "name": "Globe Trotter",
-          "slug": "level_2",
+          "slug": "social-level-2",
           "description": "Practice Geography",
           "type": "all",
           "totalQuestions": 15
@@ -95,7 +95,7 @@
           "id": "level_003",
           "subjectId": "subj_002",
           "name": "Geo Genius",
-          "slug": "level_3",
+          "slug": "social-level-3",
           "description": "Practice Geography",
           "type": "all",
           "totalQuestions": 15
@@ -116,37 +116,37 @@
       "borderColor": "border-green-400",
       "levels": [
         {
-          "id": "level_001",
-          "subjectId": "subj_003",
-          "name": "Explorer",
-          "slug": "level_1",
-          "description": "Practice Science",
-          "type": "all",
-          "totalQuestions": 15
-        },
-        {
-          "id": "level_002",
-          "subjectId": "subj_003",
-          "name": "Investigator",
-          "slug": "level_2",
-          "description": "Practice Science",
-          "type": "all",
-          "totalQuestions": 15
-        },
-        {
-          "id": "level_003",
-          "subjectId": "subj_003",
-          "name": "Innovator",
-          "slug": "level_3",
-          "description": "Practice Science",
-          "type": "all",
-          "totalQuestions": 15
-        },
-        {
           "id": "level_004",
           "subjectId": "subj_003",
+          "name": "Explorer",
+          "slug": "science-level-1",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_005",
+          "subjectId": "subj_003",
+          "name": "Investigator",
+          "slug": "science-level-2",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_006",
+          "subjectId": "subj_003",
+          "name": "Innovator",
+          "slug": "science-level-3",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_007",
+          "subjectId": "subj_003",
           "name": "Scientist",
-          "slug": "level_4",
+          "slug": "science-level-4",
           "description": "Practice Science",
           "type": "all",
           "totalQuestions": 15
@@ -167,37 +167,37 @@
       "borderColor": "border-purple-400",
       "levels": [
         {
-          "id": "level_001",
+          "id": "level_008",
           "subjectId": "subj_004",
           "name": "ಅಕ್ಷರಗಳು",
-          "slug": "level_1",
+          "slug": "kannada-level-1",
           "description": "Practice Kannada ",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_002",
+          "id": "level_009",
           "subjectId": "subj_004",
           "name": "ಕಾಗುಣಿತ",
-          "slug": "level_2",
+          "slug": "kannada-level-2",
           "description": "Practice Kannada ",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_003",
+          "id": "level_010",
           "subjectId": "subj_004",
           "name": "ಸಜಾತೀಯ ಒತ್ತಕ್ಷರ",
-          "slug": "level_3",
+          "slug": "kannada-level-3",
           "description": "Practice Kannada ",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_004",
+          "id": "level_011",
           "subjectId": "subj_004",
           "name": "ವಿಜಾತೀಯ ಒತ್ತಕ್ಷರ",
-          "slug": "level_4",
+          "slug": "kannada-level-4",
           "description": "Practice Kannada ",
           "type": "all",
           "totalQuestions": 15
@@ -218,37 +218,37 @@
       "borderColor": "border-red-400",
       "levels": [
         {
-          "id": "level_001",
+          "id": "level_012",
           "subjectId": "subj_005",
           "name": "अक्षर ज्ञान",
-          "slug": "level_1",
+          "slug": "hindi-level-1",
           "description": "Practice hindi",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_002",
+          "id": "level_013",
           "subjectId": "subj_005",
           "name": "स्वर-व्यंजन मिलान",
-          "slug": "level_2",
+          "slug": "hindi-level-2",
           "description": "Practice hindi",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_003",
+          "id": "level_014",
           "subjectId": "subj_005",
           "name": "शब्द ज्ञान",
-          "slug": "level_3",
+          "slug": "hindi-level-3",
           "description": "Practice hindi",
           "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_004",
+          "id": "level_015",
           "subjectId": "subj_005",
           "name": "सामान्य वाक्य",
-          "slug": "level_4",
+          "slug": "hindi-level-4",
           "description": "Practice hindi",
           "type": "all",
           "totalQuestions": 15

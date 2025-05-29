@@ -1,0 +1,386 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the result of 15 + 7?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "22",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "23",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "24",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "25",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "22",
+      "explanation": "Adding 15 and 7 gives 22."
+    },
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following operations is not a basic arithmetic operation?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Addition",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Multiplication",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Division",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Exponentiation",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Exponentiation",
+      "explanation": "The four basic operations are addition, subtraction, multiplication, and division."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the product of 8 and 6?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "48",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "42",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "54",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "56",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "48",
+      "explanation": "Multiplying 8 by 6 gives 48."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following gives a remainder when 17 is divided by 5?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "2",
+      "explanation": "17 divided by 5 is 3 with a remainder of 2."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the result of 30 − 18?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "12",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "10",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "13",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "15",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "12",
+      "explanation": "30 minus 18 equals 12."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which property is used in the expression: a + b = b + a?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Associative Property",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Commutative Property",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Distributive Property",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Identity Property",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "Commutative Property",
+      "explanation": "The commutative property of addition states that changing the order does not affect the sum."
+    },
+    {
+      "id": 7,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following is the identity element for addition?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "-1",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "None of the above",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "0",
+      "explanation": "Adding 0 to any number leaves it unchanged; hence, 0 is the additive identity."
+    },
+    {
+      "id": 8,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "If a = 5 and b = 3, what is the value of a × b − b?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "12",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "13",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "15",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "10",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "12",
+      "explanation": "5 × 3 = 15; 15 − 3 = 12."
+    },
+    {
+      "id": 9,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following represents distributive property?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "a + (b + c) = (a + b) + c",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a × (b + c) = a × b + a × c",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a × b = b × a",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a + b = b + a",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "a × (b + c) = a × b + a × c",
+      "explanation": "This is the definition of distributive property."
+    },
+    {
+      "id": 10,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "What is the value of 81 ÷ 9?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "8",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "9",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "7",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "10",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": "9",
+      "explanation": "81 divided by 9 equals 9."
+    }
+  ]
+}

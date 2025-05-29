@@ -1,0 +1,176 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ರಸ",
+        "read_text": true,
+        "read_text_value": "ರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/371f6915-ad9c-4b38-9fc3-e340ff742930.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ರಸ",
+      "alternatives": [
+        "ರಸ"
+      ],
+      "explanation": "The word is read aloud."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಸರ",
+        "read_text": true,
+        "read_text_value": "ಸರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9d79412c-9cdc-449d-b2c4-4a30f72354fe.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಸರ",
+      "alternatives": [
+        "ಸರ"
+      ],
+      "explanation": "Listen carefully to the word."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ದರ",
+        "read_text": true,
+        "read_text_value": "ದರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0976ec60-ede4-4a3c-84ea-49a5d85ea2c7.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ದರ",
+      "alternatives": [
+        "ದರ"
+      ],
+      "explanation": "The word is provided in audio form."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ದಸರ",
+        "read_text": true,
+        "read_text_value": "ದಸರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b8e77ee0-cbb1-4110-a788-54b547d9ebbf.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ದಸರ",
+      "alternatives": [
+        "ದಸರ"
+      ],
+      "explanation": "The term is recognized by its pronunciation."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಸರಸ",
+        "read_text": true,
+        "read_text_value": "ಸರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d8fc37fd-3f7a-4442-be58-91fb4dbd901a.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಸರಸ",
+      "alternatives": [
+        "ಸರಸ"
+      ],
+      "explanation": "Listen and type the word."
+    },
+    {
+      "id": 106,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಅರಸ",
+        "read_text": true,
+        "read_text_value": "ಅರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c179a18e-7b0a-4f85-8441-ad3315c01d9c.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಅರಸ",
+      "alternatives": [
+        "ಅರಸ"
+      ],
+      "explanation": "The audio provides the answer."
+    },
+    {
+      "id": 107,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಅಗಸ",
+        "read_text": true,
+        "read_text_value": "ಅಗಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c3b4183b-0ac3-4f4a-b8a2-56730b896048.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಅಗಸ",
+      "alternatives": [
+        "ಅಗಸ"
+      ],
+      "explanation": "Only the audio version is played."
+    },
+    {
+      "id": 108,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಸರಸರ",
+        "read_text": true,
+        "read_text_value": "ಸರಸರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/72513592-beca-40d6-aaf5-b618c4685c70.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಸರಸರ",
+      "alternatives": [
+        "ಸರಸರ"
+      ],
+      "explanation": "Respond with what you hear."
+    },
+    {
+      "id": 109,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ದರದರ",
+        "read_text": true,
+        "read_text_value": "ದರದರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5d7d9c05-7b70-40db-ae4c-fbce4e17f547.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ದರದರ",
+      "alternatives": [
+        "ದರದರ"
+      ],
+      "explanation": "Audio-only question."
+    },
+    {
+      "id": 110,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "ಗರಗಸ",
+        "read_text": true,
+        "read_text_value": "ಗರಗಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/277871a4-eefd-49e8-afb7-94edf69697ba.mp3",
+        "image": ""
+      },
+      "correctAnswer": "ಗರಗಸ",
+      "alternatives": [
+        "ಗರಗಸ"
+      ],
+      "explanation": "The word is provided for audio input."
+    }
+  ]
+}
