@@ -874,7 +874,7 @@ const FundamentalQuizPage = () => {
                             </div>
 
                             <div className="space-y-2">
-                              <p className="text-sm text-gray-700">
+                              <div className="text-sm text-gray-700">
                                 ✅ <span className="font-bold">Your answer:</span>{' '}
                                 <span
                                   className={`font-semibold ${userAnswers[index]?.isCorrect ? 'text-green-600' : 'text-red-600'
@@ -882,15 +882,15 @@ const FundamentalQuizPage = () => {
                                 >
                                   {renderAnswerText(userAnswers[index]?.answer) || 'Not answered'}
                                 </span>
-                              </p>
+                              </div>
 
                               {!userAnswers[index]?.isCorrect && (
-                                <p className="text-sm text-gray-700">
+                                <div className="text-sm text-gray-700">
                                   🎯 <span className="font-bold">Correct answer:</span>{' '}
                                   <span className="text-green-600 font-semibold">
                                     {renderAnswerText(question.correctAnswer)}
                                   </span>
-                                </p>
+                                </div>
                               )}
 
                               {question.explanation && (

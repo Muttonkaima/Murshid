@@ -495,21 +495,44 @@ const SettingsPage = () => {
               <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-medium mb-4 text-gray-900">App Language</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => setLanguage(lang.code)}
-                      className={`p-4 border rounded-lg text-left transition-colors ${language === lang.code ? 'border-[var(--primary-color)] bg-[var(--primary-color)]' : 'border-gray-200 hover:border-gray-300'} cursor-pointer`}
-                    >
-                      <div className={`font-medium ${language === lang.code ? 'text-white' : 'text-gray-900'}`}>{lang.name}</div>
-                      <div className={`text-sm ${language === lang.code ? 'text-white text-opacity-80' : 'text-gray-500'}`}>{lang.code.toUpperCase()}</div>
-                      {language === lang.code && (
-                        <div className="mt-2 text-sm text-white flex items-center">
-                          <span className="mr-1">✓</span> Selected
-                        </div>
-                      )}
-                    </button>
-                  ))}
+                  {languages.map((lang) => {
+                    const isEnglish = lang.code === 'en';
+                    const isSelected = language === lang.code;
+                    const isDisabled = !isEnglish;
+                    
+                    return (
+                      <div key={lang.code} className="relative">
+                        <button
+                          onClick={() => isEnglish && setLanguage(lang.code)}
+                          disabled={isDisabled}
+                          className={`w-full p-4 border rounded-lg text-left transition-colors ${
+                            isSelected 
+                              ? 'border-[var(--primary-color)] bg-[var(--primary-color)] text-white' 
+                              : isDisabled 
+                                ? 'border-gray-200 bg-gray-50 text-gray-500 cursor-not-allowed' 
+                                : 'border-gray-200 hover:border-gray-300 text-gray-900 cursor-pointer'
+                          }`}
+                        >
+                          <div className="font-medium flex items-center">
+                            {lang.name}
+                            {isDisabled && (
+                              <span className="ml-2 px-2 py-0.5 bg-gray-100 text-gray-500 text-xs rounded-full">
+                                Coming Soon
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-sm">
+                            {lang.code.toUpperCase()}
+                          </div>
+                          {isSelected && (
+                            <div className="mt-2 text-sm text-white flex items-center">
+                              <span className="mr-1">✓</span> Selected
+                            </div>
+                          )}
+                        </button>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">

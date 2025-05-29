@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
       'images.unsplash.com',
       'source.unsplash.com',
       'via.placeholder.com',
-      'picsum.photos'
+      'picsum.photos',
+      'pnccs.edu.in',
+      'www.adda247.com',
+      'st.adda247.com',
+      'www.adda247.in'
     ],
   },
 };
