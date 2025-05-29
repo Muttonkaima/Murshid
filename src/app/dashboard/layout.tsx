@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import AuthCheck from '@/components/AuthCheck';
 
 export const metadata: Metadata = {
   title: 'Dashboard | Murshid',
@@ -11,8 +12,10 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {children}
-    </div>
+    <AuthCheck>
+      <div className="min-h-screen bg-gray-50">
+        {children}
+      </div>
+    </AuthCheck>
   );
 }

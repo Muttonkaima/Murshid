@@ -13,10 +13,23 @@ const api = axios.create({
 // Add a request interceptor to add the auth token to requests
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    // Skip token addition for login/signup requests
+    if (config.url?.includes('/auth/')) {
+      return config;
     }
+    
+    // Get token from cookies in the browser
+    if (typeof document !== 'undefined') {
+      const token = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('token='))
+        ?.split('=')[1];
+      
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    }
+    
     return config;
   },
   (error) => {

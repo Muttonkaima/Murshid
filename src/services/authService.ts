@@ -1,6 +1,6 @@
 import api from './api';
 
-// Interface for user data to be stored in localStorage
+// Interface for user data to be stored in session
 interface StoredUserData {
   id: string;
   email: string;
@@ -22,13 +22,37 @@ interface LoginData {
   password: string;
 }
 
+// Helper function to set cookie
+const setCookie = (name: string, value: string, days = 1) => {
+  if (typeof document === 'undefined') return;
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax;Secure`;
+};
+
+// Helper function to get cookie
+const getCookie = (name: string): string | null => {
+  if (typeof document === 'undefined') return null;
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+};
+
+// Helper function to delete cookie
+const deleteCookie = (name: string) => {
+  if (typeof document === 'undefined') return;
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
 export const authService = {
   // Sign up a new user
   async signup(userData: SignupData) {
     const response = await api.post('/auth/signup', userData);
     // If signup was successful and includes user data, store it
     if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
+      setCookie('token', response.data.token);
       if (response.data.data?.user) {
         this.storeUserData(response.data.data.user);
       }
@@ -56,7 +80,7 @@ export const authService = {
   async login(credentials: LoginData) {
     const response = await api.post('/auth/login', credentials);
     if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
+      setCookie('token', response.data.token);
       // Store user data if available
       if (response.data.data?.user) {
         this.storeUserData(response.data.data.user);
@@ -67,8 +91,9 @@ export const authService = {
 
   // Log out the current user
   logout() {
-    localStorage.removeItem('token');
+    deleteCookie('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
   },
 
   // Get the current authenticated user
@@ -91,7 +116,8 @@ export const authService = {
 
   // Check if user is authenticated
   isAuthenticated() {
-    return !!localStorage.getItem('token');
+    if (typeof window === 'undefined') return false;
+    return !!getCookie('token') || !!localStorage.getItem('token');
   },
 
   // Forgot password

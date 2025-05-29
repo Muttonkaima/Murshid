@@ -101,6 +101,10 @@ export default function AuthForm() {
         return;
       }
       
+      // Check if we have a redirect URL in session storage
+      const redirectAfterLogin = sessionStorage.getItem('redirectAfterLogin');
+      sessionStorage.removeItem('redirectAfterLogin'); // Clear it so it doesn't affect future logins
+      
       try {
         setIsLoading(true);
         const response = await fetch('/api/auth/login', {
@@ -136,8 +140,14 @@ export default function AuthForm() {
             email: formData.email,
             password: formData.password
           });
-          // Redirect to dashboard or home page
-          router.push('/dashboard');
+          
+          // Get the redirect URL from session storage if it exists
+          const redirectAfterLogin = sessionStorage.getItem('redirectAfterLogin');
+          sessionStorage.removeItem('redirectAfterLogin'); // Clear it after getting it
+          
+          // Redirect to the intended URL or dashboard
+          const redirectTo = redirectAfterLogin || '/dashboard';
+          router.push(redirectTo);
         }
         
       } catch (error: any) {
