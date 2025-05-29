@@ -1,0 +1,130 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following numbers into their correct categories:",
+        "read_text": false
+      },
+      "categories": [
+        { "hide_text": false, "text": "Natural Numbers", "read_text": false },
+        { "hide_text": false, "text": "Whole Numbers", "read_text": false },
+        { "hide_text": false, "text": "Integers", "read_text": false }
+      ],
+      "items": [
+        { "hide_text": false, "text": "0", "read_text": false },
+        { "hide_text": false, "text": "7", "read_text": false },
+        { "hide_text": false, "text": "-5", "read_text": false }
+      ],
+      "correctSorting": {
+        "Natural Numbers": ["7"],
+        "Whole Numbers": ["0"],
+        "Integers": ["-5"]
+      },
+      "explanation": "Natural numbers start from 1, whole numbers include 0, and integers include both negative and positive numbers."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following based on their mathematical properties:",
+        "read_text": false
+      },
+      "categories": [
+        { "hide_text": false, "text": "Even Numbers", "read_text": false },
+        { "hide_text": false, "text": "Odd Numbers", "read_text": false },
+        { "hide_text": false, "text": "Prime Numbers", "read_text": false }
+      ],
+      "items": [
+        { "hide_text": false, "text": "2", "read_text": false },
+        { "hide_text": false, "text": "3", "read_text": false },
+        { "hide_text": false, "text": "4", "read_text": false },
+        { "hide_text": false, "text": "5", "read_text": false }
+      ],
+      "correctSorting": {
+        "Even Numbers": ["2", "4"],
+        "Odd Numbers": ["3", "5"],
+        "Prime Numbers": ["2", "3", "5"]
+      },
+      "explanation": "2 and 4 are even, 3 and 5 are odd, and 2, 3, 5 are primes."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Categorize the following based on number types:",
+        "read_text": false
+      },
+      "categories": [
+        { "hide_text": false, "text": "Rational Numbers", "read_text": false },
+        { "hide_text": false, "text": "Irrational Numbers", "read_text": false }
+      ],
+      "items": [
+        { "hide_text": false, "text": "√2", "read_text": false },
+        { "hide_text": false, "text": "1/2", "read_text": false },
+        { "hide_text": false, "text": "π", "read_text": false },
+        { "hide_text": false, "text": "4", "read_text": false }
+      ],
+      "correctSorting": {
+        "Rational Numbers": ["1/2", "4"],
+        "Irrational Numbers": ["√2", "π"]
+      },
+      "explanation": "Rational numbers can be expressed as fractions, irrational numbers cannot."
+    },
+    {
+      "id": 5,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the operations into their correct categories:",
+        "read_text": false
+      },
+      "categories": [
+        { "hide_text": false, "text": "Commutative", "read_text": false },
+        { "hide_text": false, "text": "Non-Commutative", "read_text": false }
+      ],
+      "items": [
+        { "hide_text": false, "text": "Addition", "read_text": false },
+        { "hide_text": false, "text": "Multiplication", "read_text": false },
+        { "hide_text": false, "text": "Subtraction", "read_text": false },
+        { "hide_text": false, "text": "Division", "read_text": false }
+      ],
+      "correctSorting": {
+        "Commutative": ["Addition", "Multiplication"],
+        "Non-Commutative": ["Subtraction", "Division"]
+      },
+      "explanation": "Addition and multiplication are commutative (a + b = b + a), subtraction and division are not."
+    },
+    {
+      "id": 6,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following expressions by their result being positive, negative, or zero:",
+        "read_text": false
+      },
+      "categories": [
+        { "hide_text": false, "text": "Positive", "read_text": false },
+        { "hide_text": false, "text": "Negative", "read_text": false },
+        { "hide_text": false, "text": "Zero", "read_text": false }
+      ],
+      "items": [
+        { "hide_text": false, "text": "5 - 3", "read_text": false },
+        { "hide_text": false, "text": "3 - 7", "read_text": false },
+        { "hide_text": false, "text": "2 × 0", "read_text": false }
+      ],
+      "correctSorting": {
+        "Positive": ["5 - 3"],
+        "Negative": ["3 - 7"],
+        "Zero": ["2 × 0"]
+      },
+      "explanation": "5 − 3 = 2 (positive), 3 − 7 = -4 (negative), 2 × 0 = 0 (zero)."
+    }
+  ]
+}

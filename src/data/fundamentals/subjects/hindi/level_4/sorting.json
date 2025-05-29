@@ -1,0 +1,243 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 901,
+      "marks": 2,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दों को सही क्रम में लगाकर सरल वाक्य बनाइए।) Arrange the given words to form simple meaningful sentences:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "राम खाना खाता है।",
+          "read_text": true,
+          "read_text_value": "राम खाना खाता है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/91c0dfc6-2eb8-4278-9ffc-cfa0ed7136d4.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "सीता पढ़ रही है।",
+          "read_text": true,
+          "read_text_value": "सीता पढ़ रही है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d66535be-4283-4ffc-b7a7-bbb01b0a6b31.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "राम",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खाना",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पढ़",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "रही",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "सीता",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खाता",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "है",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "राम खाना खाता है।": [
+          "राम",
+          "खाना",
+          "खाता",
+          "है"
+        ],
+        "सीता पढ़ रही है।": [
+          "सीता",
+          "पढ़",
+          "रही",
+          "है"
+        ]
+      },
+      "explanation": "Arrange the given words in the correct order to form meaningful simple sentences."
+    },
+    {
+      "id": 902,
+      "marks": 2,
+      "question": {
+        "hide_text": false,
+        "text": "(शब्दों को सही क्रम में लगाकर वाक्य बनाएँ।) Arrange the words to form sentences:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "बच्चा खेल रहा है।",
+          "read_text": true,
+          "read_text_value": "बच्चा खेल रहा है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/83bc5abc-9693-45e2-be7d-2f57e72181a1.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "माँ खाना बना रही है।",
+          "read_text": true,
+          "read_text_value": "माँ खाना बना रही है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d9c943a3-6ea5-4605-9289-b12e4a2104bc.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "खाना",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "रही",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "माँ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "बच्चा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खेल",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "रहा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "बना",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "है",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "बच्चा खेल रहा है।": [
+          "बच्चा",
+          "खेल",
+          "रहा",
+          "है"
+        ],
+        "माँ खाना बना रही है।": [
+          "माँ",
+          "खाना",
+          "बना",
+          "रही",
+          "है"
+        ]
+      },
+      "explanation": "Arrange the words to make the given simple sentences."
+    },
+    {
+      "id": 903,
+      "marks": 2,
+      "question": {
+        "hide_text": false,
+        "text": "(शब्दों को सही क्रम में लगाकर वाक्य बनाएं। श्रेणी का नाम सुनें और उसी अनुसार शब्दों को क्रमबद्ध करें।) Listen to the category label and arrange words accordingly:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "बच्चा पानी पीता है।",
+          "read_text": true,
+          "read_text_value": "बच्चा पानी पीता है।",
+          "read_text_url": "https://example.com/audio/bachcha_pani_peeta_hai.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "लड़की स्कूल जाती है।",
+          "read_text": true,
+          "read_text_value": "लड़की स्कूल जाती है।",
+          "read_text_url": "https://example.com/audio/ladki_school_jati_hai.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "लड़की",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "स्कूल",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "बच्चा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पीता",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "है",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "जाती",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पानी",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "बच्चा पानी पीता है।": [
+          "बच्चा",
+          "पानी",
+          "पीता",
+          "है"
+        ],
+        "लड़की स्कूल जाती है।": [
+          "लड़की",
+          "स्कूल",
+          "जाती",
+          "है"
+        ]
+      },
+      "explanation": "Listen to the category label and arrange the words to form the matching sentence."
+    }
+  ]
+}

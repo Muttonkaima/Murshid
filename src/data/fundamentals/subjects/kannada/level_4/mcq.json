@@ -1,0 +1,428 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಅರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0b649af3-1a0b-4f1e-bc70-fd5f78002f54.mp3"
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಅರಸ",
+          "read_text": true,
+          "read_text_value": "ಅರಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/17ac5116-32b9-48ae-bbf1-4913142f15bc.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸರ",
+          "read_text": true,
+          "read_text_value": "ಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8173a8bc-7feb-4330-b241-c1f57fff77e6.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದರ",
+          "read_text": true,
+          "read_text_value": "ದರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/76397b5e-9a26-446c-b58a-6dbc5b244c27.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಸರ",
+          "read_text": true,
+          "read_text_value": "ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/72004126-0b1f-4529-852c-bb6674f087a0.mp3"
+        }
+      ],
+      "correctAnswer": "ಅರಸ",
+      "explanation": "The audio asks for the word 'ಅರಸ'."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear (ನೀವು ಕೆಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಕಮಲ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/41c8b34d-4ef9-4241-bdbe-7d36a40391b0.mp3"
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6d4e6062-7c4c-4b45-94de-cb46bdf90d43.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಗನ",
+          "read_text": true,
+          "read_text_value": "ಗಗನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e877ce13-7a0d-471a-9504-6c008ffd7eb2.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ನಮನ",
+          "read_text": true,
+          "read_text_value": "ನಮನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/baad57e4-a666-4b53-8ece-6541be26fccf.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸರಸ",
+          "read_text": true,
+          "read_text_value": "ಸರಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0287de26-0866-4f7d-917c-379fb2e27ec4.mp3"
+        }
+      ],
+      "correctAnswer": "ಕಮಲ",
+      "explanation": "The audio highlights the word 'ಕಮಲ'."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "Select the word you hear (ನೀವು ಕೆಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ರಾಜ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8f253c8c-ba87-4e73-8e87-e9b6d74bbdfc.mp3"
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ರಾಜ",
+          "read_text": true,
+          "read_text_value": "ರಾಜ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/030357b5-0580-47bc-943a-2de131438975.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ನಗ",
+          "read_text": true,
+          "read_text_value": "ನಗ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5b04740c-5613-4292-96ee-2b72b8ffe732.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದರ",
+          "read_text": true,
+          "read_text_value": "ದರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fcdd4308-b9a3-42ce-a2b5-e1b25b19b058.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅಗಸ",
+          "read_text": true,
+          "read_text_value": "ಅಗಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d3603eae-2d82-4ccf-94b2-f272d41c6b81.mp3"
+        }
+      ],
+      "correctAnswer": "ರಾಜ",
+      "explanation": "The audio instructs to select 'ರಾಜ'."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "Select the word you hear (ನೀವು ಕೆಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಸರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f7707556-5427-4566-b5a7-079772526bf9.mp3"
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಸರಸ",
+          "read_text": true,
+          "read_text_value": "ಸರಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/586eb140-8f99-440d-93ca-be979c4e2372.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/bde37551-f3fc-4e0f-acd9-c4195097d351.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಸರ",
+          "read_text": true,
+          "read_text_value": "ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3855c37a-9e74-47fa-ada2-5f82ba372d61.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಶಕ",
+          "read_text": true,
+          "read_text_value": "ದಶಕ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/728ee33f-d4e5-402a-9c08-8a2f22060729.mp3"
+        }
+      ],
+      "correctAnswer": "ಸರಸ",
+      "explanation": "The user must choose the pronounced word 'ಸರಸ'."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "Select the word you hear (ನೀವು ಕೆಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಗಗನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6bb594a1-1010-4dc4-abb3-ccd2df8af0c0.mp3"
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಗಗನ",
+          "read_text": true,
+          "read_text_value": "ಗಗನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/12de7336-6fee-48ad-95de-671a7f9301e1.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ನಮನ",
+          "read_text": true,
+          "read_text_value": "ನಮನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c04b0af1-b1fa-457d-817d-35a8d2cf77ff.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅವಸರ",
+          "read_text": true,
+          "read_text_value": "ಅವಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5981c583-4586-4db4-9f2c-eaaeff2c7410.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಉರಗ",
+          "read_text": true,
+          "read_text_value": "ಉರಗ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5b626090-ae29-4298-8be4-05a4a609ffa5.mp3"
+        }
+      ],
+      "correctAnswer": "ಗಗನ",
+      "explanation": "The word 'ಗಗನ' is played and must be selected."
+    },
+    {
+      "id": 106,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಕಮಲ",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಕಮಲ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/20624b22-c164-4e37-b791-9f5cb1412c1f.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/733d232a-a8ef-45cc-8979-d7abd4cba32d.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಶಕ",
+          "read_text": true,
+          "read_text_value": "ದಶಕ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f5074ec2-4837-4672-b958-e958e1bd1b35.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಸರ",
+          "read_text": true,
+          "read_text_value": "ದಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/65f9aa68-97f6-45a6-ace8-fe4f8a13609b.mp3"
+        }
+      ],
+      "correctAnswer": "ಕಮಲ",
+      "explanation": "The visible word is 'ಕಮಲ' and the options are read aloud."
+    },
+    {
+      "id": 107,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಅವಸರ",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಅವಸರ",
+          "read_text": true,
+          "read_text_value": "ಅವಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6ba22f11-fea6-40af-a3c9-b1c9367d9ff1.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸರ",
+          "read_text": true,
+          "read_text_value": "ಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/65a1d2c2-fdca-4668-8652-072db06cfa8a.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದಶಕ",
+          "read_text": true,
+          "read_text_value": "ದಶಕ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/43143997-decd-4cc6-820a-568130517cb8.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಉದಯ",
+          "read_text": true,
+          "read_text_value": "ಉದಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/268f0ee6-613b-4b06-8c49-3eca50e2fb12.mp3"
+        }
+      ],
+      "correctAnswer": "ಅವಸರ",
+      "explanation": "Listen to the options and pick the word that matches the visible text."
+    },
+    {
+      "id": 108,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ನಮನ",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ನಮನ",
+          "read_text": true,
+          "read_text_value": "ನಮನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2bc75dfd-ac72-4174-b073-430fcb71ec56.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಗಗನ",
+          "read_text": true,
+          "read_text_value": "ಗಗನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/73af0eb7-0ec6-4fd9-8fd3-3fb2afe03a24.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಕಮಲಳ",
+          "read_text": true,
+          "read_text_value": "ಕಮಲಳ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/51aa84c2-640a-4e53-9ab2-2c8d69d424ab.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ತಬಲ",
+          "read_text": true,
+          "read_text_value": "ತಬಲ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/95fa40ec-077a-4b46-a336-68dc6257c571.mp3"
+        }
+      ],
+      "correctAnswer": "ನಮನ",
+      "explanation": "The word 'ನಮನ' is provided visually and the options are available as audio."
+    },
+    {
+      "id": 109,
+      "marks": 1.5,
+      "question": {
+        "hide_text": true,
+        "text": "Select the word you hear (ನೀವು ಕೆಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ದಶಕ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/407d9b22-810d-4ef9-ba40-bdaf66496b16.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ದಶಕ",
+          "read_text": true,
+          "read_text_value": "ದಶಕ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1d43a57c-b2bf-4fa1-9e9b-59cc2a882420.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಊಟದ ಸಮಯ",
+          "read_text": true,
+          "read_text_value": "ಊಟದ ಸಮಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d0d63bf1-43d2-48b3-8090-c7bcb6c59c9b.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಲಗ",
+          "read_text": true,
+          "read_text_value": "ಸಲಗ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/eefb07f9-7a3c-4ad3-944a-9776376854ad.mp3"
+        },
+        {
+          "hide_text": false,
+          "text": "ಹರಹರ",
+          "read_text": true,
+          "read_text_value": "ಹರಹರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/107e69f2-6ecf-42c7-a725-8d6fcb2c50d4.mp3"
+        }
+      ],
+      "correctAnswer": "ದಶಕ",
+      "explanation": "The audio prompt is for the word 'ದಶಕ'."
+    },
+    {
+      "id": 110,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಉದಯ",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "ಉದಯ",
+          "read_text": true,
+          "read_text_value": "ಉದಯ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3c7353b7-a31f-4d3e-afd7-07918eb76f46.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅಗಸ",
+          "read_text": true,
+          "read_text_value": "ಅಗಸ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/aae0b26a-cf54-4f68-978a-38f21d85a974.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸರಸರ",
+          "read_text": true,
+          "read_text_value": "ಸರಸರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f5804caf-6def-4426-bdd8-ee53dc2c192a.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ನಯನ",
+          "read_text": true,
+          "read_text_value": "ನಯನ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1d75ec4f-db6b-48c8-8427-a04c03429af2.mp3"
+        }
+      ],
+      "correctAnswer": "ಉದಯ",
+      "explanation": "The question shows the word 'ಉದಯ' and the answer must match the audio option."
+    }
+  ]
+}

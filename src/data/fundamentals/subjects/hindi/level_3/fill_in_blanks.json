@@ -1,0 +1,166 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 401,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "कमल",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/160d64ea-016f-4557-b239-32351ce0d14e.mp3"
+      },
+      "correctAnswer": "कमल",
+      "alternatives": [
+        "कमल"
+      ],
+      "explanation": "यह शब्द 'कमल' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 402,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "घर",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/85dbd7e4-9ce7-4885-98ac-9b9a20617fc3.mp3"
+      },
+      "correctAnswer": "घर",
+      "alternatives": [
+        "घर"
+      ],
+      "explanation": "यह शब्द 'घर' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 403,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "फल",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/58ddac45-aad5-4711-9d97-425aad7427e1.mp3"
+      },
+      "correctAnswer": "फल",
+      "alternatives": [
+        "फल"
+      ],
+      "explanation": "यह शब्द 'फल' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 404,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "पानी",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b27314e4-6837-4ed4-913e-6d25c83b485d.mp3"
+      },
+      "correctAnswer": "पानी",
+      "alternatives": [
+        "पानी"
+      ],
+      "explanation": "यह शब्द 'पानी' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 405,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "किताब",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6d5cfe0b-6426-46ec-805a-96de923f9cf5.mp3"
+      },
+      "correctAnswer": "किताब",
+      "alternatives": [
+        "किताब"
+      ],
+      "explanation": "यह शब्द 'किताब' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 406,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "माँ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0cdb9cb5-0b02-41d8-bd51-4278bab51e03.mp3"
+      },
+      "correctAnswer": "माँ",
+      "alternatives": [
+        "माँ"
+      ],
+      "explanation": "यह शब्द 'माँ' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 407,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "सूरज",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d142e5b0-486f-4fbf-a28f-277575e7321b.mp3"
+      },
+      "correctAnswer": "सूरज",
+      "alternatives": [
+        "सूरज"
+      ],
+      "explanation": "यह शब्द 'सूरज' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 408,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "नदी",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/03ffae02-fdc9-4081-a727-f8d3a05dc01e.mp3"
+      },
+      "correctAnswer": "नदी",
+      "alternatives": [
+        "नदी"
+      ],
+      "explanation": "यह शब्द 'नदी' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 409,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "तारा",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1fbacb04-1b9f-4ac7-8fde-bbc17f442898.mp3"
+      },
+      "correctAnswer": "तारा",
+      "alternatives": [
+        "तारा"
+      ],
+      "explanation": "यह शब्द 'तारा' है, जो सरल शब्द है।"
+    },
+    {
+      "id": 410,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "शब्द को सुनिए और खाली स्थान भरिए। (Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "मेला",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ab5bded9-ae81-48de-9033-c44e9a34a464.mp3"
+      },
+      "correctAnswer": "मेला",
+      "alternatives": [
+        "मेला"
+      ],
+      "explanation": "यह शब्द 'मेला' है, जो सरल शब्द है।"
+    }
+  ]
+}

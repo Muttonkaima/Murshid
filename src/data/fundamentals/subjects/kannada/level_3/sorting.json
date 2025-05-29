@@ -1,0 +1,454 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 501,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಹೆಬ್ಬಲಸು",
+          "read_text": true,
+          "read_text_value": "ಹೆಬ್ಬಲಸು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3e2c1adb-ee24-48d7-a57b-2a976d67a64b.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸಜ್ಜನಿಕೆ",
+          "read_text": true,
+          "read_text_value": "ಸಜ್ಜನಿಕೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/32b200a7-f87f-4515-9555-4c010deab04b.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಬ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಲ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸು"
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ್"
+        },
+        {
+          "hide_text": false,
+          "text": "ನಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಬ"
+        }
+      ],
+      "correctSorting": {
+        "ಹೆಬ್ಬಲಸು": [
+          "ಹೆ",
+          "ಬ",
+          "ಬ",
+          "ಲ",
+          "ಸು"
+        ],
+        "ಸಜ್ಜನಿಕೆ": [
+          "ಸ",
+          "ಜ್",
+          "ಜ",
+          "ನ",
+          "ನಿ",
+          "ಕೆ",
+          "ಸ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 502,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ನುಗಕಾಯಿ",
+          "read_text": true,
+          "read_text_value": "ನುಗಕಾಯಿ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8b18039d-c8f5-4cbe-8cbd-166763830863.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅಜ್ಜಮ್ಮ",
+          "read_text": true,
+          "read_text_value": "ಅಜ್ಜಮ್ಮ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ff0cda9f-50ab-4999-be6d-c00505f19176.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಅ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಮ್ಮ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನು"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಯಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಗ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        }
+      ],
+      "correctSorting": {
+        "ನುಗಕಾಯಿ": [
+          "ನು",
+          "ಗ",
+          "ಕ",
+          "ಯಿ",
+          "ಅ"
+        ],
+        "ಅಜ್ಜಮ್ಮ": [
+          "ಅ",
+          "ಜ",
+          "ಜ",
+          "ಮ್ಮ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 503,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಸಜ್ಜಿಗೆ",
+          "read_text": true,
+          "read_text_value": "ಸಜ್ಜಿಗೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/34e20eff-0cf1-49d0-8a35-733017e0280d.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಕಬ್ಬಿಣ",
+          "read_text": true,
+          "read_text_value": "ಕಬ್ಬಿಣ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/97580b57-50af-402a-b437-b3ed94ec2e6f.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಣ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಗೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ್"
+        },
+        {
+          "hide_text": false,
+          "text": "ಣ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಬ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕ"
+        },
+        {
+          "hide_text": false,
+          "text": "ರಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        }
+      ],
+      "correctSorting": {
+        "ಸಜ್ಜಿಗೆ": [
+          "ಸ",
+          "ಜ",
+          "ಜ",
+          "ಗೆ"
+        ],
+        "ಕಬ್ಬಿಣ": [
+          "ಕ",
+          "ಬ",
+          "ರಿ",
+          "ಣ",
+          "ಣ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 504,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಎಚ್ಚರಿಕೆ",
+          "read_text": true,
+          "read_text_value": "ಎಚ್ಚರಿಕೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3ac59a2a-c31b-4d5e-ad55-0a84323505cc.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಅಜ್ಜಂದಿರು",
+          "read_text": true,
+          "read_text_value": "ಅಜ್ಜಂದಿರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/01ca93df-e77d-4627-a1a0-2c1581705a93.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಅ"
+        },
+        {
+          "hide_text": false,
+          "text": "ದಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ರಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಎ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಚ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        },
+        {
+          "hide_text": false,
+          "text": "ರಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ರು"
+        },
+        {
+          "hide_text": false,
+          "text": "ಚ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನ್"
+        }
+      ],
+      "correctSorting": {
+        "ಎಚ್ಚರಿಕೆ": [
+          "ಎ",
+          "ಚ",
+          "ಚ",
+          "ರಿ",
+          "ಕೆ"
+        ],
+        "ಅಜ್ಜಂದಿರು": [
+          "ಅ",
+          "ಜ",
+          "ಜ",
+          "ನ್",
+          "ದಿ",
+          "ರು"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 505,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಹಗ್ಗದಾಟ",
+          "read_text": true,
+          "read_text_value": "ಹಗ್ಗದಾಟ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/36e6f839-b53b-4160-9529-1496f264f3f7.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಸಜ್ಜನಿಕೆ",
+          "read_text": true,
+          "read_text_value": "ಸಜ್ಜನಿಕೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/16e04002-0723-4e30-b6f3-73b0bc39eeef.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಟ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಗ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಕೆ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ್"
+        },
+        {
+          "hide_text": false,
+          "text": "ಗ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಜ"
+        },
+        {
+          "hide_text": false,
+          "text": "ದ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಹ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಸ"
+        },
+        {
+          "hide_text": false,
+          "text": "ನಿ"
+        },
+        {
+          "hide_text": false,
+          "text": "ಅ"
+        }
+      ],
+      "correctSorting": {
+        "ಹಗ್ಗದಾಟ": [
+          "ಹ",
+          "ಗ",
+          "ಗ",
+          "ದ",
+          "ಅ",
+          "ಟ"
+        ],
+        "ಸಜ್ಜನಿಕೆ": [
+          "ಸ",
+          "ಜ್",
+          "ಜ",
+          "ನ",
+          "ನಿ",
+          "ಕೆ",
+          "ಸ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    }
+  ]
+}

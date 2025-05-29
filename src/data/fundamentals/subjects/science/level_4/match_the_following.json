@@ -1,0 +1,166 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 25,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the part of the plant with its function:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Flower", "read_text": false },
+        { "hide_text": false, "text": "Stem", "read_text": false },
+        { "hide_text": false, "text": "Leaves", "read_text": false },
+        { "hide_text": false, "text": "Roots", "read_text": false },
+        { "hide_text": false, "text": "Fruits", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Absorbs water", "read_text": false },
+        { "hide_text": false, "text": "Reproduction", "read_text": false },
+        { "hide_text": false, "text": "Support and transport", "read_text": false },
+        { "hide_text": false, "text": "Photosynthesis", "read_text": false },
+        { "hide_text": false, "text": "Seed formation", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Roots", "right": "Absorbs water" },
+        { "left": "Leaves", "right": "Photosynthesis" },
+        { "left": "Stem", "right": "Support and transport" },
+        { "left": "Flower", "right": "Reproduction" },
+        { "left": "Fruits", "right": "Seed formation" }
+      ],
+      "explanation": "Each plant part performs a unique function."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the type of weather with its typical season:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Pleasant and breezy", "read_text": false },
+        { "hide_text": false, "text": "Rainy", "read_text": false },
+        { "hide_text": false, "text": "Hot and dry", "read_text": false },
+        { "hide_text": false, "text": "Cold and snowy", "read_text": false },
+        { "hide_text": false, "text": "Foggy", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Spring", "read_text": false },
+        { "hide_text": false, "text": "Winter", "read_text": false },
+        { "hide_text": false, "text": "Summer", "read_text": false },
+        { "hide_text": false, "text": "Monsoon", "read_text": false },
+        { "hide_text": false, "text": "Autumn", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Hot and dry", "right": "Summer" },
+        { "left": "Cold and snowy", "right": "Winter" },
+        { "left": "Rainy", "right": "Monsoon" },
+        { "left": "Pleasant and breezy", "right": "Spring" },
+        { "left": "Foggy", "right": "Autumn" }
+      ],
+      "explanation": "Each season has characteristic weather patterns."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the scientist to their discovery (Level 4 - Application):",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Gregor Mendel", "read_text": false },
+        { "hide_text": false, "text": "Isaac Newton", "read_text": false },
+        { "hide_text": false, "text": "Marie Curie", "read_text": false },
+        { "hide_text": false, "text": "Benjamin Franklin", "read_text": false },
+        { "hide_text": false, "text": "Charles Darwin", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Electricity", "read_text": false },
+        { "hide_text": false, "text": "Gravity", "read_text": false },
+        { "hide_text": false, "text": "Genetics", "read_text": false },
+        { "hide_text": false, "text": "Radioactivity", "read_text": false },
+        { "hide_text": false, "text": "Evolution", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Benjamin Franklin", "right": "Electricity" },
+        { "left": "Isaac Newton", "right": "Gravity" },
+        { "left": "Marie Curie", "right": "Radioactivity" },
+        { "left": "Gregor Mendel", "right": "Genetics" },
+        { "left": "Charles Darwin", "right": "Evolution" }
+      ],
+      "explanation": "These scientists are known for foundational discoveries."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the separation technique to what it separates:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Filtration", "read_text": false },
+        { "hide_text": false, "text": "Evaporation", "read_text": false },
+        { "hide_text": false, "text": "Magnetic separation", "read_text": false },
+        { "hide_text": false, "text": "Sieving", "read_text": false },
+        { "hide_text": false, "text": "Decantation", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Sand from muddy water", "read_text": false },
+        { "hide_text": false, "text": "Salt from water", "read_text": false },
+        { "hide_text": false, "text": "Iron filings from sand", "read_text": false },
+        { "hide_text": false, "text": "Pebbles from flour", "read_text": false },
+        { "hide_text": false, "text": "Oil from water", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Filtration", "right": "Sand from muddy water" },
+        { "left": "Evaporation", "right": "Salt from water" },
+        { "left": "Magnetic separation", "right": "Iron filings from sand" },
+        { "left": "Sieving", "right": "Pebbles from flour" },
+        { "left": "Decantation", "right": "Oil from water" }
+      ],
+      "explanation": "Each method is suited for specific mixtures."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the item to whether it's living or non-living:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Tree", "read_text": false },
+        { "hide_text": false, "text": "Car", "read_text": false },
+        { "hide_text": false, "text": "Bird", "read_text": false },
+        { "hide_text": false, "text": "Rock", "read_text": false },
+        { "hide_text": false, "text": "Cat", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Living", "read_text": false },
+        { "hide_text": false, "text": "Non-living", "read_text": false },
+        { "hide_text": false, "text": "Living", "read_text": false },
+        { "hide_text": false, "text": "Non-living", "read_text": false },
+        { "hide_text": false, "text": "Living", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Tree", "right": "Living" },
+        { "left": "Car", "right": "Non-living" },
+        { "left": "Bird", "right": "Living" },
+        { "left": "Rock", "right": "Non-living" },
+        { "left": "Cat", "right": "Living" }
+      ],
+      "explanation": "Living things grow, reproduce, and respond to stimuli."
+    }
+  ]
+}

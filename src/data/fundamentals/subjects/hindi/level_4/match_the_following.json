@@ -1,0 +1,130 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 100,
+  "questions": [
+    {
+      "id": 501,
+      "type": "matchTheFollowing",
+      "marks": 100,
+      "question": {
+        "hide_text": false,
+        "text": "नीचे दिए गए हिंदी वाक्यों के ऑडियो को सही वाक्य से मिलाइए:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "वाक्य 1",
+          "read_text": true,
+          "read_text_value": "मैं पानी पी रहा हूँ।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/e5110418-8951-4bf1-adaf-aa96cd9b85e2.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "वाक्य 2",
+          "read_text": true,
+          "read_text_value": "तुम कहाँ जा रहे हो?",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d396fd15-eba4-4fe7-9ebb-57e2b13877f0.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "वाक्य 3",
+          "read_text": true,
+          "read_text_value": "यह मेरा दोस्त है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a513e2f7-2fc3-464f-86fc-f6ff3a6d7408.mp3"
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "यह मेरा दोस्त है।"
+        },
+        {
+          "hide_text": false,
+          "text": "मैं पानी पी रहा हूँ।"
+        },
+        {
+          "hide_text": false,
+          "text": "तुम कहाँ जा रहे हो?"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "मैं पानी पी रहा हूँ।",
+          "right": "मैं पानी पी रहा हूँ।"
+        },
+        {
+          "left": "तुम कहाँ जा रहे हो?",
+          "right": "तुम कहाँ जा रहे हो?"
+        },
+        {
+          "left": "यह मेरा दोस्त है।",
+          "right": "यह मेरा दोस्त है।"
+        }
+      ],
+      "explanation": "हर ऑडियो वाक्य को उसके सही हिंदी वाक्य से मिलाया गया है।"
+    },
+    {
+      "id": 303,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "नीचे दिए गए वाक्यों को उनके सही उच्चारण से मिलाइए:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "मैं स्कूल जा रहा हूँ।",
+          "read_text": true,
+          "read_text_value": "मैं स्कूल जा रहा हूँ।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b8865251-c997-4494-930f-6702814ef33b.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "वह खाना खा रहा है।",
+          "read_text": true,
+          "read_text_value": "वह खाना खा रहा है।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/728ac75c-7ec2-4e0a-bdbe-d98a467b363f.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "हम खेल रहे हैं।",
+          "read_text": true,
+          "read_text_value": "हम खेल रहे हैं।",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5ad072d7-95f1-4c33-8842-065febc279b6.mp3"
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "मैं स्कूल जा रहा हूँ।"
+        },
+        {
+          "hide_text": false,
+          "text": "वह खाना खा रहा है।"
+        },
+        {
+          "hide_text": false,
+          "text": "हम खेल रहे हैं।"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "मैं स्कूल जा रहा हूँ।",
+          "right": "मैं स्कूल जा रहा हूँ।"
+        },
+        {
+          "left": "वह खाना खा रहा है।",
+          "right": "वह खाना खा रहा है।"
+        },
+        {
+          "left": "हम खेल रहे हैं।",
+          "right": "हम खेल रहे हैं।"
+        }
+      ],
+      "explanation": "प्रत्येक वाक्य को उसके सही उच्चारण से मिलाया गया है।"
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 515,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the operation with its correct symbol:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "Addition", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Subtraction", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Multiplication", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Division", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Equals", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "+", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "-", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "×", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "÷", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "=", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "Addition", 
+          "right": "+" 
+        },
+        { 
+          "left": "Subtraction", 
+          "right": "-" 
+        },
+        { 
+          "left": "Multiplication", 
+          "right": "×" 
+        },
+        { 
+          "left": "Division", 
+          "right": "÷" 
+        },
+        { 
+          "left": "Equals", 
+          "right": "=" 
+        }
+      ],
+      "explanation": "Each basic operation has a standard symbol used in arithmetic."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the terms with their meanings in basic operations:",
+        "read_text": false
+      },
+      "leftItems": [
+        {   
+          "hide_text": false, 
+          "text": "Sum", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Difference", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Product", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Quotient", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Remainder", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "Result of addition", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Result of subtraction", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Result of multiplication", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Result of division", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Leftover after division", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "Sum", 
+          "right": "Result of addition" 
+        },
+        { 
+          "left": "Difference", 
+          "right": "Result of subtraction" 
+        },
+        { 
+          "left": "Product", 
+          "right": "Result of multiplication" 
+        },
+        { 
+          "left": "Quotient", 
+          "right": "Result of division" 
+        },
+        { 
+          "left": "Remainder", 
+          "right": "Leftover after division" 
+        }
+      ],
+      "explanation": "These terms describe the outcomes of each arithmetic operation."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the expressions with their correct results:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "8 + 5", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "15 - 6", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "3 × 7", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "20 ÷ 4", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "18 % 5", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "13", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "9", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "21", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "5", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "3", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "8 + 5", 
+          "right": "13" 
+        },
+        { 
+          "left": "15 - 6", 
+          "right": "9" 
+        },
+        { 
+          "left": "3 × 7", 
+          "right": "21" 
+        },
+        { 
+          "left": "20 ÷ 4", 
+          "right": "5" 
+        },
+        { 
+          "left": "18 % 5", 
+          "right": "3" 
+        }
+      ],
+      "explanation": "These are results of common arithmetic operations including modulus."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the operation properties with their descriptions:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "Commutative Property", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Associative Property", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Distributive Property", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Additive Identity", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Multiplicative Identity", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "Changing order does not change result", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Grouping does not affect result", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "a × (b + c) = a × b + a × c", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "0 added to a number gives the same number", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "1 multiplied to a number gives the same number", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "Commutative Property", 
+          "right": "Changing order does not change result" 
+        },
+        { 
+          "left": "Associative Property", 
+          "right": "Grouping does not affect result" 
+        },
+        { 
+          "left": "Distributive Property", 
+          "right": "a × (b + c) = a × b + a × c" 
+        },
+        { 
+          "left": "Additive Identity", 
+          "right": "0 added to a number gives the same number" 
+        },
+        { 
+          "left": "Multiplicative Identity", 
+          "right": "1 multiplied to a number gives the same number" 
+        }
+      ],
+      "explanation": "These are standard arithmetic properties used in solving expressions."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the equations with the correct missing value:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "9 + __ = 17", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "__ - 4 = 8", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "6 × __ = 36", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "__ ÷ 5 = 4", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "10 % __ = 0", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "8", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "12", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "6", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "20", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "2", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "9 + __ = 17", 
+          "right": "8" 
+        },
+        { 
+          "left": "__ - 4 = 8", 
+          "right": "12" 
+        },
+        { 
+          "left": "6 × __ = 36", 
+          "right": "6" 
+        },
+        { 
+          "left": "__ ÷ 5 = 4", 
+          "right": "20" 
+        },
+        { 
+          "left": "10 % __ = 0", 
+          "right": "2" 
+        }
+      ],
+      "explanation": "Solving each equation gives the corresponding unknown value."
+    },
+    {
+      "id": 6,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the operations with their real-life examples:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "Addition", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Subtraction", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Multiplication", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Division", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Remainder", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "Finding total apples in two baskets", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Calculating money left after spending", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Finding total cost of 5 pens at ₹10 each", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Distributing 12 chocolates among 3 children", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Leftover marbles after dividing equally", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "Addition", 
+          "right": "Finding total apples in two baskets" 
+        },
+        { 
+          "left": "Subtraction", 
+          "right": "Calculating money left after spending" 
+        },
+        { 
+          "left": "Multiplication", 
+          "right": "Finding total cost of 5 pens at ₹10 each" 
+        },
+        { 
+          "left": "Division", 
+          "right": "Distributing 12 chocolates among 3 children" 
+        },
+        { 
+          "left": "Remainder", 
+          "right": "Leftover marbles after dividing equally" 
+        }
+      ],
+      "explanation": "Each basic operation is applied in everyday situations."
+    },
+    {
+      "id": 7,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the terms with their mathematical operation:",
+        "read_text": false
+      },
+      "leftItems": [
+        { 
+          "hide_text": false, 
+          "text": "Add", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Subtract", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Multiply", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Divide", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Modulus", 
+          "read_text": false 
+        }
+      ],
+      "rightItems": [
+        { 
+          "hide_text": false, 
+          "text": "Addition", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Subtraction", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Multiplication", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Division", 
+          "read_text": false 
+        },
+        { 
+          "hide_text": false, 
+          "text": "Remainder", 
+          "read_text": false 
+        }
+      ],
+      "correctPairs": [
+        { 
+          "left": "Add", 
+          "right": "Addition" 
+        },
+        { 
+          "left": "Subtract", 
+          "right": "Subtraction" 
+        },
+        { 
+          "left": "Multiply", 
+          "right": "Multiplication" 
+        },
+        { 
+          "left": "Divide", 
+          "right": "Division" 
+        },
+        { 
+          "left": "Modulus", 
+          "right": "Remainder" 
+        }
+      ],
+      "explanation": "These are synonyms or names of basic arithmetic operations."
+    }
+  ]
+}

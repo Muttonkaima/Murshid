@@ -1,0 +1,190 @@
+{
+    "questionType": "multiSelect",
+    "totalMarks": 15,
+    "questions": [
+      {
+        "id": 1,
+        "marks": 3,
+        "question": {
+          "hide_text": false,
+          "text": "Which of the following are prime numbers?",
+          "read_text": false
+        },
+        "options": [
+          { 
+            "hide_text": false,
+            "text": "2",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "3",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "4",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "5",
+            "read_text": false
+          }
+        ],
+        "correctAnswers": [
+          "2",
+          "3",
+          "5"
+        ],
+        "explanation": "2, 3, and 5 are prime numbers; 4 is not."
+      },
+      {
+        "id": 2,
+        "marks": 3,
+        "question": {
+          "hide_text": false,
+          "text": "Select all even numbers from the list.",
+          "read_text": false
+        },
+        "options": [
+          { 
+            "hide_text": false,
+            "text": "7",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "10",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "14",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "15",
+            "read_text": false
+          }
+        ],
+        "correctAnswers": [
+          "10",
+          "14"
+        ],
+        "explanation": "10 and 14 are even numbers."
+      },
+      {
+        "id": 3,
+        "marks": 3,
+        "question": {
+          "hide_text": false,
+          "text": "Which of the following are number systems?",
+          "read_text": false
+        },
+        "options": [
+          { 
+            "hide_text": false,
+            "text": "Binary",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "Hexadecimal",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "Decimal",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "Alphabet",
+            "read_text": false
+          }
+        ],
+        "correctAnswers": [
+          "Binary",
+          "Hexadecimal",
+          "Decimal"
+        ],
+        "explanation": "Binary, Hexadecimal, and Decimal are number systems; Alphabet is not."
+      },
+      {
+        "id": 4,
+        "marks": 3,
+        "question": {
+          "hide_text": false,
+          "text": "Select all composite numbers from the list.",
+          "read_text": false
+        },
+        "options": [
+          { 
+            "hide_text": false,
+            "text": "1",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "4",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "6",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "7",
+            "read_text": false
+          }
+        ],
+        "correctAnswers": [
+          "4",
+          "6"
+        ],
+        "explanation": "4 and 6 are composite numbers; 1 and 7 are not."
+      },
+      {
+        "id": 5,
+        "marks": 3,
+        "question": {
+          "hide_text": false,
+          "text": "Which of these are valid digits in hexadecimal system?",
+          "read_text": false
+        },
+        "options": [
+          { 
+            "hide_text": false,
+            "text": "A",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "G",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "F",
+            "read_text": false
+          },
+          { 
+            "hide_text": false,
+            "text": "9",
+            "read_text": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "F",
+          "9"
+        ],
+        "explanation": "Hexadecimal digits include 0-9 and A-F. G is not a valid hexadecimal digit."
+      }
+    ]
+  }
+  

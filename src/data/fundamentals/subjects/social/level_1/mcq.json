@@ -1,0 +1,230 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 201,
+      "marks": 2,
+      "question": {
+        "hide_text": false,
+        "text": "Find Karnataka in the following options ",
+        "read_text": false,
+        "read_text_value": "",
+        "image": ""
+      },
+      "options": [
+        { 
+          "hide_text": true,
+          "text": "Kerala",
+          "read_text": false,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/India_map_kerala.png" 
+        },
+        { "hide_text": true,
+          "text": "Karnataka",
+          "read_text": false,
+          "image": "https://www.researchgate.net/publication/321141433/figure/fig1/AS:11431281271281204@1723579879810/Map-of-India-with-Karnataka-highlighted-Images-available-from.tif" 
+        },
+        { "hide_text": true,
+          "text": "Tamil Nadu",
+          "read_text": false,
+          "image": "data:image/jpeg;base64,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" 
+        },
+        { "hide_text": true,
+          "text": "Andhra Pradesh",
+          "read_text": false,
+          "image": "data:image/jpeg;base64,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" 
+        }
+      ],
+      "correctAnswer": "Karnataka",
+      "explanation": "Karnataka is one of the states of India, located in the southwestern region."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the capital of the state shown in the image.",
+        "read_text": false,
+        "image": "data:image/jpeg;base64,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"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Pune",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Chennai",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Bengaluru",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Mumbai",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Mumbai",
+      "explanation": "The state is Maharashtra and the capital is Mumbai."
+    },
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the correct flag for the province shown in the image.",
+        "read_text": false,
+        "image": "https://www.researchgate.net/publication/321141433/figure/fig1/AS:11431281271281204@1723579879810/Map-of-India-with-Karnataka-highlighted-Images-available-from.tif"
+      },
+      "options": [
+        { 
+          "hide_text": true,
+          "text": "Poland",
+          "read_text": false,
+          "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAACxCAMAAAAh3/JWAAAADFBMVEX////cFDzup6/bAC47xqeuAAAA0UlEQVR4nO3QMQHAMAzAsLTjz3kI4qO3BEEzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPLms5mM1h5WcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICfICXKCnCAnyAlygpwgJ8gJcoKcICf8zMtmEUHJBe8AAAAASUVORK5CYII=" 
+        },
+        { 
+          "hide_text": true,
+          "text": "Karnataka",
+          "read_text": false,
+          "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAADFBMVEX+/gD+AADkfQL6AAH0Hi0PAAAA0ElEQVR4nO3QMQHAMAzAsLTjz3kU4qOfBEEzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE9c1uZjbQ5rsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICmQFsgJZgaxAViArkBXICn5vrmOdXqtQigAAAABJRU5ErkJggg==" 
+        },
+        {
+           "hide_text": true,
+          "text": "Guinea",
+          "read_text": false,
+          "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAG1BMVEXOICkAlGD60RXMFSrebyH91hX/0w11rEUAk2ME5yjrAAABAElEQVR4nO3QRwEAIAwEsDKLf8WouF8iIVUxa5+ZcvuNmFyJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEye5kw8x5tcsm2OWvgAAAABJRU5ErkJggg==" 
+        },
+        {
+           "hide_text": true,
+          "text": "Germany",
+          "read_text": false,
+          "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAElBMVEUAAAD/zgDdAADnAADaAAD/2AAtsSEoAAAA+ElEQVR4nO3QMQGAMAAEsYeCf8tIuI0pkZANAAAAAAAAAAAAAAAAAAAAgB8dwm6CoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKewh7CbsIipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUofMGTNC8HkSxoAAAAASUVORK5CYII=" 
+        }
+      ],
+      "correctAnswer": "Karnataka",
+      "explanation": "The image shows the state Karnataka,."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the river shown in the image",
+        "read_text": false,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/River_Cauvery_TA.png"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Ganga",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Yamuna",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Cauvery",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Krishna",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Cauvery",
+      "explanation": "The image shows the Cauvery river."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the coastline shown in the image",
+        "read_text": false,
+        "image": "https://st.adda247.com/https://www.adda247.com/jobs/wp-content/uploads/sites/4/2024/07/11161048/image-22-1.png"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "Pacific Coast",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Gulf of Mannar coast",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Coromandel Coast",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Western Coastal Plains of India",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Eastern Coastal Plains of India",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "Western Coastal Plains of India",
+      "explanation": "The user must choose the pronounced word 'ಸರಸ'."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the monument located in the capital city of India.",
+        "read_text": false
+      },
+      "options": [
+        {
+          "hide_text": true,
+          "text": "Taj Mahal",
+          "read_text": false,
+          "image": "https://pnccs.edu.in/wp-content/uploads/2024/03/image-1.png"
+        },
+        {
+          "hide_text": true,
+          "text": "Qutub Minar",
+          "read_text": false,
+          "image": "https://pnccs.edu.in/wp-content/uploads/2024/03/image.png"
+        },
+        {
+          "hide_text": true,
+          "text": "Red Fort",
+          "read_text": false,
+          "image": "data:image/jpeg;base64,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"
+        },
+        {
+          "hide_text": true,
+          "text": "Khajuraho Temples",
+          "read_text": false,
+          "image": "https://pnccs.edu.in/wp-content/uploads/2024/03/image-2.png"
+        },
+        {
+          "hide_text": true,
+          "text": "Hampi Ruins",
+          "read_text": false,
+          "image": "https://pnccs.edu.in/wp-content/uploads/2024/03/image-3.png"
+        }
+      ],
+      "correctAnswer": "Red Fort",
+      "explanation": "The capital of India is New Delhi and Red Fort is the historical monument in New Delhi."
+    }
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 501,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಡೊರು",
+          "read_text": true,
+          "read_text_value": "ಡೊರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/88b97bc0-cefc-495f-8f4f-3b54606d03bf.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಾಠ",
+          "read_text": true,
+          "read_text_value": "ಪಾಠ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f97d8b10-cf9c-4678-aa52-3e6cd38756ef.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಠ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಡೊ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಆ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಡೊರು": [
+          "ಡೊ",
+          "ರು"
+        ],
+        "ಪಾಠ": [
+          "ಪ",
+          "ಆ",
+          "ಠ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 502,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಪಂಪ",
+          "read_text": true,
+          "read_text_value": "ಪಂಪ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2a85fa8d-b27f-4234-a497-8b2d4b12bd80.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ತೂರ",
+          "read_text": true,
+          "read_text_value": "ತೂರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2840c0b5-1dcf-4a2c-a585-5ab7d8a1c714.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಂ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ತೂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಪಂಪ": [
+          "ಪಂ",
+          "ಪ"
+        ],
+        "ತೂರ": [
+          "ತೂ",
+          "ರ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 503,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ದುರು",
+          "read_text": true,
+          "read_text_value": "ದುರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/10057096-5fda-44da-a6cd-2e77c6084f01.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ರೆಂಬೆ",
+          "read_text": true,
+          "read_text_value": "ರೆಂಬೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/054a5045-70d5-404f-903e-a04df6884e23.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಬೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರೆಂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ದುರು": [
+          "ದು",
+          "ರು"
+        ],
+        "ರೆಂಬೆ": [
+          "ರೆಂ",
+          "ಬೆ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 504,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಪಾಠ",
+          "read_text": true,
+          "read_text_value": "ಪಾಠ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/32fd2c4b-19c4-4705-b8b4-084c3dd9c694.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಂಪ",
+          "read_text": true,
+          "read_text_value": "ಪಂಪ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/26ff7f89-cf17-4c36-8276-ca1b5bdbb4d9.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಠ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಪಾಠ": [
+          "ಪ",
+          "ಆ",
+          "ಠ"
+        ],
+        "ಪಂಪ": [
+          "ಪಂ",
+          "ಪ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 505,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ತೂರ",
+          "read_text": true,
+          "read_text_value": "ತೂರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/13f051ab-85a1-4e7a-bba6-98dc6a6ef4a4.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಡೊರು",
+          "read_text": true,
+          "read_text_value": "ಡೊರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9efd7478-7047-40be-b739-c7eabf7c727e.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ರ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ತೂ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಡೊ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ತೂರ": [
+          "ತೂ",
+          "ರ"
+        ],
+        "ಡೊರು": [
+          "ಡೊ",
+          "ರು"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 506,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ರೆಂಬೆ",
+          "read_text": true,
+          "read_text_value": "ರೆಂಬೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b03d3574-de22-43dd-927e-78defedcb716.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದುರು",
+          "read_text": true,
+          "read_text_value": "ದುರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/43a0916d-3393-4dea-8e9a-31256485cd49.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ದು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಬೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರೆಂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ರೆಂಬೆ": [
+          "ರೆಂ",
+          "ಬೆ"
+        ],
+        "ದುರು": [
+          "ದು",
+          "ರು"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 507,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ಡೊರು",
+          "read_text": true,
+          "read_text_value": "ಡೊರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4e9acf07-af9b-4b45-94e2-68b2dee7c49f.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಂಪ",
+          "read_text": true,
+          "read_text_value": "ಪಂಪ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dcc5b399-6064-4002-a95c-825a3c8ffed7.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಡೊ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ಡೊರು": [
+          "ಡೊ",
+          "ರು"
+        ],
+        "ಪಂಪ": [
+          "ಪಂ",
+          "ಪ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 508,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ರೆಂಬೆ",
+          "read_text": true,
+          "read_text_value": "ರೆಂಬೆ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/18168c11-8aec-4070-90b4-ace474cc2d43.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ಪಾಠ",
+          "read_text": true,
+          "read_text_value": "ಪಾಠ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/cb87eb84-c9e9-46aa-95d6-9346ce0c1587.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಠ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಬೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರೆಂ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ರೆಂಬೆ": [
+          "ರೆಂ",
+          "ಬೆ"
+        ],
+        "ಪಾಠ": [
+          "ಪ",
+          "ಆ",
+          "ಠ"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    },
+    {
+      "id": 509,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(ಕೆಳಗಿನ ಪದಗಳನ್ನು ರೂಪಿಸಲು ಅಕ್ಷರಗಳನ್ನು ವಿಂಗಡಿಸಿ. ಪ್ರತಿ ವರ್ಗದ ಲೇಬಲ್ ಅನ್ನು ಆಲಿಸಿ)Sort the letters to form the following words. Listen to each category label:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "ತೂರ",
+          "read_text": true,
+          "read_text_value": "ತೂರ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6cdfcdd7-9686-4ecc-9c00-293e81754cf2.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ದುರು",
+          "read_text": true,
+          "read_text_value": "ದುರು",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fb271cec-d386-48d9-a846-886054fc52ab.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "ತೂ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ದು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ರ",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "ತೂರ": [
+          "ತೂ",
+          "ರ"
+        ],
+        "ದುರು": [
+          "ದು",
+          "ರು"
+        ]
+      },
+      "explanation": "Arrange the scrambled letters to form the target words as given in the categories."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "questionType": "trueFalse",
+  "totalMarks": 75,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "is Bengaluru the capital of the state shown in the picture?",
+        "read_text": false,
+        "image":"https://www.researchgate.net/publication/321141433/figure/fig1/AS:11431281271281204@1723579879810/Map-of-India-with-Karnataka-highlighted-Images-available-from.tif"
+      },
+      "correctAnswer": true,
+      "explanation": "The sate shown is Karnataka and capital city of Karnataka is Bengaluru"
+    },
+    {
+      "id": 2,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Is the state shown in the Image known as Gods own country?",
+        "read_text": false,
+        "image":"https://upload.wikimedia.org/wikipedia/commons/e/e5/India_map_kerala.png"
+      },
+      "correctAnswer": true,
+      "explanation": "The state shown in the image is Kerala and it is known as Gods own country"
+    }
+  ]
+}

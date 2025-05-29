@@ -1,0 +1,134 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 25,
+  "questions": [
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each body part with the correct sense:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Nose", "read_text": false },
+        { "hide_text": false, "text": "Ears", "read_text": false },
+        { "hide_text": false, "text": "Tongue", "read_text": false },
+        { "hide_text": false, "text": "Eyes", "read_text": false },
+        { "hide_text": false, "text": "Skin", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Taste", "read_text": false },
+        { "hide_text": false, "text": "Sight", "read_text": false },
+        { "hide_text": false, "text": "Smell", "read_text": false },
+        { "hide_text": false, "text": "Hearing", "read_text": false },
+        { "hide_text": false, "text": "Touch", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Eyes", "right": "Sight" },
+        { "left": "Ears", "right": "Hearing" },
+        { "left": "Tongue", "right": "Taste" },
+        { "left": "Nose", "right": "Smell" },
+        { "left": "Skin", "right": "Touch" }
+      ],
+      "explanation": "Each sense is associated with a specific body part."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the plant part to its use:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Fruits", "read_text": false },
+        { "hide_text": false, "text": "Roots", "read_text": false },
+        { "hide_text": false, "text": "Flowers", "read_text": false },
+        { "hide_text": false, "text": "Leaves", "read_text": false },
+        { "hide_text": false, "text": "Stem", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Used in decoration", "read_text": false },
+        { "hide_text": false, "text": "We eat them", "read_text": false },
+        { "hide_text": false, "text": "Make food", "read_text": false },
+        { "hide_text": false, "text": "Anchor the plant", "read_text": false },
+        { "hide_text": false, "text": "Carries water and food", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Flowers", "right": "Used in decoration" },
+        { "left": "Leaves", "right": "Make food" },
+        { "left": "Fruits", "right": "We eat them" },
+        { "left": "Roots", "right": "Anchor the plant" },
+        { "left": "Stem", "right": "Carries water and food" }
+      ],
+      "explanation": "Each plant part has a different function and use."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the tool with its type of simple machine:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Bottle opener", "read_text": false },
+        { "hide_text": false, "text": "Door knob", "read_text": false },
+        { "hide_text": false, "text": "Scissors", "read_text": false },
+        { "hide_text": false, "text": "Wheelbarrow", "read_text": false },
+        { "hide_text": false, "text": "See-saw", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Wheel and axle", "read_text": false },
+        { "hide_text": false, "text": "Lever", "read_text": false },
+        { "hide_text": false, "text": "Wheel and axle", "read_text": false },
+        { "hide_text": false, "text": "Lever", "read_text": false },
+        { "hide_text": false, "text": "Lever", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Bottle opener", "right": "Lever" },
+        { "left": "Scissors", "right": "Lever" },
+        { "left": "Door knob", "right": "Wheel and axle" },
+        { "left": "Wheelbarrow", "right": "Lever" },
+        { "left": "See-saw", "right": "Lever" }
+      ],
+      "explanation": "These tools are examples of levers or wheel-and-axle machines."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the season with its typical weather condition:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Rainy", "read_text": false },
+        { "hide_text": false, "text": "Summer", "read_text": false },
+        { "hide_text": false, "text": "Spring", "read_text": false },
+        { "hide_text": false, "text": "Winter", "read_text": false },
+        { "hide_text": false, "text": "Autumn", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Cold and foggy", "read_text": false },
+        { "hide_text": false, "text": "Wet and cloudy", "read_text": false },
+        { "hide_text": false, "text": "Hot and sunny", "read_text": false },
+        { "hide_text": false, "text": "Flowers bloom", "read_text": false },
+        { "hide_text": false, "text": "Leaves fall", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Summer", "right": "Hot and sunny" },
+        { "left": "Winter", "right": "Cold and foggy" },
+        { "left": "Rainy", "right": "Wet and cloudy" },
+        { "left": "Spring", "right": "Flowers bloom" },
+        { "left": "Autumn", "right": "Leaves fall" }
+      ],
+      "explanation": "Each season is characterized by specific weather patterns and changes in nature."
+    }
+  ]
+}

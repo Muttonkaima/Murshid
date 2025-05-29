@@ -1,0 +1,116 @@
+{
+  "questionType": "trueFalse",
+  "totalMarks": 75,
+  "questions": [
+    {
+      "id": 1,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Zero is a natural number.",
+        "read_text": false
+      },
+      "correctAnswer": false,
+      "explanation": "Natural numbers start from 1, so 0 is not considered a natural number."
+    },
+    {
+      "id": 2,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Addition is a commutative operation.",
+        "read_text": false
+      },
+      "correctAnswer": true,
+      "explanation": "Addition is commutative because a + b = b + a."
+    },
+    {
+      "id": 3,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Subtraction is associative.",
+        "read_text": false
+      },
+      "correctAnswer": false,
+      "explanation": "Subtraction is not associative; (a - b) - c ≠ a - (b - c)."
+    },
+    {
+      "id": 4,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Multiplying any number by zero gives zero.",
+        "read_text": false
+      },
+      "correctAnswer": true,
+      "explanation": "By the multiplication property of zero, any number × 0 = 0."
+    },
+    {
+      "id": 5,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Division by zero is defined in mathematics.",
+        "read_text": false
+      },
+      "correctAnswer": false,
+      "explanation": "Division by zero is undefined and leads to a mathematical error."
+    },
+    {
+      "id": 6,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Every whole number is also a natural number.",
+        "read_text": false
+      },
+      "correctAnswer": false,
+      "explanation": "Whole numbers include 0, which is not a natural number."
+    },
+    {
+      "id": 7,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "The result of adding two odd numbers is always even.",
+        "read_text": false
+      },
+      "correctAnswer": true,
+      "explanation": "Odd + Odd = Even. For example, 3 + 5 = 8."
+    },
+    {
+      "id": 8,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "The product of two negative numbers is positive.",
+        "read_text": false
+      },
+      "correctAnswer": true,
+      "explanation": "Negative × Negative = Positive."
+    },
+    {
+      "id": 9,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "An even number divided by 2 always gives an odd number.",
+        "read_text": false
+      },
+      "correctAnswer": false,
+      "explanation": "Even ÷ 2 may give either even or odd. For example, 4 ÷ 2 = 2 (even)."
+    },
+    {
+      "id": 10,
+      "marks": 1,
+      "question": {
+        "hide_text": false,
+        "text": "Multiplication is both commutative and associative.",
+        "read_text": false
+      },
+      "correctAnswer": true,
+      "explanation": "Multiplication satisfies both the commutative and associative properties."
+    }
+  ]
+}

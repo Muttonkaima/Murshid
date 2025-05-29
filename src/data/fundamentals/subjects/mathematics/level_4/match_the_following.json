@@ -1,0 +1,160 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 515,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the numbers to one of their factors:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "12", "read_text": false },
+        { "hide_text": false, "text": "18", "read_text": false },
+        { "hide_text": false, "text": "20", "read_text": false },
+        { "hide_text": false, "text": "28", "read_text": false },
+        { "hide_text": false, "text": "30", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "6", "read_text": false },
+        { "hide_text": false, "text": "9", "read_text": false },
+        { "hide_text": false, "text": "10", "read_text": false },
+        { "hide_text": false, "text": "7", "read_text": false },
+        { "hide_text": false, "text": "5", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "12", "right": "6" },
+        { "left": "18", "right": "9" },
+        { "left": "20", "right": "10" },
+        { "left": "28", "right": "7" },
+        { "left": "30", "right": "5" }
+      ],
+      "explanation": "Each number is divisible by its matching factor."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the numbers with one of their multiples:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "3", "read_text": false },
+        { "hide_text": false, "text": "5", "read_text": false },
+        { "hide_text": false, "text": "7", "read_text": false },
+        { "hide_text": false, "text": "4", "read_text": false },
+        { "hide_text": false, "text": "6", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "16", "read_text": false },
+        { "hide_text": false, "text": "20", "read_text": false },
+        { "hide_text": false, "text": "14", "read_text": false },
+        { "hide_text": false, "text": "15", "read_text": false },
+        { "hide_text": false, "text": "18", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "3", "right": "15" },
+        { "left": "5", "right": "20" },
+        { "left": "7", "right": "14" },
+        { "left": "4", "right": "16" },
+        { "left": "6", "right": "18" }
+      ],
+      "explanation": "Each multiple is obtained by multiplying the number by an integer."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each number to its highest factor less than itself:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "16", "read_text": false },
+        { "hide_text": false, "text": "21", "read_text": false },
+        { "hide_text": false, "text": "25", "read_text": false },
+        { "hide_text": false, "text": "36", "read_text": false },
+        { "hide_text": false, "text": "40", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "20", "read_text": false },
+        { "hide_text": false, "text": "12", "read_text": false },
+        { "hide_text": false, "text": "5", "read_text": false },
+        { "hide_text": false, "text": "7", "read_text": false },
+        { "hide_text": false, "text": "8", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "16", "right": "8" },
+        { "left": "21", "right": "7" },
+        { "left": "25", "right": "5" },
+        { "left": "36", "right": "12" },
+        { "left": "40", "right": "20" }
+      ],
+      "explanation": "The highest factor less than a number divides it and is closest to it."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each number with a common multiple of both it and another number:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "2 & 3", "read_text": false },
+        { "hide_text": false, "text": "4 & 6", "read_text": false },
+        { "hide_text": false, "text": "5 & 10", "read_text": false },
+        { "hide_text": false, "text": "3 & 9", "read_text": false },
+        { "hide_text": false, "text": "6 & 7", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "10", "read_text": false },
+        { "hide_text": false, "text": "6", "read_text": false },
+        { "hide_text": false, "text": "9", "read_text": false },
+        { "hide_text": false, "text": "12", "read_text": false },
+        { "hide_text": false, "text": "42", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "2 & 3", "right": "6" },
+        { "left": "4 & 6", "right": "12" },
+        { "left": "5 & 10", "right": "10" },
+        { "left": "3 & 9", "right": "9" },
+        { "left": "6 & 7", "right": "42" }
+      ],
+      "explanation": "LCM is the smallest number that is a multiple of both."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the number with a number that is NOT its multiple:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "3", "read_text": false },
+        { "hide_text": false, "text": "2", "read_text": false },
+        { "hide_text": false, "text": "5", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "80", "read_text": false },  
+        { "hide_text": false, "text": "105", "read_text": false },   
+        { "hide_text": false, "text": "66", "read_text": false } 
+      ],
+      "correctPairs": [
+        { "left": "3", "right": "80" },
+        { "left": "2", "right": "105" },
+        { "left": "5", "right": "66" }
+      ],
+      "explanation": "Each number is matched with another that is not divisible by it, ensuring only one correct match per item."
+    }    
+  ]
+}

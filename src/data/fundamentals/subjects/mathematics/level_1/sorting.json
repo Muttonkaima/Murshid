@@ -1,0 +1,153 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 2,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following numbers into their correct categories:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Natural Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Whole Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Integers",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "0",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "7",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "-5",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Natural Numbers": ["7"],
+        "Whole Numbers": ["0"],
+        "Integers": ["-5"]
+      },
+      "explanation": "Natural numbers start from 1, whole numbers include 0, and integers include both negative and positive numbers."
+    },
+    {
+      "id": 3,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following numbers according to their type:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Rational Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Irrational Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Whole Numbers",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "√2",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "4/5",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "3",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Rational Numbers": ["4/5"],
+        "Irrational Numbers": ["√2"],
+        "Whole Numbers": ["3"]
+      },
+      "explanation": "4/5 is a rational number, √2 is an irrational number, and 3 is a whole number."
+    },
+    {
+      "id": 4,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Sort the following numbers by their place in the number system:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": false,
+          "text": "Prime Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Composite Numbers",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "Neither Prime nor Composite",
+          "read_text": false
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "1",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "5",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "8",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "Prime Numbers": ["5"],
+        "Composite Numbers": ["8"],
+        "Neither Prime nor Composite": ["1"]
+      },
+      "explanation": "5 is a prime number, 8 is composite, and 1 is neither prime nor composite."
+    }
+  ]
+}

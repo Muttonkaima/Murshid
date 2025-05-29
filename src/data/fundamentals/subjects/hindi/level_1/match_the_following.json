@@ -1,0 +1,130 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 500,
+  "questions": [
+    {
+      "id": 301,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "नीचे दिए गए हिंदी स्वरों को उनके उच्चारण से मिलाइए:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "अ",
+          "read_text": true,
+          "read_text_value": "अ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/a.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ई",
+          "read_text": true,
+          "read_text_value": "ई",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/ee.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "उ",
+          "read_text": true,
+          "read_text_value": "उ",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/u.mp3"
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "अ"
+        },
+        {
+          "hide_text": false,
+          "text": "ई"
+        },
+        {
+          "hide_text": false,
+          "text": "उ"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "अ",
+          "right": "अ"
+        },
+        {
+          "left": "ई",
+          "right": "ई"
+        },
+        {
+          "left": "उ",
+          "right": "उ"
+        }
+      ],
+      "explanation": "प्रत्येक स्वर को उसके सही उच्चारण से जोड़ा गया है।"
+    },
+    {
+      "id": 302,
+      "type": "matchTheFollowing",
+      "marks": 50,
+      "question": {
+        "hide_text": false,
+        "text": "हिंदी व्यंजनों को उनके उच्चारण से मिलाइए:",
+        "read_text": false
+      },
+      "leftItems": [
+        {
+          "hide_text": true,
+          "text": "क",
+          "read_text": true,
+          "read_text_value": "क",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/ka.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "च",
+          "read_text": true,
+          "read_text_value": "च",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/cha.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "ट",
+          "read_text": true,
+          "read_text_value": "ट",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_hindi/ta.mp3"
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "च"
+        },
+        {
+          "hide_text": false,
+          "text": "क"
+        },
+        {
+          "hide_text": false,
+          "text": "ट"
+        }
+      ],
+      "correctPairs": [
+        {
+          "left": "क",
+          "right": "क"
+        },
+        {
+          "left": "च",
+          "right": "च"
+        },
+        {
+          "left": "ट",
+          "right": "ट"
+        }
+      ],
+      "explanation": "हर व्यंजन को उसके सही उच्चारण से सही ढंग से जोड़ा गया है।"
+    }
+  ]
+}

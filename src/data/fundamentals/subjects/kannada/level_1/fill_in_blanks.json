@@ -1,0 +1,246 @@
+{
+  "questionType": "fillInBlanks",
+  "totalMarks": 22.5,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಅರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c78700ee-0f32-4c5a-81cf-2548a02a7259.mp3"
+      },
+      "correctAnswer": "ಅರಸ",
+      "alternatives": [
+        "ಅರಸ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ದಸರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/199a67ed-8309-4165-8d72-b119d48e1797.mp3"
+      },
+      "correctAnswer": "ದಸರ",
+      "alternatives": [
+        "ದಸರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಅದರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c0198e45-9fc9-4037-be61-ecaaffe32b2c.mp3"
+      },
+      "correctAnswer": "ಅದರ",
+      "alternatives": [
+        "ಅದರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ನಮನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/85b6ee0e-844f-4224-8437-632f5e554904.mp3"
+      },
+      "correctAnswer": "ನಮನ",
+      "alternatives": [
+        "ನಮನ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಅಮರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c3784cc0-326e-48a3-bcb2-c801c2c35974.mp3"
+      },
+      "correctAnswer": "ಅಮರ",
+      "alternatives": [
+        "ಅಮರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 106,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಸದರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fb5ae702-313f-4dcb-af2a-daa9721d5a78.mp3"
+      },
+      "correctAnswer": "ಸದರ",
+      "alternatives": [
+        "ಸದರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 107,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಅಗಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2b4df92a-4336-4fa9-81d6-ebd5ceb7e9ab.mp3"
+      },
+      "correctAnswer": "ಅಗಸ",
+      "alternatives": [
+        "ಅಗಸ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 108,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಸಮರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/b63dbe89-d789-4bf0-8e8e-1b86634e44c3.mp3"
+      },
+      "correctAnswer": "ಸಮರ",
+      "alternatives": [
+        "ಸಮರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 109,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ವನಜ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c3826d88-0f31-4839-b25c-f30a0c7a4647.mp3"
+      },
+      "correctAnswer": "ವನಜ",
+      "alternatives": [
+        "ವನಜ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 110,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ನಗರ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/fffcdc71-9172-4708-aa9c-5a318fd3f076.mp3"
+      },
+      "correctAnswer": "ನಗರ",
+      "alternatives": [
+        "ನಗರ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 111,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಸರಸ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c50f85c9-4c2e-4e61-8488-89b1b6ff212f.mp3"
+      },
+      "correctAnswer": "ಸರಸ",
+      "alternatives": [
+        "ಸರಸ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 112,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಗಗನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ded2a2d7-4081-40be-b1ed-c61b86665b94.mp3"
+      },
+      "correctAnswer": "ಗಗನ",
+      "alternatives": [
+        "ಗಗನ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 113,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ದವನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/46aa6e2b-d862-4620-926c-460f799e258c.mp3"
+      },
+      "correctAnswer": "ದವನ",
+      "alternatives": [
+        "ದವನ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 114,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ಜಲಜ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d3cf66e0-2439-42b1-883b-7b895af37a15.mp3"
+      },
+      "correctAnswer": "ಜಲಜ",
+      "alternatives": [
+        "ಜಲಜ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    },
+    {
+      "id": 115,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ.(Listen to the word and fill in the blank.)",
+        "read_text": true,
+        "read_text_value": "ವಚನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/608210ec-3efe-4487-9fde-23c83495c90f.mp3"
+      },
+      "correctAnswer": "ವಚನ",
+      "alternatives": [
+        "ವಚನ"
+      ],
+      "explanation": "ಶಬ್ದವನ್ನು ಆಲಿಸಿ ಮತ್ತು ಖಾಲಿ ಜಾಗವನ್ನು ಭರ್ತಿ ಮಾಡಿ."
+    }
+  ]
+}

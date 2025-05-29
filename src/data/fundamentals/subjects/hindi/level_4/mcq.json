@@ -1,0 +1,356 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 15,
+  "questions": [
+    {
+      "id": 601,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही साधारण वाक्य चुनिए (Select the correct simple sentence)",
+        "read_text": true,
+        "read_text_value": "मैं स्कूल जाता हूँ।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/4105cf0c-5cc6-4e03-ad26-fbc608379725.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "मैं स्कूल जाता हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "स्कूल मैं जाता हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "मैं जाता स्कूल हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "जाता मैं स्कूल हूँ।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "मैं स्कूल जाता हूँ।",
+      "explanation": "यह एक सही और स्पष्ट साधारण वाक्य है।"
+    },
+    {
+      "id": 602,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "नीचे दिए गए विकल्पों में से सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "वह खाना खा रहा है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/c91be05d-ecc5-4562-b80a-ef5fe8b7f6c6.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "वह खाना खा रहा है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खाना वह खा रहा है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "वह खा खाना रहा है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खा रहा वह खाना है।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "वह खाना खा रहा है।",
+      "explanation": "यह वाक्य व्याकरण के अनुसार सही है।"
+    },
+    {
+      "id": 603,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "हम पार्क में खेलते हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6e4ad680-d9ba-4b1c-a448-7bc115e78051.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "हम पार्क में खेलते हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पार्क हम में खेलते हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "हम में पार्क खेलते हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खेलते हम पार्क में हैं।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "हम पार्क में खेलते हैं।",
+      "explanation": "यह वाक्य सामान्य और सही है।"
+    },
+    {
+      "id": 604,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही साधारण वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "तुम किताब पढ़ते हो।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3b6ed15c-c44c-40c9-8acb-dea620fd148a.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "तुम किताब पढ़ते हो।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "किताब तुम पढ़ते हो।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "तुम पढ़ते किताब हो।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पढ़ते तुम किताब हो।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "तुम किताब पढ़ते हो।",
+      "explanation": "यह वाक्य सरल और सही है।"
+    },
+    {
+      "id": 605,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "वह पानी पी रही है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9f99c210-a82a-423f-ae69-b4c354f920bf.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "वह पानी पी रही है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पानी वह पी रही है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पी रही वह पानी है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "वह पी पानी रही है।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "वह पानी पी रही है।",
+      "explanation": "यह वाक्य व्याकरणिक रूप से सही है।"
+    },
+    {
+      "id": 606,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "माँ खाना बना रही है।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0c6dba50-cf10-4785-a9d8-b50ea0e4d2f7.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "माँ खाना बना रही है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खाना माँ बना रही है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "माँ बना खाना रही है।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "बना रही माँ खाना है।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "माँ खाना बना रही है।",
+      "explanation": "यह एक सही और स्पष्ट साधारण वाक्य है।"
+    },
+    {
+      "id": 607,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही साधारण वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "बच्चे खेल रहे हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0007d3d3-c540-4566-8188-dd4b62c9faf1.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "बच्चे खेल रहे हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खेल बच्चे रहे हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "खेल रहे बच्चे हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "रहे बच्चे खेल हैं।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "बच्चे खेल रहे हैं।",
+      "explanation": "यह वाक्य सामान्य और सही है।"
+    },
+    {
+      "id": 608,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "मैं पानी पीता हूँ।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/30b0d324-f364-4143-984a-4062225120f4.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "मैं पानी पीता हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पानी मैं पीता हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पीता मैं पानी हूँ।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "हूँ मैं पानी पीता।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "मैं पानी पीता हूँ।",
+      "explanation": "यह वाक्य व्याकरण के अनुसार सही है।"
+    },
+    {
+      "id": 609,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही साधारण वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "तुम दोस्त हो।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3c6478cd-3d6c-4a10-83ed-139dd92ef2ae.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "तुम दोस्त हो।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "दोस्त तुम हो।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "तुम हो दोस्त।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "हो तुम दोस्त।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "तुम दोस्त हो।",
+      "explanation": "यह एक सही और सामान्य वाक्य है।"
+    },
+    {
+      "id": 610,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "सही वाक्य चुनिए",
+        "read_text": true,
+        "read_text_value": "हम पानी पीते हैं।",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/bf7dce1b-d588-4af0-bb0a-dbc02a6588fd.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "हम पानी पीते हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पानी हम पीते हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "पीते हम पानी हैं।",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "हैं हम पानी पीते।",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "हम पानी पीते हैं।",
+      "explanation": "यह वाक्य व्याकरण के अनुसार सही है।"
+    }
+  ]
+}

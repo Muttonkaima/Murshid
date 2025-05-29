@@ -1,0 +1,245 @@
+{
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "📐",
+      "tests": [
+        {
+          "id": "Part-1",
+          "name": "Part 1",
+          "description": "Test your knowledge of Part 1 concepts",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ],
+      "fundamentals": [
+        {
+          "id": "level_1",
+          "name": "Numbers & Number System",
+          "description": "Practice Numbers & Number System",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_2",
+          "name": "Basic Operations",
+          "description": "Practice Basic Operations",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_3",
+          "name": "Fractions & Decimals",
+          "description": "Practice Fractions & Decimals",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_4",
+          "name": "Factors and Multiples",
+          "description": "Practice Factors and Multiples",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_5",
+          "name": "general geometry",
+          "description": "Practice general geometry",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "icon": "🔬",
+      "tests": [
+        {
+          "id": "Part-1",
+          "name": "Part 1",
+          "description": "Learn about Part 1 of Science",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ],
+      "fundamentals": [
+        {
+          "id": "level_1",
+          "name": "Explorer",
+          "description": "Practice Science",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_2",
+          "name": "Investigator",
+          "description": "Practice Science",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_3",
+          "name": "Innovator",
+          "description": "Practice Science",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_4",
+          "name": "Scientist",
+          "description": "Practice Science",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Studies",
+      "icon": "🌍",
+      "tests": [
+        {
+          "id": "history",
+          "name": "Indian History",
+          "description": "Explore the rich history of India",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "geography",
+          "name": "World Geography",
+          "description": "Learn about countries and landscapes",
+          "duration": 25,
+          "totalQuestions": 15
+        },
+        {
+          "id": "political_science",
+          "name": "Political Science",
+          "description": "Learn about Political Science",
+          "duration": 25,
+          "totalQuestions": 15
+        }
+      ],
+      "fundamentals": [
+        {
+          "id": "level_1",
+          "name": "Map Reader",
+          "description": "Practice Geography",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_2",
+          "name": "Globe Trotter",
+          "description": "Practice Geography",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_3",
+          "name": "Geo Genius",
+          "description": "Practice Geography",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ]
+    },
+    {
+      "id": "kannada",
+      "name": "Kannada",
+      "icon": "📚",
+      "tests": [
+        {
+          "id": "ಮೂಲಗಳು(Basics)",
+          "name": "Kannada Grammar",
+          "description": "Practice Kannada grammar rules",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "ಬಾಗ-1",
+          "name": "ಬಾಗ-1",
+          "description": "Explore Kannada ಬಾಗ-1",
+          "duration": 25,
+          "totalQuestions": 15
+        }
+      ],
+      "fundamentals": [
+        {
+          "id": "level_1",
+          "name": "ಅಕ್ಷರಗಳು",
+          "description": "Practice Kannada ",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_2",
+          "name": "ಕಾಗುಣಿತ",
+          "description": "Practice Kannada ",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_3",
+          "name": "ಸಜಾತೀಯ ಒತ್ತಕ್ಷರ",
+          "description": "Practice Kannada ",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_4",
+          "name": "ವಿಜಾತೀಯ ಒತ್ತಕ್ಷರ",
+          "description": "Practice Kannada ",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ]
+    },
+    {
+      "id": "hindi",
+      "name": "Hindi",
+      "icon": "📖",
+      "tests": [
+        {
+          "id": "व्याकरण(Basics)",
+          "name": "व्याकरण(Basics)",
+          "description": "Enhance your Hindi vocabulary",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+      ],
+      "fundamentals": [
+	{
+          "id": "level_1",
+          "name": "अक्षर ज्ञान",
+          "description": "Practice hindi",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_2",
+          "name": "स्वर-व्यंजन मिलान",
+          "description": "Practice hindi",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_3",
+          "name": "शब्द ज्ञान",
+          "description": "Practice hindi",
+          "duration": 30,
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_4",
+          "name": "सामान्य वाक्य",
+          "description": "Practice hindi",
+          "duration": 30,
+          "totalQuestions": 15
+        }
+	]
+    }
+  ]
+}

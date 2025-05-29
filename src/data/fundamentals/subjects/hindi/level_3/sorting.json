@@ -1,0 +1,186 @@
+{
+  "questionType": "sorting",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 801,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर सरल शब्द बनाएँ।) Arrange the given syllables to form simple meaningful words:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "कमल",
+          "read_text": true,
+          "read_text_value": "कमल",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/69faa717-1f7a-4b2f-8dca-1b7931a64c8d.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "पानी",
+          "read_text": true,
+          "read_text_value": "पानी",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/6c2e24be-b832-4eef-82d4-3885cd581131.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "पा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "नी",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "कम",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "कमल": [
+          "कम",
+          "ल"
+        ],
+        "पानी": [
+          "पा",
+          "नी"
+        ]
+      },
+      "explanation": "Arrange syllables like 'कम' + 'ल' and 'पा' + 'नी' to form the words 'कमल' and 'पानी'."
+    },
+    {
+      "id": 802,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर सरल शब्द बनाएँ।) Arrange the given syllables to form simple meaningful words:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "मकान",
+          "read_text": true,
+          "read_text_value": "मकान",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a5c9f889-c671-4dcc-aaad-c08d4032a687.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "बालक",
+          "read_text": true,
+          "read_text_value": "बालक",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/dec56462-b384-4ecd-9fea-caddf927c984.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "म",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "का",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "न",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "बा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "लक",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "मकान": [
+          "म",
+          "का",
+          "न"
+        ],
+        "बालक": [
+          "बा",
+          "लक"
+        ]
+      },
+      "explanation": "Arrange the syllables to form the words 'मकान' and 'बालक'."
+    },
+    {
+      "id": 803,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "(दिए गए शब्दांशों को सही क्रम में लगाकर सरल शब्द बनाएँ।) Arrange the given syllables to form simple meaningful words:",
+        "read_text": false
+      },
+      "categories": [
+        {
+          "hide_text": true,
+          "text": "फल",
+          "read_text": true,
+          "read_text_value": "फल",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/2bbe8ab1-81d3-43c5-b2ce-fb2652aa06e9.mp3"
+        },
+        {
+          "hide_text": true,
+          "text": "माला",
+          "read_text": true,
+          "read_text_value": "माला",
+          "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/784509a5-088e-4ef2-b89c-d9dac7bce154.mp3"
+        }
+      ],
+      "items": [
+        {
+          "hide_text": false,
+          "text": "मा",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ला",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "फ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ल",
+          "read_text": false
+        }
+      ],
+      "correctSorting": {
+        "फल": [
+          "फ",
+          "ल"
+        ],
+        "माला": [
+          "मा",
+          "ला"
+        ]
+      },
+      "explanation": "Use the syllables to form words 'फल' and 'माला'."
+    }
+  ]
+}

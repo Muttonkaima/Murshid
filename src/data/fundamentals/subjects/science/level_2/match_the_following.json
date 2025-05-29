@@ -1,0 +1,166 @@
+{
+  "questionType": "matchTheFollowing",
+  "totalMarks": 25,
+  "questions": [
+    {
+      "id": 1,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each stage to the correct phase in the life cycle of a frog:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Young frog", "read_text": false },
+        { "hide_text": false, "text": "Tadpole with legs", "read_text": false },
+        { "hide_text": false, "text": "Tadpole", "read_text": false },
+        { "hide_text": false, "text": "Egg", "read_text": false },
+        { "hide_text": false, "text": "Adult frog", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Tail becomes shorter", "read_text": false },
+        { "hide_text": false, "text": "Starts developing limbs", "read_text": false },
+        { "hide_text": false, "text": "Has tail and gills", "read_text": false },
+        { "hide_text": false, "text": "Beginning of life", "read_text": false },
+        { "hide_text": false, "text": "Fully grown and can reproduce", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Egg", "right": "Beginning of life" },
+        { "left": "Tadpole", "right": "Has tail and gills" },
+        { "left": "Tadpole with legs", "right": "Starts developing limbs" },
+        { "left": "Young frog", "right": "Tail becomes shorter" },
+        { "left": "Adult frog", "right": "Fully grown and can reproduce" }
+      ],
+      "explanation": "Each stage of a frog's life has distinct characteristics."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the state of matter to its example:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Ice", "read_text": false },
+        { "hide_text": false, "text": "Liquid", "read_text": false },
+        { "hide_text": false, "text": "Gas", "read_text": false },
+        { "hide_text": false, "text": "Solid", "read_text": false },
+        { "hide_text": false, "text": "Steam", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Air", "read_text": false },
+        { "hide_text": false, "text": "Table", "read_text": false },
+        { "hide_text": false, "text": "Frozen water", "read_text": false },
+        { "hide_text": false, "text": "Water", "read_text": false },
+        { "hide_text": false, "text": "Water vapor", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Solid", "right": "Table" },
+        { "left": "Liquid", "right": "Water" },
+        { "left": "Gas", "right": "Air" },
+        { "left": "Ice", "right": "Frozen water" },
+        { "left": "Steam", "right": "Water vapor" }
+      ],
+      "explanation": "Each example matches a particular state of matter."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each type of energy source with its example:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Fuel", "read_text": false },
+        { "hide_text": false, "text": "Solar energy", "read_text": false },
+        { "hide_text": false, "text": "Wind", "read_text": false },
+        { "hide_text": false, "text": "Battery", "read_text": false },
+        { "hide_text": false, "text": "Water", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Windmill", "read_text": false },
+        { "hide_text": false, "text": "Sun", "read_text": false },
+        { "hide_text": false, "text": "Petrol", "read_text": false },
+        { "hide_text": false, "text": "Torch light", "read_text": false },
+        { "hide_text": false, "text": "Hydropower plant", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Solar energy", "right": "Sun" },
+        { "left": "Battery", "right": "Torch light" },
+        { "left": "Fuel", "right": "Petrol" },
+        { "left": "Wind", "right": "Windmill" },
+        { "left": "Water", "right": "Hydropower plant" }
+      ],
+      "explanation": "Each source provides energy to power devices or machines."
+    },
+    {
+      "id": 4,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match each type of pollution to its example:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Noise pollution", "read_text": false },
+        { "hide_text": false, "text": "Water pollution", "read_text": false },
+        { "hide_text": false, "text": "Land pollution", "read_text": false },
+        { "hide_text": false, "text": "Air pollution", "read_text": false },
+        { "hide_text": false, "text": "Light pollution", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Litter on roads", "read_text": false },
+        { "hide_text": false, "text": "Oil spills", "read_text": false },
+        { "hide_text": false, "text": "Honking vehicles", "read_text": false },
+        { "hide_text": false, "text": "Smoke from factories", "read_text": false },
+        { "hide_text": false, "text": "Too many streetlights", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Air pollution", "right": "Smoke from factories" },
+        { "left": "Water pollution", "right": "Oil spills" },
+        { "left": "Noise pollution", "right": "Honking vehicles" },
+        { "left": "Land pollution", "right": "Litter on roads" },
+        { "left": "Light pollution", "right": "Too many streetlights" }
+      ],
+      "explanation": "Different types of pollution affect the environment in various ways."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the property of material to its object:",
+        "read_text": false
+      },
+      "leftItems": [
+        { "hide_text": false, "text": "Flexible", "read_text": false },
+        { "hide_text": false, "text": "Waterproof", "read_text": false },
+        { "hide_text": false, "text": "Hard", "read_text": false },
+        { "hide_text": false, "text": "Transparent", "read_text": false },
+        { "hide_text": false, "text": "Soft", "read_text": false }
+      ],
+      "rightItems": [
+        { "hide_text": false, "text": "Rubber band", "read_text": false },
+        { "hide_text": false, "text": "Glass", "read_text": false },
+        { "hide_text": false, "text": "Rock", "read_text": false },
+        { "hide_text": false, "text": "Cotton", "read_text": false },
+        { "hide_text": false, "text": "Raincoat", "read_text": false }
+      ],
+      "correctPairs": [
+        { "left": "Transparent", "right": "Glass" },
+        { "left": "Flexible", "right": "Rubber band" },
+        { "left": "Hard", "right": "Rock" },
+        { "left": "Waterproof", "right": "Raincoat" },
+        { "left": "Soft", "right": "Cotton" }
+      ],
+      "explanation": "Each object shows a key property used in materials classification."
+    }
+  ]
+}

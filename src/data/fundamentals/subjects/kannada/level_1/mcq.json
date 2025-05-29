@@ -1,0 +1,461 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಸರಳ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1c59bd9a-9dbd-43d3-86ab-41d888a8443e.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಗಣಕ",
+          "read_text": false        
+        },
+        {
+          "hide_text": false,
+          "text": "ಸರಳ",
+          "read_text": false        
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಥನ",
+          "read_text": false        
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಲಕ",
+          "read_text": false        
+        }
+      ],
+      "correctAnswer": "ಸರಳ",
+      "explanation": "The audio asks for the word 'ಸರಳ'."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಒರಟ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/0f450e37-d049-48d7-be96-af4b9e5bd2ef.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಫಟಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಒರಟ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭರತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಣಜ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಒರಟ",
+      "explanation": "The audio asks for the word 'ಒರಟ'."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಸಮಯ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f8fde25b-58f0-4f77-bd0a-cc7c3a1cec53.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಭವನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಯಣ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಧವಳ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಸಮಯ",
+      "explanation": "The audio asks for the word 'ಸಮಯ'."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಬಹಳ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8f84237e-1b24-4534-a32d-c0d1b2e4c3a0.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಧವಳ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಬಹಳ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಣಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಟಕ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಬಹಳ",
+      "explanation": "The audio asks for the word 'ಬಹಳ'."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಪಯಣ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/68644687-3ab7-4708-827e-ffbb09c6edbe.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಕಥನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಯಣ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಲಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸರಳ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಪಯಣ",
+      "explanation": "The audio asks for the word 'ಪಯಣ'."
+    },
+    {
+      "id": 106,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಭರತ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8896e986-8864-4bb0-86e3-11567c2ddbf3.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಭರತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭವನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಒರಟ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಭರತ",
+      "explanation": "The audio asks for the word 'ಭರತ'."
+    },
+    {
+      "id": 107,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಕಥನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/1f0b32a8-0916-4fae-bb7d-4d6d48963f87.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಫಟಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಥನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಣಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಬಹಳ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಕಥನ",
+      "explanation": "The audio asks for the word 'ಕಥನ'."
+    },
+    {
+      "id": 108,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಫಟಕ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/845f945d-0eaf-4c33-8470-72a86c0a253f.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಫಟಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಲಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಧವಳ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಯಣ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಫಟಕ",
+      "explanation": "The audio asks for the word 'ಫಟಕ'."
+    },
+    {
+      "id": 109,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಕಣಜ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a956b76e-015e-4fc1-80ac-5ee0770761db.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಸರಳ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಣಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಒರಟ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಣಕ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಕಣಜ",
+      "explanation": "The audio asks for the word 'ಕಣಜ'."
+    },
+    {
+      "id": 110,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಗಣಕ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/07fae8cd-48ef-482d-96b1-7cb3517511c7.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಗಣಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಥನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಲಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭವನ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಗಣಕ",
+      "explanation": "The audio asks for the word 'ಗಣಕ'."
+    },
+    {
+      "id": 111,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಭವನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/f20600c7-a9ed-4ea0-9c29-195829537192.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭವನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭರತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಕಣಜ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಭವನ",
+      "explanation": "The audio asks for the word 'ಭವನ'."
+    },
+    {
+      "id": 112,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಧವಳ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/8383d355-0be5-4cc2-aff7-99ac6be050e9.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಧವಳ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಪಯಣ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಒರಟ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಸರಳ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಧವಳ",
+      "explanation": "The audio asks for the word 'ಧವಳ'."
+    },
+    {
+      "id": 113,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಫಲಕ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/5bec2eb6-38d6-49e8-a92c-7ffd5b48756e.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಸಮಯ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಫಲಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗಣಕ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭರತ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಫಲಕ",
+      "explanation": "The audio asks for the word 'ಫಲಕ'."
+    }
+  ]
+}

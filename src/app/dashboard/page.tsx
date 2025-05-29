@@ -255,7 +255,9 @@ const DashboardPage = () => {
               <div className="bg-white rounded-xl shadow-sm p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">AI Tools</h3>
+                  <Link href="/ai-tools">
                   <button className="text-sm text-[var(--primary-color)] hover:underline cursor-pointer whitespace-nowrap">View All</button>
+                  </Link>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {aiTools.map((tool) => (

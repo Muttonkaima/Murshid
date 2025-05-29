@@ -1,0 +1,182 @@
+{
+    "questionType": "matchTheFollowing",
+    "totalMarks": 515,
+    "questions": [
+      
+      {
+        "id": 5,
+        "type": "matchTheFollowing",
+        "marks": 5,
+        "question": {
+          "hide_text": false,
+          "text": "Match the number types with their correct definitions:",
+          "read_text": false
+        },
+        "leftItems": [
+          { 
+            "hide_text": false, 
+            "text": "Prime Number", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Composite Number", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Even Number", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Odd Number", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Natural Number", 
+            "read_text": false 
+          }
+        ],
+        "rightItems": [
+          { 
+            "hide_text": false, 
+            "text": "Number divisible only by 1 and itself", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Number divisible by numbers other than 1 and itself", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Number divisible by 2", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Number not divisible by 2", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Counting numbers starting from 1", 
+            "read_text": false 
+          }
+        ],
+        "correctPairs": [
+          { 
+            "left": "Prime Number", 
+            "right": "Number divisible only by 1 and itself" 
+          },
+          { 
+            "left": "Composite Number", 
+            "right": "Number divisible by numbers other than 1 and itself" 
+          },
+          { 
+            "left": "Even Number", 
+            "right": "Number divisible by 2" 
+          },
+          { 
+            "left": "Odd Number", 
+            "right": "Number not divisible by 2" 
+          },
+          { 
+            "left": "Natural Number", 
+            "right": "Counting numbers starting from 1" 
+          }
+        ],
+        "explanation": "These are basic classifications of numbers: Prime and Composite relate to factors, Even and Odd relate to divisibility by 2, and Natural Numbers begin from 1."
+      },
+      {
+        "id": 7,
+        "type": "matchTheFollowing",
+        "marks": 5,
+        "question": {
+          "hide_text": false,
+          "text": "Match the terms related to numbers with their descriptions:",
+          "read_text": false
+        },
+        "leftItems": [
+          { 
+            "hide_text": false, 
+            "text": "HCF", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "LCM", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Perfect Square", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Perfect Cube", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Rational Number", 
+            "read_text": false 
+          }
+        ],
+        "rightItems": [
+          { 
+            "hide_text": false, 
+            "text": "Highest number that divides two numbers exactly", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Smallest number divisible by two or more numbers", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Square of an integer", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Cube of an integer", 
+            "read_text": false 
+          },
+          { 
+            "hide_text": false, 
+            "text": "Number expressed as a fraction a/b", 
+            "read_text": false 
+          }
+        ],
+        "correctPairs": [
+          { 
+            "left": "HCF", 
+            "right": "Highest number that divides two numbers exactly" 
+          },
+          { 
+            "left": "LCM", 
+            "right": "Smallest number divisible by two or more numbers" 
+          },
+          { 
+            "left": "Perfect Square", 
+            "right": "Square of an integer" 
+          },
+          { 
+            "left": "Perfect Cube", 
+            "right": "Cube of an integer" 
+          },
+          { 
+            "left": "Rational Number", 
+            "right": "Number expressed as a fraction a/b" 
+          }
+        ],
+        "explanation": "HCF and LCM are common concepts in number theory. Perfect squares and cubes are results of multiplying integers, and rational numbers are numbers that can be expressed as fractions."
+      }
+    ]
+  }
+  

@@ -1,0 +1,356 @@
+{
+  "questionType": "multipleChoice",
+  "totalMarks": 150,
+  "questions": [
+    {
+      "id": 101,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಅಣ್ಣ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/68258078-7b41-43c5-bc2e-0527b2a433f5.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಅಜ್ಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಣ್ಣ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಗಲು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗುಟ್ಟು",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಅಣ್ಣ",
+      "explanation": "The audio asks for the word 'ಅಣ್ಣ'."
+    },
+    {
+      "id": 102,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಅಜ್ಜ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/11f4abbc-a380-4d2b-865c-404c426d5175.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಭತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಜ್ಜ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅನ್ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಎಮ್ಮೆ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಅಜ್ಜ",
+      "explanation": "The audio asks for the word 'ಅಜ್ಜ'."
+    },
+    {
+      "id": 103,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಹೆತ್ತ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/763d6d50-e3e7-4ada-b94d-094501b91d4d.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಅಪ್ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮೆಚ್ಚು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಣ್ಣ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಹೆತ್ತ",
+      "explanation": "The audio asks for the word 'ಹೆತ್ತ'."
+    },
+    {
+      "id": 104,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಭತ್ತ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/a0108318-e1ec-4706-8b26-5886a8765ef0.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಹಗಲು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಪ್ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಜ್ಜ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಭತ್ತ",
+      "explanation": "The audio asks for the word 'ಭತ್ತ'."
+    },
+    {
+      "id": 105,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಮೆಚ್ಚು",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/d86642d2-7957-42d8-b8c6-a94f1e75e3e6.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಅನ್ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮೆಚ್ಚು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಎಮ್ಮೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆತ್ತ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಮೆಚ್ಚು",
+      "explanation": "The audio asks for the word 'ಮೆಚ್ಚು'."
+    },
+    {
+      "id": 106,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಗುಟ್ಟು",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/9bcc4bb3-58aa-451d-aa0d-25cf5ae2ea6d.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಗುಟ್ಟು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹೆತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಪ್ಪ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಗುಟ್ಟು",
+      "explanation": "The audio asks for the word 'ಗುಟ್ಟು'."
+    },
+    {
+      "id": 107,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಅನ್ನ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3eb2acb3-1c2c-4786-ae32-b288c463c0aa.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಎಮ್ಮೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅನ್ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮೆಚ್ಚು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಗಲು",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಅನ್ನ",
+      "explanation": "The audio asks for the word 'ಅನ್ನ'."
+    },
+    {
+      "id": 108,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಅಪ್ಪ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/240e1043-9fec-43ed-8631-0c33a990af0e.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಅಪ್ಪ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಗಲು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಣ್ಣ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಜ್ಜ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಅಪ್ಪ",
+      "explanation": "The audio asks for the word 'ಅಪ್ಪ'."
+    },
+    {
+      "id": 109,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಹಗಲು",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/3ed50a0b-3329-487e-8a01-655d1a4665c1.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಹೆತ್ತ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಹಗಲು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಗುಟ್ಟು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಭತ್ತ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಹಗಲು",
+      "explanation": "The audio asks for the word 'ಹಗಲು'."
+    },
+    {
+      "id": 110,
+      "marks": 1.5,
+      "question": {
+        "hide_text": false,
+        "text": "Select the word you hear(ನೀವು ಕೇಳುವ ಪದವನ್ನು ಆಯ್ಕೆಮಾಡಿ)",
+        "read_text": true,
+        "read_text_value": "ಎಮ್ಮೆ",
+        "read_text_url": "https://murshidaudio.s3.ap-south-1.amazonaws.com/audios_2/audios/ca6b7954-2831-4c63-b39b-1ce835b4b5ad.mp3"
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "ಎಮ್ಮೆ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅನ್ನ",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಮೆಚ್ಚು",
+          "read_text": false
+        },
+        {
+          "hide_text": false,
+          "text": "ಅಣ್ಣ",
+          "read_text": false
+        }
+      ],
+      "correctAnswer": "ಎಮ್ಮೆ",
+      "explanation": "The audio asks for the word 'ಎಮ್ಮೆ'."
+    }
+  ]
+}
