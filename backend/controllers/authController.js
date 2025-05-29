@@ -34,12 +34,24 @@ exports.checkEmail = async (req, res, next) => {
       return next(new AppError('Please provide an email address', 400));
     }
     
-    const user = await User.findOne({ email }).select('isEmailVerified');
+    const user = await User.findOne({ email }).select('isEmailVerified firstName lastName');
+    
+    if (!user) {
+      return res.status(200).json({
+        status: 'success',
+        exists: false,
+        isVerified: false
+      });
+    }
     
     const response = {
       status: 'success',
-      exists: !!user,
-      ...(checkVerified && { isVerified: user?.isEmailVerified || false })
+      exists: true,
+      isVerified: user.isEmailVerified || false,
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName
+      }
     };
     
     res.status(200).json(response);

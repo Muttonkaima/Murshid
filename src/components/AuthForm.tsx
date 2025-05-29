@@ -198,14 +198,15 @@ export default function AuthForm() {
       try {
         setIsLoading(true);
         
-        // First check if user already exists
+        // First check if user already exists and if their email is verified
         const checkUserResponse = await fetch('/api/auth/check-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            email: formData.email
+            email: formData.email,
+            checkVerified: true
           }),
         });
 
@@ -217,10 +218,23 @@ export default function AuthForm() {
         const checkUserData = await checkUserResponse.json();
 
         if (checkUserData.exists) {
-          throw new Error('This email is already registered. Please login instead.');
+          if (checkUserData.isVerified) {
+            throw new Error('This email is already registered and verified. Please login instead.');
+          } else {
+            // User exists but email is not verified
+            // Pre-fill the form with existing user data if available
+            if (checkUserData.user) {
+              setFormData(prev => ({
+                ...prev,
+                firstName: checkUserData.user.firstName || prev.firstName,
+                lastName: checkUserData.user.lastName || prev.lastName
+              }));
+            }
+            // Continue with OTP sending
+          }
         }
 
-        // If user doesn't exist, proceed with OTP sending
+        // If user doesn't exist or exists but not verified, proceed with OTP sending
         await sendOTP(formData.email, 'signup');
         
         // Store user data in session storage for after OTP verification
@@ -228,6 +242,7 @@ export default function AuthForm() {
           email: formData.email,
           firstName: formData.firstName,
           lastName: formData.lastName,
+          password: formData.password // Include password for final signup after OTP verification
         };
         sessionStorage.setItem('signupData', JSON.stringify(userData));
         
