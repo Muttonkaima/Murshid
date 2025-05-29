@@ -1,245 +1,274 @@
 {
   "subjects": [
     {
-      "id": "mathematics",
+      "id": "subj_001",
       "name": "Mathematics",
-      "icon": "📐",
-      "tests": [
+      "slug": "mathematics",
+      "description": "Learn math from basics like numbers and operations to advanced problem-solving",
+      "icon": "FiDivideCircle",
+      "isLocked": false,
+      "isVisible": true,
+      "order": 1,
+      "color": "from-amber-500 to-yellow-400",
+      "bgColor": "bg-amber-500",
+      "borderColor": "border-amber-400",
+      "levels": [
         {
-          "id": "Part-1",
-          "name": "Part 1",
-          "description": "Test your knowledge of Part 1 concepts",
-          "duration": 30,
-          "totalQuestions": 15
-        }
-      ],
-      "fundamentals": [
-        {
-          "id": "level_1",
+          "id": "level_001",
+          "subjectId": "subj_001",
           "name": "Numbers & Number System",
+          "slug": "level_1",
           "description": "Practice Numbers & Number System",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_2",
+          "id": "level_002",
+          "subjectId": "subj_001",
           "name": "Basic Operations",
+          "slug": "level_2",
           "description": "Practice Basic Operations",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_3",
+          "id": "level_003",
+          "subjectId": "subj_001",
           "name": "Fractions & Decimals",
+          "slug": "level_3",
           "description": "Practice Fractions & Decimals",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_4",
+          "id": "level_004",
+          "subjectId": "subj_001",
           "name": "Factors and Multiples",
+          "slug": "level_4",
           "description": "Practice Factors and Multiples",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_5",
+          "id": "level_005",
+          "subjectId": "subj_001",
           "name": "general geometry",
+          "slug": "level_5",
           "description": "Practice general geometry",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         }
       ]
     },
     {
-      "id": "science",
-      "name": "Science",
-      "icon": "🔬",
-      "tests": [
-        {
-          "id": "Part-1",
-          "name": "Part 1",
-          "description": "Learn about Part 1 of Science",
-          "duration": 30,
-          "totalQuestions": 15
-        }
-      ],
-      "fundamentals": [
-        {
-          "id": "level_1",
-          "name": "Explorer",
-          "description": "Practice Science",
-          "duration": 30,
-          "totalQuestions": 15
-        },
-        {
-          "id": "level_2",
-          "name": "Investigator",
-          "description": "Practice Science",
-          "duration": 30,
-          "totalQuestions": 15
-        },
-        {
-          "id": "level_3",
-          "name": "Innovator",
-          "description": "Practice Science",
-          "duration": 30,
-          "totalQuestions": 15
-        },
-        {
-          "id": "level_4",
-          "name": "Scientist",
-          "description": "Practice Science",
-          "duration": 30,
-          "totalQuestions": 15
-        }
-      ]
-    },
-    {
-      "id": "social",
+      "id": "subj_002",
       "name": "Social Studies",
-      "icon": "🌍",
-      "tests": [
+      "slug": "social-studies",
+      "description": "Learn basic geography — continents, countries, landforms, maps, and how our world is shaped",
+      "icon": "FiMap",
+      "isLocked": false,
+      "isVisible": true,
+      "order": 6,
+      "color": "from-blue-500 to-cyan-400",
+      "bgColor": "bg-blue-500",
+      "borderColor": "border-blue-400",
+      "levels": [
         {
-          "id": "history",
-          "name": "Indian History",
-          "description": "Explore the rich history of India",
-          "duration": 30,
-          "totalQuestions": 15
-        },
-        {
-          "id": "geography",
-          "name": "World Geography",
-          "description": "Learn about countries and landscapes",
-          "duration": 25,
-          "totalQuestions": 15
-        },
-        {
-          "id": "political_science",
-          "name": "Political Science",
-          "description": "Learn about Political Science",
-          "duration": 25,
-          "totalQuestions": 15
-        }
-      ],
-      "fundamentals": [
-        {
-          "id": "level_1",
+          "id": "level_001",
+          "subjectId": "subj_002",
           "name": "Map Reader",
+          "slug": "level_1",
           "description": "Practice Geography",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_2",
+          "id": "level_002",
+          "subjectId": "subj_002",
           "name": "Globe Trotter",
+          "slug": "level_2",
           "description": "Practice Geography",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_3",
+          "id": "level_003",
+          "subjectId": "subj_002",
           "name": "Geo Genius",
+          "slug": "level_3",
           "description": "Practice Geography",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         }
       ]
     },
     {
-      "id": "kannada",
+      "id": "subj_003",
+      "name": "General Science",
+      "slug": "general-science",
+      "description": "Understand science concepts with fun, clear explanations from the ground up",
+      "icon": "FiActivity",
+      "isLocked": false,
+      "isVisible": true,
+      "order": 7,
+      "color": "from-green-500 to-emerald-400",
+      "bgColor": "bg-green-500",
+      "borderColor": "border-green-400",
+      "levels": [
+        {
+          "id": "level_001",
+          "subjectId": "subj_003",
+          "name": "Explorer",
+          "slug": "level_1",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_002",
+          "subjectId": "subj_003",
+          "name": "Investigator",
+          "slug": "level_2",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_003",
+          "subjectId": "subj_003",
+          "name": "Innovator",
+          "slug": "level_3",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        },
+        {
+          "id": "level_004",
+          "subjectId": "subj_003",
+          "name": "Scientist",
+          "slug": "level_4",
+          "description": "Practice Science",
+          "type": "all",
+          "totalQuestions": 15
+        }
+      ]
+    },
+    {
+      "id": "subj_004",
       "name": "Kannada",
-      "icon": "📚",
-      "tests": [
+      "slug": "kannada",
+      "description": "Start from alphabets and build strong reading, writing, and speaking skills in Kannada",
+      "icon": "FiEdit",
+      "isLocked": false,
+      "isVisible": true,
+      "order": 8,
+      "color": "from-purple-500 to-fuchsia-400",
+      "bgColor": "bg-purple-500",
+      "borderColor": "border-purple-400",
+      "levels": [
         {
-          "id": "ಮೂಲಗಳು(Basics)",
-          "name": "Kannada Grammar",
-          "description": "Practice Kannada grammar rules",
-          "duration": 30,
-          "totalQuestions": 15
-        },
-        {
-          "id": "ಬಾಗ-1",
-          "name": "ಬಾಗ-1",
-          "description": "Explore Kannada ಬಾಗ-1",
-          "duration": 25,
-          "totalQuestions": 15
-        }
-      ],
-      "fundamentals": [
-        {
-          "id": "level_1",
+          "id": "level_001",
+          "subjectId": "subj_004",
           "name": "ಅಕ್ಷರಗಳು",
+          "slug": "level_1",
           "description": "Practice Kannada ",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_2",
+          "id": "level_002",
+          "subjectId": "subj_004",
           "name": "ಕಾಗುಣಿತ",
+          "slug": "level_2",
           "description": "Practice Kannada ",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_3",
+          "id": "level_003",
+          "subjectId": "subj_004",
           "name": "ಸಜಾತೀಯ ಒತ್ತಕ್ಷರ",
+          "slug": "level_3",
           "description": "Practice Kannada ",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_4",
+          "id": "level_004",
+          "subjectId": "subj_004",
           "name": "ವಿಜಾತೀಯ ಒತ್ತಕ್ಷರ",
+          "slug": "level_4",
           "description": "Practice Kannada ",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         }
       ]
     },
     {
-      "id": "hindi",
+      "id": "subj_005",
       "name": "Hindi",
-      "icon": "📖",
-      "tests": [
+      "slug": "hindi",
+      "description": "Begin with varnamala and progress to reading, writing, and grammar step-by-step",
+      "icon": "FiFileText",
+      "isLocked": false,
+      "isVisible": true,
+      "order": 9,
+      "color": "from-red-500 to-pink-400",
+      "bgColor": "bg-red-500",
+      "borderColor": "border-red-400",
+      "levels": [
         {
-          "id": "व्याकरण(Basics)",
-          "name": "व्याकरण(Basics)",
-          "description": "Enhance your Hindi vocabulary",
-          "duration": 30,
-          "totalQuestions": 15
-        }
-      ],
-      "fundamentals": [
-	{
-          "id": "level_1",
+          "id": "level_001",
+          "subjectId": "subj_005",
           "name": "अक्षर ज्ञान",
+          "slug": "level_1",
           "description": "Practice hindi",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_2",
+          "id": "level_002",
+          "subjectId": "subj_005",
           "name": "स्वर-व्यंजन मिलान",
+          "slug": "level_2",
           "description": "Practice hindi",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_3",
+          "id": "level_003",
+          "subjectId": "subj_005",
           "name": "शब्द ज्ञान",
+          "slug": "level_3",
           "description": "Practice hindi",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         },
         {
-          "id": "level_4",
+          "id": "level_004",
+          "subjectId": "subj_005",
           "name": "सामान्य वाक्य",
+          "slug": "level_4",
           "description": "Practice hindi",
-          "duration": 30,
+          "type": "all",
           "totalQuestions": 15
         }
-	]
+      ]
+    },
+    {
+      "id": "subj_006",
+      "name": "Tamil",
+      "slug": "tamil",
+      "description": "Master Tamil starting from letters to forming words and understanding grammar basics",
+      "icon": "FiBookOpen",
+      "isLocked": true,
+      "lockedMessage": "Coming soon!",
+      "isVisible": true,
+      "order": 10,
+      "color": "from-indigo-500 to-violet-400",
+      "bgColor": "bg-indigo-500",
+      "borderColor": "border-indigo-400",
+      "levels": []
     }
   ]
 }
