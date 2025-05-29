@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
 import { FaArrowLeft, FaEye, FaEyeSlash, FaSpinner } from 'react-icons/fa';
+import { authService } from '@/services/authService';
+import { toast } from 'react-toastify';
 
 type FormData = {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  dob: string;
-  gender: string;
   rememberMe: boolean;
 };
 
@@ -26,8 +26,6 @@ export default function AuthForm() {
     lastName: '',
     email: '',
     password: '',
-    dob: '',
-    gender: '',
     rememberMe: false,
   });
 
@@ -41,30 +39,207 @@ export default function AuthForm() {
     }));
   };
 
+  const sendOTP = async (email: string, type: 'signup' | 'reset') => {
+    try {
+      setIsLoading(true);
+      console.log('Sending OTP to:', email);
+      
+      const response = await fetch('/api/auth/send-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          type,
+          ...(type === 'signup' && {
+            firstName: formData.firstName,
+            lastName: formData.lastName
+          })
+        }),
+      });
+
+      const data = await response.json();
+      console.log('OTP Response:', data);
+
+      if (!response.ok) {
+        // If we get a 400 error with a message about email in use, handle it specially
+        if (response.status === 400 && data.message?.includes('already in use')) {
+          throw new Error('This email is already registered. Please login instead.');
+        }
+        throw new Error(data.message || 'Failed to send OTP. Please try again.');
+      }
+
+      toast.success('OTP sent successfully! Check your email.');
+      return data;
+    } catch (error: any) {
+      console.error('Error sending OTP:', error);
+      
+      // Handle specific error cases
+      let errorMessage = 'Failed to send OTP. Please try again.';
+      
+      if (error.message) {
+        errorMessage = error.message;
+      } else if (error instanceof TypeError) {
+        errorMessage = 'Network error. Please check your connection.';
+      }
+      
+      toast.error(errorMessage);
+      throw new Error(errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!isLogin) {
-      // For registration, navigate to OTP verification
-      if (!formData.email) {
-        alert('Please enter your email');
+    if (isLogin) {
+      // Handle login
+      if (!formData.email || !formData.password) {
+        toast.error('Please enter both email and password');
         return;
       }
-      router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=signup`);
-      return;
-    }
-    
-    // For login, proceed with normal authentication
-    setIsLoading(true);
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Login submitted:', { email: formData.email });
-      // Add your actual authentication logic here
-    } catch (error) {
-      console.error('Authentication error:', error);
-    } finally {
-      setIsLoading(false);
+      
+      try {
+        setIsLoading(true);
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          // If user needs to verify email, redirect to verify-otp
+          if (data.code === 'EMAIL_NOT_VERIFIED') {
+            // Send OTP before redirecting
+            await sendOTP(formData.email, 'signup');
+            // Store email for verification
+            sessionStorage.setItem('signupData', JSON.stringify({ email: formData.email }));
+            router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=signup`);
+            return;
+          }
+          throw new Error(data.message || 'Login failed');
+        }
+        
+        // Store the token and user data
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          if (data.user) {
+            localStorage.setItem('user', JSON.stringify(data.user));
+          }
+          // Redirect to dashboard or home page
+          router.push('/dashboard');
+        }
+        
+      } catch (error: any) {
+        console.error('Login error:', error);
+        
+        // Default error message
+        let errorMessage = 'Login failed. Please try again.';
+        let errorCode = '';
+        
+        // Try to extract error details from response if available
+        if (error.response) {
+          const { data } = error.response;
+          console.log('Error response data:', data);
+          
+          if (data && data.message) {
+            errorMessage = data.message;
+            errorCode = data.code || '';
+          }
+        } else if (error.message) {
+          // Handle error message from the error object
+          errorMessage = error.message;
+        }
+        
+        // Map specific error messages
+        if (errorMessage.toLowerCase().includes('incorrect') || 
+            errorMessage.toLowerCase().includes('invalid credentials')) {
+          errorMessage = 'Invalid email or password. Please try again.';
+        } else if (errorMessage.toLowerCase().includes('verify your email')) {
+          // If email not verified, send OTP and redirect to verification
+          try {
+            await sendOTP(formData.email, 'signup');
+            sessionStorage.setItem('signupData', JSON.stringify({ 
+              email: formData.email,
+              password: formData.password 
+            }));
+            router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=signup`);
+            return;
+          } catch (otpError) {
+            console.error('Error sending verification OTP:', otpError);
+            errorMessage = 'Please verify your email. ' + 
+              (otpError instanceof Error ? otpError.message : 'Failed to send verification email.');
+          }
+        } else if (errorMessage.toLowerCase().includes('not found')) {
+          errorMessage = 'No account found with this email. Please sign up.';
+        }
+        
+        console.log('Displaying error to user:', errorMessage);
+        toast.error(errorMessage);
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      // Handle registration
+      if (!formData.email || !formData.firstName || !formData.lastName) {
+        toast.error('Please fill in all fields');
+        return;
+      }
+      
+      try {
+        setIsLoading(true);
+        
+        // First check if user already exists
+        const checkUserResponse = await fetch('/api/auth/check-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData.email
+          }),
+        });
+
+        if (!checkUserResponse.ok) {
+          const errorData = await checkUserResponse.json();
+          throw new Error(errorData.message || 'Failed to check email. Please try again.');
+        }
+
+        const checkUserData = await checkUserResponse.json();
+
+        if (checkUserData.exists) {
+          throw new Error('This email is already registered. Please login instead.');
+        }
+
+        // If user doesn't exist, proceed with OTP sending
+        await sendOTP(formData.email, 'signup');
+        
+        // Store user data in session storage for after OTP verification
+        const userData = {
+          email: formData.email,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+        };
+        sessionStorage.setItem('signupData', JSON.stringify(userData));
+        
+        // Redirect to verify-otp page with email as query param
+        router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=signup`);
+        
+      } catch (error: any) {
+        console.error('Error during signup:', error);
+        toast.error(error.message || 'Failed to send OTP. Please try again.');
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -72,32 +247,67 @@ export default function AuthForm() {
     setIsLogin(!isLogin);
   };
 
-  const handleForgotPassword = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowForgotPassword(true);
-  };
-
   const handleBackToSignIn = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowForgotPassword(false);
   };
 
-  const handleSendOtp = (e: React.FormEvent) => {
+  const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.email) {
-      alert('Please enter your email');
+      toast.error('Please enter your email address');
       return;
     }
-    router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=forgot-password`);
-  };
+    
+    try {
+      setIsLoading(true);
+      
+      // First check if user exists and is verified
+      const checkUserResponse = await fetch('/api/auth/check-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          checkVerified: true
+        }),
+      });
 
-  const handleBackToLogin = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsLogin(true);
+      if (!checkUserResponse.ok) {
+        const errorData = await checkUserResponse.json();
+        throw new Error(errorData.message || 'Failed to verify email. Please try again.');
+      }
+
+      const checkUserData = await checkUserResponse.json();
+
+      if (!checkUserData.exists) {
+        throw new Error('No account found with this email. Please sign up.');
+      }
+
+      if (!checkUserData.isVerified) {
+        throw new Error('This email is not verified. Please verify your email first.');
+      }
+
+      // If user exists and is verified, send OTP for password reset
+      await sendOTP(formData.email, 'reset');
+      
+      // Store email in session storage for after OTP verification
+      sessionStorage.setItem('resetEmail', formData.email);
+      
+      // Redirect to verify-otp page with email and reset flag
+      router.push(`/verify-otp?email=${encodeURIComponent(formData.email)}&type=reset`);
+      
+      setShowForgotPassword(false);
+    } catch (error: any) {
+      console.error('Forgot password error:', error);
+      toast.error(error.message || 'Failed to proceed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Forgot Password View
-
   if (showForgotPassword) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center justify-center p-4">
@@ -113,7 +323,7 @@ export default function AuthForm() {
                 </p>
               </div>
 
-              <form onSubmit={handleSendOtp} className="space-y-6">
+              <form onSubmit={handleForgotPassword} className="space-y-6">
                 <div>
                   <label htmlFor="forgotEmail" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address *
@@ -144,85 +354,10 @@ export default function AuthForm() {
                     'Send OTP'
                   )}
                 </button>
-
-                <div className="text-center mt-4">
-                  <p className="text-sm text-gray-600">
-                    Remember password? <a 
-                    href="#" 
-                    onClick={handleBackToSignIn}
-                    className="text-sm text-[var(--primary-color)] hover:text-[var(--primary-hover)] cursor-pointer"
-                  ><span className="font-medium">Sign in</span></a>
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Main Login/Register View
-  // Forgot Password View
-  if (showForgotPassword) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center justify-center p-4">
-        <div className="w-full max-w-md">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="p-8">
-              <button
-                onClick={handleBackToLogin}
-                className="flex items-center text-gray-600 hover:text-gray-800 mb-6 focus:outline-none cursor-pointer"
-              >
-                <FaArrowLeft className="mr-2" />
-                Back to Sign In
-              </button>
-              
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                  Forgot Password?
-                </h2>
-                <p className="text-gray-600">
-                  Enter your email to receive a password reset OTP
-                </p>
-              </div>
-
-              <form onSubmit={handleSendOtp} className="space-y-6">
-                <div>
-                  <label htmlFor="forgotEmail" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="forgotEmail"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800 placeholder-gray-400"
-                    placeholder="Enter Your Email Address"
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
-                >
-                  {isLoading ? (
-                    <>
-                      <FaSpinner className="animate-spin mr-2" />
-                      Sending OTP...
-                    </>
-                  ) : (
-                    'Send OTP'
-                  )}
-                </button>
-
 
                 <div className="text-center mt-4">
                   <button
-                    onClick={handleBackToLogin}
+                    onClick={handleBackToSignIn}
                     className="text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
                   >
                     Remember password? <span className="font-medium">Sign in</span>
@@ -284,42 +419,6 @@ export default function AuthForm() {
                         placeholder="Last Name"
                         required
                       />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="dob" className="block text-sm font-medium text-gray-700 mb-1">
-                        Date of Birth *
-                      </label>
-                      <input
-                        type="date"
-                        id="dob"
-                        name="dob"
-                        value={formData.dob}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-1">
-                        Gender *
-                      </label>
-                      <select
-                        id="gender"
-                        name="gender"
-                        value={formData.gender}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none transition-all duration-200 text-gray-800"
-                        required
-                      >
-                        <option value="">Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                        <option value="prefer-not-to-say">Prefer not to say</option>
-                      </select>
                     </div>
                   </div>
                 </>
@@ -387,7 +486,7 @@ export default function AuthForm() {
                   </div>
                   <a 
                     href="#" 
-                    onClick={handleForgotPassword}
+                    onClick={() => setShowForgotPassword(true)}
                     className="text-sm text-[var(--primary-color)] hover:text-[var(--primary-hover)] cursor-pointer"
                   >
                     Forgot password?

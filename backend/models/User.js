@@ -1,78 +1,61 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const crypto = require('crypto');
+const validator = require('validator');
+const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
-  firstName: { 
-    type: String, 
-    required: false,
+  firstName: {
+    type: String,
+    required: [true, 'Please provide your first name'],
     trim: true
   },
-  lastName: { 
-    type: String, 
-    required: false,
+  lastName: {
+    type: String,
+    required: [true, 'Please provide your last name'],
     trim: true
   },
-  email: { 
-    type: String, 
-    required: [true, 'Please provide an email'],
+  email: {
+    type: String,
+    required: [true, 'Please provide your email'],
     unique: true,
     lowercase: true,
-    trim: true,
-    match: [
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      'Please provide a valid email'
-    ]
+    validate: [validator.isEmail, 'Please provide a valid email']
   },
-  password: { 
+  password: {
     type: String,
-    minlength: 8,
+    required: [
+      function() { return !this.isOtpSignup; }, 
+      'Please provide a password'
+    ],
+    minlength: [8, 'Password must be at least 8 characters long'],
     select: false
   },
-  googleId: {
-    type: String,
+  isOtpSignup: {
+    type: Boolean,
+    default: false,
     select: false
   },
-  role: { 
-    type: String, 
+  role: {
+    type: String,
     enum: ['user', 'admin'],
-    default: 'user' 
+    default: 'user'
   },
-  isVerified: { 
-    type: Boolean, 
-    default: false 
+  isEmailVerified: {
+    type: Boolean,
+    default: false
   },
-  verificationToken: {
-    type: String,
-    select: false
-  },
-  verificationExpires: {
-    type: Date,
-    select: false
-  },
-  passwordResetToken: {
-    type: String,
-    select: false
-  },
-  passwordResetExpires: {
-    type: Date,
-    select: false
-  },
+  emailVerificationToken: String,
+  emailVerificationExpires: Date,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
+  otp: String,
+  otpExpires: Date,
   active: {
     type: Boolean,
     default: true,
     select: false
   },
-  lastLogin: {
-    type: Date
-  },
-  loginAttempts: {
-    type: Number,
-    default: 0
-  },
-  lockUntil: {
-    type: Date
-  }
+  passwordChangedAt: Date
 }, {
   timestamps: true,
   toJSON: { virtuals: true },
@@ -81,7 +64,7 @@ const userSchema = new mongoose.Schema({
 
 // Hash password before saving
 userSchema.pre('save', async function(next) {
-  // Only run this function if password was modified
+  // Only run this function if password was actually modified
   if (!this.isModified('password')) return next();
   
   // Hash the password with cost of 12
@@ -89,28 +72,50 @@ userSchema.pre('save', async function(next) {
   next();
 });
 
-// Instance method to check password
+// Set passwordChangedAt when password is modified
+userSchema.pre('save', function(next) {
+  if (!this.isModified('password') || this.isNew) return next();
+  
+  this.passwordChangedAt = Date.now() - 1000; // 1 second in the past to ensure token is created after
+  next();
+});
+
+// Sign JWT token
+userSchema.methods.signToken = function() {
+  const payload = { 
+    id: this._id,
+    email: this.email,
+    role: this.role
+  };
+  
+  return jwt.sign(
+    payload,
+    process.env.JWT_SECRET,
+    { expiresIn: process.env.JWT_EXPIRES_IN || '90d' }
+  );
+};
+
+// Instance method to check if password is correct
 userSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
   return await bcrypt.compare(candidatePassword, userPassword);
 };
 
-// Instance method to create password reset token
-userSchema.methods.createPasswordResetToken = function() {
-  const resetToken = crypto.randomBytes(32).toString('hex');
-  
-  this.passwordResetToken = crypto
-    .createHash('sha256')
-    .update(resetToken)
-    .digest('hex');
-    
-  this.passwordResetExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
-  
-  return resetToken;
+// Check if password was changed after token was issued
+userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10
+    );
+    return JWTTimestamp < changedTimestamp;
+  }
+  // False means NOT changed
+  return false;
 };
 
-// Query middleware to exclude inactive users by default
+// Query middleware to filter out inactive users
 userSchema.pre(/^find/, function(next) {
-  // This points to the current query
+  // this points to the current query
   this.find({ active: { $ne: false } });
   next();
 });

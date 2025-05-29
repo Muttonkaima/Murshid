@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaArrowLeft, FaSpinner } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 import OtpInput from '@/components/OtpInput';
 
 export default function VerifyOtpPage() {
@@ -24,20 +25,61 @@ export default function VerifyOtpPage() {
     setError('');
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const type = searchParams?.get('type') || 'reset';
+      console.log('Verifying OTP:', { email, type });
       
-      // For demo purposes, any 6-digit OTP is considered valid
-      // In a real app, you would validate against your backend
-      console.log('OTP verified successfully');
+      const response = await fetch('/api/auth/verify-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          otp,
+          type
+        }),
+      });
+      
+      const data = await response.json();
+      console.log('OTP Verification Response:', data);
+      
+      if (!response.ok) {
+        const errorMessage = data.message || 'Failed to verify OTP';
+        console.error('OTP Verification Error:', errorMessage);
+        throw new Error(errorMessage);
+      }
+      
+      // Store verification token in session storage
+      if (data.token) {
+        console.log('Storing verification token');
+        sessionStorage.setItem('verificationToken', data.token);
+      }
       
       // Redirect to set-password page with the email and type
-      const type = searchParams?.get('type') || 'reset';
       router.push(`/set-password?email=${encodeURIComponent(email)}&type=${type}`);
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error verifying OTP:', error);
-      setError('Invalid or expired OTP. Please try again.');
+      
+      // Handle specific error cases
+      let errorMessage = 'Failed to verify OTP. Please try again.';
+      
+      if (error.message) {
+        if (error.message.includes('Invalid or expired OTP') || 
+            error.message.includes('OTP has expired') ||
+            error.message.includes('OTP not found')) {
+          errorMessage = 'Invalid or expired OTP. Please request a new one.';
+        } else if (error.message.includes('User not found')) {
+          errorMessage = 'No account found with this email. Please sign up.';
+        } else if (error.message.includes('Please request a new OTP')) {
+          errorMessage = 'This OTP has expired. Please request a new one.';
+        } else {
+          errorMessage = error.message;
+        }
+      }
+      
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -49,6 +91,59 @@ export default function VerifyOtpPage() {
     
     setIsLoading(true);
     setError('');
+    
+    try {
+      const type = searchParams?.get('type') || 'reset';
+      console.log('Resending OTP to:', { email, type });
+      
+      const response = await fetch('/api/auth/send-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email, 
+          type,
+          // Include user data if available in session storage for signup flow
+          ...(type === 'signup' && {
+            ...JSON.parse(sessionStorage.getItem('signupData') || '{}')
+          })
+        }),
+      });
+      
+      const data = await response.json();
+      console.log('Resend OTP Response:', data);
+      
+      if (!response.ok) {
+        let errorMessage = data.message || 'Failed to resend OTP';
+        console.error('Resend OTP Error:', errorMessage);
+        
+        // Handle specific error cases for resend
+        if (errorMessage.includes('Please wait before requesting a new OTP')) {
+          errorMessage = 'Please wait before requesting a new OTP. Try again in a few minutes.';
+        } else if (errorMessage.includes('User not found')) {
+          errorMessage = 'No account found with this email. Please sign up.';
+        } else if (errorMessage.includes('maximum attempts')) {
+          errorMessage = 'Too many attempts. Please try again later.';
+        }
+        
+        throw new Error(errorMessage);
+      }
+      
+      // Start countdown
+      setResendDisabled(true);
+      setCountdown(30);
+      
+      toast.success('OTP resent successfully!');
+      console.log('OTP resent successfully');
+    } catch (error: any) {
+      console.error('Resend OTP error:', error);
+      const errorMessage = error.message || 'Failed to resend OTP. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
     
     try {
       // Simulate API call to resend OTP
@@ -65,8 +160,6 @@ export default function VerifyOtpPage() {
       setCountdown(30);
       setResendDisabled(true);
       
-      // Show success message (in a real app, you might want to show a toast)
-      alert('A new OTP has been sent to your email.');
     } catch (err) {
       console.error('Error resending OTP:', err);
       setError('Failed to resend OTP. Please try again.');
@@ -115,12 +208,6 @@ export default function VerifyOtpPage() {
                 Enter the 6-digit code sent to <span className="font-medium">{email || 'your email'}</span>
               </p>
             </div>
-
-            {error && (
-              <div className="mb-6 p-3 bg-red-50 text-red-700 text-sm rounded-lg">
-                {error}
-              </div>
-            )}
 
             <div className="mb-8">
               <OtpInput

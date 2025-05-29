@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaEye, FaEyeSlash, FaCheck, FaArrowLeft } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 interface PasswordRules {
   minLength: boolean;
@@ -66,21 +67,60 @@ export default function SetPasswordPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormValid) return;
-
+    
     setIsLoading(true);
+    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Password set successfully');
+      console.log('Setting up password for:', { email, type });
       
-      // Navigate based on the type (reset or signup)
-      if (type === 'signup') {
-        router.push('/onboarding');
+      const response = await fetch('/api/auth/setup-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          passwordConfirm: confirmPassword
+        }),
+      });
+      
+      const data = await response.json();
+      console.log('Setup password response:', data);
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to set password');
+      }
+      
+      // Store the token if provided
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        
+        // Also store user data if provided
+        if (data.data?.user) {
+          localStorage.setItem('user', JSON.stringify(data.data.user));
+        }
+      }
+      
+      // Clear stored data
+      sessionStorage.removeItem('verificationToken');
+      sessionStorage.removeItem('signupData');
+      sessionStorage.removeItem('resetEmail');
+      
+      // Show success message
+      toast.success('Password set successfully!');
+      
+      // Redirect to dashboard or login based on auth state
+      if (data.token) {
+        // If we have a token, redirect to dashboard
+        router.push('/dashboard');
       } else {
+        // Otherwise, go to login
         router.push('/login');
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error setting password:', error);
+      alert(error.message || 'Failed to set password. Please try again.');
     } finally {
       setIsLoading(false);
     }
