@@ -93,7 +93,6 @@ export const authService = {
   logout() {
     deleteCookie('token');
     localStorage.removeItem('user');
-    localStorage.removeItem('token');
   },
 
   // Get the current authenticated user
