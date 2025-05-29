@@ -129,12 +129,13 @@ export default function AuthForm() {
           throw new Error(data.message || 'Login failed');
         }
         
-        // Store the token and user data
+        // Store the token and user data using authService
         if (data.token) {
-          localStorage.setItem('token', data.token);
-          if (data.user) {
-            localStorage.setItem('user', JSON.stringify(data.user));
-          }
+          // Use authService to handle the login
+          await authService.login({
+            email: formData.email,
+            password: formData.password
+          });
           // Redirect to dashboard or home page
           router.push('/dashboard');
         }

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaEye, FaEyeSlash, FaCheck, FaArrowLeft } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { authService } from '@/services/authService';
 
 interface PasswordRules {
   minLength: boolean;
@@ -92,13 +93,14 @@ export default function SetPasswordPage() {
         throw new Error(data.message || 'Failed to set password');
       }
       
-      // Store the token if provided
+      // Store the token and user data using authService
       if (data.token) {
+        // Store the token
         localStorage.setItem('token', data.token);
         
-        // Also store user data if provided
+        // Use authService to store user data if provided
         if (data.data?.user) {
-          localStorage.setItem('user', JSON.stringify(data.data.user));
+          authService.storeUserData(data.data.user);
         }
       }
       

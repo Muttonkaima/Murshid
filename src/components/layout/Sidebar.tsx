@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { authService } from '../../services/authService';
 import { 
   FiHome, 
   FiMessageSquare, 
@@ -37,6 +38,12 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    authService.logout();
+    router.push('/login');
+  };
 
   // Automatically open the dropdown if we're on a subject page
   useEffect(() => {
@@ -200,7 +207,10 @@ const Sidebar = () => {
         </nav>
 
         <div className="p-4 border-t border-gray-200">
-          <button className="w-full flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer cursor-pointer">
+          <button 
+            onClick={handleLogout}
+            className="w-full flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+          >
             <FiLogOut size={20} />
             <span>Sign out</span>
           </button>
