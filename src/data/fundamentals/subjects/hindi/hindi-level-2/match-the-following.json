@@ -52,7 +52,7 @@
           "text": "कु"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "का",
           "right": "का"
@@ -118,7 +118,7 @@
           "text": "नानी"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "मू",
           "right": "मूर्ख"

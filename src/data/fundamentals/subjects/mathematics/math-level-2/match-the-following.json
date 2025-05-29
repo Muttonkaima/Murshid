@@ -76,7 +76,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Addition",
           "right": "+"
@@ -174,7 +174,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Sum",
           "right": "Result of addition"
@@ -272,7 +272,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "8 + 5",
           "right": "13"
@@ -370,7 +370,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Commutative Property",
           "right": "Changing order does not change result"
@@ -468,7 +468,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "9 + __ = 17",
           "right": "8"
@@ -566,7 +566,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Addition",
           "right": "Finding total apples in two baskets"
@@ -664,7 +664,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Add",
           "right": "Addition"

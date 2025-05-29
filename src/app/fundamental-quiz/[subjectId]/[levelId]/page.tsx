@@ -25,9 +25,15 @@ const ALL_QUESTION_TYPES: QuestionType[] = [
 ];
 
 const FundamentalQuizPage = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const { subjectId, levelId } = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  // Set isMounted to true after component mounts
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const [error, setError] = useState<string | null>(null);
   const [questions, setQuestions] = useState<any[]>([]);
@@ -49,9 +55,16 @@ const FundamentalQuizPage = () => {
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showNav, setShowNav] = window.innerWidth < 768 ? useState(false) : useState(true);
+  const [showNav, setShowNav] = useState(true);
   const navRef = useRef<HTMLDivElement>(null);
   const navToggleRef = useRef<HTMLButtonElement>(null);
+
+  // Initialize showNav based on window width after component mounts
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShowNav(window.innerWidth >= 768);
+    }
+  }, []);
 
   // Calculate score and statistics
   const totalQuestions = questions.length;
@@ -242,8 +255,8 @@ const FundamentalQuizPage = () => {
 
   // Timer effect - client-side only
   useEffect(() => {
-    // Only run on client
-    if (typeof window === 'undefined') return;
+    // Only run on client and when component is mounted
+    if (typeof window === 'undefined' || !isMounted) return;
 
     let interval: NodeJS.Timeout;
 
@@ -280,8 +293,8 @@ const FundamentalQuizPage = () => {
 
   // Set time limit based on question count - client-side only
   useEffect(() => {
-    // Only run on client
-    if (typeof window === 'undefined') return;
+    // Only run on client and when component is mounted
+    if (typeof window === 'undefined' || !isMounted) return;
 
     // 30 seconds per question as default
     const calculatedTime = questionCount * 12;
@@ -768,12 +781,35 @@ const FundamentalQuizPage = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="px-6 pb-6 flex gap-3">
+              <div className="px-6 pb-6 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => router.push('/fundamentals')}
+                  className="py-3 px-6 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors flex items-center justify-center cursor-pointer gap-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                  </svg>
+                  Back to Fundamentals
+                </button>
                 <button
                   onClick={() => setShowDetailedResults(!showDetailedResults)}
-                  className="flex-1 py-3 px-4 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors flex items-center justify-center cursor-pointer"
+                  className="py-3 px-6 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-colors flex-1 flex items-center justify-center cursor-pointer gap-2"
                 >
-                  {showDetailedResults ? 'Hide Details' : 'View Details'}
+                  {showDetailedResults ? (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                      </svg>
+                      Hide Details
+                    </>
+                  ) : (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                      View Details
+                    </>
+                  )}
                 </button>
               </div>
 

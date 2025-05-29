@@ -7,53 +7,182 @@
       "marks": 3,
       "question": {
         "hide_text": false,
-        "text": "Which of the following are prime numbers?",
+        "text": "Which of the following operations are considered basic arithmetic operations?",
         "read_text": false,
         "image": ""
       },
       "options": [
         {
           "hide_text": false,
-          "text": "2",
+          "text": "Addition",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "3",
+          "text": "Subtraction",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "4",
+          "text": "Exponentiation",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "5",
+          "text": "Division",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctAnswers": [
-        "2",
-        "3",
-        "5"
+      "correctAnswer": [
+        "Addition",
+        "Subtraction",
+        "Division"
       ],
-      "explanation": "2, 3, and 5 are prime numbers; 4 is not."
+      "explanation": "The four basic arithmetic operations are addition, subtraction, multiplication, and division. Exponentiation is not basic."
     },
     {
       "id": 2,
       "marks": 3,
       "question": {
         "hide_text": false,
-        "text": "Select all even numbers from the list.",
+        "text": "Select all expressions that correctly use the distributive property:",
         "read_text": false,
         "image": ""
       },
       "options": [
+        {
+          "hide_text": false,
+          "text": "a × (b + c) = a × b + a × c",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a + (b + c) = (a + b) + c",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "2 × (3 + 4) = 2 × 3 + 2 × 4",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "(a + b) × c = a × b + b × c",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        "a × (b + c) = a × b + a × c",
+        "2 × (3 + 4) = 2 × 3 + 2 × 4"
+      ],
+      "explanation": "Distributive property is a × (b + c) = a × b + a × c. Associative property and incorrect distribution do not qualify."
+    },
+    {
+      "id": 3,
+      "marks": 3,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following are correct results of basic arithmetic calculations?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "6 × 7 = 42",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "25 ÷ 5 = 6",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "9 − 4 = 5",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "12 + 3 = 16",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        "6 × 7 = 42",
+        "9 − 4 = 5"
+      ],
+      "explanation": "6×7=42 and 9−4=5 are correct; 25÷5=5 (not 6) and 12+3=15 (not 16)."
+    },
+    {
+      "id": 4,
+      "marks": 3,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following equations use the commutative property correctly?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "a + b = b + a",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a × b = b × a",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "(a + b) + c = a + (b + c)",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "a − b = b − a",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        "a + b = b + a",
+        "a × b = b × a"
+      ],
+      "explanation": "Addition and multiplication are commutative; subtraction is not. Associative property is shown in the third option."
+    },
+    {
+      "id": 5,
+      "marks": 3,
+      "question": {
+        "hide_text": false,
+        "text": "Which of the following numbers when divided by 3 give a remainder of 1?",
+        "read_text": false,
+        "image": ""
+      },
+      "options": [
+        {
+          "hide_text": false,
+          "text": "4",
+          "read_text": false,
+          "image": ""
+        },
         {
           "hide_text": false,
           "text": "7",
@@ -68,147 +197,18 @@
         },
         {
           "hide_text": false,
-          "text": "14",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "15",
+          "text": "13",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctAnswers": [
-        "10",
-        "14"
-      ],
-      "explanation": "10 and 14 are even numbers."
-    },
-    {
-      "id": 3,
-      "marks": 3,
-      "question": {
-        "hide_text": false,
-        "text": "Which of the following are number systems?",
-        "read_text": false,
-        "image": ""
-      },
-      "options": [
-        {
-          "hide_text": false,
-          "text": "Binary",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Hexadecimal",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Decimal",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Alphabet",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctAnswers": [
-        "Binary",
-        "Hexadecimal",
-        "Decimal"
-      ],
-      "explanation": "Binary, Hexadecimal, and Decimal are number systems; Alphabet is not."
-    },
-    {
-      "id": 4,
-      "marks": 3,
-      "question": {
-        "hide_text": false,
-        "text": "Select all composite numbers from the list.",
-        "read_text": false,
-        "image": ""
-      },
-      "options": [
-        {
-          "hide_text": false,
-          "text": "1",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "4",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "6",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "7",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctAnswers": [
+      "correctAnswer": [
         "4",
-        "6"
+        "7",
+        "10",
+        "13"
       ],
-      "explanation": "4 and 6 are composite numbers; 1 and 7 are not."
-    },
-    {
-      "id": 5,
-      "marks": 3,
-      "question": {
-        "hide_text": false,
-        "text": "Which of these are valid digits in hexadecimal system?",
-        "read_text": false,
-        "image": ""
-      },
-      "options": [
-        {
-          "hide_text": false,
-          "text": "A",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "G",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "F",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "9",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctAnswers": [
-        "A",
-        "F",
-        "9"
-      ],
-      "explanation": "Hexadecimal digits include 0-9 and A-F. G is not a valid hexadecimal digit."
+      "explanation": "All these numbers leave a remainder of 1 when divided by 3 (e.g., 4 ÷ 3 = 1 R1, etc.)."
     }
   ]
 }

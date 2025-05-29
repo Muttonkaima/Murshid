@@ -52,7 +52,7 @@
           "text": "ಪಚನ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಉದಯ",
           "right": "ಉದಯ"
@@ -124,7 +124,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಉದರ",
           "right": "ಉದರ"
@@ -196,7 +196,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಉಗಮ",
           "right": "ಉಗಮ"
@@ -262,7 +262,7 @@
           "text": "ಸಲಗ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಕಡತ",
           "right": "ಕಡತ"
@@ -334,7 +334,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ನಯನ",
           "right": "ನಯನ"
@@ -406,7 +406,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಕಥನ",
           "right": "ಕಥನ"
@@ -478,7 +478,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪದರ",
           "right": "ಪದರ"
@@ -550,7 +550,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಸಲಗ",
           "right": "ಸಲಗ"
@@ -622,7 +622,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪಚನ",
           "right": "ಪಚನ"
@@ -694,7 +694,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಚದರ",
           "right": "ಚದರ"

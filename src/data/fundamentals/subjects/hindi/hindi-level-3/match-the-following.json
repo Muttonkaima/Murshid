@@ -52,7 +52,7 @@
           "text": "तारा"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "कि",
           "right": "किताब"
@@ -118,7 +118,7 @@
           "text": "पानी"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "पा",
           "right": "पानी"

@@ -51,7 +51,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Natural Numbers": [
           "7"
         ],
@@ -113,7 +113,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Rational Numbers": [
           "4/5"
         ],
@@ -175,7 +175,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "Prime Numbers": [
           "5"
         ],

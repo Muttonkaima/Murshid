@@ -52,7 +52,7 @@
           "text": "उ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "अ",
           "right": "अ"
@@ -118,7 +118,7 @@
           "text": "ट"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "क",
           "right": "क"

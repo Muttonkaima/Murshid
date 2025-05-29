@@ -8,38 +8,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the fractions with their decimal equivalents:",
+        "text": "Match the numbers to one of their factors:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "1/2",
+          "text": "12",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "1/4",
+          "text": "18",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "3/4",
+          "text": "20",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "1/5",
+          "text": "28",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "2/5",
+          "text": "30",
           "read_text": false,
           "image": ""
         }
@@ -47,58 +47,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "0.2",
+          "text": "6",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.25",
+          "text": "9",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.75",
+          "text": "10",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.5",
+          "text": "7",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.4",
+          "text": "5",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "1/2",
-          "right": "0.5"
+          "left": "12",
+          "right": "6"
         },
         {
-          "left": "1/4",
-          "right": "0.25"
+          "left": "18",
+          "right": "9"
         },
         {
-          "left": "3/4",
-          "right": "0.75"
+          "left": "20",
+          "right": "10"
         },
         {
-          "left": "1/5",
-          "right": "0.2"
+          "left": "28",
+          "right": "7"
         },
         {
-          "left": "2/5",
-          "right": "0.4"
+          "left": "30",
+          "right": "5"
         }
       ],
-      "explanation": "Each fraction has a standard decimal equivalent when divided."
+      "explanation": "Each number is divisible by its matching factor."
     },
     {
       "id": 2,
@@ -106,38 +106,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the mixed fractions to improper fractions:",
+        "text": "Match the numbers with one of their multiples:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "1 1/2",
+          "text": "3",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "2 1/3",
+          "text": "5",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "3 1/4",
+          "text": "7",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "4 2/5",
+          "text": "4",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "5 3/8",
+          "text": "6",
           "read_text": false,
           "image": ""
         }
@@ -145,58 +145,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "13/4",
+          "text": "16",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "11/3",
+          "text": "20",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "11/2",
+          "text": "14",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "43/8",
+          "text": "15",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "22/5",
+          "text": "18",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "1 1/2",
-          "right": "3/2"
+          "left": "3",
+          "right": "15"
         },
         {
-          "left": "2 1/3",
-          "right": "7/3"
+          "left": "5",
+          "right": "20"
         },
         {
-          "left": "3 1/4",
-          "right": "13/4"
+          "left": "7",
+          "right": "14"
         },
         {
-          "left": "4 2/5",
-          "right": "22/5"
+          "left": "4",
+          "right": "16"
         },
         {
-          "left": "5 3/8",
-          "right": "43/8"
+          "left": "6",
+          "right": "18"
         }
       ],
-      "explanation": "Mixed fractions are converted by multiplying the whole number with the denominator and adding the numerator."
+      "explanation": "Each multiple is obtained by multiplying the number by an integer."
     },
     {
       "id": 3,
@@ -204,38 +204,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the decimal numbers with their word forms:",
+        "text": "Match each number to its highest factor less than itself:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "0.1",
+          "text": "16",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.01",
+          "text": "21",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.5",
+          "text": "25",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.25",
+          "text": "36",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.75",
+          "text": "40",
           "read_text": false,
           "image": ""
         }
@@ -243,58 +243,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "One tenth",
+          "text": "20",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "One hundredth",
+          "text": "12",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Half",
+          "text": "5",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Three quarters",
+          "text": "7",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "One fourth",
+          "text": "8",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "0.1",
-          "right": "One tenth"
+          "left": "16",
+          "right": "8"
         },
         {
-          "left": "0.01",
-          "right": "One hundredth"
+          "left": "21",
+          "right": "7"
         },
         {
-          "left": "0.5",
-          "right": "Half"
+          "left": "25",
+          "right": "5"
         },
         {
-          "left": "0.25",
-          "right": "One fourth"
+          "left": "36",
+          "right": "12"
         },
         {
-          "left": "0.75",
-          "right": "Three quarters"
+          "left": "40",
+          "right": "20"
         }
       ],
-      "explanation": "Each decimal has a standard name in words based on place value."
+      "explanation": "The highest factor less than a number divides it and is closest to it."
     },
     {
       "id": 4,
@@ -302,38 +302,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the decimal numbers to their fractional equivalents:",
+        "text": "Match each number with a common multiple of both it and another number:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "0.2",
+          "text": "2 & 3",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.6",
+          "text": "4 & 6",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.8",
+          "text": "5 & 10",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.1",
+          "text": "3 & 9",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.9",
+          "text": "6 & 7",
           "read_text": false,
           "image": ""
         }
@@ -341,58 +341,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "1/10",
+          "text": "10",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "2/5",
+          "text": "6",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "3/5",
+          "text": "9",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "4/5",
+          "text": "12",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "9/10",
+          "text": "42",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "0.2",
-          "right": "1/5"
+          "left": "2 & 3",
+          "right": "6"
         },
         {
-          "left": "0.6",
-          "right": "3/5"
+          "left": "4 & 6",
+          "right": "12"
         },
         {
-          "left": "0.8",
-          "right": "4/5"
+          "left": "5 & 10",
+          "right": "10"
         },
         {
-          "left": "0.1",
-          "right": "1/10"
+          "left": "3 & 9",
+          "right": "9"
         },
         {
-          "left": "0.9",
-          "right": "9/10"
+          "left": "6 & 7",
+          "right": "42"
         }
       ],
-      "explanation": "Convert decimals to fractions by understanding place value and reducing."
+      "explanation": "LCM is the smallest number that is a multiple of both."
     },
     {
       "id": 5,
@@ -400,38 +400,26 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the operations on decimals with their results:",
+        "text": "Match the number with a number that is NOT its multiple:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "0.2 + 0.5",
+          "text": "3",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "1.2 - 0.7",
+          "text": "2",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.3 × 3",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "0.8 ÷ 2",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "1.5 + 1.5",
+          "text": "5",
           "read_text": false,
           "image": ""
         }
@@ -439,58 +427,38 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "0.9",
+          "text": "80",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.5",
+          "text": "105",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "0.6",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "3.0",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "0.15",
+          "text": "66",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "0.2 + 0.5",
-          "right": "0.7"
+          "left": "3",
+          "right": "80"
         },
         {
-          "left": "1.2 - 0.7",
-          "right": "0.5"
+          "left": "2",
+          "right": "105"
         },
         {
-          "left": "0.3 × 3",
-          "right": "0.9"
-        },
-        {
-          "left": "0.8 ÷ 2",
-          "right": "0.4"
-        },
-        {
-          "left": "1.5 + 1.5",
-          "right": "3.0"
+          "left": "5",
+          "right": "66"
         }
       ],
-      "explanation": "Each operation on decimals should be solved using place value and correct arithmetic."
+      "explanation": "Each number is matched with another that is not divisible by it, ensuring only one correct match per item."
     }
   ]
 }

@@ -52,7 +52,7 @@
           "text": "ಬಿಜ್ಜಳ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಮಣ್ಣು",
           "right": "ಮಣ್ಣು"
@@ -124,7 +124,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪಟ್ಟಣ",
           "right": "ಪಟ್ಟಣ"
@@ -196,7 +196,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಗುಡ್ಗಾದು",
           "right": "ಗುಡ್ಗಾದು"
@@ -262,7 +262,7 @@
           "text": "ಮಜ್ಜಿಗೆ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಹೆಬ್ಬಲಿ",
           "right": "ಹೆಬ್ಬಲಿ"
@@ -334,7 +334,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಬಿಜ್ಜಳ",
           "right": "ಬಿಜ್ಜಳ"
@@ -406,7 +406,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಹಬ್ಬಾಗಿಲು",
           "right": "ಹಬ್ಬಾಗಿಲು"
@@ -478,7 +478,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಮಜ್ಜನ",
           "right": "ಮಜ್ಜನ"
@@ -550,7 +550,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಮಜ್ಜಿಗೆ",
           "right": "ಮಜ್ಜಿಗೆ"
@@ -622,7 +622,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಮುಟ್ಟಿಮೆ",
           "right": "ಮುಟ್ಟಿಮೆ"
@@ -694,7 +694,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಗಜ್ಜರಿ",
           "right": "ಗಜ್ಜರಿ"

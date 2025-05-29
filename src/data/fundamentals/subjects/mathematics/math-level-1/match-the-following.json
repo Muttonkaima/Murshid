@@ -76,7 +76,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Prime Number",
           "right": "Number divisible only by 1 and itself"
@@ -174,7 +174,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "HCF",
           "right": "Highest number that divides two numbers exactly"

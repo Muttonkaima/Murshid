@@ -86,7 +86,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ನಗರ",
           "right": "ನಗರ"
@@ -194,7 +194,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಜನಮನ",
           "right": "ಜನಮನ"
@@ -302,7 +302,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಊಟದ ಸಮಯ",
           "right": "ಊಟದ ಸಮಯ"
@@ -410,7 +410,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ದಶಕ",
           "right": "ದಶಕ"
@@ -518,7 +518,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಆಗಸ",
           "right": "ಆಗಸ"
@@ -626,7 +626,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಕಮಲ",
           "right": "ಕಮಲ"
@@ -734,7 +734,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಊರಜನ",
           "right": "ಊರಜನ"
@@ -842,7 +842,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಕಮಲಳ",
           "right": "ಕಮಲಳ"

@@ -3,19 +3,117 @@
   "totalMarks": 25,
   "questions": [
     {
-      "id": 2,
+      "id": 1,
       "type": "matchTheFollowing",
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match each body part with the correct sense:",
+        "text": "Match the part of a plant to its function:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Nose",
+          "text": "Leaves",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Flowers",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Stem",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Roots",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Fruits",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Absorb water",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Make food",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Support plant",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Attract pollinators",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Carry seeds",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        {
+          "left": "Roots",
+          "right": "Absorb water"
+        },
+        {
+          "left": "Leaves",
+          "right": "Make food"
+        },
+        {
+          "left": "Stem",
+          "right": "Support plant"
+        },
+        {
+          "left": "Flowers",
+          "right": "Attract pollinators"
+        },
+        {
+          "left": "Fruits",
+          "right": "Carry seeds"
+        }
+      ],
+      "explanation": "Each part of the plant performs a unique function important for survival."
+    },
+    {
+      "id": 2,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the sense organ to the correct sense:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Tongue",
           "read_text": false,
           "image": ""
         },
@@ -27,7 +125,7 @@
         },
         {
           "hide_text": false,
-          "text": "Tongue",
+          "text": "Nose",
           "read_text": false,
           "image": ""
         },
@@ -47,13 +145,13 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Taste",
+          "text": "Hearing",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Sight",
+          "text": "Taste",
           "read_text": false,
           "image": ""
         },
@@ -65,7 +163,7 @@
         },
         {
           "hide_text": false,
-          "text": "Hearing",
+          "text": "Sight",
           "read_text": false,
           "image": ""
         },
@@ -76,7 +174,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "Eyes",
           "right": "Sight"
@@ -86,19 +184,19 @@
           "right": "Hearing"
         },
         {
-          "left": "Tongue",
-          "right": "Taste"
-        },
-        {
           "left": "Nose",
           "right": "Smell"
+        },
+        {
+          "left": "Tongue",
+          "right": "Taste"
         },
         {
           "left": "Skin",
           "right": "Touch"
         }
       ],
-      "explanation": "Each sense is associated with a specific body part."
+      "explanation": "Each sense organ is responsible for a specific sense."
     },
     {
       "id": 3,
@@ -106,38 +204,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the plant part to its use:",
+        "text": "Match the animals to their category:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Fruits",
+          "text": "Parrot",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Roots",
+          "text": "Lion",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Flowers",
+          "text": "Fish",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Leaves",
+          "text": "Frog",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Stem",
+          "text": "Snake",
           "read_text": false,
           "image": ""
         }
@@ -145,58 +243,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Used in decoration",
+          "text": "Bird",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "We eat them",
+          "text": "Amphibian",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Make food",
+          "text": "Aquatic",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Anchor the plant",
+          "text": "Mammal",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Carries water and food",
+          "text": "Reptile",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Flowers",
-          "right": "Used in decoration"
+          "left": "Frog",
+          "right": "Amphibian"
         },
         {
-          "left": "Leaves",
-          "right": "Make food"
+          "left": "Lion",
+          "right": "Mammal"
         },
         {
-          "left": "Fruits",
-          "right": "We eat them"
+          "left": "Parrot",
+          "right": "Bird"
         },
         {
-          "left": "Roots",
-          "right": "Anchor the plant"
+          "left": "Fish",
+          "right": "Aquatic"
         },
         {
-          "left": "Stem",
-          "right": "Carries water and food"
+          "left": "Snake",
+          "right": "Reptile"
         }
       ],
-      "explanation": "Each plant part has a different function and use."
+      "explanation": "Animals are grouped based on their features and habitats."
     },
     {
       "id": 4,
@@ -204,20 +302,112 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the tool with its type of simple machine:",
+        "text": "Match the layer of Earth to its description:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Bottle opener",
+          "text": "Outer Core",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Door knob",
+          "text": "Mantle",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Inner Core",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Crust",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Soil",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Solid metal center",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Semi-solid rock",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Liquid iron and nickel",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Thinnest layer",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Top layer where plants grow",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        {
+          "left": "Crust",
+          "right": "Thinnest layer"
+        },
+        {
+          "left": "Mantle",
+          "right": "Semi-solid rock"
+        },
+        {
+          "left": "Outer Core",
+          "right": "Liquid iron and nickel"
+        },
+        {
+          "left": "Inner Core",
+          "right": "Solid metal center"
+        },
+        {
+          "left": "Soil",
+          "right": "Top layer where plants grow"
+        }
+      ],
+      "explanation": "Earth is made up of different layers, each with unique properties."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the example to the type of simple machine:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Pulley",
           "read_text": false,
           "image": ""
         },
@@ -229,13 +419,19 @@
         },
         {
           "hide_text": false,
+          "text": "Ramp",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
           "text": "Wheelbarrow",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "See-saw",
+          "text": "Screw",
           "read_text": false,
           "image": ""
         }
@@ -243,156 +439,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Wheel and axle",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
           "text": "Lever",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Wheel and axle",
+          "text": "Used to lift bucket",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Lever",
+          "text": "Second class lever",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Lever",
+          "text": "Inclined plane",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Used to hold things tightly",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
-        {
-          "left": "Bottle opener",
-          "right": "Lever"
-        },
+      "correctAnswer": [
         {
           "left": "Scissors",
           "right": "Lever"
         },
         {
-          "left": "Door knob",
-          "right": "Wheel and axle"
-        },
-        {
           "left": "Wheelbarrow",
-          "right": "Lever"
+          "right": "Second class lever"
         },
         {
-          "left": "See-saw",
-          "right": "Lever"
+          "left": "Ramp",
+          "right": "Inclined plane"
+        },
+        {
+          "left": "Pulley",
+          "right": "Used to lift bucket"
+        },
+        {
+          "left": "Screw",
+          "right": "Used to hold things tightly"
         }
       ],
-      "explanation": "These tools are examples of levers or wheel-and-axle machines."
-    },
-    {
-      "id": 5,
-      "type": "matchTheFollowing",
-      "marks": 5,
-      "question": {
-        "hide_text": false,
-        "text": "Match the season with its typical weather condition:",
-        "read_text": false,
-        "image": ""
-      },
-      "leftItems": [
-        {
-          "hide_text": false,
-          "text": "Rainy",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Summer",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Spring",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Winter",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Autumn",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
-        {
-          "hide_text": false,
-          "text": "Cold and foggy",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Wet and cloudy",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Hot and sunny",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Flowers bloom",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Leaves fall",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctPairs": [
-        {
-          "left": "Summer",
-          "right": "Hot and sunny"
-        },
-        {
-          "left": "Winter",
-          "right": "Cold and foggy"
-        },
-        {
-          "left": "Rainy",
-          "right": "Wet and cloudy"
-        },
-        {
-          "left": "Spring",
-          "right": "Flowers bloom"
-        },
-        {
-          "left": "Autumn",
-          "right": "Leaves fall"
-        }
-      ],
-      "explanation": "Each season is characterized by specific weather patterns and changes in nature."
+      "explanation": "Simple machines make work easier and are used in tools we use daily."
     }
   ]
 }

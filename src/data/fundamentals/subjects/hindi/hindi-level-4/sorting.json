@@ -73,7 +73,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "राम खाना खाता है।": [
           "राम",
           "खाना",
@@ -166,7 +166,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "बच्चा खेल रहा है।": [
           "बच्चा",
           "खेल",
@@ -254,7 +254,7 @@
           "image": ""
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "बच्चा पानी पीता है।": [
           "बच्चा",
           "पानी",

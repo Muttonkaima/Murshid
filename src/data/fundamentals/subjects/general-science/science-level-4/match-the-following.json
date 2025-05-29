@@ -8,38 +8,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match each stage to the correct phase in the life cycle of a frog:",
+        "text": "Match the part of the plant with its function:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Young frog",
+          "text": "Flower",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Tadpole with legs",
+          "text": "Stem",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Tadpole",
+          "text": "Leaves",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Egg",
+          "text": "Roots",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Adult frog",
+          "text": "Fruits",
           "read_text": false,
           "image": ""
         }
@@ -47,58 +47,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Tail becomes shorter",
+          "text": "Absorbs water",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Starts developing limbs",
+          "text": "Reproduction",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Has tail and gills",
+          "text": "Support and transport",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Beginning of life",
+          "text": "Photosynthesis",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Fully grown and can reproduce",
+          "text": "Seed formation",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Egg",
-          "right": "Beginning of life"
+          "left": "Roots",
+          "right": "Absorbs water"
         },
         {
-          "left": "Tadpole",
-          "right": "Has tail and gills"
+          "left": "Leaves",
+          "right": "Photosynthesis"
         },
         {
-          "left": "Tadpole with legs",
-          "right": "Starts developing limbs"
+          "left": "Stem",
+          "right": "Support and transport"
         },
         {
-          "left": "Young frog",
-          "right": "Tail becomes shorter"
+          "left": "Flower",
+          "right": "Reproduction"
         },
         {
-          "left": "Adult frog",
-          "right": "Fully grown and can reproduce"
+          "left": "Fruits",
+          "right": "Seed formation"
         }
       ],
-      "explanation": "Each stage of a frog's life has distinct characteristics."
+      "explanation": "Each plant part performs a unique function."
     },
     {
       "id": 2,
@@ -106,38 +106,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the state of matter to its example:",
+        "text": "Match the type of weather with its typical season:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Ice",
+          "text": "Pleasant and breezy",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Liquid",
+          "text": "Rainy",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Gas",
+          "text": "Hot and dry",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Solid",
+          "text": "Cold and snowy",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Steam",
+          "text": "Foggy",
           "read_text": false,
           "image": ""
         }
@@ -145,58 +145,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Air",
+          "text": "Spring",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Table",
+          "text": "Winter",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Frozen water",
+          "text": "Summer",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Water",
+          "text": "Monsoon",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Water vapor",
+          "text": "Autumn",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Solid",
-          "right": "Table"
+          "left": "Hot and dry",
+          "right": "Summer"
         },
         {
-          "left": "Liquid",
-          "right": "Water"
+          "left": "Cold and snowy",
+          "right": "Winter"
         },
         {
-          "left": "Gas",
-          "right": "Air"
+          "left": "Rainy",
+          "right": "Monsoon"
         },
         {
-          "left": "Ice",
-          "right": "Frozen water"
+          "left": "Pleasant and breezy",
+          "right": "Spring"
         },
         {
-          "left": "Steam",
-          "right": "Water vapor"
+          "left": "Foggy",
+          "right": "Autumn"
         }
       ],
-      "explanation": "Each example matches a particular state of matter."
+      "explanation": "Each season has characteristic weather patterns."
     },
     {
       "id": 3,
@@ -204,38 +204,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match each type of energy source with its example:",
+        "text": "Match the scientist to their discovery (Level 4 - Application):",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Fuel",
+          "text": "Gregor Mendel",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Solar energy",
+          "text": "Isaac Newton",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Wind",
+          "text": "Marie Curie",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Battery",
+          "text": "Benjamin Franklin",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Water",
+          "text": "Charles Darwin",
           "read_text": false,
           "image": ""
         }
@@ -243,58 +243,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Windmill",
+          "text": "Electricity",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Sun",
+          "text": "Gravity",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Petrol",
+          "text": "Genetics",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Torch light",
+          "text": "Radioactivity",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Hydropower plant",
+          "text": "Evolution",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Solar energy",
-          "right": "Sun"
+          "left": "Benjamin Franklin",
+          "right": "Electricity"
         },
         {
-          "left": "Battery",
-          "right": "Torch light"
+          "left": "Isaac Newton",
+          "right": "Gravity"
         },
         {
-          "left": "Fuel",
-          "right": "Petrol"
+          "left": "Marie Curie",
+          "right": "Radioactivity"
         },
         {
-          "left": "Wind",
-          "right": "Windmill"
+          "left": "Gregor Mendel",
+          "right": "Genetics"
         },
         {
-          "left": "Water",
-          "right": "Hydropower plant"
+          "left": "Charles Darwin",
+          "right": "Evolution"
         }
       ],
-      "explanation": "Each source provides energy to power devices or machines."
+      "explanation": "These scientists are known for foundational discoveries."
     },
     {
       "id": 4,
@@ -302,38 +302,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match each type of pollution to its example:",
+        "text": "Match the separation technique to what it separates:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Noise pollution",
+          "text": "Filtration",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Water pollution",
+          "text": "Evaporation",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Land pollution",
+          "text": "Magnetic separation",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Air pollution",
+          "text": "Sieving",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Light pollution",
+          "text": "Decantation",
           "read_text": false,
           "image": ""
         }
@@ -341,58 +341,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Litter on roads",
+          "text": "Sand from muddy water",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Oil spills",
+          "text": "Salt from water",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Honking vehicles",
+          "text": "Iron filings from sand",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Smoke from factories",
+          "text": "Pebbles from flour",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Too many streetlights",
+          "text": "Oil from water",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Air pollution",
-          "right": "Smoke from factories"
+          "left": "Filtration",
+          "right": "Sand from muddy water"
         },
         {
-          "left": "Water pollution",
-          "right": "Oil spills"
+          "left": "Evaporation",
+          "right": "Salt from water"
         },
         {
-          "left": "Noise pollution",
-          "right": "Honking vehicles"
+          "left": "Magnetic separation",
+          "right": "Iron filings from sand"
         },
         {
-          "left": "Land pollution",
-          "right": "Litter on roads"
+          "left": "Sieving",
+          "right": "Pebbles from flour"
         },
         {
-          "left": "Light pollution",
-          "right": "Too many streetlights"
+          "left": "Decantation",
+          "right": "Oil from water"
         }
       ],
-      "explanation": "Different types of pollution affect the environment in various ways."
+      "explanation": "Each method is suited for specific mixtures."
     },
     {
       "id": 5,
@@ -400,52 +400,26 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the property of material to its object:",
+        "text": "Match the item to whether it's living or non-living:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Flexible",
+          "text": "Tree",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Waterproof",
+          "text": "Car",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Hard",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Transparent",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Soft",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
-        {
-          "hide_text": false,
-          "text": "Rubber band",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Glass",
+          "text": "Bird",
           "read_text": false,
           "image": ""
         },
@@ -457,40 +431,66 @@
         },
         {
           "hide_text": false,
-          "text": "Cotton",
+          "text": "Cat",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Living",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Raincoat",
+          "text": "Non-living",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Living",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Non-living",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Living",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Transparent",
-          "right": "Glass"
+          "left": "Tree",
+          "right": "Living"
         },
         {
-          "left": "Flexible",
-          "right": "Rubber band"
+          "left": "Car",
+          "right": "Non-living"
         },
         {
-          "left": "Hard",
-          "right": "Rock"
+          "left": "Bird",
+          "right": "Living"
         },
         {
-          "left": "Waterproof",
-          "right": "Raincoat"
+          "left": "Rock",
+          "right": "Non-living"
         },
         {
-          "left": "Soft",
-          "right": "Cotton"
+          "left": "Cat",
+          "right": "Living"
         }
       ],
-      "explanation": "Each object shows a key property used in materials classification."
+      "explanation": "Living things grow, reproduce, and respond to stimuli."
     }
   ]
 }

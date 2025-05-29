@@ -3,31 +3,117 @@
   "totalMarks": 25,
   "questions": [
     {
-      "id": 1,
+      "id": 2,
       "type": "matchTheFollowing",
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the part of the plant with its function:",
+        "text": "Match each body part with the correct sense:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Flower",
+          "text": "Nose",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Stem",
+          "text": "Ears",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Leaves",
+          "text": "Tongue",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Eyes",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Skin",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Taste",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Sight",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Smell",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Hearing",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Touch",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        {
+          "left": "Eyes",
+          "right": "Sight"
+        },
+        {
+          "left": "Ears",
+          "right": "Hearing"
+        },
+        {
+          "left": "Tongue",
+          "right": "Taste"
+        },
+        {
+          "left": "Nose",
+          "right": "Smell"
+        },
+        {
+          "left": "Skin",
+          "right": "Touch"
+        }
+      ],
+      "explanation": "Each sense is associated with a specific body part."
+    },
+    {
+      "id": 3,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the plant part to its use:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
+        {
+          "hide_text": false,
+          "text": "Fruits",
           "read_text": false,
           "image": ""
         },
@@ -39,7 +125,19 @@
         },
         {
           "hide_text": false,
-          "text": "Fruits",
+          "text": "Flowers",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Leaves",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Stem",
           "read_text": false,
           "image": ""
         }
@@ -47,76 +145,168 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Absorbs water",
+          "text": "Used in decoration",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Reproduction",
+          "text": "We eat them",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Support and transport",
+          "text": "Make food",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Photosynthesis",
+          "text": "Anchor the plant",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Seed formation",
+          "text": "Carries water and food",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Roots",
-          "right": "Absorbs water"
+          "left": "Flowers",
+          "right": "Used in decoration"
         },
         {
           "left": "Leaves",
-          "right": "Photosynthesis"
-        },
-        {
-          "left": "Stem",
-          "right": "Support and transport"
-        },
-        {
-          "left": "Flower",
-          "right": "Reproduction"
+          "right": "Make food"
         },
         {
           "left": "Fruits",
-          "right": "Seed formation"
+          "right": "We eat them"
+        },
+        {
+          "left": "Roots",
+          "right": "Anchor the plant"
+        },
+        {
+          "left": "Stem",
+          "right": "Carries water and food"
         }
       ],
-      "explanation": "Each plant part performs a unique function."
+      "explanation": "Each plant part has a different function and use."
     },
     {
-      "id": 2,
+      "id": 4,
       "type": "matchTheFollowing",
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the type of weather with its typical season:",
+        "text": "Match the tool with its type of simple machine:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Pleasant and breezy",
+          "text": "Bottle opener",
           "read_text": false,
           "image": ""
         },
+        {
+          "hide_text": false,
+          "text": "Door knob",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Scissors",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Wheelbarrow",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "See-saw",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "rightItems": [
+        {
+          "hide_text": false,
+          "text": "Wheel and axle",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Lever",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Wheel and axle",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Lever",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Lever",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        {
+          "left": "Bottle opener",
+          "right": "Lever"
+        },
+        {
+          "left": "Scissors",
+          "right": "Lever"
+        },
+        {
+          "left": "Door knob",
+          "right": "Wheel and axle"
+        },
+        {
+          "left": "Wheelbarrow",
+          "right": "Lever"
+        },
+        {
+          "left": "See-saw",
+          "right": "Lever"
+        }
+      ],
+      "explanation": "These tools are examples of levers or wheel-and-axle machines."
+    },
+    {
+      "id": 5,
+      "type": "matchTheFollowing",
+      "marks": 5,
+      "question": {
+        "hide_text": false,
+        "text": "Match the season with its typical weather condition:",
+        "read_text": false,
+        "image": ""
+      },
+      "leftItems": [
         {
           "hide_text": false,
           "text": "Rainy",
@@ -125,24 +315,10 @@
         },
         {
           "hide_text": false,
-          "text": "Hot and dry",
+          "text": "Summer",
           "read_text": false,
           "image": ""
         },
-        {
-          "hide_text": false,
-          "text": "Cold and snowy",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Foggy",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
         {
           "hide_text": false,
           "text": "Spring",
@@ -157,340 +333,66 @@
         },
         {
           "hide_text": false,
-          "text": "Summer",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Monsoon",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
           "text": "Autumn",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "rightItems": [
         {
-          "left": "Hot and dry",
-          "right": "Summer"
+          "hide_text": false,
+          "text": "Cold and foggy",
+          "read_text": false,
+          "image": ""
         },
         {
-          "left": "Cold and snowy",
-          "right": "Winter"
+          "hide_text": false,
+          "text": "Wet and cloudy",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Hot and sunny",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Flowers bloom",
+          "read_text": false,
+          "image": ""
+        },
+        {
+          "hide_text": false,
+          "text": "Leaves fall",
+          "read_text": false,
+          "image": ""
+        }
+      ],
+      "correctAnswer": [
+        {
+          "left": "Summer",
+          "right": "Hot and sunny"
+        },
+        {
+          "left": "Winter",
+          "right": "Cold and foggy"
         },
         {
           "left": "Rainy",
-          "right": "Monsoon"
+          "right": "Wet and cloudy"
         },
         {
-          "left": "Pleasant and breezy",
-          "right": "Spring"
+          "left": "Spring",
+          "right": "Flowers bloom"
         },
         {
-          "left": "Foggy",
-          "right": "Autumn"
+          "left": "Autumn",
+          "right": "Leaves fall"
         }
       ],
-      "explanation": "Each season has characteristic weather patterns."
-    },
-    {
-      "id": 3,
-      "type": "matchTheFollowing",
-      "marks": 5,
-      "question": {
-        "hide_text": false,
-        "text": "Match the scientist to their discovery (Level 4 - Application):",
-        "read_text": false,
-        "image": ""
-      },
-      "leftItems": [
-        {
-          "hide_text": false,
-          "text": "Gregor Mendel",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Isaac Newton",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Marie Curie",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Benjamin Franklin",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Charles Darwin",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
-        {
-          "hide_text": false,
-          "text": "Electricity",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Gravity",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Genetics",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Radioactivity",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Evolution",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctPairs": [
-        {
-          "left": "Benjamin Franklin",
-          "right": "Electricity"
-        },
-        {
-          "left": "Isaac Newton",
-          "right": "Gravity"
-        },
-        {
-          "left": "Marie Curie",
-          "right": "Radioactivity"
-        },
-        {
-          "left": "Gregor Mendel",
-          "right": "Genetics"
-        },
-        {
-          "left": "Charles Darwin",
-          "right": "Evolution"
-        }
-      ],
-      "explanation": "These scientists are known for foundational discoveries."
-    },
-    {
-      "id": 4,
-      "type": "matchTheFollowing",
-      "marks": 5,
-      "question": {
-        "hide_text": false,
-        "text": "Match the separation technique to what it separates:",
-        "read_text": false,
-        "image": ""
-      },
-      "leftItems": [
-        {
-          "hide_text": false,
-          "text": "Filtration",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Evaporation",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Magnetic separation",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Sieving",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Decantation",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
-        {
-          "hide_text": false,
-          "text": "Sand from muddy water",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Salt from water",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Iron filings from sand",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Pebbles from flour",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Oil from water",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctPairs": [
-        {
-          "left": "Filtration",
-          "right": "Sand from muddy water"
-        },
-        {
-          "left": "Evaporation",
-          "right": "Salt from water"
-        },
-        {
-          "left": "Magnetic separation",
-          "right": "Iron filings from sand"
-        },
-        {
-          "left": "Sieving",
-          "right": "Pebbles from flour"
-        },
-        {
-          "left": "Decantation",
-          "right": "Oil from water"
-        }
-      ],
-      "explanation": "Each method is suited for specific mixtures."
-    },
-    {
-      "id": 5,
-      "type": "matchTheFollowing",
-      "marks": 5,
-      "question": {
-        "hide_text": false,
-        "text": "Match the item to whether it's living or non-living:",
-        "read_text": false,
-        "image": ""
-      },
-      "leftItems": [
-        {
-          "hide_text": false,
-          "text": "Tree",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Car",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Bird",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Rock",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Cat",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "rightItems": [
-        {
-          "hide_text": false,
-          "text": "Living",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Non-living",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Living",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Non-living",
-          "read_text": false,
-          "image": ""
-        },
-        {
-          "hide_text": false,
-          "text": "Living",
-          "read_text": false,
-          "image": ""
-        }
-      ],
-      "correctPairs": [
-        {
-          "left": "Tree",
-          "right": "Living"
-        },
-        {
-          "left": "Car",
-          "right": "Non-living"
-        },
-        {
-          "left": "Bird",
-          "right": "Living"
-        },
-        {
-          "left": "Rock",
-          "right": "Non-living"
-        },
-        {
-          "left": "Cat",
-          "right": "Living"
-        }
-      ],
-      "explanation": "Living things grow, reproduce, and respond to stimuli."
+      "explanation": "Each season is characterized by specific weather patterns and changes in nature."
     }
   ]
 }

@@ -8,38 +8,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the part of a plant to its function:",
+        "text": "Match each stage to the correct phase in the life cycle of a frog:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Leaves",
+          "text": "Young frog",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Flowers",
+          "text": "Tadpole with legs",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Stem",
+          "text": "Tadpole",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Roots",
+          "text": "Egg",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Fruits",
+          "text": "Adult frog",
           "read_text": false,
           "image": ""
         }
@@ -47,58 +47,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Absorb water",
+          "text": "Tail becomes shorter",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Make food",
+          "text": "Starts developing limbs",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Support plant",
+          "text": "Has tail and gills",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Attract pollinators",
+          "text": "Beginning of life",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Carry seeds",
+          "text": "Fully grown and can reproduce",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Roots",
-          "right": "Absorb water"
+          "left": "Egg",
+          "right": "Beginning of life"
         },
         {
-          "left": "Leaves",
-          "right": "Make food"
+          "left": "Tadpole",
+          "right": "Has tail and gills"
         },
         {
-          "left": "Stem",
-          "right": "Support plant"
+          "left": "Tadpole with legs",
+          "right": "Starts developing limbs"
         },
         {
-          "left": "Flowers",
-          "right": "Attract pollinators"
+          "left": "Young frog",
+          "right": "Tail becomes shorter"
         },
         {
-          "left": "Fruits",
-          "right": "Carry seeds"
+          "left": "Adult frog",
+          "right": "Fully grown and can reproduce"
         }
       ],
-      "explanation": "Each part of the plant performs a unique function important for survival."
+      "explanation": "Each stage of a frog's life has distinct characteristics."
     },
     {
       "id": 2,
@@ -106,38 +106,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the sense organ to the correct sense:",
+        "text": "Match the state of matter to its example:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Tongue",
+          "text": "Ice",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Ears",
+          "text": "Liquid",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Nose",
+          "text": "Gas",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Eyes",
+          "text": "Solid",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Skin",
+          "text": "Steam",
           "read_text": false,
           "image": ""
         }
@@ -145,58 +145,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Hearing",
+          "text": "Air",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Taste",
+          "text": "Table",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Smell",
+          "text": "Frozen water",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Sight",
+          "text": "Water",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Touch",
+          "text": "Water vapor",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Eyes",
-          "right": "Sight"
+          "left": "Solid",
+          "right": "Table"
         },
         {
-          "left": "Ears",
-          "right": "Hearing"
+          "left": "Liquid",
+          "right": "Water"
         },
         {
-          "left": "Nose",
-          "right": "Smell"
+          "left": "Gas",
+          "right": "Air"
         },
         {
-          "left": "Tongue",
-          "right": "Taste"
+          "left": "Ice",
+          "right": "Frozen water"
         },
         {
-          "left": "Skin",
-          "right": "Touch"
+          "left": "Steam",
+          "right": "Water vapor"
         }
       ],
-      "explanation": "Each sense organ is responsible for a specific sense."
+      "explanation": "Each example matches a particular state of matter."
     },
     {
       "id": 3,
@@ -204,38 +204,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the animals to their category:",
+        "text": "Match each type of energy source with its example:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Parrot",
+          "text": "Fuel",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Lion",
+          "text": "Solar energy",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Fish",
+          "text": "Wind",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Frog",
+          "text": "Battery",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Snake",
+          "text": "Water",
           "read_text": false,
           "image": ""
         }
@@ -243,58 +243,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Bird",
+          "text": "Windmill",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Amphibian",
+          "text": "Sun",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Aquatic",
+          "text": "Petrol",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Mammal",
+          "text": "Torch light",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Reptile",
+          "text": "Hydropower plant",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Frog",
-          "right": "Amphibian"
+          "left": "Solar energy",
+          "right": "Sun"
         },
         {
-          "left": "Lion",
-          "right": "Mammal"
+          "left": "Battery",
+          "right": "Torch light"
         },
         {
-          "left": "Parrot",
-          "right": "Bird"
+          "left": "Fuel",
+          "right": "Petrol"
         },
         {
-          "left": "Fish",
-          "right": "Aquatic"
+          "left": "Wind",
+          "right": "Windmill"
         },
         {
-          "left": "Snake",
-          "right": "Reptile"
+          "left": "Water",
+          "right": "Hydropower plant"
         }
       ],
-      "explanation": "Animals are grouped based on their features and habitats."
+      "explanation": "Each source provides energy to power devices or machines."
     },
     {
       "id": 4,
@@ -302,38 +302,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the layer of Earth to its description:",
+        "text": "Match each type of pollution to its example:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Outer Core",
+          "text": "Noise pollution",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Mantle",
+          "text": "Water pollution",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Inner Core",
+          "text": "Land pollution",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Crust",
+          "text": "Air pollution",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Soil",
+          "text": "Light pollution",
           "read_text": false,
           "image": ""
         }
@@ -341,58 +341,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Solid metal center",
+          "text": "Litter on roads",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Semi-solid rock",
+          "text": "Oil spills",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Liquid iron and nickel",
+          "text": "Honking vehicles",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Thinnest layer",
+          "text": "Smoke from factories",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Top layer where plants grow",
+          "text": "Too many streetlights",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Crust",
-          "right": "Thinnest layer"
+          "left": "Air pollution",
+          "right": "Smoke from factories"
         },
         {
-          "left": "Mantle",
-          "right": "Semi-solid rock"
+          "left": "Water pollution",
+          "right": "Oil spills"
         },
         {
-          "left": "Outer Core",
-          "right": "Liquid iron and nickel"
+          "left": "Noise pollution",
+          "right": "Honking vehicles"
         },
         {
-          "left": "Inner Core",
-          "right": "Solid metal center"
+          "left": "Land pollution",
+          "right": "Litter on roads"
         },
         {
-          "left": "Soil",
-          "right": "Top layer where plants grow"
+          "left": "Light pollution",
+          "right": "Too many streetlights"
         }
       ],
-      "explanation": "Earth is made up of different layers, each with unique properties."
+      "explanation": "Different types of pollution affect the environment in various ways."
     },
     {
       "id": 5,
@@ -400,38 +400,38 @@
       "marks": 5,
       "question": {
         "hide_text": false,
-        "text": "Match the example to the type of simple machine:",
+        "text": "Match the property of material to its object:",
         "read_text": false,
         "image": ""
       },
       "leftItems": [
         {
           "hide_text": false,
-          "text": "Pulley",
+          "text": "Flexible",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Scissors",
+          "text": "Waterproof",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Ramp",
+          "text": "Hard",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Wheelbarrow",
+          "text": "Transparent",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Screw",
+          "text": "Soft",
           "read_text": false,
           "image": ""
         }
@@ -439,58 +439,58 @@
       "rightItems": [
         {
           "hide_text": false,
-          "text": "Lever",
+          "text": "Rubber band",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Used to lift bucket",
+          "text": "Glass",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Second class lever",
+          "text": "Rock",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Inclined plane",
+          "text": "Cotton",
           "read_text": false,
           "image": ""
         },
         {
           "hide_text": false,
-          "text": "Used to hold things tightly",
+          "text": "Raincoat",
           "read_text": false,
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
-          "left": "Scissors",
-          "right": "Lever"
+          "left": "Transparent",
+          "right": "Glass"
         },
         {
-          "left": "Wheelbarrow",
-          "right": "Second class lever"
+          "left": "Flexible",
+          "right": "Rubber band"
         },
         {
-          "left": "Ramp",
-          "right": "Inclined plane"
+          "left": "Hard",
+          "right": "Rock"
         },
         {
-          "left": "Pulley",
-          "right": "Used to lift bucket"
+          "left": "Waterproof",
+          "right": "Raincoat"
         },
         {
-          "left": "Screw",
-          "right": "Used to hold things tightly"
+          "left": "Soft",
+          "right": "Cotton"
         }
       ],
-      "explanation": "Simple machines make work easier and are used in tools we use daily."
+      "explanation": "Each object shows a key property used in materials classification."
     }
   ]
 }

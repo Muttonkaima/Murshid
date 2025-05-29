@@ -52,7 +52,7 @@
           "text": "ದೃತಿ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪ್ರೀತಿ",
           "right": "ಪ್ರೀತಿ"
@@ -124,7 +124,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ತೃಣ",
           "right": "ತೃಣ"
@@ -196,7 +196,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ತುಳಸಿ",
           "right": "ತುಳಸಿ"
@@ -262,7 +262,7 @@
           "text": "ನೊರೆ"
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ನೊರೆ",
           "right": "ನೊರೆ"
@@ -334,7 +334,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ದೃತಿ",
           "right": "ದೃತಿ"
@@ -406,7 +406,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ತೇರು",
           "right": "ತೇರು"
@@ -478,7 +478,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಗಿಳಿ",
           "right": "ಗಿಳಿ"
@@ -550,7 +550,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಜೂಜೂ",
           "right": "ಜೂಜೂ"
@@ -622,7 +622,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪರಿಮಳ",
           "right": "ಪರಿಮಳ"
@@ -694,7 +694,7 @@
           "image": ""
         }
       ],
-      "correctPairs": [
+      "correctAnswer": [
         {
           "left": "ಪರಮ",
           "right": "ಪರಮ"

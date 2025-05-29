@@ -83,7 +83,7 @@
           "text": "ಬ"
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "ಹೆಬ್ಬಲಸು": [
           "ಹೆ",
           "ಬ",
@@ -168,7 +168,7 @@
           "text": "ಜ"
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "ನುಗಕಾಯಿ": [
           "ನು",
           "ಗ",
@@ -250,7 +250,7 @@
           "text": "ಜ"
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "ಸಜ್ಜಿಗೆ": [
           "ಸ",
           "ಜ",
@@ -344,7 +344,7 @@
           "text": "ನ್"
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "ಎಚ್ಚರಿಕೆ": [
           "ಎ",
           "ಚ",
@@ -444,7 +444,7 @@
           "text": "ಅ"
         }
       ],
-      "correctSorting": {
+      "correctAnswer": {
         "ಹಗ್ಗದಾಟ": [
           "ಹ",
           "ಗ",

@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      'upload.wikimedia.org',
+      'www.researchgate.net',
+      'images.unsplash.com',
+      'source.unsplash.com',
+      'via.placeholder.com',
+      'picsum.photos'
+    ],
+  },
 };
 
 export default nextConfig;
