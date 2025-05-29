@@ -56,7 +56,7 @@ export default function VerifyOtpPage() {
       }
       
       // Redirect to set-password page with the email and type
-      router.push(`/set-password?email=${encodeURIComponent(email)}&type=${type}`);
+      router.push(`/set-password?email=${encodeURIComponent(email)}&type=${type}&token=${data.token}`);
       
     } catch (error: any) {
       console.error('Error verifying OTP:', error);

@@ -20,6 +20,16 @@ export default function SetPasswordPage() {
   const searchParams = useSearchParams();
   const email = searchParams.get('email') || '';
   const type = searchParams.get('type') || 'reset';
+  const token = searchParams.get('token') || '';
+
+  // Verify tokens exist and match
+  useEffect(() => {
+    const verificationToken = sessionStorage.getItem('verificationToken');
+    if (!token || !verificationToken || token !== verificationToken) {
+      toast.error('Invalid or expired verification link');
+      router.push('/login');
+    }
+  }, [token, router]);
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
