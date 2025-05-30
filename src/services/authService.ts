@@ -184,37 +184,45 @@ export const authService = {
   },
   
   // Google OAuth login
-  loginWithGoogle(action: 'login' | 'signup' = 'login'): void {
-    try {
-      // Store the action in localStorage to handle the response
-      localStorage.setItem('oauthAction', action);
-      
-      // Get the current URL to redirect back after authentication
-      const frontendUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
-      const redirectUri = `${frontendUrl}/auth/callback`;
-      
-      // Get the backend URL
-      const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      
-      // Construct the OAuth URL
-      const authUrl = new URL(`${backendUrl}/api/auth/google`);
-      authUrl.searchParams.set('action', action);
-      authUrl.searchParams.set('redirect_uri', redirectUri);
-      
-      // Store the current path to redirect back after authentication
-      if (typeof window !== 'undefined') {
-        const currentPath = window.location.pathname;
-        if (currentPath !== '/login' && currentPath !== '/signup') {
-          localStorage.setItem('redirectAfterAuth', currentPath);
+  loginWithGoogle(action: 'login' | 'signup' = 'login'): Promise<void> {
+    return new Promise((resolve, reject) => {
+      try {
+        // Store the action in localStorage to handle the response
+        localStorage.setItem('oauthAction', action);
+        
+        // Get the current URL to redirect back after authentication
+        const frontendUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
+        const redirectUri = `${frontendUrl}/auth/callback`;
+        
+        // Get the backend URL
+        const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+        
+        // Construct the OAuth URL
+        const authUrl = new URL(`${backendUrl}/api/auth/google`);
+        authUrl.searchParams.set('action', action);
+        authUrl.searchParams.set('redirect_uri', redirectUri);
+        
+        // Store the current path to redirect back after authentication
+        if (typeof window !== 'undefined') {
+          const currentPath = window.location.pathname;
+          if (currentPath !== '/login' && currentPath !== '/signup') {
+            localStorage.setItem('redirectAfterAuth', currentPath);
+          }
         }
+        
+        // Redirect to the OAuth URL
+        window.location.href = authUrl.toString();
+        
+        // The promise will never resolve if the redirect is successful
+        // This is just to satisfy TypeScript
+        return new Promise(() => {});
+        
+      } catch (error) {
+        console.error('Google OAuth error:', error);
+        reject(error instanceof Error ? error : new Error('Failed to initiate Google authentication'));
+        return Promise.reject(error);
       }
-      
-      // Redirect to the OAuth URL
-      window.location.href = authUrl.toString();
-    } catch (error) {
-      console.error('Google OAuth error:', error);
-      throw new Error('Failed to initiate Google authentication');
-    }
+    });
   },
   
   // Handle successful authentication

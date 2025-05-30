@@ -74,39 +74,45 @@ exports.googleAuthCallback = (req, res, next) => {
   
   // Handle authentication with Passport
   passport.authenticate('google', {
-    session: false // We're using JWT, not sessions
-  }, (err, user, info) => {
+    session: false, // We're using JWT, not sessions
+    failWithError: true // This will make passport return an error instead of a 401
+  }, async (err, user, info) => {
     try {
+      // If there was an error in the Passport strategy, handle it
       if (err) {
-        console.error('Passport error:', err);
+        console.error('Passport authentication error:', err);
         const errorMessage = encodeURIComponent(err.message || 'Authentication failed');
         return res.redirect(`${redirectUri}?error=${errorMessage}`);
       }
       
+      // If we get here, authentication was successful
       if (!user) {
-        const errorMessage = action === 'signup' 
-          ? 'Failed to sign up with Google. Please try again.' 
-          : 'No account found with this Google account. Please sign up first.';
+        // This should not happen as Passport should have handled all error cases
+        const errorMessage = 'Authentication failed. Please try again.';
         return res.redirect(`${redirectUri}?error=${encodeURIComponent(errorMessage)}`);
       }
       
-      // If we get here, authentication was successful
-      // Generate JWT
+      // If we get here, the authentication was successful
+      // Generate JWT token
       const token = signToken(user._id);
       
-      // Convert user to plain object and remove sensitive data
-      const userObj = user.toObject();
-      delete userObj.password;
-      delete userObj.passwordChangedAt;
-      delete userObj.passwordResetToken;
-      delete userObj.passwordResetExpires;
+      // Prepare user data to send back
+      const userData = {
+        id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        isEmailVerified: user.isEmailVerified,
+        authProvider: user.authProvider
+      };
       
-      // Create the redirect URL with token and user data as URL parameters
-      const redirectUrl = new URL(redirectUri);
-      redirectUrl.searchParams.set('token', token);
-      redirectUrl.searchParams.set('user', JSON.stringify(userObj));
+      // Redirect back to the frontend with token and user data
+      const finalRedirectUrl = new URL(redirectUri);
+      finalRedirectUrl.searchParams.set('token', token);
+      finalRedirectUrl.searchParams.set('user', JSON.stringify(userData));
       
-      return res.redirect(redirectUrl.toString());
+      return res.redirect(finalRedirectUrl.toString());
       
     } catch (error) {
       console.error('Google OAuth Callback Error:', error);

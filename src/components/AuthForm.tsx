@@ -280,11 +280,46 @@ export default function AuthForm() {
     setIsGoogleLoading(true);
     
     try {
+      // Store the current path for redirection after successful login
+      if (typeof window !== 'undefined') {
+        const currentPath = window.location.pathname;
+        if (currentPath !== '/login' && currentPath !== '/signup') {
+          localStorage.setItem('redirectAfterAuth', currentPath);
+        }
+      }
+      
       // Use authService to handle Google OAuth
       await authService.loginWithGoogle(isLogin ? 'login' : 'signup');
-    } catch (error) {
+      
+      // This line will only be reached if there's an error before redirect
+      throw new Error('Authentication failed. Please try again.');
+      
+    } catch (error: any) {
       console.error('Google OAuth error:', error);
-      toast.error('Failed to initiate Google authentication. Please try again.');
+      
+      // Don't show error if it's a redirect (we'll handle it in the callback)
+      if (error.message.includes('Failed to initiate Google authentication')) {
+        return;
+      }
+      
+      // Handle specific error messages
+      let errorMessage = 'Authentication failed. Please try again.';
+      if (error.message.includes('already registered with email and password') ||
+          error.message.includes('already signed up with Google') ||
+          error.message.includes('No account found with this Google account')) {
+        errorMessage = error.message;
+      }
+      
+      toast.error(errorMessage, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: 'light',
+      });
+      
       setIsGoogleLoading(false);
     }
   };

@@ -49,19 +49,37 @@ passport.use(
         const state = req.query.state ? JSON.parse(Buffer.from(req.query.state, 'base64').toString()) : {};
         const action = state?.action || 'login';
 
-        // Check if user already exists by googleId or email
-        let user = await User.findOne({
-          $or: [
-            { googleId: profile.id },
-            { email }
-          ]
-        });
+        // Always check if user exists by email first
+        const existingUser = await User.findOne({ email });
+
+        // Case 1: User exists with local auth but trying to sign in with Google
+        if (existingUser && existingUser.authProvider === 'local' && action === 'login') {
+          return done(new AppError('This email is already registered with email and password. Please sign in with your email and password.', 400));
+        }
+
+        // Case 2: User exists with Google auth but trying to sign up again
+        if (existingUser && existingUser.authProvider === 'google' && action === 'signup') {
+          return done(new AppError('You have already signed up with Google. Please sign in instead.', 400));
+        }
+
+        // Case 3: User exists with Google auth and trying to sign in
+        if (existingUser && existingUser.authProvider === 'google' && action === 'login') {
+          // Update last login time
+          existingUser.lastLogin = Date.now();
+          await existingUser.save({ validateBeforeSave: false });
+          return done(null, existingUser);
+        }
+
+        // Case 4: User exists with local auth but trying to sign up with Google
+        if (existingUser && existingUser.authProvider === 'local' && action === 'signup') {
+          return done(new AppError('This email is already registered with email and password. Please sign in with your email and password.', 400));
+        }
 
         // Handle new user signup
-        if (!user && action === 'signup') {
+        if (!existingUser && action === 'signup') {
           const { firstName, lastName } = splitName(profile.displayName);
           
-          user = await User.create({
+          const newUser = await User.create({
             firstName,
             lastName,
             email,
@@ -69,27 +87,11 @@ passport.use(
             authProvider: 'google',
             isEmailVerified: true,
             // Generate a random password that won't be used
-            password: require('crypto').randomBytes(16).toString('hex')
+            password: require('crypto').randomBytes(16).toString('hex'),
+            lastLogin: Date.now()
           });
           
-          return done(null, user);
-        }
-        
-        // Handle existing user login
-        if (user) {
-          // If user exists but doesn't have googleId, link it
-          if (!user.googleId) {
-            user.googleId = profile.id;
-            user.authProvider = 'google';
-            user.isEmailVerified = true;
-            await user.save({ validateBeforeSave: false });
-          }
-          
-          // Update last login time
-          user.lastLogin = Date.now();
-          await user.save({ validateBeforeSave: false });
-          
-          return done(null, user);
+          return done(null, newUser);
         }
 
         // If we get here, it's a login attempt but no user found
@@ -97,7 +99,7 @@ passport.use(
           return done(new AppError('No account found with this Google account. Please sign up first.', 404));
         }
 
-        return done(new AppError('Authentication failed', 401));
+        return done(new AppError('Authentication failed. Please try again.', 401));
         
       } catch (error) {
         console.error('Google OAuth Error:', error);
