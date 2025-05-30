@@ -29,10 +29,13 @@ const createSendToken = (user, statusCode, res) => {
 
 // Google OAuth handlers
 exports.googleAuth = (req, res, next) => {
-  const { action = 'login' } = req.query; // 'login' or 'signup'
+  const { action = 'login', redirect_uri } = req.query; // 'login' or 'signup'
   
-  // Store the action in the session or state
-  const state = Buffer.from(JSON.stringify({ action })).toString('base64');
+  // Store the action and redirect_uri in the state
+  const state = Buffer.from(JSON.stringify({ 
+    action,
+    redirect_uri: redirect_uri || `${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/callback`
+  })).toString('base64');
   
   // Configure the authentication parameters
   const authParams = {
@@ -40,8 +43,7 @@ exports.googleAuth = (req, res, next) => {
     accessType: 'offline',
     prompt: 'select_account',
     state: state,
-    // Pass the action to the strategy as a custom parameter
-    callbackURL: process.env.GOOGLE_CALLBACK_URL
+    callbackURL: process.env.GOOGLE_CALLBACK_URL || `${process.env.BACKEND_URL || 'http://localhost:5000'}/api/auth/google/callback`
   };
   
   // Authenticate with Passport
@@ -52,34 +54,64 @@ exports.googleAuth = (req, res, next) => {
 exports.googleAuthCallback = (req, res, next) => {
   const { state } = req.query;
   
-  // Parse the state to get the original action
-  const stateObj = state ? JSON.parse(Buffer.from(state, 'base64').toString()) : {};
-  const action = stateObj?.action || 'login';
+  // Parse the state to get the original action and redirect_uri
+  let stateObj = {};
+  let redirectUri = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/callback`;
+  let action = 'login';
+  
+  try {
+    if (state) {
+      stateObj = JSON.parse(Buffer.from(state, 'base64').toString());
+      action = stateObj.action || 'login';
+      if (stateObj.redirect_uri) {
+        redirectUri = stateObj.redirect_uri;
+      }
+    }
+  } catch (err) {
+    console.error('Error parsing state:', err);
+    return next(new AppError('Invalid state parameter', 400));
+  }
   
   // Handle authentication with Passport
   passport.authenticate('google', {
-    failureRedirect: '/login', // Redirect on failure
     session: false // We're using JWT, not sessions
   }, (err, user, info) => {
     try {
       if (err) {
-        return next(new AppError(err.message || 'Authentication failed', 401));
+        console.error('Passport error:', err);
+        const errorMessage = encodeURIComponent(err.message || 'Authentication failed');
+        return res.redirect(`${redirectUri}?error=${errorMessage}`);
       }
       
       if (!user) {
-        if (action === 'signup') {
-          return next(new AppError('Failed to sign up with Google. Please try again.', 400));
-        }
-        return next(new AppError('No account found with this Google account. Please sign up first.', 404));
+        const errorMessage = action === 'signup' 
+          ? 'Failed to sign up with Google. Please try again.' 
+          : 'No account found with this Google account. Please sign up first.';
+        return res.redirect(`${redirectUri}?error=${encodeURIComponent(errorMessage)}`);
       }
       
       // If we get here, authentication was successful
-      // Generate JWT and send response
-      createSendToken(user, 200, res);
+      // Generate JWT
+      const token = signToken(user._id);
+      
+      // Convert user to plain object and remove sensitive data
+      const userObj = user.toObject();
+      delete userObj.password;
+      delete userObj.passwordChangedAt;
+      delete userObj.passwordResetToken;
+      delete userObj.passwordResetExpires;
+      
+      // Create the redirect URL with token and user data as URL parameters
+      const redirectUrl = new URL(redirectUri);
+      redirectUrl.searchParams.set('token', token);
+      redirectUrl.searchParams.set('user', JSON.stringify(userObj));
+      
+      return res.redirect(redirectUrl.toString());
       
     } catch (error) {
       console.error('Google OAuth Callback Error:', error);
-      next(new AppError('Error during Google authentication', 500));
+      const errorMessage = encodeURIComponent('An error occurred during authentication');
+      return res.redirect(`${redirectUri}?error=${errorMessage}`);
     }
   })(req, res, next);
 };

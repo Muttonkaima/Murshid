@@ -275,16 +275,13 @@ export default function AuthForm() {
     setIsLogin(!isLogin);
   };
 
-  const handleGoogleAuth = (e: React.MouseEvent) => {
+  const handleGoogleAuth = async (e: React.MouseEvent) => {
     e.preventDefault();
     setIsGoogleLoading(true);
     
     try {
-      // Determine the action based on the current form state
-      const action = isLogin ? 'login' : 'signup';
-      
-      // Redirect to the Google OAuth endpoint with the appropriate action
-      window.location.href = `${API_URL}/api/auth/google?action=${action}`;
+      // Use authService to handle Google OAuth
+      await authService.loginWithGoogle(isLogin ? 'login' : 'signup');
     } catch (error) {
       console.error('Google OAuth error:', error);
       toast.error('Failed to initiate Google authentication. Please try again.');

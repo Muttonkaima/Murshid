@@ -53,6 +53,21 @@ const deleteCookie = (name: string) => {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${window.location.pathname};`;
 };
 
+// Google OAuth response type
+export interface GoogleAuthResponse {
+  status: string;
+  token: string;
+  data: {
+    user: StoredUserData & {
+      _id: string;
+      createdAt: string;
+      updatedAt: string;
+      __v: number;
+      id: string;
+    };
+  };
+}
+
 export const authService = {
   // Sign up a new user
   async signup(userData: SignupData) {
@@ -68,21 +83,25 @@ export const authService = {
   },
 
   // Store user data in localStorage
-  storeUserData(userData: any) {
-    if (!userData) return;
+  storeUserData(userData: any): void {
+    if (typeof window === 'undefined' || !userData) return;
     
-    const userToStore: Partial<StoredUserData> = {
-      id: userData._id || userData.id,
-      email: userData.email,
-      firstName: userData.firstName,
-      lastName: userData.lastName,
-      role: userData.role || 'user',
-      isEmailVerified: userData.isEmailVerified || false,
-      authProvider: userData.authProvider || 'local',
-      googleId: userData.googleId || null
-    };
-    
-    localStorage.setItem('user', JSON.stringify(userToStore));
+    try {
+      const userToStore: Partial<StoredUserData> = {
+        id: userData._id || userData.id,
+        email: userData.email,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        role: userData.role || 'user',
+        isEmailVerified: userData.isEmailVerified || false,
+        authProvider: userData.authProvider || 'local',
+        googleId: userData.googleId || null
+      };
+      
+      localStorage.setItem('user', JSON.stringify(userToStore));
+    } catch (error) {
+      console.error('Error storing user data:', error);
+    }
   },
 
   // Log in a user
@@ -161,12 +180,79 @@ export const authService = {
 
   // Update password
   async updatePassword(currentPassword: string, newPassword: string) {
-    const response = await api.patch('/auth/update-my-password', {
-      currentPassword,
-      newPassword
-    });
-    return response.data;
-  }
+    return api.post('/users/update-password', { currentPassword, newPassword });
+  },
+  
+  // Google OAuth login
+  loginWithGoogle(action: 'login' | 'signup' = 'login'): void {
+    try {
+      // Store the action in localStorage to handle the response
+      localStorage.setItem('oauthAction', action);
+      
+      // Get the current URL to redirect back after authentication
+      const frontendUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
+      const redirectUri = `${frontendUrl}/auth/callback`;
+      
+      // Get the backend URL
+      const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      
+      // Construct the OAuth URL
+      const authUrl = new URL(`${backendUrl}/api/auth/google`);
+      authUrl.searchParams.set('action', action);
+      authUrl.searchParams.set('redirect_uri', redirectUri);
+      
+      // Store the current path to redirect back after authentication
+      if (typeof window !== 'undefined') {
+        const currentPath = window.location.pathname;
+        if (currentPath !== '/login' && currentPath !== '/signup') {
+          localStorage.setItem('redirectAfterAuth', currentPath);
+        }
+      }
+      
+      // Redirect to the OAuth URL
+      window.location.href = authUrl.toString();
+    } catch (error) {
+      console.error('Google OAuth error:', error);
+      throw new Error('Failed to initiate Google authentication');
+    }
+  },
+  
+  // Handle successful authentication
+  handleAuthentication(token: string, userData: any): void {
+    if (typeof window === 'undefined') return;
+    
+    try {
+      // Store the token in cookies
+      const cookieOptions = {
+        path: '/',
+        maxAge: 7 * 24 * 60 * 60, // 7 days in seconds
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production'
+      };
+      
+      document.cookie = `token=${token}; ${Object.entries(cookieOptions)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('; ')}`;
+      
+      // Store the token in localStorage
+      localStorage.setItem('token', token);
+      
+      // Store user data in localStorage
+      this.storeUserData(userData);
+      
+      // Get the redirect URL from localStorage or default to '/dashboard'
+      const redirectPath = localStorage.getItem('redirectAfterAuth') || '/dashboard';
+      localStorage.removeItem('redirectAfterAuth');
+      
+      // Redirect to the desired page
+      window.location.href = redirectPath;
+    } catch (error) {
+      console.error('Error handling authentication:', error);
+      throw new Error('Failed to complete authentication');
+    }
+  },
+  
+
 };
 
 export default authService;
