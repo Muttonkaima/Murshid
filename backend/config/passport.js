@@ -54,12 +54,12 @@ passport.use(
 
         // Case 1: User exists with local auth but trying to sign in with Google
         if (existingUser && existingUser.authProvider === 'local' && action === 'login') {
-          return done(new AppError('This email is already registered with email and password. Please sign in with your email and password.', 400));
+          return done(new AppError('Email registered with password. Use email & password to sign in.', 400));
         }
 
         // Case 2: User exists with Google auth but trying to sign up again
         if (existingUser && existingUser.authProvider === 'google' && action === 'signup') {
-          return done(new AppError('You have already signed up with Google. Please sign in instead.', 400));
+          return done(new AppError('Already signed up with Google. Please sign in.', 400));
         }
 
         // Case 3: User exists with Google auth and trying to sign in
@@ -72,7 +72,7 @@ passport.use(
 
         // Case 4: User exists with local auth but trying to sign up with Google
         if (existingUser && existingUser.authProvider === 'local' && action === 'signup') {
-          return done(new AppError('This email is already registered with email and password. Please sign in with your email and password.', 400));
+          return done(new AppError('Email registered with password. Use email & password to sign in.', 400));
         }
 
         // Handle new user signup

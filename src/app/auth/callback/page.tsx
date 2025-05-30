@@ -20,15 +20,7 @@ export default function AuthCallbackPage() {
           const errorMessage = decodeURIComponent(error);
           
           // Show error message
-          toast.error(errorMessage, {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: 'light',
-          });
+          toast.error(errorMessage);
           
           // Redirect to login after a short delay to show the toast
           setTimeout(() => {
@@ -74,15 +66,7 @@ export default function AuthCallbackPage() {
           localStorage.removeItem('redirectAfterAuth');
           
           // Show success message
-          toast.success('Successfully signed in!', {
-            position: 'top-center',
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: 'light',
-          });
+          toast.success('Successfully signed in!');
           
           // Redirect to the desired page
           window.location.href = redirectPath;
@@ -96,15 +80,7 @@ export default function AuthCallbackPage() {
         console.error('Authentication error:', err);
         // Show error toast and redirect to login
         const errorMessage = err instanceof Error ? err.message : 'Authentication failed';
-        toast.error(errorMessage, {
-          position: 'top-center',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: 'light',
-        });
+        toast.error(errorMessage);
         
         // Redirect to login after a short delay to show the toast
         setTimeout(() => {
