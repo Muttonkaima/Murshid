@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
-import { FaArrowLeft, FaEye, FaEyeSlash, FaSpinner } from 'react-icons/fa';
+import { FaArrowLeft, FaEye, FaEyeSlash, FaSpinner, FaGoogle } from 'react-icons/fa';
 import { authService } from '@/services/authService';
 import { toast } from 'react-toastify';
+import { API_URL } from '@/services/api';
 
 type FormData = {
   firstName: string;
@@ -19,6 +20,7 @@ export default function AuthForm() {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -271,6 +273,23 @@ export default function AuthForm() {
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
+  };
+
+  const handleGoogleAuth = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsGoogleLoading(true);
+    
+    try {
+      // Determine the action based on the current form state
+      const action = isLogin ? 'login' : 'signup';
+      
+      // Redirect to the Google OAuth endpoint with the appropriate action
+      window.location.href = `${API_URL}/api/auth/google?action=${action}`;
+    } catch (error) {
+      console.error('Google OAuth error:', error);
+      toast.error('Failed to initiate Google authentication. Please try again.');
+      setIsGoogleLoading(false);
+    }
   };
 
   const handleBackToSignIn = (e: React.MouseEvent) => {
@@ -546,14 +565,26 @@ export default function AuthForm() {
                 </div>
               </div>
 
-              <div>
+              <div className="space-y-4">
                 <button
                   type="button"
-                  className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 cursor-pointer"
+                  onClick={handleGoogleAuth}
+                  disabled={isGoogleLoading}
+                  className="w-full flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <FcGoogle className="w-5 h-5 mr-2" />
-                  {isLogin ? 'Sign in with Google' : 'Sign up with Google'}
+                  {isGoogleLoading ? (
+                    <>
+                      <FaSpinner className="animate-spin mr-2" size={16} />
+                      {isLogin ? 'Signing in...' : 'Signing up...'}
+                    </>
+                  ) : (
+                    <>
+                      <FcGoogle className="w-5 h-5 mr-2" />
+                      {isLogin ? 'Sign in with Google' : 'Sign up with Google'}
+                    </>
+                  )}
                 </button>
+                
               </div>
             </form>
 

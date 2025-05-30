@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
 const User = require('../models/User');
 const AppError = require('../utils/appError');
 const sendEmail = require('../utils/email');
@@ -24,6 +25,63 @@ const createSendToken = (user, statusCode, res) => {
       user
     }
   });
+};
+
+// Google OAuth handlers
+exports.googleAuth = (req, res, next) => {
+  const { action = 'login' } = req.query; // 'login' or 'signup'
+  
+  // Store the action in the session or state
+  const state = Buffer.from(JSON.stringify({ action })).toString('base64');
+  
+  // Configure the authentication parameters
+  const authParams = {
+    scope: ['profile', 'email'],
+    accessType: 'offline',
+    prompt: 'select_account',
+    state: state,
+    // Pass the action to the strategy as a custom parameter
+    callbackURL: process.env.GOOGLE_CALLBACK_URL
+  };
+  
+  // Authenticate with Passport
+  passport.authenticate('google', authParams)(req, res, next);
+};
+
+// Google OAuth callback handler
+exports.googleAuthCallback = (req, res, next) => {
+  const { state } = req.query;
+  
+  // Parse the state to get the original action
+  const stateObj = state ? JSON.parse(Buffer.from(state, 'base64').toString()) : {};
+  const action = stateObj?.action || 'login';
+  
+  // Handle authentication with Passport
+  passport.authenticate('google', {
+    failureRedirect: '/login', // Redirect on failure
+    session: false // We're using JWT, not sessions
+  }, (err, user, info) => {
+    try {
+      if (err) {
+        return next(new AppError(err.message || 'Authentication failed', 401));
+      }
+      
+      if (!user) {
+        if (action === 'signup') {
+          return next(new AppError('Failed to sign up with Google. Please try again.', 400));
+        }
+        return next(new AppError('No account found with this Google account. Please sign up first.', 404));
+      }
+      
+      // If we get here, authentication was successful
+      // Generate JWT and send response
+      createSendToken(user, 200, res);
+      
+    } catch (error) {
+      console.error('Google OAuth Callback Error:', error);
+      next(new AppError('Error during Google authentication', 500));
+    }
+  })(req, res, next);
 };
 
 exports.checkEmail = async (req, res, next) => {

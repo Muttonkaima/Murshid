@@ -1,9 +1,21 @@
 const express = require('express');
+const passport = require('passport');
 const authController = require('../controllers/authController');
 const userController = require('../controllers/userController');
 const otpController = require('../controllers/otpController');
 
 const router = express.Router();
+
+// Google OAuth routes
+router.get('/google', authController.googleAuth);
+router.get(
+  '/google/callback',
+  authController.googleAuthCallback,
+  (req, res) => {
+    // Successful authentication, redirect home or send response
+    res.redirect('/');
+  }
+);
 
 // OTP routes
 router.post('/send-otp', otpController.sendOTP);
