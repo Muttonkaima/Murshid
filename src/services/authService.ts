@@ -8,6 +8,8 @@ interface StoredUserData {
   lastName: string;
   role: string;
   isEmailVerified: boolean;
+  authProvider?: 'local' | 'google';
+  googleId?: string;
 }
 
 interface SignupData {
@@ -75,7 +77,9 @@ export const authService = {
       firstName: userData.firstName,
       lastName: userData.lastName,
       role: userData.role || 'user',
-      isEmailVerified: userData.isEmailVerified || false
+      isEmailVerified: userData.isEmailVerified || false,
+      authProvider: userData.authProvider || 'local',
+      googleId: userData.googleId || null
     };
     
     localStorage.setItem('user', JSON.stringify(userToStore));
@@ -86,6 +90,7 @@ export const authService = {
     const response = await api.post('/auth/login', credentials);
     if (response.data.token) {
       setCookie('token', response.data.token);
+      localStorage.setItem('token', response.data.token);
       // Store user data if available
       if (response.data.data?.user) {
         this.storeUserData(response.data.data.user);

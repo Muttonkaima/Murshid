@@ -21,11 +21,21 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'Please provide a valid email']
   },
+  authProvider: {
+    type: String,
+    enum: ['local', 'google'],
+    default: 'local'
+  },
+  googleId: {
+    type: String,
+    sparse: true,
+    unique: true
+  },
   password: {
     type: String,
     required: [
-      function() { return !this.isOtpSignup; }, 
-      'Please provide a password'
+      function() { return this.authProvider === 'local' && !this.isOtpSignup; },
+      'Password is required for local authentication'
     ],
     minlength: [8, 'Password must be at least 8 characters long'],
     select: false
