@@ -130,8 +130,8 @@ exports.checkEmail = async (req, res, next) => {
       return next(new AppError('Please provide an email address', 400));
     }
     
-    const user = await User.findOne({ email }).select('isEmailVerified firstName lastName');
-    
+    const user = await User.findOne({ email }).select('isEmailVerified firstName lastName authProvider');
+    console.log("user from check email",email);
     if (!user) {
       return res.status(200).json({
         status: 'success',
@@ -142,13 +142,15 @@ exports.checkEmail = async (req, res, next) => {
     
     const response = {
       status: 'success',
-      exists: true,
-      isVerified: user.isEmailVerified || false,
-      user: {
+      exists: !!user, // ensures boolean
+      isVerified: !!(user?.isEmailVerified), // safely checks if user exists and then the field
+      isLocal: user?.authProvider === 'local',
+      user: user ? {
         firstName: user.firstName,
         lastName: user.lastName
-      }
+      } : null
     };
+    
     
     res.status(200).json(response);
   } catch (error) {

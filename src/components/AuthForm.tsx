@@ -363,9 +363,12 @@ export default function AuthForm() {
       }
 
       if (!checkUserData.isVerified) {
-        throw new Error('This email is not verified. Please verify your email first.');
+        throw new Error('Email is not verified. Please verify your email first.');
       }
-
+      console.log(checkUserData);
+      if (!checkUserData.isLocal) {
+        throw new Error('Email is registered with Google. Password reset is not available.');
+      }
       // If user exists and is verified, send OTP for password reset
       await sendOTP(formData.email, 'reset');
       
@@ -435,9 +438,9 @@ export default function AuthForm() {
                 <div className="text-center mt-4">
                   <button
                     onClick={handleBackToSignIn}
-                    className="text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
+                    className="text-sm text-gray-900"
                   >
-                    Remember password? <span className="font-medium">Sign in</span>
+                    Remember password? <span className="font-medium text-[var(--primary-color)] cursor-pointer hover:text-[var(--primary-hover)]">Sign in</span>
                   </button>
                 </div>
               </form>
