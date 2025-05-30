@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
+
+// Import database connection
+const connectDB = require('./config/db');
 
 // Import routes
 const authRoutes = require('./routes/auth');
@@ -16,10 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/murshid-ai')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB
+connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
