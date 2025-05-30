@@ -43,7 +43,12 @@ const getCookie = (name: string): string | null => {
 // Helper function to delete cookie
 const deleteCookie = (name: string) => {
   if (typeof document === 'undefined') return;
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  // Clear cookie with all possible paths and domains
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+  // Clear for subdomains as well
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+  // Clear for current path
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${window.location.pathname};`;
 };
 
 export const authService = {
@@ -91,8 +96,26 @@ export const authService = {
 
   // Log out the current user
   logout() {
+    // Clear all auth related cookies
     deleteCookie('token');
+    deleteCookie('connect.sid'); // Clear any session cookies
+    
+    // Clear all auth related local storage
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    
+    // Clear any session storage
+    sessionStorage.clear();
+    
+    // Clear axios default headers
+    if (api.defaults.headers.common['Authorization']) {
+      delete api.defaults.headers.common['Authorization'];
+    }
+    
+    // Redirect to login page
+    if (typeof window !== 'undefined') {
+      window.location.href = '/login';
+    }
   },
 
   // Get the current authenticated user
