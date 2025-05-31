@@ -35,15 +35,6 @@ router.use(authController.protect);
 // Update password for logged-in user
 router.patch('/update-my-password', authController.updatePassword);
 
-// Get current user
-router.get('/me', userController.getMe, userController.getUser);
-
-// Update current user data (except password)
-router.patch('/update-me', userController.updateMe);
-
-// Delete current user (set active to false)
-router.delete('/delete-me', userController.deleteMe);
-
 // Restrict the following routes to admin only
 router.use(authController.restrictTo('admin'));
 

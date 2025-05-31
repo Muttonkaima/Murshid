@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import { FiEdit2, FiLock, FiX, FiSave, FiTrash, FiEdit, FiUpload, FiXCircle, FiCamera } from 'react-icons/fi';
+import { FiLock, FiX, FiSave, FiTrash, FiEdit, FiUpload, FiXCircle, FiCamera } from 'react-icons/fi';
 import { FaUserGraduate, FaEnvelope, FaUser, FaVenusMars, FaCalendarAlt, FaGraduationCap, FaBook, FaSchool } from 'react-icons/fa';
 import Image from 'next/image';
 import Sidebar from '@/components/layout/Sidebar';
@@ -46,7 +46,7 @@ const ProfilePage = () => {
   const [tempImage, setTempImage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
-
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
   // Fetch profile data on component mount
   useEffect(() => {
     const fetchProfile = async () => {
@@ -148,143 +148,6 @@ const ProfilePage = () => {
 
     fetchProfile();
   }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (isUpdating) return;
-    
-    try {
-      setIsUpdating(true);
-      
-      // Prepare the data to be sent to the server
-      const userUpdateData: Record<string, any> = {};
-      const profileUpdateData: Record<string, any> = {};
-      
-      // Handle User model fields
-      if (formData.firstName !== undefined) {
-        userUpdateData.firstName = formData.firstName;
-      }
-      if (formData.lastName !== undefined) {
-        userUpdateData.lastName = formData.lastName;
-      }
-      if (formData.email !== undefined) {
-        userUpdateData.email = formData.email;
-      }
-      
-      // Handle Profile model fields
-      const profileFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
-      profileFields.forEach(field => {
-        if (formData[field] !== undefined) {
-          profileUpdateData[field] = formData[field];
-        }
-      });
-      
-      // If we have both user and profile updates, send them together
-      const updateData = {
-        ...userUpdateData,
-        ...profileUpdateData
-      };
-      
-      // Update profile
-      const response = await updateProfile(updateData);
-      const { user, profile: profileData } = response;
-      
-      // Update local state with the updated profile data
-      const updatedProfileFields: ProfileField[] = [
-        { 
-          id: 'firstName', 
-          label: 'First Name', 
-          value: user.firstName || '', 
-          icon: <FaUser /> 
-        },
-        { 
-          id: 'lastName', 
-          label: 'Last Name', 
-          value: user.lastName || '', 
-          icon: <FaUser /> 
-        },
-        { 
-          id: 'email', 
-          label: 'Email', 
-          value: user.email || '', 
-          icon: <FaEnvelope />, 
-          type: 'email' 
-        },
-        { 
-          id: 'gender', 
-          label: 'Gender', 
-          value: profileData.gender || '', 
-          icon: <FaVenusMars />, 
-          type: 'select', 
-          options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
-        },
-        { 
-          id: 'dateOfBirth', 
-          label: 'Date of Birth', 
-          value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
-          icon: <FaCalendarAlt />, 
-          type: 'date' 
-        },
-        { 
-          id: 'profileType', 
-          label: 'Profile Type', 
-          value: profileData.profileType || '', 
-          icon: <FaUserGraduate />, 
-          type: 'select', 
-          options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
-        },
-        { 
-          id: 'school', 
-          label: 'School', 
-          value: profileData.school || '', 
-          icon: <FaSchool />, 
-          type: 'select', 
-          options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
-        },
-        { 
-          id: 'class', 
-          label: 'Class', 
-          value: profileData.class || '', 
-          icon: <FaGraduationCap />, 
-          type: 'select', 
-          options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
-        },
-        { 
-          id: 'syllabus', 
-          label: 'Syllabus', 
-          value: profileData.syllabus || '', 
-          icon: <FaBook />, 
-          type: 'select', 
-          options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
-        },
-      ];
-
-      setProfile(updatedProfileFields);
-      setBio(profileData.bio || '');
-      setProfileImage(profileData.profileImage || '/images/favicon.png');
-      
-      // Update user data in localStorage
-      localStorage.setItem('user', JSON.stringify({
-        ...JSON.parse(localStorage.getItem('user') || '{}'),
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        role: user.role,
-        onboarded: user.onboarded
-      }));
-      
-      // Close the modal and show success message
-      setIsEditModalOpen(false);
-      toast.success('Profile updated successfully!');
-      
-    } catch (error) {
-      console.error('Error updating profile:', error);
-      toast.error('Failed to update profile. Please try again.');
-    } finally {
-      setIsUpdating(false);
-    }
-  };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -745,15 +608,15 @@ const ProfilePage = () => {
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Mithun</h1>
-                <p className="text-blue-500 font-medium mb-4">mithun@gmail.com</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{user.firstName} {user.lastName}</h1>
+                <p className="text-blue-500 font-medium mb-4">{user.email}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
                   <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full flex items-center">
                     <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    Active
+                    {user.isEmailVerified ? 'Verified' : 'Not Verified'}
                   </span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                    Student
+                   {user.role}
                   </span>
                 </div>
               </div>
