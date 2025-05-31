@@ -47,6 +47,7 @@ export function middleware(request: NextRequest) {
   if (!requestHeaders.has('authorization') && token) {
     requestHeaders.set('authorization', `Bearer ${token}`);
   }
+  
 
   // Continue with the request with the new headers
   return NextResponse.next({

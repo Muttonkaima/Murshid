@@ -11,11 +11,15 @@ export default function AuthCheck({ children }: { children: React.ReactNode }) {
     // Only run on client side
     if (typeof window !== 'undefined') {
       const isAuthenticated = authService.isAuthenticated();
+      const isOnboarded = authService.isOnboarded();
       
       if (!isAuthenticated) {
         // Store the current URL for redirecting after login
         sessionStorage.setItem('redirectAfterLogin', window.location.pathname);
         router.push('/login');
+      }
+      if (isAuthenticated && !isOnboarded) {
+        router.push('/onboarding');
       }
     }
   }, [router]);

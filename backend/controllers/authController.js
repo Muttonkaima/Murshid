@@ -96,9 +96,6 @@ exports.googleAuthCallback = (req, res, next) => {
       // Generate JWT token
       const token = signToken(user._id);
       
-      // Check if user just signed up (no password set yet)
-      const isNewUser = user.authProvider === 'google' && !user.onboarded;
-      
       // Prepare user data to send back
       const userData = {
         id: user._id,
@@ -107,8 +104,8 @@ exports.googleAuthCallback = (req, res, next) => {
         email: user.email,
         role: user.role,
         isEmailVerified: user.isEmailVerified,
+        onboarded: user.onboarded,
         authProvider: user.authProvider,
-        isNewUser: isNewUser
       };
       
       // Redirect back to the frontend with token and user data
@@ -222,7 +219,7 @@ exports.login = async (req, res, next) => {
     }
     
     // 2) Check if user exists
-    const user = await User.findOne({ email }).select('+password');
+    const user = await User.findOne({ email }).select('+password +onboarded');
     
     if (!user) {
       console.log('No user found with email:', email);
@@ -243,6 +240,7 @@ exports.login = async (req, res, next) => {
     }
     
     console.log('Login successful for user:', email);
+    console.log('user data passing from backend',user);
     // 5) If everything ok, send token to client
     createSendToken(user, 200, res);
   } catch (err) {

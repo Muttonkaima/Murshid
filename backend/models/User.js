@@ -72,8 +72,7 @@ const userSchema = new mongoose.Schema({
   },
   onboarded: {
     type: Boolean,
-    default: false,
-    select: false
+    default: false
   },
   passwordChangedAt: Date
 }, {

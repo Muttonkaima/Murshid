@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FaCheck, FaChevronDown, FaUser, FaVenusMars, FaCalendarAlt, FaGraduationCap, FaBook, FaSchool } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast, ToastOptions } from 'react-toastify';
+import authService from '@/services/authService';
 
 interface FormData {
   gender: string;
@@ -124,7 +125,7 @@ const OnboardingPage = () => {
 
   // Options
   const genders = ['Male', 'Female', 'Other', 'Prefer not to say'];
-  const profileTypes = ['Student', 'Dropout', 'Repeating Year', 'Homechooled', 'Other'];
+  const profileTypes = ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'];
   const classes = Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`);
   const syllabi = ['CBSE', 'ICSE', 'State Board', 'Other'];
   const schools = ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'];
@@ -220,8 +221,25 @@ const OnboardingPage = () => {
       setIsSubmitting(true);
       
       try {
-        // Convert date string to proper format for the backend
-        const dateOfBirth = formData.dob ? new Date(formData.dob).toISOString() : null;
+        // Prepare the request data
+        const requestData: any = {
+          gender: formData.gender,
+          profileType: formData.profileType,
+          class: formData.class,
+          syllabus: formData.syllabus,
+          school: formData.school,
+          bio: formData.bio || ''
+        };
+
+        // Only add dateOfBirth if it exists and is valid
+        if (formData.dob) {
+          const date = new Date(formData.dob);
+          if (!isNaN(date.getTime())) {
+            requestData.dateOfBirth = date.toISOString();
+          }
+        }
+        
+        console.log('Sending data to server:', requestData);
         
         // Call the API to save onboarding data
         const response = await fetch('/api/users/onboarding', {
@@ -230,25 +248,27 @@ const OnboardingPage = () => {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
           },
-          body: JSON.stringify({
-            gender: formData.gender,
-            dateOfBirth: dateOfBirth,
-            profileType: formData.profileType,
-            class: formData.class,
-            syllabus: formData.syllabus,
-            school: formData.school,
-            bio: formData.bio || ''
-          })
+          body: JSON.stringify(requestData)
         });
         
         const data = await response.json();
+        console.log('Server response:', data);
         
         if (!response.ok) {
-          throw new Error(data.message || 'Failed to save your information');
+          // Try to get a more detailed error message
+          let errorMessage = 'Failed to save your information';
+          if (data.message) {
+            errorMessage = data.message;
+          } else if (data.error) {
+            errorMessage = data.error;
+          } else if (data.errors) {
+            errorMessage = Object.values(data.errors).join(', ');
+          }
+          throw new Error(errorMessage);
         }
         
         // Show success message
-        toast.success('Profile updated successfully!');
+        toast.success('Profile updated successfully!, Please Login');
         
         // Update user data in local storage
         const userData = JSON.parse(localStorage.getItem('userData') || '{}');
@@ -259,7 +279,7 @@ const OnboardingPage = () => {
         
         // Redirect to dashboard after a short delay
         setTimeout(() => {
-          router.push('/dashboard');
+          authService.logout();
         }, 1000);
         
       } catch (error: any) {

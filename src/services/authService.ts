@@ -8,6 +8,7 @@ interface StoredUserData {
   lastName: string;
   role: string;
   isEmailVerified: boolean;
+  onboarded: boolean;
   authProvider?: 'local' | 'google';
   googleId?: string;
 }
@@ -94,6 +95,7 @@ export const authService = {
         lastName: userData.lastName,
         role: userData.role || 'user',
         isEmailVerified: userData.isEmailVerified || false,
+        onboarded: userData.onboarded || false,
         authProvider: userData.authProvider || 'local',
         googleId: userData.googleId || null
       };
@@ -164,6 +166,12 @@ export const authService = {
   isAuthenticated() {
     if (typeof window === 'undefined') return false;
     return !!getCookie('token') || !!localStorage.getItem('token');
+  },
+
+  // Check if user has completed onboarding
+  isOnboarded(): boolean {
+    const userData = localStorage.getItem('user');
+    return userData ? JSON.parse(userData).onboarded === true : false;
   },
 
   // Forgot password

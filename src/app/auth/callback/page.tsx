@@ -72,9 +72,9 @@ export default function AuthCallbackPage() {
           // For new users, redirect to onboarding, otherwise to dashboard or intended page
           const intendedPath = localStorage.getItem('redirectAfterAuth');
           localStorage.removeItem('redirectAfterAuth');
-          
+          console.log('userData from callback', userData);
           // Redirect to onboarding for new users, otherwise to intended path or dashboard
-          const redirectPath = userData.isNewUser ? '/onboarding' : (intendedPath || '/dashboard');
+          const redirectPath = userData.onboarded ? '/dashboard' : (intendedPath || '/onboarding');
           
           setStatus('success');
           setMessage('Authentication successful! Redirecting...');
