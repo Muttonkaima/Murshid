@@ -43,7 +43,7 @@ const DashboardPage = () => {
   const [activeSubject, setActiveSubject] = useState('all');
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileRef = useRef<HTMLDivElement>(null);
-
+  const user = authService.getCurrentUser();
   const router = useRouter();
 
   const handleLogout = () => {
@@ -131,8 +131,7 @@ const DashboardPage = () => {
                 >
                  
                   <div className="hidden md:block text-right">
-                    <p className="text-sm font-medium text-gray-900">Mithun</p>
-                    <p className="text-xs text-gray-500">Class 10 • CBSE</p>
+                    <p className="text-sm font-medium text-gray-900">{user?.firstName + " " + user?.lastName}</p>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-[var(--primary-color)] flex items-center justify-center text-white cursor-pointer">
                     <FiUser size={16} />

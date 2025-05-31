@@ -9,6 +9,7 @@ import Sidebar from '@/components/layout/Sidebar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getProfile, updateProfile, uploadProfileImage } from '@/services/profileService';
 import { toast } from 'react-toastify';
+import authService from '@/services/authService';
 
 type ProfileField = {
   id: string;
@@ -46,7 +47,7 @@ const ProfilePage = () => {
   const [tempImage, setTempImage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const user = authService.getCurrentUser();
   // Fetch profile data on component mount
   useEffect(() => {
     const fetchProfile = async () => {
@@ -609,11 +610,11 @@ const ProfilePage = () => {
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{user.firstName} {user.lastName}</h1>
-                <p className="text-blue-500 font-medium mb-4">{user.email}</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{user?.firstName} {user?.lastName}</h1>
+                <p className="text-blue-500 font-medium mb-4">{user?.email}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
                   <span className="px-3 py-1 bg-green-100 text-[var(--primary-color)] text-xs font-medium rounded-full flex items-center">
-                    {user.isEmailVerified ? (
+                    {user?.isEmailVerified ? (
                       <>
                         <FiCheckCircle /> &nbsp;
                         <span className="mr-2 font-bold">Verified</span>
@@ -626,7 +627,7 @@ const ProfilePage = () => {
                     )}
                   </span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                    {user.role}
+                    {user?.role}
                   </span>
                 </div>
               </div>
