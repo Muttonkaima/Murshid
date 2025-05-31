@@ -70,7 +70,7 @@ const userSchema = new mongoose.Schema({
     default: false,
     select: false
   },
-  onBoarded: {
+  onboarded: {
     type: Boolean,
     default: false,
     select: false
