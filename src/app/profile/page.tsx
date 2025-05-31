@@ -21,7 +21,7 @@ type ProfileField = {
 
 const ProfilePage = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [profileImage, setProfileImage] = useState('/images/favicon.png');
+  const [profileImage, setProfileImage] = useState('');
   
   // Dropdown visibility state
   type DropdownState = {
@@ -53,27 +53,26 @@ const ProfilePage = () => {
       try {
         setIsLoading(true);
         const response = await getProfile();
-        const profileData = response.profile || {};
-        const userData = JSON.parse(localStorage.getItem('user') || '{}');
+        const { user, profile: profileData } = response;
         
         // Transform profile data to match our form structure
         const profileFields: ProfileField[] = [
           { 
             id: 'firstName', 
             label: 'First Name', 
-            value: userData.firstName || '', 
+            value: user.firstName || '', 
             icon: <FaUser /> 
           },
           { 
             id: 'lastName', 
             label: 'Last Name', 
-            value: userData.lastName || '', 
+            value: user.lastName || '', 
             icon: <FaUser /> 
           },
           { 
             id: 'email', 
             label: 'Email', 
-            value: userData.email || '', 
+            value: user.email || '', 
             icon: <FaEnvelope />, 
             type: 'email' 
           },
@@ -129,6 +128,16 @@ const ProfilePage = () => {
         setProfile(profileFields);
         setBio(profileData.bio || '');
         setProfileImage(profileData.profileImage || '/images/favicon.png');
+
+        // Update user data in localStorage
+        localStorage.setItem('user', JSON.stringify({
+          ...JSON.parse(localStorage.getItem('user') || '{}'),
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          role: user.role,
+          onboarded: user.onboarded
+        }));
       } catch (error) {
         console.error('Failed to fetch profile:', error);
         toast.error('Failed to load profile data');
@@ -149,47 +158,56 @@ const ProfilePage = () => {
       setIsUpdating(true);
       
       // Prepare the data to be sent to the server
-      const updateData: Record<string, any> = {};
+      const userUpdateData: Record<string, any> = {};
+      const profileUpdateData: Record<string, any> = {};
       
-      // Handle name separately as it's split in the form
-      if (formData.firstName || formData.lastName) {
-        updateData.name = `${formData.firstName || ''} ${formData.lastName || ''}`.trim();
+      // Handle User model fields
+      if (formData.firstName !== undefined) {
+        userUpdateData.firstName = formData.firstName;
+      }
+      if (formData.lastName !== undefined) {
+        userUpdateData.lastName = formData.lastName;
+      }
+      if (formData.email !== undefined) {
+        userUpdateData.email = formData.email;
       }
       
-      // Add other fields
-      const otherFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
-      otherFields.forEach(field => {
+      // Handle Profile model fields
+      const profileFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
+      profileFields.forEach(field => {
         if (formData[field] !== undefined) {
-          updateData[field] = formData[field];
+          profileUpdateData[field] = formData[field];
         }
       });
       
-      // Update profile
-      await updateProfile(updateData);
+      // If we have both user and profile updates, send them together
+      const updateData = {
+        ...userUpdateData,
+        ...profileUpdateData
+      };
       
-      // Refresh the profile data to ensure we have the latest from the server
-      const response = await getProfile();
-      const profileData = response.profile || {};
-      const userData = response.user || {};
+      // Update profile
+      const response = await updateProfile(updateData);
+      const { user, profile: profileData } = response;
       
       // Update local state with the updated profile data
-      const profileFields: ProfileField[] = [
+      const updatedProfileFields: ProfileField[] = [
         { 
           id: 'firstName', 
           label: 'First Name', 
-          value: userData.name?.split(' ')[0] || '', 
+          value: user.firstName || '', 
           icon: <FaUser /> 
         },
         { 
           id: 'lastName', 
           label: 'Last Name', 
-          value: userData.name?.split(' ').slice(1).join(' ') || '', 
+          value: user.lastName || '', 
           icon: <FaUser /> 
         },
         { 
           id: 'email', 
           label: 'Email', 
-          value: userData.email || '', 
+          value: user.email || '', 
           icon: <FaEnvelope />, 
           type: 'email' 
         },
@@ -242,9 +260,19 @@ const ProfilePage = () => {
         },
       ];
 
-      setProfile(profileFields);
+      setProfile(updatedProfileFields);
       setBio(profileData.bio || '');
-      setProfileImage(userData.photo || '/images/favicon.png');
+      setProfileImage(profileData.profileImage || '/images/favicon.png');
+      
+      // Update user data in localStorage
+      localStorage.setItem('user', JSON.stringify({
+        ...JSON.parse(localStorage.getItem('user') || '{}'),
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        onboarded: user.onboarded
+      }));
       
       // Close the modal and show success message
       setIsEditModalOpen(false);
@@ -284,17 +312,17 @@ const ProfilePage = () => {
 
     try {
       setIsUpdating(true);
-      const userData = await uploadProfileImage(file);
+      const { profileImage: newProfileImage } = await uploadProfileImage(file);
       
       // Update profile image in state
-      if (userData?.photo) {
-        setProfileImage(userData.photo);
+      if (newProfileImage) {
+        setProfileImage(newProfileImage);
         toast.success('Profile image updated successfully!');
       } else {
-        // If no photo in response, refresh the profile to get the latest data
+        // If no image in response, refresh the profile to get the latest data
         const response = await getProfile();
-        if (response?.user?.photo) {
-          setProfileImage(response.user.photo);
+        if (response?.profile?.profileImage) {
+          setProfileImage(response.profile.profileImage);
         }
       }
     } catch (error) {
@@ -363,22 +391,139 @@ const ProfilePage = () => {
     });
   };
 
-  const saveChanges = () => {
-    const updatedProfile = profile.map(field => ({
-      ...field,
-      value: formData[field.id] || field.value
-    }));
-    setProfile(updatedProfile);
-    // Update bio if it was changed
-    if (formData['bio'] !== undefined) {
-      setBio(formData['bio']);
+  const saveChanges = async () => {
+    if (isUpdating) return;
+    
+    try {
+      setIsUpdating(true);
+      
+      // Prepare the data to be sent to the server
+      const userUpdateData: Record<string, any> = {};
+      const profileUpdateData: Record<string, any> = {};
+      
+      // Handle User model fields
+      if (formData.firstName !== undefined) {
+        userUpdateData.firstName = formData.firstName;
+      }
+      if (formData.lastName !== undefined) {
+        userUpdateData.lastName = formData.lastName;
+      }
+      if (formData.email !== undefined) {
+        userUpdateData.email = formData.email;
+      }
+      
+      // Handle Profile model fields
+      const profileFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
+      profileFields.forEach(field => {
+        if (formData[field] !== undefined) {
+          profileUpdateData[field] = formData[field];
+        }
+      });
+      
+      // If we have both user and profile updates, send them together
+      const updateData = {
+        ...userUpdateData,
+        ...profileUpdateData
+      };
+      
+      // Update profile in the database
+      const response = await updateProfile(updateData);
+      const { user, profile: profileData } = response;
+      
+      // Update local state with the updated profile data
+      const updatedProfileFields: ProfileField[] = [
+        { 
+          id: 'firstName', 
+          label: 'First Name', 
+          value: user.firstName || '', 
+          icon: <FaUser /> 
+        },
+        { 
+          id: 'lastName', 
+          label: 'Last Name', 
+          value: user.lastName || '', 
+          icon: <FaUser /> 
+        },
+        { 
+          id: 'email', 
+          label: 'Email', 
+          value: user.email || '', 
+          icon: <FaEnvelope />, 
+          type: 'email' 
+        },
+        { 
+          id: 'gender', 
+          label: 'Gender', 
+          value: profileData.gender || '', 
+          icon: <FaVenusMars />, 
+          type: 'select', 
+          options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
+        },
+        { 
+          id: 'dateOfBirth', 
+          label: 'Date of Birth', 
+          value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
+          icon: <FaCalendarAlt />, 
+          type: 'date' 
+        },
+        { 
+          id: 'profileType', 
+          label: 'Profile Type', 
+          value: profileData.profileType || '', 
+          icon: <FaUserGraduate />, 
+          type: 'select', 
+          options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
+        },
+        { 
+          id: 'school', 
+          label: 'School', 
+          value: profileData.school || '', 
+          icon: <FaSchool />, 
+          type: 'select', 
+          options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
+        },
+        { 
+          id: 'class', 
+          label: 'Class', 
+          value: profileData.class || '', 
+          icon: <FaGraduationCap />, 
+          type: 'select', 
+          options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
+        },
+        { 
+          id: 'syllabus', 
+          label: 'Syllabus', 
+          value: profileData.syllabus || '', 
+          icon: <FaBook />, 
+          type: 'select', 
+          options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
+        },
+      ];
+
+      setProfile(updatedProfileFields);
+      setBio(profileData.bio || '');
+      setProfileImage(profileData.profileImage || '/images/favicon.png');
+      
+      // Update user data in localStorage
+      localStorage.setItem('user', JSON.stringify({
+        ...JSON.parse(localStorage.getItem('user') || '{}'),
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        onboarded: user.onboarded
+      }));
+      
+      // Close the modal and show success message
+      closeEditModal();
+      toast.success('Profile updated successfully!');
+      
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      toast.error('Failed to update profile. Please try again.');
+    } finally {
+      setIsUpdating(false);
     }
-    // Update profile image if changed
-    if (tempImage) {
-      setProfileImage(tempImage);
-      setTempImage(''); // Reset temp image after saving
-    }
-    closeEditModal();
   };
 
 

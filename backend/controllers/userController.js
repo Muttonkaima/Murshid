@@ -78,19 +78,53 @@ exports.markAsOnboarded = catchAsync(async (req, res, next) => {
 
 // Get current user profile
 exports.getMe = catchAsync(async (req, res, next) => {
-  // 1) Get user profile with user data
-  const profile = await Profile.findOne({ user: req.user.id })
-    .populate('user', 'name email photo');
+  // 1) Get user data
+  const user = await User.findById(req.user.id).select('-__v -password');
   
-  if (!profile) {
-    return next(new AppError('No profile found for this user', 404));
+  if (!user) {
+    return next(new AppError('No user found with this ID', 404));
   }
   
-  // 2) Send response
+  // 2) Get or create profile
+  let profile = await Profile.findOne({ user: req.user.id });
+  
+  if (!profile) {
+    // Create a default profile if none exists
+    profile = await Profile.create({
+      user: req.user.id,
+      gender: 'Prefer not to say',
+      dateOfBirth: new Date(),
+      profileType: 'Student',
+      class: 'Class 1',
+      syllabus: 'CBSE',
+      school: 'Other',
+      bio: ''
+    });
+  }
+  
+  // 3) Send response with combined user and profile data
   res.status(200).json({
     status: 'success',
     data: {
-      profile
+      user: {
+        id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+        onboarded: user.onboarded
+      },
+      profile: {
+        id: profile._id,
+        gender: profile.gender,
+        dateOfBirth: profile.dateOfBirth,
+        profileType: profile.profileType,
+        class: profile.class,
+        syllabus: profile.syllabus,
+        school: profile.school,
+        bio: profile.bio,
+        profileImage: profile.profileImage
+      }
     }
   });
 });
@@ -131,11 +165,36 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     new: true,
     runValidators: true
   });
+
+  // 4) If profile data is being updated, update the profile as well
+  const profileData = filterObj(
+    req.body,
+    'gender',
+    'dateOfBirth',
+    'profileType',
+    'class',
+    'syllabus',
+    'school',
+    'bio',
+    'profileImage'
+  );
+
+  if (Object.keys(profileData).length > 0) {
+    await Profile.findOneAndUpdate(
+      { user: req.user.id },
+      profileData,
+      { new: true, runValidators: true }
+    );
+  }
+  
+  // 5) Get updated profile data
+  const profile = await Profile.findOne({ user: req.user.id });
   
   res.status(200).json({
     status: 'success',
     data: {
-      user: updatedUser
+      user: updatedUser,
+      profile: profile || {}
     }
   });
 });

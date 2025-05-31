@@ -1,6 +1,28 @@
 import api from './api';
 
-export const getProfile = async () => {
+export interface UserProfile {
+  user: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+    onboarded: boolean;
+  };
+  profile: {
+    id: string;
+    gender: string;
+    dateOfBirth: string;
+    profileType: string;
+    class: string;
+    syllabus: string;
+    school: string;
+    bio: string;
+    profileImage: string;
+  };
+}
+
+export const getProfile = async (): Promise<UserProfile> => {
   try {
     const response = await api.get('/users/me');
     return response.data.data;
@@ -10,35 +32,29 @@ export const getProfile = async () => {
   }
 };
 
-export const updateProfile = async (profileData: any) => {
+export const updateProfile = async (profileData: Partial<UserProfile['profile']>): Promise<UserProfile> => {
   try {
-    // Send the update request
-    await api.patch('/users/update-me', profileData);
-    
-    // Return the updated profile data
-    const response = await getProfile();
-    return response;
+    const response = await api.patch('/users/update-me', profileData);
+    return response.data.data;
   } catch (error) {
     console.error('Error updating profile:', error);
     throw error;
   }
 };
 
-export const uploadProfileImage = async (file: File) => {
+export const uploadProfileImage = async (file: File): Promise<{ profileImage: string }> => {
   const formData = new FormData();
-  formData.append('photo', file);
+  formData.append('profileImage', file);
 
   try {
-    // Send the photo update request
-    await api.patch('/users/update-me', formData, {
+    const response = await api.patch('/users/update-me', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
     
-    // Return the updated user data
-    const response = await getProfile();
-    return response.user;
+    // Return the updated profile image URL
+    return { profileImage: response.data.data.profile.profileImage };
   } catch (error) {
     console.error('Error uploading profile image:', error);
     throw error;
