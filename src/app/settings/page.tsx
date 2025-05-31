@@ -2,8 +2,16 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+
+// Utility function to format date to 'Month Day, Year' format
+const formatDate = (dateString: string | undefined) => {
+  if (!dateString) return 'N/A';
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
 import { FiArrowLeft, FiUser, FiLock, FiMail, FiBell, FiCreditCard, FiShield, FiGlobe, FiMoon, FiSun, FiHelpCircle, FiLogOut, FiEye, FiEyeOff, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Sidebar from '@/components/layout/Sidebar';
+import authService from '@/services/authService';
 
 const SettingsPage = () => {
   const router = useRouter();
@@ -31,7 +39,7 @@ const SettingsPage = () => {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  
+  const user = authService.getCurrentUser();
   // Password validation states
   const [passwordErrors, setPasswordErrors] = useState({
     hasMinLength: false,
@@ -159,32 +167,77 @@ const SettingsPage = () => {
             <h2 className="text-xl font-semibold text-gray-900">Account Information</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Full Name</label>
                 <input
                   type="text"
-                  defaultValue="Mithun Gowda H"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none text-gray-900"
+                  value={user?.firstName + ' ' + user?.lastName}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Email</label>
                 <input
                   type="email"
-                  defaultValue="tandoori.chakna@example.com"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none text-gray-900"
+                  value={user?.email}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Signed up with</label>
                 <input
-                  type="tel"
-                  defaultValue="+91 7899238398"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[var(--primary-color)] focus:outline-none text-gray-900"
+                  type="text"
+                  value={user?.authProvider}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
                 />
               </div>
-              <button className="mt-4 bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white px-6 py-2 rounded-lg transition-colors cursor-pointer">
-                Save Changes
-              </button>
+              <div>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Email Verified</label>
+                <input
+                  type="text"
+                  value={user?.isEmailVerified ? 'Yes' : 'No'}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Account Type</label>
+                <input
+                  type="text"
+                  value={user?.role}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Account Status</label>
+                <input
+                  type="text"
+                  value={user?.onboarded ? 'Active' : 'Inactive'}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Member Since</label>
+                <input
+                  type="text"
+                  value={formatDate(user?.createdAt)}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-500 mb-1">Last Password Change</label>
+                <input
+                  type="text"
+                  value={formatDate(user?.passwordChangedAt) || 'Never'}
+                  readOnly
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-600"
+                />
+              </div>
             </div>
           </div>
         );
@@ -378,7 +431,7 @@ const SettingsPage = () => {
                   </div>
                   <div className="w-full mt-4">
                     <button 
-                      className={`w-full py-2 px-4 text-base rounded-lg transition-colors ${isPasswordValid() ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+                      className={`w-full py-2 px-4 text-base rounded-lg transition-colors ${isPasswordValid() ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' : 'bg-gray-300 text-gray-500'}`}
                       disabled={!isPasswordValid()}
                       onClick={() => {
                         if (isPasswordValid()) {
@@ -509,7 +562,7 @@ const SettingsPage = () => {
                             isSelected 
                               ? 'border-[var(--primary-color)] bg-[var(--primary-color)] text-white' 
                               : isDisabled 
-                                ? 'border-gray-200 bg-gray-50 text-gray-500 cursor-not-allowed' 
+                                ? 'border-gray-200 bg-gray-50 text-gray-500' 
                                 : 'border-gray-200 hover:border-gray-300 text-gray-900 cursor-pointer'
                           }`}
                         >

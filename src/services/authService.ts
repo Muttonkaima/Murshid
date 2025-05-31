@@ -11,6 +11,8 @@ interface StoredUserData {
   onboarded: boolean;
   authProvider?: 'local' | 'google';
   googleId?: string;
+  createdAt?: string;
+  passwordChangedAt?: string;
 }
 
 interface SignupData {
@@ -97,7 +99,9 @@ export const authService = {
         isEmailVerified: userData.isEmailVerified || false,
         onboarded: userData.onboarded || false,
         authProvider: userData.authProvider || 'local',
-        googleId: userData.googleId || null
+        googleId: userData.googleId || null,
+        createdAt: userData.createdAt || null,
+        passwordChangedAt: userData.passwordChangedAt || null,
       };
       
       localStorage.setItem('user', JSON.stringify(userToStore));

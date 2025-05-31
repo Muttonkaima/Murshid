@@ -123,18 +123,22 @@ export default function SetPasswordPage() {
       
       // Show success message
       toast.success('Password set successfully!');
-      
-      // Redirect to onboarding page after successful password setup
-      if (data.token) {
+
+      setTimeout(() => {
+        // Redirect to onboarding page after successful password setup
+      if (data.token && type === 'signup') {
         // If we have a token, redirect to onboarding
         router.push('/onboarding');
       } else {
         // Fallback to login (shouldn't normally happen)
         router.push('/login');
+        authService.logout();
       }
+      }, 1500);
+      
     } catch (error: any) {
       console.error('Error setting password:', error);
-      alert(error.message || 'Failed to set password. Please try again.');
+      toast.error(error.message || 'Failed to set password. Please try again.');
     } finally {
       setIsLoading(false);
     }
