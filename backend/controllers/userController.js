@@ -76,11 +76,24 @@ exports.markAsOnboarded = catchAsync(async (req, res, next) => {
   });
 });
 
-// Get current user
-exports.getMe = (req, res, next) => {
-  req.params.id = req.user.id;
-  next();
-};
+// Get current user profile
+exports.getMe = catchAsync(async (req, res, next) => {
+  // 1) Get user profile with user data
+  const profile = await Profile.findOne({ user: req.user.id })
+    .populate('user', 'name email photo');
+  
+  if (!profile) {
+    return next(new AppError('No profile found for this user', 404));
+  }
+  
+  // 2) Send response
+  res.status(200).json({
+    status: 'success',
+    data: {
+      profile
+    }
+  });
+});
 
 // Get user by ID
 exports.getUser = catchAsync(async (req, res, next) => {

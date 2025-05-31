@@ -7,6 +7,8 @@ import { FaUserGraduate, FaEnvelope, FaUser, FaVenusMars, FaCalendarAlt, FaGradu
 import Image from 'next/image';
 import Sidebar from '@/components/layout/Sidebar';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getProfile, updateProfile, uploadProfileImage } from '@/services/profileService';
+import { toast } from 'react-toastify';
 
 type ProfileField = {
   id: string;
@@ -38,56 +40,271 @@ const ProfilePage = () => {
     school: false
   });
 
-  const [profile, setProfile] = useState<ProfileField[]>([
-    { id: 'firstName', label: 'First Name', value: 'John', icon: <FaUser /> },
-    { id: 'lastName', label: 'Last Name', value: 'Doe', icon: <FaUser /> },
-    { id: 'email', label: 'Email', value: 'john.doe@example.com', icon: <FaEnvelope />, type: 'email' },
-    { 
-      id: 'gender', 
-      label: 'Gender', 
-      value: 'Male', 
-      icon: <FaVenusMars />, 
-      type: 'select', 
-      options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
-    },
-    { id: 'dob', label: 'Date of Birth', value: '1990-01-01', icon: <FaCalendarAlt />, type: 'date' },
-    { 
-      id: 'profileType', 
-      label: 'Profile Type', 
-      value: 'Student', 
-      icon: <FaUserGraduate />, 
-      type: 'select', 
-      options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
-    },
-    { 
-      id: 'school', 
-      label: 'School', 
-      value: 'Prerana Institute', 
-      icon: <FaSchool />, 
-      type: 'select', 
-      options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
-    },
-    { 
-      id: 'class', 
-      label: 'Class', 
-      value: 'Class 12', 
-      icon: <FaGraduationCap />, 
-      type: 'select', 
-      options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
-    },
-    { 
-      id: 'syllabus', 
-      label: 'Syllabus', 
-      value: 'CBSE', 
-      icon: <FaBook />, 
-      type: 'select', 
-      options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
-    },
-  ]);
-
+  const [profile, setProfile] = useState<ProfileField[]>([]);
   const [formData, setFormData] = useState<Record<string, string>>({});
-  const [bio, setBio] = useState('Passionate about learning and technology. Always looking for new challenges and opportunities to grow.');
+  const [bio, setBio] = useState('');
   const [tempImage, setTempImage] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [isUpdating, setIsUpdating] = useState(false);
+
+  // Fetch profile data on component mount
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        setIsLoading(true);
+        const response = await getProfile();
+        const profileData = response.profile || {};
+        const userData = JSON.parse(localStorage.getItem('user') || '{}');
+        
+        // Transform profile data to match our form structure
+        const profileFields: ProfileField[] = [
+          { 
+            id: 'firstName', 
+            label: 'First Name', 
+            value: userData.firstName || '', 
+            icon: <FaUser /> 
+          },
+          { 
+            id: 'lastName', 
+            label: 'Last Name', 
+            value: userData.lastName || '', 
+            icon: <FaUser /> 
+          },
+          { 
+            id: 'email', 
+            label: 'Email', 
+            value: userData.email || '', 
+            icon: <FaEnvelope />, 
+            type: 'email' 
+          },
+          { 
+            id: 'gender', 
+            label: 'Gender', 
+            value: profileData.gender || '', 
+            icon: <FaVenusMars />, 
+            type: 'select', 
+            options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
+          },
+          { 
+            id: 'dateOfBirth', 
+            label: 'Date of Birth', 
+            value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
+            icon: <FaCalendarAlt />, 
+            type: 'date' 
+          },
+          { 
+            id: 'profileType', 
+            label: 'Profile Type', 
+            value: profileData.profileType || '', 
+            icon: <FaUserGraduate />, 
+            type: 'select', 
+            options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
+          },
+          { 
+            id: 'school', 
+            label: 'School', 
+            value: profileData.school || '', 
+            icon: <FaSchool />, 
+            type: 'select', 
+            options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
+          },
+          { 
+            id: 'class', 
+            label: 'Class', 
+            value: profileData.class || '', 
+            icon: <FaGraduationCap />, 
+            type: 'select', 
+            options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
+          },
+          { 
+            id: 'syllabus', 
+            label: 'Syllabus', 
+            value: profileData.syllabus || '', 
+            icon: <FaBook />, 
+            type: 'select', 
+            options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
+          },
+        ];
+
+        setProfile(profileFields);
+        setBio(profileData.bio || '');
+        setProfileImage(profileData.profileImage || '/images/favicon.png');
+      } catch (error) {
+        console.error('Failed to fetch profile:', error);
+        toast.error('Failed to load profile data');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (isUpdating) return;
+    
+    try {
+      setIsUpdating(true);
+      
+      // Prepare the data to be sent to the server
+      const updateData: Record<string, any> = {};
+      
+      // Handle name separately as it's split in the form
+      if (formData.firstName || formData.lastName) {
+        updateData.name = `${formData.firstName || ''} ${formData.lastName || ''}`.trim();
+      }
+      
+      // Add other fields
+      const otherFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
+      otherFields.forEach(field => {
+        if (formData[field] !== undefined) {
+          updateData[field] = formData[field];
+        }
+      });
+      
+      // Update profile
+      await updateProfile(updateData);
+      
+      // Refresh the profile data to ensure we have the latest from the server
+      const response = await getProfile();
+      const profileData = response.profile || {};
+      const userData = response.user || {};
+      
+      // Update local state with the updated profile data
+      const profileFields: ProfileField[] = [
+        { 
+          id: 'firstName', 
+          label: 'First Name', 
+          value: userData.name?.split(' ')[0] || '', 
+          icon: <FaUser /> 
+        },
+        { 
+          id: 'lastName', 
+          label: 'Last Name', 
+          value: userData.name?.split(' ').slice(1).join(' ') || '', 
+          icon: <FaUser /> 
+        },
+        { 
+          id: 'email', 
+          label: 'Email', 
+          value: userData.email || '', 
+          icon: <FaEnvelope />, 
+          type: 'email' 
+        },
+        { 
+          id: 'gender', 
+          label: 'Gender', 
+          value: profileData.gender || '', 
+          icon: <FaVenusMars />, 
+          type: 'select', 
+          options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
+        },
+        { 
+          id: 'dateOfBirth', 
+          label: 'Date of Birth', 
+          value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
+          icon: <FaCalendarAlt />, 
+          type: 'date' 
+        },
+        { 
+          id: 'profileType', 
+          label: 'Profile Type', 
+          value: profileData.profileType || '', 
+          icon: <FaUserGraduate />, 
+          type: 'select', 
+          options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
+        },
+        { 
+          id: 'school', 
+          label: 'School', 
+          value: profileData.school || '', 
+          icon: <FaSchool />, 
+          type: 'select', 
+          options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
+        },
+        { 
+          id: 'class', 
+          label: 'Class', 
+          value: profileData.class || '', 
+          icon: <FaGraduationCap />, 
+          type: 'select', 
+          options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
+        },
+        { 
+          id: 'syllabus', 
+          label: 'Syllabus', 
+          value: profileData.syllabus || '', 
+          icon: <FaBook />, 
+          type: 'select', 
+          options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
+        },
+      ];
+
+      setProfile(profileFields);
+      setBio(profileData.bio || '');
+      setProfileImage(userData.photo || '/images/favicon.png');
+      
+      // Close the modal and show success message
+      setIsEditModalOpen(false);
+      toast.success('Profile updated successfully!');
+      
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      toast.error('Failed to update profile. Please try again.');
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Reset file input
+    e.target.value = '';
+
+    // Check if file is an image
+    if (!file.type.startsWith('image/')) {
+      toast.error('Please upload an image file (JPEG, PNG, etc.)');
+      return;
+    }
+
+    // Check file size (max 2MB)
+    const maxSize = 2 * 1024 * 1024; // 2MB
+    if (file.size > maxSize) {
+      toast.error('Image size should be less than 2MB');
+      return;
+    }
+
+    // Create a temporary URL for the image preview
+    const imageUrl = URL.createObjectURL(file);
+    setTempImage(imageUrl);
+
+    try {
+      setIsUpdating(true);
+      const userData = await uploadProfileImage(file);
+      
+      // Update profile image in state
+      if (userData?.photo) {
+        setProfileImage(userData.photo);
+        toast.success('Profile image updated successfully!');
+      } else {
+        // If no photo in response, refresh the profile to get the latest data
+        const response = await getProfile();
+        if (response?.user?.photo) {
+          setProfileImage(response.user.photo);
+        }
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      toast.error('Failed to upload profile image. Please try again.');
+      setTempImage(''); // Reset temp image on error
+    } finally {
+      setIsUpdating(false);
+    }
+  };
 
   const openEditModal = () => {
     const initialFormData: Record<string, string> = {};
@@ -164,18 +381,15 @@ const ProfilePage = () => {
     closeEditModal();
   };
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setTempImage(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
