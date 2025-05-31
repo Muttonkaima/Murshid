@@ -25,7 +25,7 @@ interface LoginData {
 }
 
 // Helper function to set cookie
-const setCookie = (name: string, value: string, days = 1) => {
+export const setCookie = (name: string, value: string, days = 1) => {
   if (typeof document === 'undefined') return;
   const date = new Date();
   date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));

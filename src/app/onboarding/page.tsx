@@ -4,15 +4,102 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaCheck, FaChevronDown, FaUser, FaVenusMars, FaCalendarAlt, FaGraduationCap, FaBook, FaSchool } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { toast, ToastOptions } from 'react-toastify';
+
+interface FormData {
+  gender: string;
+  dob: string;
+  profileType: string;
+  class: string;
+  syllabus: string;
+  school: string;
+  bio?: string;
+  emailNotifications: boolean;
+  inAppNotifications: boolean;
+  studyReminders: boolean;
+  agreedToTerms: boolean;
+}
+
+interface FormErrors {
+  [key: string]: string;
+}
+
+// Define field type
+type FormField = {
+  name: string;
+  label: string;
+  type: string;
+  options?: string[];
+  required?: boolean;
+};
+
+type FormStep = {
+  id: number;
+  title: string;
+  fields: FormField[];
+};
 
 const OnboardingPage = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [progress, setProgress] = useState(25);
   
+  // Form steps
+  const steps = [
+    {
+      id: 1,
+      title: 'Personal Information',
+      fields: [
+        { name: 'gender', label: 'Gender', type: 'select', options: ['Male', 'Female', 'Other', 'Prefer not to say'], required: true },
+        { name: 'dob', label: 'Date of Birth', type: 'date', required: true },
+        { name: 'profileType', label: 'Profile Type', type: 'select', options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'], required: true },
+      ]
+    },
+    {
+      id: 2,
+      title: 'Education',
+      fields: [
+        { name: 'class', label: 'Class', type: 'text', required: true },
+        { name: 'syllabus', label: 'Syllabus', type: 'select', options: ['CBSE', 'ICSE', 'State Board', 'Other'], required: true },
+        { name: 'school', label: 'School/Institution', type: 'text', required: true },
+      ]
+    },
+    {
+      id: 3,
+      title: 'About You',
+      fields: [
+        { name: 'bio', label: 'Bio', type: 'textarea', required: false },
+      ]
+    },
+    {
+      id: 4,
+      title: 'Preferences',
+      fields: [
+        { name: 'emailNotifications', label: 'Email Notifications', type: 'checkbox', required: false },
+        { name: 'inAppNotifications', label: 'In-App Notifications', type: 'checkbox', required: false },
+        { name: 'studyReminders', label: 'Study Reminders', type: 'checkbox', required: false },
+        { name: 'agreedToTerms', label: 'I agree to the Terms of Service and Privacy Policy', type: 'checkbox', required: true },
+      ]
+    }
+  ];
+  
   // Form state
-  const [formData, setFormData] = useState({
+  interface FormData {
+    gender: string;
+    dob: string;
+    profileType: string;
+    class: string;
+    syllabus: string;
+    school: string;
+    bio?: string;
+    emailNotifications: boolean;
+    inAppNotifications: boolean;
+    studyReminders: boolean;
+    agreedToTerms: boolean;
+  }
+  const [formData, setFormData] = useState<FormData>({
     gender: '',
     dob: '',
     profileType: 'Student',
@@ -104,35 +191,99 @@ const OnboardingPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate all steps before submission
-    let isValid = true;
-    for (let i = 1; i <= 3; i++) {
-      if (!validateStep(i)) {
-        isValid = false;
-      }
-    }
-    
-    if (!isValid) {
-      setCurrentStep(1); // Go back to first step if validation fails
+    // Get current step info
+    const currentStepInfo = steps.find(step => step.id === currentStep);
+    if (!currentStepInfo) {
+      console.error('Current step not found:', currentStep);
       return;
     }
     
-    setIsSubmitting(true);
+    const currentStepFields = currentStepInfo.fields;
+    const errors: Record<string, string> = {};
     
-    try {
-      // Simulate API call with form data
-      console.log('Submitting form data:', formData);
-      await new Promise(resolve => setTimeout(resolve, 1000));
+    // Validate required fields for current step
+    currentStepFields.forEach((field: FormField) => {
+      if (field.required && !formData[field.name as keyof FormData]) {
+        errors[field.name] = `${field.label} is required`;
+      }
+    });
+    
+    // If there are validation errors, show them and stop
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+    
+    // If this is the last step, submit the form
+    const isLastStep = currentStep === steps[steps.length - 1].id;
+    if (isLastStep) {
+      setIsSubmitting(true);
       
-      // Redirect to dashboard after successful onboarding
-      router.push('/dashboard');
-    } catch (error) {
-      console.error('Error during onboarding:', error);
-    } finally {
-      setIsSubmitting(false);
+      try {
+        // Convert date string to proper format for the backend
+        const dateOfBirth = formData.dob ? new Date(formData.dob).toISOString() : null;
+        
+        // Call the API to save onboarding data
+        const response = await fetch('/api/users/onboarding', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+          },
+          body: JSON.stringify({
+            gender: formData.gender,
+            dateOfBirth: dateOfBirth,
+            profileType: formData.profileType,
+            class: formData.class,
+            syllabus: formData.syllabus,
+            school: formData.school,
+            bio: formData.bio || ''
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.message || 'Failed to save your information');
+        }
+        
+        // Show success message
+        toast.success('Profile updated successfully!');
+        
+        // Update user data in local storage
+        const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+        localStorage.setItem('userData', JSON.stringify({
+          ...userData,
+          onboarded: true
+        }));
+        
+        // Redirect to dashboard after a short delay
+        setTimeout(() => {
+          router.push('/dashboard');
+        }, 1000);
+        
+      } catch (error: any) {
+        console.error('Error submitting form:', error);
+        toast.error(error.message || 'Failed to save your information. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
+      
+      return;
+    }
+    
+    // Otherwise, go to next step
+    const currentIndex = steps.findIndex(step => step.id === currentStep);
+    if (currentIndex < steps.length - 1) {
+      const nextStep = steps[currentIndex + 1].id;
+      // Update progress based on steps (ensure we don't exceed 100%)
+      const newProgress = Math.min(((currentIndex + 2) / steps.length) * 100, 100);
+      setProgress(newProgress);
+      setCurrentStep(nextStep);
+      setFormErrors({});
     }
   };
-  
+
   const handleCheckboxChange = (field: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,

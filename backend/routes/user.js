@@ -13,6 +13,12 @@ router.get('/me', userController.getMe, userController.getUser);
 // Update current user data (except password)
 router.patch('/update-me', userController.updateMe);
 
+// Complete user onboarding
+router.post('/onboarding', userController.completeOnboarding);
+
+// Mark user as onboarded (for OAuth users who don't need full onboarding)
+router.patch('/me/onboarded', userController.markAsOnboarded);
+
 // Delete current user (set active to false)
 router.delete('/delete-me', userController.deleteMe);
 

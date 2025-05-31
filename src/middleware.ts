@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
     '/_next',
     '/favicon.ico',
     '/images/',
-    '/auth/callback',
+    '/auth/callback'
   ].some(publicPath => 
     path === publicPath || 
     path.startsWith(publicPath + '/') ||

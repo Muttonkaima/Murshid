@@ -96,6 +96,9 @@ exports.googleAuthCallback = (req, res, next) => {
       // Generate JWT token
       const token = signToken(user._id);
       
+      // Check if user just signed up (no password set yet)
+      const isNewUser = user.authProvider === 'google' && !user.onboarded;
+      
       // Prepare user data to send back
       const userData = {
         id: user._id,
@@ -104,7 +107,8 @@ exports.googleAuthCallback = (req, res, next) => {
         email: user.email,
         role: user.role,
         isEmailVerified: user.isEmailVerified,
-        authProvider: user.authProvider
+        authProvider: user.authProvider,
+        isNewUser: isNewUser
       };
       
       // Redirect back to the frontend with token and user data

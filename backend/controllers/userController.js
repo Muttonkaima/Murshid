@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Profile = require('../models/Profile');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
@@ -21,6 +22,57 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     data: {
       users
     }
+  });
+});
+
+// Complete user onboarding
+exports.completeOnboarding = catchAsync(async (req, res, next) => {
+  // 1) Get user from the request (protected route)
+  const userId = req.user.id;
+  
+  // 2) Filter allowed fields
+  const allowedFields = ['gender', 'dateOfBirth', 'profileType', 'class', 'syllabus', 'school', 'bio'];
+  const filteredBody = {};
+  Object.keys(req.body).forEach(key => {
+    if (allowedFields.includes(key)) {
+      filteredBody[key] = req.body[key];
+    }
+  });
+
+  // 3) Check if profile already exists
+  let profile = await Profile.findOne({ user: userId });
+
+  if (profile) {
+    // Update existing profile
+    Object.assign(profile, filteredBody);
+    await profile.save();
+  } else {
+    // Create new profile
+    profile = await Profile.create({
+      user: userId,
+      ...filteredBody
+    });
+  }
+
+  // 4) Mark user as onboarded
+  await User.findByIdAndUpdate(userId, { onboarded: true });
+
+  // 5) Send response
+  res.status(200).json({
+    status: 'success',
+    data: {
+      profile
+    }
+  });
+});
+
+// Mark user as onboarded
+exports.markAsOnboarded = catchAsync(async (req, res, next) => {
+  await User.findByIdAndUpdate(req.user.id, { onboarded: true });
+  
+  res.status(200).json({
+    status: 'success',
+    data: null
   });
 });
 

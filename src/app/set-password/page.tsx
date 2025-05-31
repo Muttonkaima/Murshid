@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { FaEye, FaEyeSlash, FaCheck, FaArrowLeft } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { authService } from '@/services/authService';
+import { setCookie } from '@/services/authService';
 
 interface PasswordRules {
   minLength: boolean;
@@ -111,6 +112,7 @@ export default function SetPasswordPage() {
         // Use authService to store user data if provided
         if (data.data?.user) {
           authService.storeUserData(data.data.user);
+          setCookie('token', data.token);
         }
       }
       
@@ -122,12 +124,12 @@ export default function SetPasswordPage() {
       // Show success message
       toast.success('Password set successfully!');
       
-      // Redirect to dashboard or login based on auth state
+      // Redirect to onboarding page after successful password setup
       if (data.token) {
-        // If we have a token, redirect to dashboard
-        router.push('/dashboard');
+        // If we have a token, redirect to onboarding
+        router.push('/onboarding');
       } else {
-        // Otherwise, go to login
+        // Fallback to login (shouldn't normally happen)
         router.push('/login');
       }
     } catch (error: any) {
