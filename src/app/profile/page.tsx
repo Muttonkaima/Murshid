@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import { FiLock, FiX, FiSave, FiTrash, FiEdit, FiUpload, FiXCircle, FiCamera } from 'react-icons/fi';
+import { FiLock, FiX, FiSave, FiTrash, FiEdit, FiUpload, FiXCircle, FiCamera, FiCheck, FiCheckCircle } from 'react-icons/fi';
 import { FaUserGraduate, FaEnvelope, FaUser, FaVenusMars, FaCalendarAlt, FaGraduationCap, FaBook, FaSchool } from 'react-icons/fa';
 import Image from 'next/image';
 import Sidebar from '@/components/layout/Sidebar';
@@ -22,7 +22,7 @@ type ProfileField = {
 const ProfilePage = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState('');
-  
+
   // Dropdown visibility state
   type DropdownState = {
     gender: boolean;
@@ -54,74 +54,74 @@ const ProfilePage = () => {
         setIsLoading(true);
         const response = await getProfile();
         const { user, profile: profileData } = response;
-        
+
         // Transform profile data to match our form structure
         const profileFields: ProfileField[] = [
-          { 
-            id: 'firstName', 
-            label: 'First Name', 
-            value: user.firstName || '', 
-            icon: <FaUser /> 
+          {
+            id: 'firstName',
+            label: 'First Name',
+            value: user.firstName || '',
+            icon: <FaUser />
           },
-          { 
-            id: 'lastName', 
-            label: 'Last Name', 
-            value: user.lastName || '', 
-            icon: <FaUser /> 
+          {
+            id: 'lastName',
+            label: 'Last Name',
+            value: user.lastName || '',
+            icon: <FaUser />
           },
-          { 
-            id: 'email', 
-            label: 'Email', 
-            value: user.email || '', 
-            icon: <FaEnvelope />, 
-            type: 'email' 
+          {
+            id: 'email',
+            label: 'Email',
+            value: user.email || '',
+            icon: <FaEnvelope />,
+            type: 'email'
           },
-          { 
-            id: 'gender', 
-            label: 'Gender', 
-            value: profileData.gender || '', 
-            icon: <FaVenusMars />, 
-            type: 'select', 
-            options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
+          {
+            id: 'gender',
+            label: 'Gender',
+            value: profileData.gender || '',
+            icon: <FaVenusMars />,
+            type: 'select',
+            options: ['Male', 'Female', 'Other', 'Prefer not to say']
           },
-          { 
-            id: 'dateOfBirth', 
-            label: 'Date of Birth', 
-            value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
-            icon: <FaCalendarAlt />, 
-            type: 'date' 
+          {
+            id: 'dateOfBirth',
+            label: 'Date of Birth',
+            value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '',
+            icon: <FaCalendarAlt />,
+            type: 'date'
           },
-          { 
-            id: 'profileType', 
-            label: 'Profile Type', 
-            value: profileData.profileType || '', 
-            icon: <FaUserGraduate />, 
-            type: 'select', 
-            options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
+          {
+            id: 'profileType',
+            label: 'Profile Type',
+            value: profileData.profileType || '',
+            icon: <FaUserGraduate />,
+            type: 'select',
+            options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other']
           },
-          { 
-            id: 'school', 
-            label: 'School', 
-            value: profileData.school || '', 
-            icon: <FaSchool />, 
-            type: 'select', 
-            options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
+          {
+            id: 'school',
+            label: 'School',
+            value: profileData.school || '',
+            icon: <FaSchool />,
+            type: 'select',
+            options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other']
           },
-          { 
-            id: 'class', 
-            label: 'Class', 
-            value: profileData.class || '', 
-            icon: <FaGraduationCap />, 
-            type: 'select', 
-            options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
+          {
+            id: 'class',
+            label: 'Class',
+            value: profileData.class || '',
+            icon: <FaGraduationCap />,
+            type: 'select',
+            options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`)
           },
-          { 
-            id: 'syllabus', 
-            label: 'Syllabus', 
-            value: profileData.syllabus || '', 
-            icon: <FaBook />, 
-            type: 'select', 
-            options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
+          {
+            id: 'syllabus',
+            label: 'Syllabus',
+            value: profileData.syllabus || '',
+            icon: <FaBook />,
+            type: 'select',
+            options: ['CBSE', 'ICSE', 'State Board', 'Other']
           },
         ];
 
@@ -176,7 +176,7 @@ const ProfilePage = () => {
     try {
       setIsUpdating(true);
       const { profileImage: newProfileImage } = await uploadProfileImage(file);
-      
+
       // Update profile image in state
       if (newProfileImage) {
         setProfileImage(newProfileImage);
@@ -226,17 +226,17 @@ const ProfilePage = () => {
           ...acc,
           [key]: false
         }), {} as DropdownState);
-        
+
         // Toggle the clicked dropdown only if it wasn't already open
         if (!prev[dropdownId]) {
           newState[dropdownId] = true;
         }
-        
+
         return newState;
       });
     }
   };
-  
+
   const toggleDropdown = (id: string) => {
     setDropdowns(prev => {
       // Close all dropdowns first
@@ -244,26 +244,26 @@ const ProfilePage = () => {
         ...acc,
         [key]: false
       }), {} as DropdownState);
-      
+
       // Toggle the clicked dropdown only if it wasn't already open
       if (!prev[id as keyof DropdownState]) {
         newState[id as keyof DropdownState] = true;
       }
-      
+
       return newState;
     });
   };
 
   const saveChanges = async () => {
     if (isUpdating) return;
-    
+
     try {
       setIsUpdating(true);
-      
+
       // Prepare the data to be sent to the server
       const userUpdateData: Record<string, any> = {};
       const profileUpdateData: Record<string, any> = {};
-      
+
       // Handle User model fields
       if (formData.firstName !== undefined) {
         userUpdateData.firstName = formData.firstName;
@@ -274,7 +274,7 @@ const ProfilePage = () => {
       if (formData.email !== undefined) {
         userUpdateData.email = formData.email;
       }
-      
+
       // Handle Profile model fields
       const profileFields = ['gender', 'dateOfBirth', 'profileType', 'school', 'class', 'syllabus', 'bio'];
       profileFields.forEach(field => {
@@ -282,91 +282,91 @@ const ProfilePage = () => {
           profileUpdateData[field] = formData[field];
         }
       });
-      
+
       // If we have both user and profile updates, send them together
       const updateData = {
         ...userUpdateData,
         ...profileUpdateData
       };
-      
+
       // Update profile in the database
       const response = await updateProfile(updateData);
       const { user, profile: profileData } = response;
-      
+
       // Update local state with the updated profile data
       const updatedProfileFields: ProfileField[] = [
-        { 
-          id: 'firstName', 
-          label: 'First Name', 
-          value: user.firstName || '', 
-          icon: <FaUser /> 
+        {
+          id: 'firstName',
+          label: 'First Name',
+          value: user.firstName || '',
+          icon: <FaUser />
         },
-        { 
-          id: 'lastName', 
-          label: 'Last Name', 
-          value: user.lastName || '', 
-          icon: <FaUser /> 
+        {
+          id: 'lastName',
+          label: 'Last Name',
+          value: user.lastName || '',
+          icon: <FaUser />
         },
-        { 
-          id: 'email', 
-          label: 'Email', 
-          value: user.email || '', 
-          icon: <FaEnvelope />, 
-          type: 'email' 
+        {
+          id: 'email',
+          label: 'Email',
+          value: user.email || '',
+          icon: <FaEnvelope />,
+          type: 'email'
         },
-        { 
-          id: 'gender', 
-          label: 'Gender', 
-          value: profileData.gender || '', 
-          icon: <FaVenusMars />, 
-          type: 'select', 
-          options: ['Male', 'Female', 'Other', 'Prefer not to say'] 
+        {
+          id: 'gender',
+          label: 'Gender',
+          value: profileData.gender || '',
+          icon: <FaVenusMars />,
+          type: 'select',
+          options: ['Male', 'Female', 'Other', 'Prefer not to say']
         },
-        { 
-          id: 'dateOfBirth', 
-          label: 'Date of Birth', 
-          value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '', 
-          icon: <FaCalendarAlt />, 
-          type: 'date' 
+        {
+          id: 'dateOfBirth',
+          label: 'Date of Birth',
+          value: profileData.dateOfBirth ? new Date(profileData.dateOfBirth).toISOString().split('T')[0] : '',
+          icon: <FaCalendarAlt />,
+          type: 'date'
         },
-        { 
-          id: 'profileType', 
-          label: 'Profile Type', 
-          value: profileData.profileType || '', 
-          icon: <FaUserGraduate />, 
-          type: 'select', 
-          options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other'] 
+        {
+          id: 'profileType',
+          label: 'Profile Type',
+          value: profileData.profileType || '',
+          icon: <FaUserGraduate />,
+          type: 'select',
+          options: ['Student', 'Dropout', 'Repeating Year', 'Homeschooled', 'Other']
         },
-        { 
-          id: 'school', 
-          label: 'School', 
-          value: profileData.school || '', 
-          icon: <FaSchool />, 
-          type: 'select', 
-          options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'] 
+        {
+          id: 'school',
+          label: 'School',
+          value: profileData.school || '',
+          icon: <FaSchool />,
+          type: 'select',
+          options: ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other']
         },
-        { 
-          id: 'class', 
-          label: 'Class', 
-          value: profileData.class || '', 
-          icon: <FaGraduationCap />, 
-          type: 'select', 
-          options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`) 
+        {
+          id: 'class',
+          label: 'Class',
+          value: profileData.class || '',
+          icon: <FaGraduationCap />,
+          type: 'select',
+          options: Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`)
         },
-        { 
-          id: 'syllabus', 
-          label: 'Syllabus', 
-          value: profileData.syllabus || '', 
-          icon: <FaBook />, 
-          type: 'select', 
-          options: ['CBSE', 'ICSE', 'State Board', 'Other'] 
+        {
+          id: 'syllabus',
+          label: 'Syllabus',
+          value: profileData.syllabus || '',
+          icon: <FaBook />,
+          type: 'select',
+          options: ['CBSE', 'ICSE', 'State Board', 'Other']
         },
       ];
 
       setProfile(updatedProfileFields);
       setBio(profileData.bio || '');
       setProfileImage(profileData.profileImage || '/images/favicon.png');
-      
+
       // Update user data in localStorage
       localStorage.setItem('user', JSON.stringify({
         ...JSON.parse(localStorage.getItem('user') || '{}'),
@@ -376,11 +376,11 @@ const ProfilePage = () => {
         role: user.role,
         onboarded: user.onboarded
       }));
-      
+
       // Close the modal and show success message
       closeEditModal();
       toast.success('Profile updated successfully!');
-      
+
     } catch (error) {
       console.error('Error updating profile:', error);
       toast.error('Failed to update profile. Please try again.');
@@ -412,7 +412,7 @@ const ProfilePage = () => {
           {/* Edit Profile Modal */}
           <AnimatePresence>
             {isEditModalOpen && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -420,7 +420,7 @@ const ProfilePage = () => {
                 className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4"
                 onClick={closeEditModal}
               >
-                <motion.div 
+                <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -20, opacity: 0 }}
@@ -435,9 +435,9 @@ const ProfilePage = () => {
                         <h2 className="text-2xl font-bold bg-[var(--primary-color)] bg-clip-text text-transparent">
                           Edit Profile
                         </h2>
-                        <p className="text-sm text-gray-500 mt-1">Update your personal information</p>
+                        {/* <p className="text-sm text-gray-500 mt-1">Update your personal information</p> */}
                       </div>
-                      <button 
+                      <button
                         onClick={closeEditModal}
                         className="p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
                         aria-label="Close"
@@ -446,10 +446,10 @@ const ProfilePage = () => {
                       </button>
                     </div>
                   </div>
-                  
+
                   <div className="p-6 md:p-8">
                     {/* Profile Image Upload */}
-                    <div className="flex flex-col items-center mb-10">
+                    {/* <div className="flex flex-col items-center mb-10">
                       <div className="relative group">
                         <div className="w-36 h-36 rounded-2xl overflow-hidden border-4 border-white shadow-xl relative">
                           <Image
@@ -487,8 +487,8 @@ const ProfilePage = () => {
                       <p className="mt-4 text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
                         Click to upload new photo
                       </p>
-                    </div>
-                    
+                    </div> */}
+
                     {/* Form Fields */}
                     <div className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -500,7 +500,7 @@ const ProfilePage = () => {
                             <div className="relative">
                               {field.type === 'select' ? (
                                 <div className="relative">
-                                  <div 
+                                  <div
                                     className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-800 cursor-pointer flex justify-between items-center"
                                     onClick={() => toggleDropdown(field.id)}
                                   >
@@ -528,14 +528,15 @@ const ProfilePage = () => {
                                   <input
                                     type={field.type || 'text'}
                                     value={formData[field.id] || ''}
+                                    readOnly={field.id === 'email'}
                                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 placeholder-gray-400 text-gray-800"
+                                    className={`w-full px-4 py-2.5 text-gray-300 bg-white border border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 placeholder-gray-400 ${field.id === 'email' ? 'bg-gray-50 cursor-not-allowed' : 'text-gray-800'}`}
                                     placeholder={`Enter ${field.label.toLowerCase()}`}
                                   />
                                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
-                                    {React.cloneElement(field.icon as React.ReactElement, { 
+                                    {React.cloneElement(field.icon as React.ReactElement, {
                                       // @ts-ignore - size prop is valid for the icon component
-                                      size: 18 
+                                      size: 18
                                     })}
                                   </div>
                                 </>
@@ -544,7 +545,7 @@ const ProfilePage = () => {
                           </div>
                         ))}
                       </div>
-                      
+
                       {/* Bio Field */}
                       <div className="space-y-1.5">
                         <label className="block text-sm font-medium text-gray-700 pl-1">
@@ -561,7 +562,7 @@ const ProfilePage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Action Buttons */}
                     <div className="flex justify-end space-x-3 pt-6 mt-8 border-t border-gray-100">
                       <button
@@ -611,12 +612,21 @@ const ProfilePage = () => {
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{user.firstName} {user.lastName}</h1>
                 <p className="text-blue-500 font-medium mb-4">{user.email}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    {user.isEmailVerified ? 'Verified' : 'Not Verified'}
+                  <span className="px-3 py-1 bg-green-100 text-[var(--primary-color)] text-xs font-medium rounded-full flex items-center">
+                    {user.isEmailVerified ? (
+                      <>
+                        <FiCheckCircle /> &nbsp;
+                        <span className="mr-2 font-bold">Verified</span>
+                      </>
+                    ) : (
+                      <>
+                        <FiXCircle /> &nbsp;
+                        <span className="mr-2 font-bold">Not Verified</span>
+                      </>
+                    )}
                   </span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                   {user.role}
+                    {user.role}
                   </span>
                 </div>
               </div>
@@ -626,7 +636,7 @@ const ProfilePage = () => {
           {/* Profile Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {profile.map((field) => (
-              <div 
+              <div
                 key={field.id}
                 className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-all duration-300"
               >
