@@ -1,30 +1,52 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaCheck, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaCheck, FaChevronDown, FaUser, FaVenusMars, FaCalendarAlt, FaGraduationCap, FaBook, FaSchool } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const OnboardingPage = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [progress, setProgress] = useState(25);
   
   // Form state
   const [formData, setFormData] = useState({
+    gender: '',
+    dob: '',
+    profileType: 'Student',
     class: '',
     syllabus: '',
-    school: ''
+    school: '',
+    emailNotifications: true,
+    inAppNotifications: true,
+    studyReminders: true,
+    agreedToTerms: false
   });
   
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  
   const [dropdowns, setDropdowns] = useState({
+    gender: false,
+    profileType: false,
     class: false,
     syllabus: false,
     school: false
   });
 
   // Options
-  const classes = Array.from({ length: 10 }, (_, i) => `Class ${i + 1}`);
-  const syllabi = ['State', 'CBSE', 'ICSE'];
-  const schools = ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions'];
+  const genders = ['Male', 'Female', 'Other', 'Prefer not to say'];
+  const profileTypes = ['Student', 'Dropout', 'Repeating Year', 'Homechooled', 'Other'];
+  const classes = Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`);
+  const syllabi = ['CBSE', 'ICSE', 'State Board', 'Other'];
+  const schools = ['Prerana Institute', 'New Baldwin Institutions', 'Jyothi Institutions', 'Other'];
+
+  // Update progress based on current step
+  useEffect(() => {
+    const newProgress = (currentStep / 4) * 100;
+    setProgress(Math.min(100, Math.max(25, newProgress)));
+  }, [currentStep]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -40,31 +62,66 @@ const OnboardingPage = () => {
   };
 
   const toggleDropdown = (field: string) => {
-    setDropdowns(prev => {
-      // Close all dropdowns first, then toggle the clicked one
-      const newState = {
-        class: false,
-        syllabus: false,
-        school: false,
-      };
-      
-      // Only open the clicked dropdown if it wasn't already open
-      if (!prev[field as keyof typeof prev]) {
-        newState[field as keyof typeof newState] = true;
-      }
-      
-      return newState;
-    });
+    setDropdowns(prev => ({
+      ...prev,
+      [field]: !prev[field as keyof typeof prev]
+    }));
+  };
+
+  const validateStep = (step: number) => {
+    const newErrors: Record<string, string> = {};
+    
+    if (step === 1) {
+      if (!formData.gender) newErrors.gender = 'Gender is required';
+      if (!formData.dob) newErrors.dob = 'Date of birth is required';
+      if (!formData.profileType) newErrors.profileType = 'Profile type is required';
+    } else if (step === 2) {
+      if (!formData.class) newErrors.class = 'Class is required';
+      if (!formData.syllabus) newErrors.syllabus = 'Syllabus is required';
+      if (!formData.school) newErrors.school = 'School/Institution is required';
+    } else if (step === 3) {
+      if (!formData.agreedToTerms) newErrors.agreedToTerms = 'You must agree to the terms and conditions';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const nextStep = () => {
+    if (currentStep < 4 && validateStep(currentStep)) {
+      setCurrentStep(prev => prev + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const prevStep = () => {
+    if (currentStep > 1) {
+      setCurrentStep(prev => prev - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.class || !formData.syllabus || !formData.school) return;
+    
+    // Validate all steps before submission
+    let isValid = true;
+    for (let i = 1; i <= 3; i++) {
+      if (!validateStep(i)) {
+        isValid = false;
+      }
+    }
+    
+    if (!isValid) {
+      setCurrentStep(1); // Go back to first step if validation fails
+      return;
+    }
     
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
+      // Simulate API call with form data
+      console.log('Submitting form data:', formData);
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Redirect to dashboard after successful onboarding
@@ -75,8 +132,56 @@ const OnboardingPage = () => {
       setIsSubmitting(false);
     }
   };
+  
+  const handleCheckboxChange = (field: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: checked
+    }));
+  };
 
-  const isFormValid = formData.class && formData.syllabus && formData.school;
+  const isFormValid = formData.gender && formData.dob && formData.profileType && 
+                     formData.class && formData.syllabus && formData.school && 
+                     formData.agreedToTerms;
+
+  // Custom Input Component
+  const InputField = ({ 
+    label, 
+    value, 
+    onChange, 
+    type = 'text', 
+    placeholder = '',
+    required = false,
+    icon: Icon,
+    onFocus = () => {}
+  }: { 
+    label: string; 
+    value: string; 
+    onChange: (value: string) => void; 
+    type?: string;
+    placeholder?: string;
+    required?: boolean;
+    icon: React.ElementType;
+    onFocus?: () => void;
+  }) => (
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center">
+        <Icon className="mr-2 text-[var(--primary-color)]" />
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={onFocus}
+        placeholder={placeholder}
+        className={`w-full px-4 py-3 rounded-xl border ${value ? 'border-[var(--primary-color)]' : 'border-gray-300'} 
+                  transition-all duration-200
+                  shadow-sm placeholder-gray-400`}
+        required={required}
+      />
+    </div>
+  );
 
   // Custom Dropdown Component
   const Dropdown = ({ 
@@ -85,7 +190,9 @@ const OnboardingPage = () => {
     isOpen, 
     toggle, 
     options, 
-    onSelect 
+    onSelect,
+    icon: Icon,
+    required = false
   }: { 
     label: string; 
     value: string; 
@@ -93,57 +200,113 @@ const OnboardingPage = () => {
     toggle: () => void; 
     options: string[]; 
     onSelect: (option: string) => void;
-  }) => {
-    // Determine if this is the school dropdown
-    const isSchoolDropdown = label === 'School';
-    
-    return (
+    icon: React.ElementType;
+    required?: boolean;
+  }) => (
     <div className="mb-6 relative">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
-        {label} *
+      <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center">
+        <Icon className="mr-2 text-[var(--primary-color)]" />
+        {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div 
         onClick={toggle}
-        className={`w-full px-4 py-3 border ${isOpen ? 'border-[var(--primary-color)] ring-1 ring-[var(--primary-color)]' : 'border-gray-300'} rounded-lg cursor-pointer flex justify-between items-center transition-all duration-200`}
+        className={`w-full px-4 py-3 rounded-xl border ${value ? 'border-[var(--primary-color)]' : 'border-gray-300'} 
+                  flex justify-between items-center cursor-pointer transition-all duration-200
+                  hover:border-[var(--primary-hover)]`}
       >
-        <span className={value ? 'text-gray-900' : 'text-gray-600'}>
+        <span className={value ? 'text-gray-800' : 'text-gray-400'}>
           {value || `Select ${label.toLowerCase()}`}
         </span>
-        {isOpen ? <FaChevronUp className="text-gray-500" /> : <FaChevronDown className="text-gray-500" />}
+        {isOpen ? <FaChevronDown className="text-gray-500 rotate-180" /> : <FaChevronDown className="text-gray-500" />}
       </div>
-      
-      {isOpen && (
-        <div 
-          className={`absolute z-10 w-full ${isSchoolDropdown ? 'bottom-full mb-1' : 'mt-1'} bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto`}
-        >
-          <div className="py-1">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute z-10 mt-1 w-full bg-white rounded-xl shadow-lg border border-gray-200 py-1 max-h-60 overflow-auto"
+          >
             {options.map((option, index) => (
               <div
                 key={index}
                 onClick={() => onSelect(option)}
-                className={`px-4 py-2 hover:bg-gray-50 cursor-pointer flex justify-between items-center text-gray-800 ${value === option ? 'bg-gray-50' : ''}`}
+                className={`px-4 py-2.5 hover:bg-[var(--primary-color)] hover:text-white cursor-pointer transition-colors ${
+                  value === option ? 'bg-[var(--primary-color)] text-white font-medium' : 'text-gray-700'
+                }`}
               >
-                <span className="break-words max-w-[calc(100%-24px)]">{option}</span>
-                {value === option && <FaCheck className="text-[var(--primary-color)] flex-shrink-0 ml-2" />}
+                {option}
+                {value === option && <FaCheck className="float-right mt-1 text-[var(--primary-color)]" />}
               </div>
             ))}
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
-  )};
+  );
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">Complete Your Profile</h2>
-              <p className="text-gray-600">Help us personalize your learning experience</p>
+  // Render step content
+  const renderStepContent = () => {
+    switch (currentStep) {
+      case 1:
+        return (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-800">Personal Information</h2>
+            <p className="text-gray-600 mb-6">Tell us a bit about yourself to get started.</p>
+            
+            <div>
+              <Dropdown
+                label="Gender"
+                value={formData.gender}
+                isOpen={dropdowns.gender}
+                toggle={() => toggleDropdown('gender')}
+                options={genders}
+                onSelect={(value) => handleInputChange('gender', value)}
+                icon={FaVenusMars}
+                required
+              />
+              {errors.gender && <p className="mt-1 text-sm text-red-600">{errors.gender}</p>}
             </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
+            
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center">
+                <FaCalendarAlt className="mr-2 text-[var(--primary-color)]" />
+                Date of Birth <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="date"
+                value={formData.dob}
+                onChange={(e) => handleInputChange('dob', e.target.value)}
+                className={`w-full px-4 py-3 rounded-xl text-gray-700 border ${errors.dob ? 'border-red-500' : 'border-gray-300'} transition-all duration-200`}
+                required
+              />
+              {errors.dob && <p className="mt-1 text-sm text-red-600">{errors.dob}</p>}
+            </div>
+            
+            <div>
+              <Dropdown
+                label="Profile Type"
+                value={formData.profileType}
+                isOpen={dropdowns.profileType}
+                toggle={() => toggleDropdown('profileType')}
+                options={profileTypes}
+                onSelect={(value) => handleInputChange('profileType', value)}
+                icon={FaUser}
+                required
+              />
+              {errors.profileType && <p className="mt-1 text-sm text-red-600">{errors.profileType}</p>}
+            </div>
+          </div>
+        );
+        
+      case 2:
+        return (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-800">Education Details</h2>
+            <p className="text-gray-600 mb-6">Help us understand your educational background.</p>
+            
+            <div>
               <Dropdown
                 label="Class"
                 value={formData.class}
@@ -151,8 +314,13 @@ const OnboardingPage = () => {
                 toggle={() => toggleDropdown('class')}
                 options={classes}
                 onSelect={(value) => handleInputChange('class', value)}
+                icon={FaGraduationCap}
+                required
               />
-
+              {errors.class && <p className="mt-1 text-sm text-red-600">{errors.class}</p>}
+            </div>
+            
+            <div>
               <Dropdown
                 label="Syllabus"
                 value={formData.syllabus}
@@ -160,37 +328,224 @@ const OnboardingPage = () => {
                 toggle={() => toggleDropdown('syllabus')}
                 options={syllabi}
                 onSelect={(value) => handleInputChange('syllabus', value)}
+                icon={FaBook}
+                required
               />
-
+              {errors.syllabus && <p className="mt-1 text-sm text-red-600">{errors.syllabus}</p>}
+            </div>
+            
+            <div>
               <Dropdown
-                label="School"
+                label="School/Institution"
                 value={formData.school}
                 isOpen={dropdowns.school}
                 toggle={() => toggleDropdown('school')}
                 options={schools}
                 onSelect={(value) => handleInputChange('school', value)}
+                icon={FaSchool}
+                required
               />
-
-              <button
-                type="submit"
-                disabled={!isFormValid || isSubmitting}
-                className={`w-full mt-8 flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${
-                  isFormValid 
-                    ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] cursor-pointer' 
-                    : 'bg-gray-400 cursor-not-allowed'
-                } focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors duration-200`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <span className="animate-spin mr-2">↻</span>
-                    Saving...
-                  </>
-                ) : (
-                  'Continue to Dashboard'
-                )}
-              </button>
-            </form>
+              {errors.school && <p className="mt-1 text-sm text-red-600">{errors.school}</p>}
+            </div>
           </div>
+        );
+        
+      case 3:
+        return (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-800">Account Preferences</h2>
+            <p className="text-gray-600 mb-6">Customize your experience with us.</p>
+            
+            <div className="bg-indigo-50 p-6 rounded-xl mb-6">
+              <h3 className="font-medium text-indigo-800 mb-2">Notification Preferences</h3>
+              <p className="text-sm text-indigo-700 mb-4">How would you like to receive updates?</p>
+              
+              <div className="space-y-3">
+                <label className="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="rounded text-[var(--primary-color)]" 
+                    checked={formData.emailNotifications}
+                    onChange={(e) => handleCheckboxChange('emailNotifications', e.target.checked)}
+                  />
+                  <span className="ml-2 text-gray-700">Email notifications</span>
+                </label>
+                <label className="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="rounded text-[var(--primary-color)]" 
+                    checked={formData.inAppNotifications}
+                    onChange={(e) => handleCheckboxChange('inAppNotifications', e.target.checked)}
+                  />
+                  <span className="ml-2 text-gray-700">In-app notifications</span>
+                </label>
+                <label className="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="rounded text-[var(--primary-color)]" 
+                    checked={formData.studyReminders}
+                    onChange={(e) => handleCheckboxChange('studyReminders', e.target.checked)}
+                  />
+                  <span className="ml-2 text-gray-700">Study reminders</span>
+                </label>
+              </div>
+            </div>
+            
+            <div className="bg-amber-50 p-6 rounded-xl">
+              <h3 className="font-medium text-amber-800 mb-2">Terms & Conditions</h3>
+              <p className="text-sm text-amber-700 mb-4">
+                By continuing, you agree to our Terms of Service and Privacy Policy.
+              </p>
+              <div className="mt-2">
+                <label className="flex items-start">
+                  <input 
+                    type="checkbox" 
+                    className="mt-1 rounded text-[var(--primary-color)]" 
+                    checked={formData.agreedToTerms}
+                    onChange={(e) => handleCheckboxChange('agreedToTerms', e.target.checked)}
+                    required 
+                  />
+                  <span className="ml-2 text-sm text-gray-700">
+                    I agree to the terms and conditions
+                  </span>
+                </label>
+                {errors.agreedToTerms && <p className="mt-1 text-sm text-red-600">{errors.agreedToTerms}</p>}
+              </div>
+            </div>
+          </div>
+        );
+        
+      case 4:
+        return (
+          <div className="text-center py-8">
+            <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-12 h-12 text-[var(--primary-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-3">You're all set!</h2>
+            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+              Your profile is ready. Click the button below to complete your onboarding and start your learning journey with us.
+            </p>
+            
+            <div className="bg-gray-50 p-6 rounded-xl text-left max-w-md mx-auto">
+              <h3 className="font-medium text-gray-800 mb-3">Your Information</h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                {Object.entries(formData).map(([key, value]) => (
+                  value && (
+                    <div key={key} className="flex">
+                      <span className="font-medium text-gray-700 w-32 capitalize">
+                        {key.replace(/([A-Z])/g, ' $1').trim()}:
+                      </span>
+                      <span>{value}</span>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+        
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto">
+        {/* Progress Bar */}
+        <div className="mb-10">
+          <div className="flex justify-between mb-2">
+            <span className="text-sm font-medium text-[var(--primary-color)]">
+              Step {currentStep} of 4
+            </span>
+            <span className="text-sm font-medium text-[var(--primary-color)]">
+              {progress}% Complete
+            </span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2.5">
+            <motion.div 
+              className="bg-[var(--primary-color)] h-2.5 rounded-full" 
+              initial={{ width: '0%' }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
+          </div>
+        </div>
+        
+        {/* Form Container */}
+        <motion.div 
+          key={currentStep}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white rounded-2xl shadow-xl p-6 sm:p-8"
+        >
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-extrabold text-gray-900 mb-2">
+              {currentStep === 1 && 'Welcome to Murshid'}
+              {currentStep === 2 && 'Education Details'}
+              {currentStep === 3 && 'Almost There'}
+              {currentStep === 4 && 'Setup Complete!'}
+            </h1>
+            <p className="text-gray-500">
+              {currentStep === 1 && 'Let\'s set up your profile to get started'}
+              {currentStep === 2 && 'Tell us about your education'}
+              {currentStep === 3 && 'A few more details to personalize your experience'}
+              {currentStep === 4 && 'You\'re ready to go!'}
+            </p>
+          </div>
+          
+          <form onSubmit={handleSubmit}>
+            {renderStepContent()}
+            
+            <div className={`mt-10 flex ${currentStep === 1 ? 'justify-end' : 'justify-between'}`}>
+              {currentStep > 1 && (
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                >
+                  Back
+                </button>
+              )}
+              
+              {currentStep < 4 ? (
+                <button
+                  type="button"
+                  onClick={nextStep}
+                  className="px-6 py-3 bg-[var(--primary-color)] text-white rounded-xl font-medium hover:bg-[var(--primary-hover)] transition-colors ml-auto cursor-pointer"
+                  disabled={isSubmitting}
+                >
+                  Continue
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="px-8 py-3 bg-[var(--primary-color)] text-white rounded-xl font-medium hover:bg-[var(--primary-hover)] transition-colors w-full sm:w-auto cursor-pointer"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Completing...
+                    </span>
+                  ) : (
+                    'Complete Setup'
+                  )}
+                </button>
+              )}
+            </div>
+          </form>
+        </motion.div>
+        
+        <div className="mt-6 text-center text-sm text-gray-500">
+          <p>Need help? <a href="#" className="text-[var(--primary-color)] hover:text-[var(--primary-hover)] font-medium">Contact support</a></p>
         </div>
       </div>
     </div>

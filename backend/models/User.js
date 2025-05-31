@@ -65,6 +65,16 @@ const userSchema = new mongoose.Schema({
     default: true,
     select: false
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+    select: false
+  },
+  onBoarded: {
+    type: Boolean,
+    default: false,
+    select: false
+  },
   passwordChangedAt: Date
 }, {
   timestamps: true,

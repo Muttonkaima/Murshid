@@ -21,10 +21,10 @@ const ProfilePage = () => {
   const [profile, setProfile] = useState<ProfileField[]>([
     { id: 'name', label: 'Full Name', value: 'John Doe', icon: <FiUser /> },
     { id: 'email', label: 'Email', value: 'john.doe@example.com', icon: <FiMail />, type: 'email' },
-    { id: 'phone', label: 'Phone', value: '+1 (555) 123-4567', icon: <FiPhone />, type: 'tel' },
+    { id: 'gender', label: 'Gender', value: 'Male', icon: <FiPhone />, type: 'tel' },
     { id: 'dob', label: 'Date of Birth', value: '1990-01-01', icon: <FiCalendar />, type: 'date' },
-    { id: 'location', label: 'Location', value: 'San Francisco, CA', icon: <FiMapPin /> },
-    { id: 'education', label: 'Education', value: 'Computer Science', icon: <FiBook /> },
+    { id: 'profileType', label: 'Profile Type', value: 'Student', icon: <FiMapPin /> },
+    { id: 'school', label: 'School', value: 'Prerana Institute', icon: <FiBook /> },
     { id: 'class', label: 'Class', value: '12th Grade', icon: <FiBookOpen /> },
     { id: 'syllabus', label: 'Syllabus', value: 'CBSE', icon: <FiFileText /> },
   ]);
