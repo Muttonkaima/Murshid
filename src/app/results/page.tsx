@@ -1,10 +1,196 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FiBook, FiCalendar, FiAward, FiSearch, FiFilter, FiChevronDown, FiChevronUp, FiLayers, FiClock } from 'react-icons/fi';
+import { 
+  FiBook, 
+  FiCalendar, 
+  FiAward, 
+  FiSearch, 
+  FiFilter, 
+  FiChevronDown, 
+  FiChevronUp, 
+  FiLayers, 
+  FiClock, 
+  FiX,
+  FiCheckCircle,
+  FiXCircle,
+  FiAlertCircle
+} from 'react-icons/fi';
 import Sidebar from '@/components/layout/Sidebar';
 import { resultService } from '@/services/resultService';
 import { authService } from '@/services/authService';
+
+// Modal component for showing quiz details
+const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onClose: () => void }) => {
+  if (!result) return null;
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'correct':
+        return <FiCheckCircle className="text-green-500 mr-2 flex-shrink-0" />;
+      case 'incorrect':
+        return <FiXCircle className="text-red-500 mr-2 flex-shrink-0" />;
+      case 'partially_correct':
+        return <FiAlertCircle className="text-yellow-500 mr-2 flex-shrink-0" />;
+      default:
+        return null;
+    }
+  };
+
+  const getStatusText = (status: string) => {
+    return status.split('_').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true">
+      {/* Background overlay */}
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" 
+        aria-hidden="true"
+        onClick={onClose}
+      ></div>
+
+      {/* Modal container */}
+      <div className="flex min-h-screen items-center justify-center p-4 text-center sm:block sm:p-0">
+        {/* Modal panel */}
+        <div 
+          className="relative inline-block w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:align-middle max-h-[95vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="bg-white px-6 py-5 sm:p-6">
+            <div className="flex justify-center sticky top-0 z-10 text-center bg-white">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {result.subject} <br /> {result.quizType === 'syllabus' ? `Chapter: ${result.chapter}` : `Level: ${result.level}`}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">
+                  {result.quizType === 'syllabus' ? 'Syllabus Quiz' : 'Fundamentals Quiz'}
+                  {result.quizType === 'syllabus' && result.branch && ` • ${result.branch}`}
+                </p>
+              </div>
+            </div>
+
+            {/* Score Summary */}
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+                <p className="text-sm font-medium text-gray-500">Score</p>
+                <p className="mt-1 text-3xl font-semibold text-gray-900">
+                  {result.scored} <span className="text-lg text-gray-500">/ {result.total_score}</span>
+                </p>
+                <div className="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div 
+                    className={`h-full ${result.percentage >= 50 ? 'bg-green-500' : 'bg-red-500'}`}
+                    style={{ width: `${result.percentage}%` }}
+                  ></div>
+                </div>
+                <p className="mt-2 text-sm text-gray-500">{result.percentage.toFixed(1)}%</p>
+              </div>
+
+              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+                <p className="text-sm font-medium text-gray-500">Status</p>
+                <div className="mt-1 flex items-center">
+                  {result.percentage >= 50 ? (
+                    <FiCheckCircle className="h-8 w-8 text-green-500" />
+                  ) : (
+                    <FiXCircle className="h-8 w-8 text-red-500" />
+                  )}
+                  <span className="ml-2 text-xl font-semibold text-gray-900">
+                    {result.percentage >= 50 ? 'Passed' : 'Failed'}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-gray-500">
+                  {result.questions.filter(q => q.status === 'correct').length} of {result.questions.length} correct
+                </p>
+              </div>
+
+              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+                <p className="text-sm font-medium text-gray-500">Date & Time</p>
+                <p className="mt-1 text-lg font-semibold text-gray-900">
+                  {new Date(result.date_time).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                  })}
+                </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  {new Date(result.date_time).toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                  })}
+                </p>
+              </div>
+            </div>
+
+            {/* Questions Section */}
+            <div className="mt-8">
+              <h4 className="text-lg font-medium text-gray-900 mb-4">Questions</h4>
+              <div className="space-y-6">
+                {result.questions.map((question, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <div className={`px-4 py-3 flex items-center ${
+                      question.status === 'correct' ? 'bg-green-50' : 
+                      question.status === 'incorrect' ? 'bg-red-50' : 'bg-white'
+                    }`}>
+                      <span className="font-medium text-gray-700">Q{index + 1}.</span>
+                      <div className="ml-2 flex-1">
+                        <p className="text-gray-900">{question.question}</p>
+                      </div>
+                      <div className="flex items-center">
+                        {getStatusIcon(question.status)}
+                        <span className="text-sm font-medium text-gray-900">
+                          {getStatusText(question.status)}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 space-y-3">
+                      <div>
+                        <p className="text-sm text-gray-500">Your Answer:</p>
+                        <p className="mt-1 text-gray-900">
+                          {typeof question.user_answer === 'object' 
+                            ? JSON.stringify(question.user_answer) 
+                            : question.user_answer}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Correct Answer:</p>
+                        <p className="mt-1 text-gray-900">
+                          {typeof question.correct_answer === 'object' 
+                            ? JSON.stringify(question.correct_answer) 
+                            : question.correct_answer}
+                        </p>
+                      </div>
+                      {question.explanation && (
+                        <div className="mt-2 p-3 bg-blue-50 rounded-md">
+                          <p className="text-sm font-medium text-blue-800">Explanation:</p>
+                          <p className="mt-1 text-sm text-blue-700">{question.explanation}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-50 px-6 py-4 sm:px-6 sticky bottom-0 flex justify-between items-center">
+            <p className="text-sm text-gray-500">
+              {result.questions.length} question{result.questions.length !== 1 ? 's' : ''}
+            </p>
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 interface QuizResult {
   _id: string;
@@ -30,6 +216,7 @@ const ResultsPage = () => {
   const [results, setResults] = useState<QuizResult[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedResult, setSelectedResult] = useState<QuizResult | null>(null);
 
   // Fetch user's results on component mount
   useEffect(() => {
@@ -199,7 +386,14 @@ const ResultsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <>
+      {selectedResult && (
+        <QuizDetailsModal 
+          result={selectedResult} 
+          onClose={() => setSelectedResult(null)} 
+        />
+      )}
+      <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
       <div className="md:block md:w-64 flex-shrink-0">
         <Sidebar />
@@ -398,10 +592,7 @@ const ResultsPage = () => {
                     </span>
                     <button 
                       className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
-                      onClick={() => {
-                        // TODO: Implement view details functionality
-                        console.log('View details for result:', result._id);
-                      }}
+                      onClick={() => setSelectedResult(result)}
                     >
                       View Details
                     </button>
@@ -438,7 +629,8 @@ const ResultsPage = () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
