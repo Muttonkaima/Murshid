@@ -55,30 +55,50 @@ const QuestionAccordion = ({ question, index, isOpen, onClick }: {
     ).join(' ');
   };
 
+  const isCorrect = question.status === 'correct';
+  const isPartiallyCorrect = question.status === 'partially_correct';
+
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden mb-3 transition-all duration-200 ">
+    <div className={`border rounded-lg overflow-hidden mb-3 transition-all duration-200 ${
+      isCorrect ? 'border-green-200 bg-green-50' : 
+      !isCorrect && !isPartiallyCorrect ? 'border-red-200 bg-red-50' : 
+      'border-yellow-200 bg-yellow-50'
+    }`}>
       <button
-        className={`w-full px-4 py-3 text-left flex items-center justify-between focus:outline-none ${isOpen ? 'bg-gray-50' : 'bg-white hover:bg-gray-50'} cursor-pointer`}
+        className={`w-full px-5 py-4 text-left flex items-start justify-between focus:outline-none transition-colors cursor-pointer ${
+          isOpen ? 'bg-opacity-50' : 'hover:bg-opacity-30'
+        } ${isCorrect ? 'bg-green-50' : !isCorrect && !isPartiallyCorrect ? 'bg-red-50' : 'bg-yellow-50'}`}
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={`question-${index}-content`}
       >
-        <div className="flex items-center flex-1 min-w-0 ">
-          <span className="font-medium text-gray-700 mr-3 flex-shrink-0">Q{index + 1}.</span>
-          <p className="text-gray-900 truncate">{question.question}</p>
+        <div className="flex items-start flex-1 min-w-0">
+          <div className={`flex items-center justify-center h-6 w-6 rounded-full flex-shrink-0 mt-0.5 mr-3 ${
+            isCorrect ? 'bg-green-100 text-green-800' : 
+            !isCorrect && !isPartiallyCorrect ? 'bg-red-100 text-red-800' : 
+            'bg-yellow-100 text-yellow-800'
+          }`}>
+            <span className="text-sm font-medium">{index + 1}</span>
+          </div>
+          <div className="text-left">
+            <p className="text-gray-900 font-medium">{question.question || `Question ${index + 1}`}</p>
+            <div className="mt-1 flex items-center">
+              <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
+                isCorrect ? 'bg-green-100 text-green-800' : 
+                !isCorrect && !isPartiallyCorrect ? 'bg-red-100 text-red-800' : 
+                'bg-yellow-100 text-yellow-800'
+              }`}>
+                {getStatusText(question.status)}
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="flex items-center ml-2 flex-shrink-0">
-          <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${getStatusColor(question.status)}`}>
-            {getStatusText(question.status)}
-          </span>
-          <svg
-            className={`ml-3 w-5 h-5 text-gray-500 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
+        <div className="ml-4 flex-shrink-0 flex items-center">
+          {isOpen ? (
+            <FiChevronUp className="h-5 w-5 text-gray-500" />
+          ) : (
+            <FiChevronDown className="h-5 w-5 text-gray-500" />
+          )}
         </div>
       </button>
       <div 
@@ -173,7 +193,7 @@ const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onCl
 
             {/* Score Summary */}
             <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
-              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+              <div className="bg-white px-4 py-5 shadow-lg rounded-lg">
                 <p className="text-sm font-medium text-gray-500">Score</p>
                 <p className="mt-1 text-3xl font-semibold text-gray-900">
                   {result.scored} <span className="text-lg text-gray-500">/ {result.total_score}</span>
@@ -187,7 +207,7 @@ const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onCl
                 <p className="mt-2 text-sm text-gray-500">{result.percentage.toFixed(1)}%</p>
               </div>
 
-              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+              <div className="bg-white px-4 py-5 shadow-lg rounded-lg">
                 <p className="text-sm font-medium text-gray-500">Status</p>
                 <div className="mt-1 flex items-center">
                   {result.percentage >= 50 ? (
@@ -204,7 +224,7 @@ const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onCl
                 </p>
               </div>
 
-              <div className="bg-gray-50 px-4 py-5 rounded-lg">
+              <div className="bg-white px-4 py-5 shadow-lg rounded-lg">
                 <p className="text-sm font-medium text-gray-500">Date & Time</p>
                 <p className="mt-1 text-lg font-semibold text-gray-900">
                   {new Date(result.date_time).toLocaleDateString('en-US', { 
