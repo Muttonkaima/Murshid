@@ -1,6 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut } from 'react-icons/fi';
+import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
+import chatService, { ChatMessage as ServiceChatMessage } from '@/services/chatService';
+import DebugEnv from '../debug-env';
 
 // Type declarations for SpeechRecognition
 declare global {
@@ -41,13 +46,9 @@ var SpeechRecognition: {
   prototype: SpeechRecognition;
   new(): SpeechRecognition;
 };
-import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut } from 'react-icons/fi';
-import Image from 'next/image';
 
-interface Message {
+interface Message extends Omit<ServiceChatMessage, 'timestamp'> {
   id: string;
-  content: string;
-  sender: 'user' | 'ai';
   timestamp: Date;
 }
 
@@ -56,37 +57,23 @@ interface ChatHistory {
   title: string;
   timestamp: Date;
   preview: string;
+  messages: Message[];
 }
+const initialMessages: Message[] = [];
+const initialChatHistory: ChatHistory[] = [];
 
-const initialMessages: Message[] = [
-  {
-    id: '1',
-    content: 'Hello! I\'m Murshid, your AI learning assistant. How can I help you today?',
-    sender: 'ai',
-    timestamp: new Date(),
-  },
-];
-
-const initialChatHistory: ChatHistory[] = [
-  {
-    id: '1',
-    title: 'Introduction to Murshid',
-    timestamp: new Date(),
-    preview: 'Hello! I\'m Murshid, your AI learning assistant...',
-  },
-];
-
-export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+function ChatPage() {
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [chatHistory, setChatHistory] = useState<ChatHistory[]>(initialChatHistory);
-  const [currentChatId, setCurrentChatId] = useState<string | null>('1');
-  const [showNewChatButton, setShowNewChatButton] = useState(false);
+  const [chatHistory, setChatHistory] = useState<ChatHistory[]>([]);
+  const [currentChatId, setCurrentChatId] = useState<string | null>(null);
   const [editingChatId, setEditingChatId] = useState<string | null>(null);
   const [editTitle, setEditTitle] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -142,62 +129,105 @@ export default function ChatPage() {
   };
 
   const handleSendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
     const userMessage: Message = {
-      id: Date.now().toString(),
+      id: uuidv4(),
       content: input,
-      sender: 'user',
+      role: 'user',
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    // Add user message to UI immediately
+    const updatedMessages = [userMessage];
+    setMessages(updatedMessages);
     setInput('');
+    setShowWelcomeScreen(false);
     setIsLoading(true);
+    setError(null);
 
     try {
-      // Simulate AI response
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Convert messages to format expected by the service
+      // Only include the last 10 messages to avoid context window issues
+      const recentMessages = updatedMessages.slice(-10);
+      const serviceMessages: ServiceChatMessage[] = recentMessages.map(msg => ({
+        role: msg.role,
+        content: msg.content,
+      }));
 
-      const aiResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        content: `I received your message: "${input}"`,
-        sender: 'ai',
-        timestamp: new Date(),
-      };
+      // Get response from Gemini
+      const response = await chatService.sendMessage(serviceMessages);
 
-      setMessages(prev => [...prev, aiResponse]);
-
-      // Update chat history
-      if (currentChatId === '1') {
-        const newChatId = Date.now().toString();
-        setChatHistory(prev => [{
-          id: newChatId,
-          title: input.substring(0, 30) + (input.length > 30 ? '...' : ''),
+      if (response.success) {
+        const aiMessage: Message = {
+          id: uuidv4(),
+          content: response.message,
+          role: 'assistant',
           timestamp: new Date(),
-          preview: input.substring(0, 50) + (input.length > 50 ? '...' : ''),
-        }, ...prev]);
-        setCurrentChatId(newChatId);
+        };
+
+        const finalMessages = [...updatedMessages, aiMessage];
+        setMessages(finalMessages);
+
+        // Update chat history
+        if (!currentChatId) {
+          // Create a new chat
+          const newChat: ChatHistory = {
+            id: uuidv4(),
+            title: userMessage.content.substring(0, 30) + (userMessage.content.length > 30 ? '...' : ''),
+            timestamp: new Date(),
+            preview: userMessage.content.substring(0, 50) + (userMessage.content.length > 50 ? '...' : ''),
+            messages: finalMessages,
+          };
+          setChatHistory(prev => [newChat, ...prev]);
+          setCurrentChatId(newChat.id);
+        } else {
+          // Update existing chat
+          setChatHistory(prev =>
+            prev.map(chat =>
+              chat.id === currentChatId
+                ? {
+                    ...chat,
+                    messages: finalMessages,
+                    updatedAt: new Date(),
+                  }
+                : chat
+            )
+          );
+        }
+      } else {
+        setError('Failed to get response from the AI. Please try again.');
       }
     } catch (error) {
       console.error('Error sending message:', error);
+      setError('An error occurred while processing your message. Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleNewChat = useCallback(() => {
-    setMessages(initialMessages);
+    setMessages([]);
     setCurrentChatId(null);
     setEditingChatId(null);
+    setShowWelcomeScreen(true);
+    setError(null);
   }, []);
 
-  const handleDeleteChat = useCallback((chatId: string, e: React.MouseEvent) => {
+  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
     e.stopPropagation();
     if (window.confirm('Are you sure you want to delete this chat?')) {
-      setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
-      if (currentChatId === chatId) {
-        handleNewChat();
+      try {
+        // In a real implementation, you would call your API here
+        // await chatService.deleteConversation(chatId);
+        
+        setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+        if (currentChatId === chatId) {
+          handleNewChat();
+        }
+      } catch (error) {
+        console.error('Error deleting chat:', error);
+        setError('Failed to delete chat. Please try again.');
       }
     }
   }, [currentChatId, handleNewChat]);
@@ -238,13 +268,18 @@ export default function ChatPage() {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Handle file upload logic here
+      // In a real implementation, you would handle file upload here
       console.log('File selected:', file.name);
+      // For now, just show a message
+      setInput(prev => `${prev ? `${prev}\n` : ''}I've uploaded: ${file.name}`);
+    }
+    // Reset the input to allow selecting the same file again
+    if (e.target) {
+      e.target.value = '';
     }
   };
 
-  // Show welcome screen when no messages or only the initial message
-  const showWelcomeScreen = messages.length <= 1 && !isLoading;
+  // Show welcome screen when explicitly set or when there are no messages
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -343,7 +378,6 @@ export default function ChatPage() {
             ))}
           </div>
         </div>
-
         {/* <div className="p-4 border-t border-gray-200">
           <div className="flex items-center gap-2 text-gray-700">
             <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
@@ -370,6 +404,13 @@ export default function ChatPage() {
 
         {/* Chat Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-6">
+          {error && (
+            <div className="flex justify-center mb-4">
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                {error}
+              </div>
+            </div>
+          )}
           {showWelcomeScreen ? (
             <div className="max-w-3xl mx-auto pt-10 px-4">
               <div className="text-center mb-8">
@@ -392,18 +433,18 @@ export default function ChatPage() {
             messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-3xl rounded-2xl px-4 py-3 ${message.sender === 'user'
+                  className={`max-w-3xl rounded-2xl px-4 py-3 ${message.role === 'user'
                     ? 'bg-[var(--primary-color)] text-white rounded-br-none'
                     : 'bg-white border border-gray-200 text-gray-900 rounded-bl-none shadow-sm'
                     }`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
-                  <div className={`text-xs mt-1 ${message.sender === 'user' ? 'text-white text-right' : 'text-gray-400 text-left'
+                  <div className={`text-xs mt-1 ${message.role === 'user' ? 'text-white text-right' : 'text-gray-400 text-left'
                     }`}>
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </div>
                 </div>
               </div>
@@ -470,11 +511,11 @@ export default function ChatPage() {
                 <button
                   onClick={handleSendMessage}
                   disabled={!input.trim() || isLoading}
-                  className={`p-2 rounded-full ${input.trim()
+                  className={`p-2 rounded-full ${input.trim() && !isLoading
                     ? 'bg-[var(--primary-color)] text-white hover:bg-[var(--primary-color)] hover:text-white cursor-pointer'
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     } transition-colors`}
-                  title="Send message"
+                  title={input.trim() ? "Send message" : "Type a message to send"}
                 >
                   <FiSend className="w-5 h-5" />
                 </button>
@@ -494,6 +535,9 @@ export default function ChatPage() {
           onClick={() => setShowSidebar(false)}
         />
       )}
+      <DebugEnv />
     </div>
   );
 }
+
+export default ChatPage;
