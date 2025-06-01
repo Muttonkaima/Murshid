@@ -327,9 +327,10 @@ const SettingsPage = () => {
           <div className="space-y-6">
             <h2 className="text-xl font-semibold text-gray-900">Security Settings</h2>
             <div className="space-y-6">
-              <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-lg font-medium mb-4 text-gray-900">Change Password</h3>
-                <div className="space-y-4">
+              {user?.authProvider === 'local' ? (
+                <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-lg font-medium mb-4 text-gray-900">Change Password</h3>
+                  <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Current Password</label>
                     <div className="relative">
@@ -454,8 +455,16 @@ const SettingsPage = () => {
                       Update Password
                     </button>
                   </div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-lg font-medium mb-4 text-gray-900">Account Security</h3>
+                  <p className="text-gray-600">
+                    You signed in with {user?.authProvider}. To manage your account security, please use the settings in your {user?.authProvider} account.
+                  </p>
+                </div>
+              )}
 
               <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-medium mb-4 text-gray-900">Two-Factor Authentication</h3>
@@ -599,8 +608,7 @@ const SettingsPage = () => {
                     <div className="flex-shrink-0">
                       <button 
                         onClick={() => setAutoTranslate(!autoTranslate)}
-                        className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors ${autoTranslate ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
-                        aria-label={autoTranslate ? 'Disable auto-translate' : 'Enable auto-translate'}
+                        className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors ${autoTranslate ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-[var(--primary-color)]`}
                       >
                         <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform ${autoTranslate ? 'translate-x-6' : 'translate-x-1'}`} />
                       </button>

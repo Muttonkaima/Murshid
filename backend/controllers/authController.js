@@ -106,6 +106,7 @@ exports.googleAuthCallback = (req, res, next) => {
         isEmailVerified: user.isEmailVerified,
         onboarded: user.onboarded,
         authProvider: user.authProvider,
+        createdAt: user.createdAt
       };
       
       // Redirect back to the frontend with token and user data
