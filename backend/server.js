@@ -12,6 +12,7 @@ const connectDB = require('./config/db');
 // Import routes
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const resultRoutes = require('./routes/result');
 
 // Initialize express app
 const app = express();
@@ -54,6 +55,7 @@ require('./config/passport');
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/results', resultRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

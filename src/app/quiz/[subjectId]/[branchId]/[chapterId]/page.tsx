@@ -2,6 +2,8 @@
 
 import { useParams, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState, useRef } from 'react';
+import resultService from '@/services/resultService';
+import authService from '@/services/authService';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import MCQQuestion from '@/components/questions/MCQQuestion';
@@ -216,7 +218,47 @@ const QuizPage = () => {
     setTimeLeft(timeLimit);
   }, [timeLimit]);
 
-  // Move handleFinishQuiz before it's used in effects
+  // Save quiz results
+  const saveQuizResults = useCallback(async () => {
+    try {
+      const currentUser = authService.getCurrentUser();
+      if (!currentUser) return;
+
+      // Prepare questions data, ensuring user_answer is never null
+      const questionsData = questions.map((q, index) => {
+        const userAnswer = userAnswers[index]?.answer;
+        const hasAnswer = userAnswer !== undefined && userAnswer !== null;
+        const isCorrect = userAnswers[index]?.isCorrect || false;
+        
+        return {
+          question: q.question.text,
+          user_answer: hasAnswer ? userAnswer : 'not_answered',
+          correct_answer: q.correctAnswer,
+          explanation: q.explanation || 'No explanation available',
+          status: (isCorrect ? 'correct' : 'incorrect') as 'correct' | 'incorrect' | 'partially_correct'
+        };
+      });
+
+      const resultData = {
+        quizType: 'syllabus' as const,
+        subject: subjectId as string,
+        branch: branchId as string,
+        chapter: chapterId as string,
+        level: 'NA',
+        questions: questionsData,
+        scored: score,
+        total_score: totalPossibleMarks,
+        percentage: scorePercentage
+      };
+
+      await resultService.saveResult(resultData);
+      console.log('Quiz results saved successfully');
+    } catch (error) {
+      console.error('Error saving quiz results:', error);
+    }
+  }, [subjectId, branchId, chapterId, questions, userAnswers, score, totalPossibleMarks, scorePercentage]);
+
+  // Handle quiz completion
   const handleFinishQuiz = useCallback(() => {
     if (!showResults) {
       setIsTimerRunning(false);
@@ -236,8 +278,11 @@ const QuizPage = () => {
           ...unansweredQuestions
         }));
       }
+
+      // Save results when quiz is completed
+      saveQuizResults();
     }
-  }, [questions, showResults, userAnswers]);
+  }, [questions, showResults, userAnswers, saveQuizResults]);
 
   // Timer effect - client-side only
   useEffect(() => {
