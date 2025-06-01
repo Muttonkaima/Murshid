@@ -1,116 +1,107 @@
 'use client';
 
-import { useState } from 'react';
-import { FiBook, FiClock, FiCalendar, FiAward, FiSearch, FiFilter, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
+import { FiBook, FiCalendar, FiAward, FiSearch, FiFilter, FiChevronDown, FiChevronUp, FiLayers, FiClock } from 'react-icons/fi';
 import Sidebar from '@/components/layout/Sidebar';
+import { resultService } from '@/services/resultService';
+import { authService } from '@/services/authService';
 
 interface QuizResult {
-  id: string;
+  _id: string;
   subject: string;
-  topic: string;
-  score: number;
-  totalMarks: number;
+  quizType: 'syllabus' | 'fundamentals';
+  branch?: string;
+  chapter?: string;
+  level?: string;
+  scored: number;
+  total_score: number;
   percentage: number;
-  date: string;
-  time: string;
-  duration: string;
-  correctAnswers: number;
-  totalQuestions: number;
-  status: 'completed' | 'incomplete' | 'passed' | 'failed';
+  date_time: string;
+  questions: Array<{
+    question: string;
+    user_answer: any;
+    correct_answer: any;
+    explanation: string;
+    status: 'correct' | 'incorrect' | 'partially_correct';
+  }>;
 }
 
 const ResultsPage = () => {
-  // Sample quiz results data
-  const [results, setResults] = useState<QuizResult[]>([
-    {
-      id: '1',
-      subject: 'Mathematics',
-      topic: 'Algebra',
-      score: 18,
-      totalMarks: 20,
-      percentage: 90,
-      date: '2024-05-20',
-      time: '10:30 AM',
-      duration: '30 min',
-      correctAnswers: 18,
-      totalQuestions: 20,
-      status: 'passed'
-    },
-    {
-      id: '2',
-      subject: 'Physics',
-      topic: 'Mechanics',
-      score: 15,
-      totalMarks: 25,
-      percentage: 60,
-      date: '2024-05-18',
-      time: '02:15 PM',
-      duration: '45 min',
-      correctAnswers: 15,
-      totalQuestions: 25,
-      status: 'passed'
-    },
-    {
-      id: '3',
-      subject: 'Chemistry',
-      topic: 'Organic Chemistry',
-      score: 12,
-      totalMarks: 25,
-      percentage: 48,
-      date: '2024-05-15',
-      time: '11:00 AM',
-      duration: '40 min',
-      correctAnswers: 12,
-      totalQuestions: 25,
-      status: 'failed'
-    },
-    {
-      id: '4',
-      subject: 'Biology',
-      topic: 'Cell Biology',
-      score: 22,
-      totalMarks: 25,
-      percentage: 88,
-      date: '2024-05-10',
-      time: '09:45 AM',
-      duration: '35 min',
-      correctAnswers: 22,
-      totalQuestions: 25,
-      status: 'passed'
-    },
-    {
-      id: '5',
-      subject: 'Computer Science',
-      topic: 'Data Structures',
-      score: 19,
-      totalMarks: 20,
-      percentage: 95,
-      date: '2024-05-05',
-      time: '03:30 PM',
-      duration: '50 min',
-      correctAnswers: 19,
-      totalQuestions: 20,
-      status: 'passed'
-    },
-  ]);
+  const [results, setResults] = useState<QuizResult[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch user's results on component mount
+  useEffect(() => {
+    const fetchResults = async () => {
+      if (!authService.isAuthenticated()) {
+        setError('Please log in to view your results');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const response = await resultService.getUserResults();
+        // The response has a results property containing the array
+        const quizResults = response.data.results;
+        console.log('Fetched results:', quizResults);
+        setResults(quizResults);
+      } catch (err) {
+        console.error('Error fetching results:', err);
+        setError('Failed to load results. Please try again later.');
+        setResults([]); // Set empty array on error to prevent map errors
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResults();
+  }, []);
+
+  // Format date to a readable string
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return {
+      date: date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      time: date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      })
+    };
+  };
+
+  // Calculate correct answers count
+  const getCorrectAnswersCount = (questions: QuizResult['questions']) => {
+    return questions.filter(q => q.status === 'correct').length;
+  };
 
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     status: 'all',
     subject: 'all',
+    quizType: 'all',
     sortBy: 'date-desc',
   });
   const [showFilters, setShowFilters] = useState(false);
 
-  // Get unique subjects for filter
+  // Get unique subjects and quiz types for filters
   const subjects = Array.from(new Set(results.map(result => result.subject)));
+  const quizTypes = ['syllabus', 'fundamentals'];
 
-  // Filter and sort results
-  const filteredResults = results
+ // Filter and sort results
+  const filteredResults = (Array.isArray(results) ? results : [])
+    .filter(result => result && typeof result === 'object')
     .filter(result => {
       const matchesSearch = 
         result.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        result.topic.toLowerCase().includes(searchTerm.toLowerCase());
+        (result.quizType === 'syllabus' && result.chapter?.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (result.quizType === 'fundamentals' && result.level?.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesStatus = 
         filters.status === 'all' || 
@@ -121,13 +112,17 @@ const ResultsPage = () => {
         filters.subject === 'all' || 
         result.subject === filters.subject;
       
-      return matchesSearch && matchesStatus && matchesSubject;
+      const matchesQuizType =
+        filters.quizType === 'all' ||
+        result.quizType === filters.quizType;
+      
+      return matchesSearch && matchesStatus && matchesSubject && matchesQuizType;
     })
     .sort((a, b) => {
       if (filters.sortBy === 'date-desc') {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.date_time).getTime() - new Date(a.date_time).getTime();
       } else if (filters.sortBy === 'date-asc') {
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
+        return new Date(a.date_time).getTime() - new Date(b.date_time).getTime();
       } else if (filters.sortBy === 'score-desc') {
         return b.percentage - a.percentage;
       } else {
@@ -135,7 +130,7 @@ const ResultsPage = () => {
       }
     });
 
-  const getStatusBadge = (status: string, percentage: number) => {
+  const getStatusBadge = (percentage: number) => {
     const passed = percentage >= 50;
     const bgColor = passed ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
     const text = passed ? 'Passed' : 'Failed';
@@ -152,6 +147,45 @@ const ResultsPage = () => {
     if (percentage >= 50) return 'text-blue-600';
     return 'text-red-600';
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex">
+        <div className="md:block md:w-64 flex-shrink-0">
+          <Sidebar />
+        </div>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading your results...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex">
+        <div className="md:block md:w-64 flex-shrink-0">
+          <Sidebar />
+        </div>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+            <FiAward className="mx-auto h-12 w-12 text-red-500 mb-4" />
+            <h3 className="text-lg font-medium text-gray-900 mb-2">Error Loading Results</h3>
+            <p className="text-gray-600 mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
@@ -272,7 +306,7 @@ const ResultsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredResults.map((result) => (
                 <div 
-                  key={result.id}
+                  key={result._id}
                   className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
                   <div className="p-6">
@@ -280,20 +314,26 @@ const ResultsPage = () => {
                       <div>
                         <div className="flex items-center">
                           <div className="p-2 rounded-lg bg-blue-100 text-blue-600 mr-3">
-                            <FiBook size={20} />
+                            {result.quizType === 'syllabus' ? <FiBook size={20} /> : <FiLayers size={20} />}
                           </div>
-                          <h3 className="text-lg font-semibold text-gray-900">{result.subject}</h3>
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-900">{result.subject}</h3>
+                            <p className="text-sm text-gray-500">
+                              {result.quizType === 'syllabus' 
+                                ? `${result.branch || ''} ${result.branch && result.chapter ? '•' : ''} ${result.chapter || ''}`
+                                : `Level: ${result.level || 'N/A'}`}
+                            </p>
+                          </div>
                         </div>
-                        <p className="text-sm text-gray-500 ml-11">{result.topic}</p>
                       </div>
-                      {getStatusBadge(result.status, result.percentage)}
+                      {getStatusBadge(result.percentage)}
                     </div>
                     
                     <div className="mt-6">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm text-gray-500">Score</span>
                         <span className={`text-lg font-bold ${getScoreColor(result.percentage)}`}>
-                          {result.score} / {result.totalMarks}
+                          {result.scored} / {result.total_score}
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -303,30 +343,38 @@ const ResultsPage = () => {
                         ></div>
                       </div>
                       <div className="flex justify-between mt-1">
-                        <span className="text-xs text-gray-500">{result.percentage}%</span>
+                        <span className="text-xs text-gray-500">{result.percentage.toFixed(1)}%</span>
                         <span className="text-xs text-gray-500">
-                          {result.correctAnswers} of {result.totalQuestions} correct
+                          {getCorrectAnswersCount(result.questions)} of {result.questions.length} correct
                         </span>
                       </div>
                     </div>
                     
-                    <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                      <div className="flex items-center text-sm text-gray-500">
-                        <FiCalendar className="mr-1.5" />
-                        <span>{new Date(result.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-                        <span className="mx-2">•</span>
-                        <FiClock className="mr-1.5" />
-                        <span>{result.time}</span>
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      <div className="text-sm text-gray-500 flex justify-between items-center">
+                        <div className="flex items-center">
+                          <FiCalendar className="mr-1.5 flex-shrink-0" />
+                          <span>{formatDate(result.date_time).date}</span>
+                        </div>
+                        <div className="flex items-center text-gray-400">
+                          <FiClock className="mr-1.5 text-sm" />
+                          <span>{formatDate(result.date_time).time}</span>
+                        </div>
                       </div>
-                      <span className="text-sm text-gray-500 flex items-center">
-                        <FiClock className="mr-1.5" />
-                        {result.duration}
-                      </span>
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 px-6 py-3 flex justify-end">
-                    <button className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors cursor-pointer">
+                  <div className="bg-gray-50 px-6 py-3 flex justify-between items-center">
+                    <span className="text-xs text-gray-500">
+                      {result.quizType === 'syllabus' ? 'Syllabus Quiz' : 'Fundamentals Quiz'}
+                    </span>
+                    <button 
+                      className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
+                      onClick={() => {
+                        // TODO: Implement view details functionality
+                        console.log('View details for result:', result._id);
+                      }}
+                    >
                       View Details
                     </button>
                   </div>
@@ -349,6 +397,7 @@ const ResultsPage = () => {
                     setFilters({
                       status: 'all',
                       subject: 'all',
+                      quizType: 'all',
                       sortBy: 'date-desc',
                     });
                   }}
