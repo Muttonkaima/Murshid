@@ -70,6 +70,7 @@ function ChatPage() {
   const [chatHistory, setChatHistory] = useState<ChatHistory[]>([]);
   const [currentChatId, setCurrentChatId] = useState<string | null>(null);
   const [editingChatId, setEditingChatId] = useState<string | null>(null);
+  const [chatToDelete, setChatToDelete] = useState<string | null>(null);
   const [editTitle, setEditTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
@@ -299,32 +300,32 @@ function ChatPage() {
 
   // Handle deleting a conversation
   const handleDeleteChat = useCallback(async (chatId: string) => {
-    if (window.confirm('Are you sure you want to delete this chat? This action cannot be undone.')) {
-      try {
-        const response = await chatService.deleteConversation(chatId);
-        if (response.success) {
-          // Remove the deleted chat from history
-          setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+    try {
+      const response = await chatService.deleteConversation(chatId);
+      if (response.success) {
+        // Remove the deleted chat from history
+        setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+        
+        // If the deleted chat was the current one, reset the view
+        if (currentChatId === chatId) {
+          setMessages([]);
+          setCurrentChatId(null);
+          setShowWelcomeScreen(true);
           
-          // If the deleted chat was the current one, reset the view
-          if (currentChatId === chatId) {
-            setMessages([]);
-            setCurrentChatId(null);
-            setShowWelcomeScreen(true);
-            
-            // If there are other chats, select the most recent one
-            const updatedHistory = chatHistory.filter(chat => chat.id !== chatId);
-            if (updatedHistory.length > 0) {
-              await loadConversation(updatedHistory[0].id);
-            }
+          // If there are other chats, select the most recent one
+          const updatedHistory = chatHistory.filter(chat => chat.id !== chatId);
+          if (updatedHistory.length > 0) {
+            await loadConversation(updatedHistory[0].id);
           }
-        } else {
-          throw new Error(response.message || 'Failed to delete conversation');
         }
-      } catch (error) {
-        console.error('Failed to delete conversation:', error);
-        setError('Failed to delete conversation. Please try again.');
+      } else {
+        throw new Error(response.message || 'Failed to delete conversation');
       }
+    } catch (error) {
+      console.error('Failed to delete conversation:', error);
+      setError('Failed to delete conversation. Please try again.');
+    } finally {
+      setChatToDelete(null);
     }
   }, [currentChatId, chatHistory, loadConversation]);
 
@@ -510,11 +511,6 @@ function ChatPage() {
                           <p className="font-medium text-gray-900 truncate">
                             {chat.title}
                           </p>
-                          {/* {chat.preview && (
-                            <p className="text-xs text-gray-500 truncate mt-0.5">
-                              {chat.preview}
-                            </p>
-                          )} */}
                           <p className="text-xs text-gray-400 mt-1">
                             {new Date(chat.timestamp).toLocaleDateString()}
                           </p>
@@ -524,22 +520,22 @@ function ChatPage() {
                             onClick={(e) => startEditing(chat.id, chat.title)}
                             className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
                             title="Rename chat"
-                          >
-                            <FiEdit2 className="w-3.5 h-3.5" />
+                            >
+                              <FiEdit2 className="w-3.5 h-3.5" />
                           </button>
                           <button
-                          onClick={() => handleDeleteChat(chat.id)}
+                          onClick={(e) => setChatToDelete(chat.id)}
                           className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-colors"
                           title="Delete chat"
                         >
                           <FiTrash2 className="w-3.5 h-3.5" />
                         </button>
-                        </div>
                       </div>
                     </div>
+                  </div>
                 )}
-                </div>
-              )))}
+              </div>
+            )))}
           </div>
         </div>
         <div className="p-4 border-t border-gray-200">
@@ -691,6 +687,36 @@ function ChatPage() {
           </div>
         </div>
       </div>
+
+      {/* Delete Confirmation Dialog */}
+      {chatToDelete && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-lg z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 mx-4">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Delete Conversation</h3>
+            <p className="text-gray-600 mb-6">Are you sure you want to delete this conversation? This action cannot be undone.</p>
+            <div className="flex justify-end space-x-3">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setChatToDelete(null);
+                }}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={async (e) => {
+                  e.stopPropagation();
+                  await handleDeleteChat(chatToDelete);
+                }}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 cursor-pointer"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Overlay for mobile sidebar */}
       {showSidebar && (
