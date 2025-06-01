@@ -150,13 +150,32 @@ export const chatService = {
     }
   },
 
+  // Create a new conversation
+  async createConversation(title: string = 'New Chat') {
+    try {
+      const response = await conversationService.createConversation(title);
+      return {
+        success: true,
+        conversation: response.data.conversation
+      };
+    } catch (error) {
+      console.error('Error creating conversation:', error);
+      return {
+        success: false,
+        message: error instanceof Error ? error.message : 'Failed to create conversation',
+        conversation: null
+      };
+    }
+  },
+
   // Get all conversations for the current user
   async getConversations() {
     try {
       const response = await conversationService.getUserConversations();
+      console.log('Conversations response:', response); // Debug log
       return {
         success: true,
-        conversations: response.data.conversations
+        conversations: response?.data?.conversations || []
       };
     } catch (error) {
       console.error('Error fetching conversations:', error);

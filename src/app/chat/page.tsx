@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut, FiTrash2, FiEdit2, FiX } from 'react-icons/fi';
+import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut, FiTrash2, FiEdit2, FiX, FiMessageSquare } from 'react-icons/fi';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import chatService, { ChatMessage } from '@/services/chatService';
@@ -58,6 +58,7 @@ interface ChatHistory {
   title: string;
   timestamp: Date;
   preview: string;
+  isActive?: boolean;
 }
 
 function ChatPage() {
@@ -117,19 +118,46 @@ function ChatPage() {
     const loadConversations = async () => {
       try {
         const response = await chatService.getConversations();
-        if (response.success) {
-          const history = response.conversations.map(conv => ({
-            id: conv._id,
-            title: conv.title,
-            timestamp: new Date(conv.updatedAt || conv.createdAt),
-            preview: conv.messages[0]?.content?.substring(0, 50) || 'New conversation'
-          }));
+        console.log('Conversations response in page:', response); // Debug log
+        
+        if (response.success && Array.isArray(response.conversations)) {
+          const history = response.conversations
+            .filter(conv => conv) // Filter out any null/undefined conversations
+            .map(conv => ({
+              id: conv._id,
+              title: conv.title || 'New Chat',
+              timestamp: new Date(conv.updatedAt || conv.createdAt || Date.now()),
+              preview: conv.messages?.[0]?.content?.substring(0, 50) || 'New conversation',
+              isActive: conv._id === currentChatId
+            }));
+          
+          console.log('Processed history:', history); // Debug log
           setChatHistory(history);
           
           // If there are conversations but none selected, select the first one
           if (history.length > 0 && !currentChatId) {
-            loadConversation(history[0].id);
+            await loadConversation(history[0].id);
           }
+          
+          // If we have a currentChatId but no active conversation, select it
+          if (currentChatId && !history.some(chat => chat.id === currentChatId)) {
+            const currentConv = await chatService.getConversation(currentChatId);
+            if (currentConv.success && currentConv.conversation) {
+              setChatHistory(prev => [
+                {
+                  id: currentConv.conversation._id,
+                  title: currentConv.conversation.title || 'New Chat',
+                  timestamp: new Date(currentConv.conversation.updatedAt || currentConv.conversation.createdAt || Date.now()),
+                  preview: currentConv.conversation.messages?.[0]?.content?.substring(0, 50) || 'New conversation',
+                  isActive: true
+                },
+                ...prev
+              ]);
+            }
+          }
+        } else {
+          console.error('Invalid conversations data:', response);
+          setError('Failed to load conversations. Invalid data received.');
         }
       } catch (error) {
         console.error('Failed to load conversations:', error);
@@ -140,24 +168,36 @@ function ChatPage() {
     };
 
     loadConversations();
-  }, []);
+  }, [currentChatId]);
 
   // Load a specific conversation
   const loadConversation = async (conversationId: string) => {
     try {
+      if (currentChatId === conversationId) return;
+      
       setIsLoading(true);
       const response = await chatService.getConversation(conversationId);
       
       if (response.success && response.conversation) {
         const conv = response.conversation;
-        setMessages(conv.messages.map((msg: any) => ({
+        const formattedMessages = conv.messages.map((msg: any) => ({
           id: msg._id || uuidv4(),
           role: msg.role,
           content: msg.content,
           timestamp: new Date(msg.timestamp || Date.now())
-        })));
+        }));
+        
+        setMessages(formattedMessages);
         setCurrentChatId(conversationId);
         setShowWelcomeScreen(false);
+        
+        // Update the chat history to mark this as the active conversation
+        setChatHistory(prev => 
+          prev.map(chat => ({
+            ...chat,
+            isActive: chat.id === conversationId
+          }))
+        );
       }
     } catch (error) {
       console.error('Failed to load conversation:', error);
@@ -260,13 +300,35 @@ function ChatPage() {
 
   const handleNewChat = async () => {
     try {
-      setMessages([]);
-      setCurrentChatId(null);
-      setShowWelcomeScreen(true);
-      setEditingChatId(null);
-      setError(null);
+      // Create a new conversation in the backend
+      const response = await chatService.createConversation('New Chat');
       
-      // The conversation will be created when the first message is sent
+      if (response.success && response.conversation) {
+        const newChat: ChatHistory = {
+          id: response.conversation._id,
+          title: 'New Chat',
+          timestamp: new Date(),
+          preview: 'Start a new conversation',
+          isActive: true
+        };
+        
+        // Reset the active state for all other chats
+        setChatHistory(prev => [
+          newChat,
+          ...prev.map(chat => ({
+            ...chat,
+            isActive: false
+          }))
+        ]);
+        
+        setMessages([]);
+        setCurrentChatId(newChat.id);
+        setShowWelcomeScreen(true);
+        setEditingChatId(null);
+        setError(null);
+      } else {
+        throw new Error('Failed to create new conversation');
+      }
     } catch (error) {
       console.error('Failed to start new conversation:', error);
       setError('Failed to start a new conversation. Please try again.');
@@ -281,15 +343,24 @@ function ChatPage() {
 
   const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (window.confirm('Are you sure you want to delete this chat?')) {
+    if (window.confirm('Are you sure you want to delete this chat? This action cannot be undone.')) {
       try {
         const response = await chatService.deleteConversation(chatId);
         if (response.success) {
-          setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+          // Remove the deleted chat from history
+          const newHistory = chatHistory.filter(chat => chat.id !== chatId);
+          setChatHistory(newHistory);
+          
+          // If the deleted chat was the current one, reset the view
           if (currentChatId === chatId) {
             setMessages([]);
             setCurrentChatId(null);
             setShowWelcomeScreen(true);
+            
+            // If there are other chats, select the most recent one
+            if (newHistory.length > 0) {
+              await loadConversation(newHistory[0].id);
+            }
           }
         } else {
           throw new Error(response.message || 'Failed to delete conversation');
@@ -299,7 +370,7 @@ function ChatPage() {
         setError('Failed to delete conversation. Please try again.');
       }
     }
-  }, [currentChatId, setChatHistory, setMessages, setCurrentChatId, setShowWelcomeScreen]);
+  }, [currentChatId, chatHistory, setChatHistory, setMessages, setCurrentChatId, setShowWelcomeScreen, loadConversation]);
 
   const saveEdit = useCallback((chatId: string, e: React.FormEvent) => {
     e.preventDefault();
@@ -366,89 +437,101 @@ function ChatPage() {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-2">
-          <h3 className="px-2 py-2 text-sm font-medium text-gray-500">Recent Chats</h3>
-          <div className="space-y-1">
-            {chatHistory.map(chat => (
-              <div
-                key={chat.id}
-                className={`group relative ${currentChatId === chat.id ? 'bg-gray-100 bg-opacity-10' : ''} rounded-lg`}
-              >
-                {editingChatId === chat.id ? (
-                  <form onSubmit={(e) => saveEdit(chat.id, e)} className="p-2 bg-gray-100">
-                    <input
-                      type="text"
-                      value={editTitle}
-                      onChange={(e) => setEditTitle(e.target.value)}
+        <div className="flex-1 overflow-y-auto">
+          <h3 className="px-4 py-3 text-sm font-medium text-gray-500 border-b border-gray-100">Recent Chats</h3>
+          <div className="divide-y divide-gray-100">
+            {chatHistory.length === 0 ? (
+              <div className="p-4 text-center text-sm text-gray-500">
+                No conversations yet. Start a new chat!
+              </div>
+            ) : (
+              chatHistory.map(chat => (
+                <div
+                  key={chat.id}
+                  className={`group relative ${chat.isActive ? 'bg-blue-50' : 'hover:bg-gray-50'} transition-colors`}
+                >
+                  {editingChatId === chat.id ? (
+                    <form 
+                      onSubmit={(e) => saveEdit(chat.id, e)} 
+                      className="p-2 bg-gray-100"
                       onClick={(e) => e.stopPropagation()}
-                      className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:border-none focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] text-gray-900"
-                      autoFocus
-                    />
-                    <div className="flex justify-end mt-2 space-x-2">
-                      <button
-                        type="button"
-                        onClick={cancelEdit}
-                        className="px-2 py-1 text-xs text-gray-600 hover:bg-gray-100 rounded cursor-pointer"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-2 py-1 text-xs bg-[var(--primary-color)] text-white rounded hover:bg-[var(--primary-color)] cursor-pointer"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </form>
-                ) : (
-                  <div
-                    onClick={() => {
-                      setCurrentChatId(chat.id);
-                      setShowSidebar(false);
-                    }}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-sm truncate cursor-pointer ${currentChatId === chat.id
-                      ? 'bg-blue-100 text-[var(--primary-color)]'
-                      : 'text-gray-700 hover:bg-gray-100'
-                      }`}
-                  >
-                    <div className="font-medium flex justify-between items-center">
-                      <span className="truncate pr-8">{chat.title}</span>
-                      <div className="absolute right-2 top-2 flex space-x-1 opacity-50 group-hover:opacity-100">
+                    >
+                      <input
+                        type="text"
+                        value={editTitle}
+                        onChange={(e) => setEditTitle(e.target.value)}
+                        className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)] text-gray-900"
+                        autoFocus
+                      />
+                      <div className="flex justify-end mt-2 space-x-2">
                         <button
-                          onClick={(e) => startEditing(chat.id, chat.title, e)}
-                          className="p-1 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full cursor-pointer"
-                          title="Rename chat"
+                          type="button"
+                          onClick={cancelEdit}
+                          className="px-2 py-1 text-xs text-gray-600 hover:bg-gray-100 rounded cursor-pointer"
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                          </svg>
+                          Cancel
                         </button>
                         <button
-                          onClick={(e) => handleDeleteChat(chat.id, e)}
-                          className="p-1 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-full cursor-pointer"
-                          title="Delete chat"
+                          type="submit"
+                          className="px-2 py-1 text-xs bg-[var(--primary-color)] text-white rounded hover:bg-[var(--primary-color)] cursor-pointer"
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-                          </svg>
+                          Save
                         </button>
                       </div>
+                    </form>
+                  ) : (
+                    <div
+                      onClick={() => {
+                        loadConversation(chat.id);
+                        setShowSidebar(false);
+                      }}
+                      className="w-full text-left px-4 py-3 text-sm cursor-pointer"
+                    >
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-gray-900 truncate">
+                            {chat.title}
+                          </p>
+                          {chat.preview && (
+                            <p className="text-xs text-gray-500 truncate mt-0.5">
+                              {chat.preview}
+                            </p>
+                          )}
+                          <p className="text-xs text-gray-400 mt-1">
+                            {new Date(chat.timestamp).toLocaleDateString()}
+                          </p>
+                        </div>
+                        <div className="flex space-x-1 ml-2 opacity-0 group-hover:opacity-100">
+                          <button
+                            onClick={(e) => startEditing(chat.id, chat.title, e)}
+                            className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
+                            title="Rename chat"
+                          >
+                            <FiEdit2 className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                          onClick={(e) => handleDeleteChat(chat.id, e)}
+                          className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-colors"
+                          title="Delete chat"
+                        >
+                          <FiTrash2 className="w-3.5 h-3.5" />
+                        </button>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-500 truncate">{chat.preview}</div>
-                  </div>
                 )}
-              </div>
-            ))}
+                </div>
+              )))}
           </div>
         </div>
-        {/* <div className="p-4 border-t border-gray-200">
+        <div className="p-4 border-t border-gray-200">
           <div className="flex items-center gap-2 text-gray-700">
             <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
               <FiMessageSquare className="w-4 h-4 text-blue-600" />
             </div>
             <span className="text-sm font-medium">Murshid AI</span>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Main Chat Area */}
