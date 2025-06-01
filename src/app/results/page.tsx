@@ -684,7 +684,8 @@ const ResultsPage = () => {
               {filteredResults.map((result) => (
                 <div 
                   key={result._id}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-md transition-all duration-300 overflow-hidden"
+                  onClick={() => setSelectedResult(result)}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer"
                 >
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-4">
@@ -748,16 +749,10 @@ const ResultsPage = () => {
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 px-6 py-3 flex justify-between items-center">
+                  <div className="bg-gray-50 px-6 py-3 flex justify-between">
                     <span className="text-xs text-gray-500">
                       {result.quizType === 'syllabus' ? 'Syllabus Quiz' : 'Fundamentals Quiz'}
                     </span>
-                    <button 
-                      className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
-                      onClick={() => setSelectedResult(result)}
-                    >
-                      View Details
-                    </button>
                   </div>
                 </div>
               ))}
