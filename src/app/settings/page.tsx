@@ -12,13 +12,14 @@ const formatDate = (dateString: string | undefined) => {
 import { FiArrowLeft, FiUser, FiLock, FiMail, FiBell, FiCreditCard, FiShield, FiGlobe, FiMoon, FiSun, FiHelpCircle, FiLogOut, FiEye, FiEyeOff, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Sidebar from '@/components/layout/Sidebar';
 import authService from '@/services/authService';
+import { color } from 'framer-motion';
 
 const SettingsPage = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('account');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [darkMode, setDarkMode] = useState(false);
-  const [selectedColor, setSelectedColor] = useState('#10B981'); // Default theme color
+  const [selectedColor, setSelectedColor] = useState(''); // Default theme color
   const [language, setLanguage] = useState('en');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
