@@ -55,6 +55,93 @@ const QuestionAccordion = ({ question, index, isOpen, onClick }: {
     ).join(' ');
   };
 
+  // Format answer with proper indentation and styling for arrays, objects, and nested structures
+  const formatAnswer = (answer: any): React.ReactNode => {
+    if (answer === null || answer === undefined) return 'Not answered';
+
+    // ✅ Matching pairs array: [{left: "", right: ""}, ...]
+    if (
+      Array.isArray(answer) &&
+      answer.length &&
+      typeof answer[0] === 'object' &&
+      'left' in answer[0] &&
+      'right' in answer[0]
+    ) {
+      return (
+        <ul className="list-disc list-inside space-y-1">
+          {answer.map((pair: any, idx: number) => (
+            <li key={idx}>
+              <strong>{pair.left}</strong> → {pair.right}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    // ✅ Array of primitives
+    if (Array.isArray(answer)) {
+      return answer.join(', ');
+    }
+
+    // ✅ Primitive: string, number, boolean
+    if (typeof answer === 'string' || typeof answer === 'number' || typeof answer === 'boolean') {
+      return String(answer);
+    }
+
+    // ✅ Matching pair object
+    if ('pair1' in answer && 'pair2' in answer) {
+      return `${answer.pair1} → ${answer.pair2}`;
+    }
+
+    // ✅ Fill-in-the-blank style object
+    if ('text' in answer || 'hide_text' in answer || 'read_text' in answer || 'image' in answer) {
+      return (
+        <div className="space-y-2">
+          {answer.text && <div>{answer.text}</div>}
+          {answer.hide_text && <div className="font-medium">{answer.hide_text}</div>}
+          {answer.read_text && <div className="text-sm text-gray-600">{answer.read_text}</div>}
+          {answer.image && (
+            <div className="mt-2">
+              <img
+                src={answer.image}
+                alt="Answer illustration"
+                className="max-w-full h-auto rounded-md border border-gray-200"
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ✅ Object with keys mapping to arrays (like { English: [...], Dutch: [...] })
+    // ✅ Object with keys mapping to arrays (like { English: [...], Dutch: [...] })
+    if (
+      typeof answer === 'object' &&
+      !Array.isArray(answer) &&
+      Object.values(answer).every((val) => Array.isArray(val))
+    ) {
+      return (
+        <div className="space-y-2">
+          {(Object.entries(answer) as [string, any[]][]).map(([language, names]) => (
+            <div key={language}>
+              <strong>{language}:</strong> {names.join(', ')}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+
+    // ✅ Malformed: { undefined: [...] }
+    const keys = Object.keys(answer);
+    if (keys.length === 1 && Array.isArray(answer[keys[0]])) {
+      return answer[keys[0]].join(', ');
+    }
+
+    // ✅ Fallback: show JSON
+    return <pre className="text-xs text-gray-900">{JSON.stringify(answer, null, 2)}</pre>;
+  };
+
   const isCorrect = question.status === 'correct';
   const isPartiallyCorrect = question.status === 'partially_correct';
 
@@ -103,24 +190,24 @@ const QuestionAccordion = ({ question, index, isOpen, onClick }: {
       </button>
       <div 
         id={`question-${index}-content`}
-        className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-96' : 'max-h-0'}`}
+        className={`overflow-y-auto transition-all duration-200 ${isOpen ? 'max-h-150' : 'max-h-0'}`}
       >
         <div className="p-4 bg-white border-t border-gray-100 space-y-4">
           <div>
             <p className="text-sm font-medium text-gray-500 mb-1">Your Answer:</p>
-            <p className="text-gray-900 break-words">
-              {typeof question.user_answer === 'object' 
-                ? JSON.stringify(question.user_answer) 
-                : question.user_answer || 'No answer provided'}
-            </p>
+            <div className="bg-gray-50 p-4 rounded-md text-sm border border-gray-200 overflow-x-auto">
+              <div className="whitespace-pre-wrap font-mono text-sm text-gray-900">
+                {formatAnswer(question.user_answer)}
+              </div>
+            </div>
           </div>
           <div>
             <p className="text-sm font-medium text-gray-500 mb-1">Correct Answer:</p>
-            <p className="text-gray-900 break-words">
-              {typeof question.correct_answer === 'object' 
-                ? JSON.stringify(question.correct_answer) 
-                : question.correct_answer}
-            </p>
+            <div className="bg-green-50 p-4 rounded-md text-sm border border-green-100 overflow-x-auto">
+              <div className="whitespace-pre-wrap font-mono text-sm text-green-900">
+                {formatAnswer(question.correct_answer)}
+              </div>
+            </div>
           </div>
           {question.explanation && (
             <div className="p-3 bg-blue-50 rounded-md">
@@ -430,22 +517,6 @@ const ResultsPage = () => {
     if (percentage >= 50) return 'text-blue-600';
     return 'text-red-600';
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex">
-        <div className="md:block md:w-64 flex-shrink-0">
-          <Sidebar />
-        </div>
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading your results...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (error) {
     return (
