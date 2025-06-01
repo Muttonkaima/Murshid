@@ -283,7 +283,7 @@ const SettingsPage = () => {
           <div className="space-y-6">
             <h2 className="text-xl font-semibold text-gray-900">Appearance</h2>
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+              <div className="flex items-center justify-between p-4 bg-white opacity-50 rounded-lg shadow-sm border border-gray-100">
                 <div>
                   <h3 className="font-medium text-gray-900">Dark Mode</h3>
                   <p className="text-sm text-gray-900">Switch between light and dark theme</p>
@@ -291,7 +291,8 @@ const SettingsPage = () => {
                 <div className="flex-shrink-0">
                   <button
                     onClick={() => setDarkMode(!darkMode)}
-                    className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors focus:outline-none ${darkMode ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-pointer`}
+                    disabled={!darkMode}
+                    className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors focus:outline-none ${darkMode ? 'bg-[var(--primary-color)]' : 'bg-gray-200'} cursor-not-allowed`}
                     aria-label={darkMode ? 'Disable dark mode' : 'Enable dark mode'}
                   >
                     <span
