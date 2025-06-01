@@ -684,15 +684,21 @@ const ResultsPage = () => {
               {filteredResults.map((result) => (
                 <div 
                   key={result._id}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 overflow-hidden"
+                  className="bg-white rounded-xl shadow-lg hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <div className="flex items-center">
-                          <div className="p-2 rounded-lg bg-blue-100 text-blue-600 mr-3">
-                            {result.quizType === 'syllabus' ? <FiBook size={20} /> : <FiLayers size={20} />}
+                        {result.quizType === 'syllabus' ? 
+                          <div className="p-2 rounded-lg bg-purple-100 text-purple-600 mr-3">
+                            <FiBook size={20} />
                           </div>
+                          :<div className="p-2 rounded-lg bg-yellow-100 text-yellow-600 mr-3">
+                          <FiLayers size={20} />
+                        </div>
+                        }
+
                           <div>
                             <h3 className="text-lg font-semibold text-gray-900">{result.subject}</h3>
                             <p className="text-sm text-gray-500">
