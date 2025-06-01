@@ -226,13 +226,10 @@ export const chatService = {
   async deleteConversation(conversationId: string) {
     try {
       // First mark as deleted
-      const response = await conversationService.updateConversation(conversationId, { 
-        isDeleted: true 
-      });
+      await conversationService.deleteConversation(conversationId);
       
       return {
         success: true,
-        conversation: response.data.conversation
       };
     } catch (error) {
       console.error('Error soft deleting conversation:', error);

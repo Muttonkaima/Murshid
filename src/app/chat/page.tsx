@@ -298,8 +298,7 @@ function ChatPage() {
   }, [input, isLoading, messages, currentChatId]);
 
   // Handle deleting a conversation
-  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleDeleteChat = useCallback(async (chatId: string) => {
     if (window.confirm('Are you sure you want to delete this chat? This action cannot be undone.')) {
       try {
         const response = await chatService.deleteConversation(chatId);
@@ -529,7 +528,7 @@ function ChatPage() {
                             <FiEdit2 className="w-3.5 h-3.5" />
                           </button>
                           <button
-                          onClick={(e) => handleDeleteChat(chat.id, e)}
+                          onClick={() => handleDeleteChat(chat.id)}
                           className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-colors"
                           title="Delete chat"
                         >
