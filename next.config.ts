@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     domains: [
       'upload.wikimedia.org',
       'www.researchgate.net',
+      'researchgate.net',
       'images.unsplash.com',
       'source.unsplash.com',
       'via.placeholder.com',
@@ -12,8 +13,13 @@ const nextConfig: NextConfig = {
       'pnccs.edu.in',
       'www.adda247.com',
       'st.adda247.com',
-      'www.adda247.in'
+      'www.adda247.in',
+      'www.pnccs.edu.in'
     ],
+    // Optionally unoptimize in dev
+    ...(process.env.NODE_ENV === 'development' && {
+      unoptimized: true,
+    }),
   },
 };
 

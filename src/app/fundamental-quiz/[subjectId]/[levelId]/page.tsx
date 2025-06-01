@@ -11,6 +11,8 @@ import MatchTheFollowingQuestion from '@/components/questions/MatchTheFollowingQ
 import MultiSelectQuestion from '@/components/questions/MultiSelectQuestion';
 import SortingQuestion from '@/components/questions/SortingQuestion';
 import ReorderingQuestion from '@/components/questions/ReorderingQuestion';
+import authService from '@/services/authService';
+import resultService from '@/services/resultService';
 
 type QuestionType = 'mcq' | 'true-false' | 'fill-in-blanks' | 'match-the-following' | 'multi-select' | 'sorting' | 'reordering' | 'all';
 
@@ -56,6 +58,7 @@ const FundamentalQuizPage = () => {
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showNav, setShowNav] = useState(true);
+  const hasSavedResults = useRef(false); // Track if results have been saved
   const navRef = useRef<HTMLDivElement>(null);
   const navToggleRef = useRef<HTMLButtonElement>(null);
 
@@ -230,11 +233,52 @@ const FundamentalQuizPage = () => {
     setTimeLeft(timeLimit);
   }, [timeLimit]);
 
-  // Move handleFinishQuiz before it's used in effects
+  // Save quiz results for fundamental quiz
+  const saveQuizResults = useCallback(async () => {
+    try {
+      const currentUser = authService.getCurrentUser();
+      if (!currentUser) return;
+
+      // Prepare questions data, ensuring user_answer is never null
+      const questionsData = questions.map((q, index) => {
+        const userAnswer = userAnswers[index]?.answer;
+        const hasAnswer = userAnswer !== undefined && userAnswer !== null;
+        const isCorrect = userAnswers[index]?.isCorrect || false;
+        
+        return {
+          question: q.question.text,
+          user_answer: hasAnswer ? userAnswer : 'not_answered',
+          correct_answer: q.correctAnswer,
+          explanation: q.explanation || 'No explanation available',
+          status: (isCorrect ? 'correct' : 'incorrect') as 'correct' | 'incorrect' | 'partially_correct'
+        };
+      });
+
+      const resultData = {
+        quizType: 'fundamentals' as const,
+        subject: subjectId as string,
+        branch: 'NA',
+        chapter: 'NA',
+        level: levelId as string,
+        questions: questionsData,
+        scored: score,
+        total_score: totalPossibleMarks,
+        percentage: scorePercentage
+      };
+
+      await resultService.saveResult(resultData);
+      console.log('Fundamental quiz results saved successfully');
+    } catch (error) {
+      console.error('Error saving fundamental quiz results:', error);
+    }
+  }, [subjectId, levelId, questions, userAnswers, score, totalPossibleMarks, scorePercentage]);
+
+  // Handle quiz completion
   const handleFinishQuiz = useCallback(() => {
-    if (!showResults) {
+    if (!showResults && !hasSavedResults.current) {
       setIsTimerRunning(false);
       setShowResults(true);
+      hasSavedResults.current = true; // Mark that we've saved results
 
       // Mark unanswered questions as incorrect
       const unansweredQuestions = questions.reduce((acc, _, index) => {
@@ -250,8 +294,11 @@ const FundamentalQuizPage = () => {
           ...unansweredQuestions
         }));
       }
+
+      // Save results when quiz is completed
+      saveQuizResults();
     }
-  }, [questions, showResults, userAnswers]);
+  }, [questions, showResults, userAnswers, saveQuizResults]);
 
   // Timer effect - client-side only
   useEffect(() => {

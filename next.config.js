@@ -17,11 +17,37 @@ const nextConfig = {
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT' },
-          { key: 'Access-Control-Allow-Headers', value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version' },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value:
+              'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+          },
         ],
       },
     ];
   },
+  // ✅ Add allowed external image domains here
+  images: {
+    domains: [
+      'upload.wikimedia.org',
+      'www.researchgate.net',
+      'researchgate.net',
+      'images.unsplash.com',
+      'source.unsplash.com',
+      'via.placeholder.com',
+      'picsum.photos',
+      'pnccs.edu.in',
+      'www.adda247.com',
+      'st.adda247.com',
+      'www.adda247.in',
+      'www.pnccs.edu.in',
+    ],
+    // Optionally disable optimization in development
+    ...(process.env.NODE_ENV === 'development' && {
+      unoptimized: true,
+    }),
+  },
+
   // Enable source maps in development
   productionBrowserSourceMaps: true,
   // Enable React Strict Mode
