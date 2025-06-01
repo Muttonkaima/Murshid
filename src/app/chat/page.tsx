@@ -58,14 +58,6 @@ interface ChatHistory {
   preview: string;
 }
 
-const suggestedQuestions = [
-  'What subjects can you help me with?',
-  'How does Murshid work?',
-  'Can you explain this concept to me?',
-  'I need help with my homework',
-  'What are the upcoming lessons?',
-];
-
 const initialMessages: Message[] = [
   {
     id: '1',
@@ -381,44 +373,19 @@ export default function ChatPage() {
           {showWelcomeScreen ? (
             <div className="max-w-3xl mx-auto pt-10 px-4">
               <div className="text-center mb-8">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[var(--primary-color)] to-cyan-400 p-1">
+                <div className="w-64 h-64 mx-auto mb-4 rounded-full bg-gradient-to-br from-[var(--primary-color)] to-cyan-400 p-1">
                   <div className="w-full h-full flex items-center justify-center">
                     <Image
                       src="/images/favicon.png"
                       alt="Murshid"
-                      width={80}
-                      height={80}
+                      width={180}
+                      height={180}
                       priority
                     />
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">How can I help you today?</h2>
-                <p className="text-gray-600">Ask me anything about your studies or choose from these common questions:</p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
-                {suggestedQuestions.map((question, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setInput(question);
-                      // Auto-send the selected question
-                      setTimeout(() => {
-                        const event = new KeyboardEvent('keydown', {
-                          key: 'Enter',
-                          code: 'Enter',
-                          keyCode: 13,
-                          which: 13,
-                          bubbles: true,
-                        });
-                        document.dispatchEvent(event);
-                      }, 100);
-                    }}
-                    className="text-left p-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-gray-700 cursor-pointer"
-                  >
-                    {question}
-                  </button>
-                ))}
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">Hi there! I'm Murshid, your AI learning assistant.</h2>
+                <p className="text-gray-600">How can I help you today?</p>
               </div>
             </div>
           ) : (
