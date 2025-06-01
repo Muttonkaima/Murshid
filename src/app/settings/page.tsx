@@ -39,6 +39,9 @@ const SettingsPage = () => {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [updateError, setUpdateError] = useState('');
+  const [updateSuccess, setUpdateSuccess] = useState(false);
   const user = authService.getCurrentUser();
   // Password validation states
   const [passwordErrors, setPasswordErrors] = useState({
@@ -430,14 +433,41 @@ const SettingsPage = () => {
                       <p className="mt-1 text-sm text-green-600">Passwords match!</p>
                     )}
                   </div>
+                    
+                    {/* Success and error messages */}
+                    {updateSuccess && (
+                      <div className="p-3 mt-4 text-sm text-green-800 bg-green-100 rounded-lg">
+                        Password updated successfully!
+                      </div>
+                    )}
+                    
+                    {updateError && (
+                      <div className="p-3 mt-4 text-sm text-red-800 bg-red-100 rounded-lg">
+                        {updateError}
+                      </div>
+                    )}
                   <div className="w-full mt-4">
                     <button 
-                      className={`w-full py-2 px-4 text-base rounded-lg transition-colors ${isPasswordValid() ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' : 'bg-gray-300 text-gray-500'}`}
-                      disabled={!isPasswordValid()}
-                      onClick={() => {
-                        if (isPasswordValid()) {
-                          // Handle password update logic here
-                          alert('Password updated successfully!');
+                      className={`w-full py-2 px-4 text-base rounded-lg transition-colors flex items-center justify-center ${
+                        isPasswordValid() && !isUpdating 
+                          ? 'bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white cursor-pointer' 
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
+                      disabled={!isPasswordValid() || isUpdating}
+                      onClick={async () => {
+                        if (!isPasswordValid() || isUpdating) return;
+                        
+                        setUpdateError('');
+                        setUpdateSuccess(false);
+                        setIsUpdating(true);
+                        
+                        try {
+                          await authService.updatePassword(currentPassword, newPassword);
+                          
+                          // Show success message
+                          setUpdateSuccess(true);
+                          
+                          // Reset form
                           setCurrentPassword('');
                           setNewPassword('');
                           setConfirmPassword('');
@@ -449,10 +479,39 @@ const SettingsPage = () => {
                             hasSpecialChar: false,
                             passwordsMatch: false
                           });
+                          
+                          // Hide success message after 5 seconds
+                          setTimeout(() => setUpdateSuccess(false), 5000);
+                        } catch (error: any) {
+                          console.error('Error updating password:', error);
+                          // Show error message from the server or a generic message
+                          let errorMessage = 'Failed to update password. Please try again.';
+                          
+                          if (error.status === 401) {
+                            errorMessage = 'The current password is incorrect. Please try again.';
+                          } else if (error.message) {
+                            errorMessage = error.message;
+                          } else if (error.response?.data?.message) {
+                            errorMessage = error.response.data.message;
+                          }
+                          
+                          setUpdateError(errorMessage);
+                        } finally {
+                          setIsUpdating(false);
                         }
                       }}
                     >
-                      Update Password
+                      {isUpdating ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Updating...
+                        </>
+                      ) : (
+                        'Update Password'
+                      )}
                     </button>
                   </div>
                   </div>

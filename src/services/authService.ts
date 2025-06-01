@@ -190,9 +190,24 @@ export const authService = {
     return response.data;
   },
 
-  // Update password
+  // Update password for logged-in user
   async updatePassword(currentPassword: string, newPassword: string) {
-    return api.post('/users/update-password', { currentPassword, newPassword });
+    console.log('Sending password update request...');
+    try {
+      const token = localStorage.getItem('token');
+      console.log('Current token:', token ? 'Token exists' : 'No token found');
+      
+      const response = await api.patch('/auth/update-my-password', { 
+        currentPassword, 
+        newPassword 
+      });
+      
+      console.log('Password update response:', response);
+      return response;
+    } catch (error) {
+      console.error('Error in updatePassword:', error);
+      throw error;
+    }
   },
   
   // Google OAuth login
