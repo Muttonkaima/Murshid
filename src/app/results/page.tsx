@@ -21,8 +21,107 @@ import { resultService } from '@/services/resultService';
 import { authService } from '@/services/authService';
 
 // Modal component for showing quiz details
+const QuestionAccordion = ({ question, index, isOpen, onClick }: { 
+  question: any, 
+  index: number,
+  isOpen: boolean,
+  onClick: () => void 
+}) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'correct': return 'text-green-700 bg-green-100';
+      case 'incorrect': return 'text-red-700 bg-red-100';
+      case 'partially_correct': return 'text-yellow-700 bg-yellow-100';
+      default: return 'text-gray-700 bg-gray-100';
+    }
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'correct':
+        return <FiCheckCircle className="text-green-500 mr-2 flex-shrink-0" />;
+      case 'incorrect':
+        return <FiXCircle className="text-red-500 mr-2 flex-shrink-0" />;
+      case 'partially_correct':
+        return <FiAlertCircle className="text-yellow-500 mr-2 flex-shrink-0" />;
+      default:
+        return null;
+    }
+  };
+
+  const getStatusText = (status: string) => {
+    return status.split('_').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  };
+
+  return (
+    <div className="border border-gray-200 rounded-lg overflow-hidden mb-3 transition-all duration-200 ">
+      <button
+        className={`w-full px-4 py-3 text-left flex items-center justify-between focus:outline-none ${isOpen ? 'bg-gray-50' : 'bg-white hover:bg-gray-50'} cursor-pointer`}
+        onClick={onClick}
+        aria-expanded={isOpen}
+        aria-controls={`question-${index}-content`}
+      >
+        <div className="flex items-center flex-1 min-w-0 ">
+          <span className="font-medium text-gray-700 mr-3 flex-shrink-0">Q{index + 1}.</span>
+          <p className="text-gray-900 truncate">{question.question}</p>
+        </div>
+        <div className="flex items-center ml-2 flex-shrink-0">
+          <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${getStatusColor(question.status)}`}>
+            {getStatusText(question.status)}
+          </span>
+          <svg
+            className={`ml-3 w-5 h-5 text-gray-500 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </button>
+      <div 
+        id={`question-${index}-content`}
+        className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-96' : 'max-h-0'}`}
+      >
+        <div className="p-4 bg-white border-t border-gray-100 space-y-4">
+          <div>
+            <p className="text-sm font-medium text-gray-500 mb-1">Your Answer:</p>
+            <p className="text-gray-900 break-words">
+              {typeof question.user_answer === 'object' 
+                ? JSON.stringify(question.user_answer) 
+                : question.user_answer || 'No answer provided'}
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-500 mb-1">Correct Answer:</p>
+            <p className="text-gray-900 break-words">
+              {typeof question.correct_answer === 'object' 
+                ? JSON.stringify(question.correct_answer) 
+                : question.correct_answer}
+            </p>
+          </div>
+          {question.explanation && (
+            <div className="p-3 bg-blue-50 rounded-md">
+              <p className="text-sm font-medium text-blue-800">Explanation:</p>
+              <p className="mt-1 text-sm text-blue-700">{question.explanation}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onClose: () => void }) => {
+  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
+  
   if (!result) return null;
+
+  const toggleQuestion = (index: number) => {
+    setOpenQuestion(openQuestion === index ? null : index);
+  };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -127,49 +226,15 @@ const QuizDetailsModal = ({ result, onClose }: { result: QuizResult | null, onCl
             {/* Questions Section */}
             <div className="mt-8">
               <h4 className="text-lg font-medium text-gray-900 mb-4">Questions</h4>
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {result.questions.map((question, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <div className={`px-4 py-3 flex items-center ${
-                      question.status === 'correct' ? 'bg-green-50' : 
-                      question.status === 'incorrect' ? 'bg-red-50' : 'bg-white'
-                    }`}>
-                      <span className="font-medium text-gray-700">Q{index + 1}.</span>
-                      <div className="ml-2 flex-1">
-                        <p className="text-gray-900">{question.question}</p>
-                      </div>
-                      <div className="flex items-center">
-                        {getStatusIcon(question.status)}
-                        <span className="text-sm font-medium text-gray-900">
-                          {getStatusText(question.status)}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="bg-white p-4 space-y-3">
-                      <div>
-                        <p className="text-sm text-gray-500">Your Answer:</p>
-                        <p className="mt-1 text-gray-900">
-                          {typeof question.user_answer === 'object' 
-                            ? JSON.stringify(question.user_answer) 
-                            : question.user_answer}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-500">Correct Answer:</p>
-                        <p className="mt-1 text-gray-900">
-                          {typeof question.correct_answer === 'object' 
-                            ? JSON.stringify(question.correct_answer) 
-                            : question.correct_answer}
-                        </p>
-                      </div>
-                      {question.explanation && (
-                        <div className="mt-2 p-3 bg-blue-50 rounded-md">
-                          <p className="text-sm font-medium text-blue-800">Explanation:</p>
-                          <p className="mt-1 text-sm text-blue-700">{question.explanation}</p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  <QuestionAccordion
+                    key={index}
+                    question={question}
+                    index={index}
+                    isOpen={openQuestion === index}
+                    onClick={() => toggleQuestion(index)}
+                  />
                 ))}
               </div>
             </div>
