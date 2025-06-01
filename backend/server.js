@@ -13,6 +13,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const resultRoutes = require('./routes/result');
+const conversationRoutes = require('./routes/conversation');
 
 // Initialize express app
 const app = express();
@@ -56,6 +57,7 @@ require('./config/passport');
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/results', resultRoutes);
+app.use('/api/conversations', conversationRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut } from 'react-icons/fi';
+import { FiSend, FiMic, FiPaperclip, FiMenu, FiPlus, FiLogOut, FiTrash2, FiEdit2, FiX } from 'react-icons/fi';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
-import chatService, { ChatMessage as ServiceChatMessage } from '@/services/chatService';
+import chatService, { ChatMessage } from '@/services/chatService';
+import { useRouter } from 'next/navigation';
 import DebugEnv from '../debug-env';
 
 // Type declarations for SpeechRecognition
@@ -47,7 +48,7 @@ var SpeechRecognition: {
   new(): SpeechRecognition;
 };
 
-interface Message extends Omit<ServiceChatMessage, 'timestamp'> {
+interface Message extends ChatMessage {
   id: string;
   timestamp: Date;
 }
@@ -57,12 +58,10 @@ interface ChatHistory {
   title: string;
   timestamp: Date;
   preview: string;
-  messages: Message[];
 }
-const initialMessages: Message[] = [];
-const initialChatHistory: ChatHistory[] = [];
 
 function ChatPage() {
+  const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isListening, setIsListening] = useState(false);
@@ -74,6 +73,7 @@ function ChatPage() {
   const [editTitle, setEditTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -112,6 +112,61 @@ function ChatPage() {
     }
   }, []);
 
+  // Load conversations on mount
+  useEffect(() => {
+    const loadConversations = async () => {
+      try {
+        const response = await chatService.getConversations();
+        if (response.success) {
+          const history = response.conversations.map(conv => ({
+            id: conv._id,
+            title: conv.title,
+            timestamp: new Date(conv.updatedAt || conv.createdAt),
+            preview: conv.messages[0]?.content?.substring(0, 50) || 'New conversation'
+          }));
+          setChatHistory(history);
+          
+          // If there are conversations but none selected, select the first one
+          if (history.length > 0 && !currentChatId) {
+            loadConversation(history[0].id);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load conversations:', error);
+        setError('Failed to load conversations. Please refresh the page.');
+      } finally {
+        setIsInitialized(true);
+      }
+    };
+
+    loadConversations();
+  }, []);
+
+  // Load a specific conversation
+  const loadConversation = async (conversationId: string) => {
+    try {
+      setIsLoading(true);
+      const response = await chatService.getConversation(conversationId);
+      
+      if (response.success && response.conversation) {
+        const conv = response.conversation;
+        setMessages(conv.messages.map((msg: any) => ({
+          id: msg._id || uuidv4(),
+          role: msg.role,
+          content: msg.content,
+          timestamp: new Date(msg.timestamp || Date.now())
+        })));
+        setCurrentChatId(conversationId);
+        setShowWelcomeScreen(false);
+      }
+    } catch (error) {
+      console.error('Failed to load conversation:', error);
+      setError('Failed to load conversation. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Auto-scroll to bottom of messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -139,7 +194,7 @@ function ChatPage() {
     };
 
     // Add user message to UI immediately
-    const updatedMessages = [userMessage];
+    const updatedMessages = [...messages, userMessage];
     setMessages(updatedMessages);
     setInput('');
     setShowWelcomeScreen(false);
@@ -147,16 +202,14 @@ function ChatPage() {
     setError(null);
 
     try {
-      // Convert messages to format expected by the service
-      // Only include the last 10 messages to avoid context window issues
-      const recentMessages = updatedMessages.slice(-10);
-      const serviceMessages: ServiceChatMessage[] = recentMessages.map(msg => ({
-        role: msg.role,
-        content: msg.content,
-      }));
-
-      // Get response from Gemini
-      const response = await chatService.sendMessage(serviceMessages);
+      // Send the message and get AI response
+      const response = await chatService.sendMessage(
+        updatedMessages.map(msg => ({
+          role: msg.role as 'user' | 'assistant' | 'system',
+          content: msg.content
+        })),
+        currentChatId || undefined
+      );
 
       if (response.success) {
         const aiMessage: Message = {
@@ -170,26 +223,25 @@ function ChatPage() {
         setMessages(finalMessages);
 
         // Update chat history
-        if (!currentChatId) {
-          // Create a new chat
+        if (response.isNewConversation && response.conversationId) {
+          // Add new conversation to history
           const newChat: ChatHistory = {
-            id: uuidv4(),
-            title: userMessage.content.substring(0, 30) + (userMessage.content.length > 30 ? '...' : ''),
+            id: response.conversationId,
+            title: response.message.substring(0, 30) + (response.message.length > 30 ? '...' : ''),
             timestamp: new Date(),
-            preview: userMessage.content.substring(0, 50) + (userMessage.content.length > 50 ? '...' : ''),
-            messages: finalMessages,
+            preview: response.message.substring(0, 50) + (response.message.length > 50 ? '...' : '')
           };
           setChatHistory(prev => [newChat, ...prev]);
-          setCurrentChatId(newChat.id);
+          setCurrentChatId(response.conversationId);
         } else {
-          // Update existing chat
+          // Update existing chat in history
           setChatHistory(prev =>
             prev.map(chat =>
               chat.id === currentChatId
                 ? {
                     ...chat,
-                    messages: finalMessages,
-                    updatedAt: new Date(),
+                    timestamp: new Date(),
+                    preview: response.message.substring(0, 50) + (response.message.length > 50 ? '...' : '')
                   }
                 : chat
             )
@@ -206,37 +258,48 @@ function ChatPage() {
     }
   };
 
-  const handleNewChat = useCallback(() => {
-    setMessages([]);
-    setCurrentChatId(null);
-    setEditingChatId(null);
-    setShowWelcomeScreen(true);
-    setError(null);
-  }, []);
-
-  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (window.confirm('Are you sure you want to delete this chat?')) {
-      try {
-        // In a real implementation, you would call your API here
-        // await chatService.deleteConversation(chatId);
-        
-        setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
-        if (currentChatId === chatId) {
-          handleNewChat();
-        }
-      } catch (error) {
-        console.error('Error deleting chat:', error);
-        setError('Failed to delete chat. Please try again.');
-      }
+  const handleNewChat = async () => {
+    try {
+      setMessages([]);
+      setCurrentChatId(null);
+      setShowWelcomeScreen(true);
+      setEditingChatId(null);
+      setError(null);
+      
+      // The conversation will be created when the first message is sent
+    } catch (error) {
+      console.error('Failed to start new conversation:', error);
+      setError('Failed to start a new conversation. Please try again.');
     }
-  }, [currentChatId, handleNewChat]);
+  };
 
   const startEditing = useCallback((chatId: string, currentTitle: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setEditingChatId(chatId);
     setEditTitle(currentTitle);
   }, []);
+
+  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (window.confirm('Are you sure you want to delete this chat?')) {
+      try {
+        const response = await chatService.deleteConversation(chatId);
+        if (response.success) {
+          setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+          if (currentChatId === chatId) {
+            setMessages([]);
+            setCurrentChatId(null);
+            setShowWelcomeScreen(true);
+          }
+        } else {
+          throw new Error(response.message || 'Failed to delete conversation');
+        }
+      } catch (error) {
+        console.error('Failed to delete conversation:', error);
+        setError('Failed to delete conversation. Please try again.');
+      }
+    }
+  }, [currentChatId, setChatHistory, setMessages, setCurrentChatId, setShowWelcomeScreen]);
 
   const saveEdit = useCallback((chatId: string, e: React.FormEvent) => {
     e.preventDefault();
