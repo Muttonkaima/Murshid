@@ -10,6 +10,7 @@ export interface Conversation {
   _id: string;
   title: string;
   messages: Message[];
+  isDeleted?: boolean;
   updatedAt: string;
   createdAt: string;
 }
@@ -53,7 +54,8 @@ export const conversationService = {
     id: string, 
     updates: { 
       messages?: Message[], 
-      title?: string 
+      title?: string,
+      isDeleted?: boolean
     }
   ): Promise<{ data: { conversation: Conversation } }> {
     try {

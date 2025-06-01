@@ -205,13 +205,37 @@ export const chatService = {
     }
   },
 
-  // Delete a conversation
+  // Update a conversation
+  async updateConversation(conversationId: string, updates: { title?: string }) {
+    try {
+      const response = await conversationService.updateConversation(conversationId, updates);
+      return {
+        success: true,
+        conversation: response.data.conversation
+      };
+    } catch (error) {
+      console.error('Error updating conversation:', error);
+      return {
+        success: false,
+        message: error instanceof Error ? error.message : 'Failed to update conversation'
+      };
+    }
+  },
+
+  // Soft delete a conversation
   async deleteConversation(conversationId: string) {
     try {
-      await conversationService.deleteConversation(conversationId);
-      return { success: true };
+      // First mark as deleted
+      const response = await conversationService.updateConversation(conversationId, { 
+        isDeleted: true 
+      });
+      
+      return {
+        success: true,
+        conversation: response.data.conversation
+      };
     } catch (error) {
-      console.error('Error deleting conversation:', error);
+      console.error('Error soft deleting conversation:', error);
       return {
         success: false,
         message: error instanceof Error ? error.message : 'Failed to delete conversation'

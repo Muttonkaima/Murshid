@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import chatService, { ChatMessage } from '@/services/chatService';
 import { useRouter } from 'next/navigation';
-import DebugEnv from '../debug-env';
 
 // Type declarations for SpeechRecognition
 declare global {
@@ -223,7 +222,7 @@ function ChatPage() {
     }
   };
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = useCallback(async () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage: Message = {
@@ -273,31 +272,115 @@ function ChatPage() {
           };
           setChatHistory(prev => [newChat, ...prev]);
           setCurrentChatId(response.conversationId);
-        } else {
+        } else if (currentChatId) {
           // Update existing chat in history
-          setChatHistory(prev =>
-            prev.map(chat =>
+          setChatHistory((prev: ChatHistory[]) =>
+            prev.map((chat: ChatHistory) =>
               chat.id === currentChatId
                 ? {
                     ...chat,
-                    timestamp: new Date(),
-                    preview: response.message.substring(0, 50) + (response.message.length > 50 ? '...' : '')
+                    preview: response.message.substring(0, 50) + (response.message.length > 50 ? '...' : ''),
+                    timestamp: new Date()
                   }
                 : chat
             )
           );
         }
       } else {
-        setError('Failed to get response from the AI. Please try again.');
+        throw new Error(response.message || 'Failed to send message');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setError('An error occurred while processing your message. Please try again.');
+      setError('Failed to send message. Please try again.');
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [input, isLoading, messages, currentChatId]);
 
+  // Handle deleting a conversation
+  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (window.confirm('Are you sure you want to delete this chat? This action cannot be undone.')) {
+      try {
+        const response = await chatService.deleteConversation(chatId);
+        if (response.success) {
+          // Remove the deleted chat from history
+          setChatHistory(prev => prev.filter(chat => chat.id !== chatId));
+          
+          // If the deleted chat was the current one, reset the view
+          if (currentChatId === chatId) {
+            setMessages([]);
+            setCurrentChatId(null);
+            setShowWelcomeScreen(true);
+            
+            // If there are other chats, select the most recent one
+            const updatedHistory = chatHistory.filter(chat => chat.id !== chatId);
+            if (updatedHistory.length > 0) {
+              await loadConversation(updatedHistory[0].id);
+            }
+          }
+        } else {
+          throw new Error(response.message || 'Failed to delete conversation');
+        }
+      } catch (error) {
+        console.error('Failed to delete conversation:', error);
+        setError('Failed to delete conversation. Please try again.');
+      }
+    }
+  }, [currentChatId, chatHistory, loadConversation]);
+
+  // Handle saving edited chat title
+  const saveEdit = useCallback(async (chatId: string, e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editTitle.trim()) return;
+
+    try {
+      const response = await chatService.updateConversation(chatId, { title: editTitle });
+
+      if (response.success && response.conversation) {
+        setChatHistory(prev =>
+          prev.map(chat =>
+            chat.id === chatId
+              ? {
+                  ...chat,
+                  title: response.conversation?.title || editTitle,
+                  timestamp: new Date(response.conversation.updatedAt || Date.now())
+                }
+              : chat
+          )
+        );
+      } else {
+        throw new Error(response.message || 'Failed to update conversation');
+      }
+    } catch (error) {
+      console.error('Error updating conversation:', error);
+      setError('Failed to update conversation title. Please try again.');
+    }
+
+    setEditingChatId(null);
+    setEditTitle('');
+  }, [editTitle]);
+
+  const cancelEdit = useCallback(() => {
+    setEditingChatId(null);
+    setEditTitle('');
+  }, []);
+
+  const handleFileUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // In a real implementation, you would handle file upload here
+      console.log('File selected:', file.name);
+      // For now, just show a message
+      setInput((prev: string) => `${prev ? `${prev}\n` : ''}I've uploaded: ${file.name}`);
+    }
+    // Reset the input to allow selecting the same file again
+    if (e.target) {
+      e.target.value = '';
+    }
+  }, []);
+
+  // Handle starting a new chat
   const handleNewChat = async () => {
     try {
       // Create a new conversation in the backend
@@ -335,83 +418,19 @@ function ChatPage() {
     }
   };
 
-  const startEditing = useCallback((chatId: string, currentTitle: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setEditingChatId(chatId);
-    setEditTitle(currentTitle);
-  }, []);
-
-  const handleDeleteChat = useCallback(async (chatId: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (window.confirm('Are you sure you want to delete this chat? This action cannot be undone.')) {
-      try {
-        const response = await chatService.deleteConversation(chatId);
-        if (response.success) {
-          // Remove the deleted chat from history
-          const newHistory = chatHistory.filter(chat => chat.id !== chatId);
-          setChatHistory(newHistory);
-          
-          // If the deleted chat was the current one, reset the view
-          if (currentChatId === chatId) {
-            setMessages([]);
-            setCurrentChatId(null);
-            setShowWelcomeScreen(true);
-            
-            // If there are other chats, select the most recent one
-            if (newHistory.length > 0) {
-              await loadConversation(newHistory[0].id);
-            }
-          }
-        } else {
-          throw new Error(response.message || 'Failed to delete conversation');
-        }
-      } catch (error) {
-        console.error('Failed to delete conversation:', error);
-        setError('Failed to delete conversation. Please try again.');
-      }
-    }
-  }, [currentChatId, chatHistory, setChatHistory, setMessages, setCurrentChatId, setShowWelcomeScreen, loadConversation]);
-
-  const saveEdit = useCallback((chatId: string, e: React.FormEvent) => {
-    e.preventDefault();
-    if (editTitle.trim()) {
-      setChatHistory(prev =>
-        prev.map(chat =>
-          chat.id === chatId
-            ? { ...chat, title: editTitle.trim() }
-            : chat
-        )
-      );
-      setEditingChatId(null);
-      setEditTitle('');
-    }
-  }, [editTitle]);
-
-  const cancelEdit = useCallback(() => {
-    setEditingChatId(null);
-    setEditTitle('');
-  }, []);
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  // Handle key down event for the input
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
-  };
+  }, [handleSendMessage]);
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      // In a real implementation, you would handle file upload here
-      console.log('File selected:', file.name);
-      // For now, just show a message
-      setInput(prev => `${prev ? `${prev}\n` : ''}I've uploaded: ${file.name}`);
-    }
-    // Reset the input to allow selecting the same file again
-    if (e.target) {
-      e.target.value = '';
-    }
-  };
+  // Start editing a chat title
+  const startEditing = useCallback((chatId: string, title: string) => {
+    setEditingChatId(chatId);
+    setEditTitle(title);
+  }, []);
 
   // Show welcome screen when explicitly set or when there are no messages
 
@@ -492,18 +511,18 @@ function ChatPage() {
                           <p className="font-medium text-gray-900 truncate">
                             {chat.title}
                           </p>
-                          {chat.preview && (
+                          {/* {chat.preview && (
                             <p className="text-xs text-gray-500 truncate mt-0.5">
                               {chat.preview}
                             </p>
-                          )}
+                          )} */}
                           <p className="text-xs text-gray-400 mt-1">
                             {new Date(chat.timestamp).toLocaleDateString()}
                           </p>
                         </div>
                         <div className="flex space-x-1 ml-2 opacity-0 group-hover:opacity-100">
                           <button
-                            onClick={(e) => startEditing(chat.id, chat.title, e)}
+                            onClick={(e) => startEditing(chat.id, chat.title)}
                             className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
                             title="Rename chat"
                           >
@@ -681,7 +700,6 @@ function ChatPage() {
           onClick={() => setShowSidebar(false)}
         />
       )}
-      <DebugEnv />
     </div>
   );
 }
