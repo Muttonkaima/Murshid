@@ -142,6 +142,17 @@ const ResultsPage = () => {
     );
   };
 
+  const getQuizTypeBadge = (quizType: string) => {
+    const bgColor = quizType === 'syllabus' ? 'bg-purple-100 text-purple-800' : 'bg-yellow-100 text-yellow-800';
+    const text = quizType === 'syllabus' ? 'Syllabus' : 'Fundamentals';
+    
+    return (
+      <span className={`px-3 py-1 text-xs font-medium rounded-full ${bgColor}`}>
+        {text}
+      </span>
+    );
+  };
+
   const getScoreColor = (percentage: number) => {
     if (percentage >= 85) return 'text-green-600';
     if (percentage >= 50) return 'text-blue-600';
@@ -260,6 +271,22 @@ const ResultsPage = () => {
                       <option value="failed">Failed</option>
                     </select>
                   </div>
+
+                  <div>
+                    <label htmlFor="quizType" className="block text-sm font-medium text-gray-700 mb-1">
+                      Quiz Type
+                    </label>
+                    <select
+                      id="quizType"
+                      className="block w-full pl-3 pr-10 py-2 text-gray-700 border border-gray-300 sm:text-sm rounded-lg cursor-pointer"
+                      value={filters.quizType}
+                      onChange={(e) => setFilters({ ...filters, quizType: e.target.value })}
+                    >
+                      <option value="all">All Quizzes</option>
+                      <option value="syllabus">Syllabus Quizzes</option>
+                      <option value="fundamentals">Fundamentals Quizzes</option>
+                    </select>
+                  </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
@@ -326,6 +353,7 @@ const ResultsPage = () => {
                           </div>
                         </div>
                       </div>
+                      {getQuizTypeBadge(result.quizType)}
                       {getStatusBadge(result.percentage)}
                     </div>
                     
@@ -386,11 +414,11 @@ const ResultsPage = () => {
               <FiAward className="mx-auto h-12 w-12 text-gray-400" />
               <h3 className="mt-2 text-lg font-medium text-gray-900">No results found</h3>
               <p className="mt-1 text-gray-500">
-                {searchTerm || filters.status !== 'all' || filters.subject !== 'all' 
+                {searchTerm || filters.status !== 'all' || filters.subject !== 'all' || filters.quizType !== 'all' 
                   ? 'Try adjusting your search or filter criteria.'
                   : 'You have not taken any quizzes yet.'}
               </p>
-              {(searchTerm || filters.status !== 'all' || filters.subject !== 'all') && (
+              {(searchTerm || filters.status !== 'all' || filters.subject !== 'all' || filters.quizType !== 'all') && (
                 <button
                   onClick={() => {
                     setSearchTerm('');
